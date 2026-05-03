@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrii Torianyk — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ ANIMATED BACKGROUND ░░ -->
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/projects/" class="nav-link">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>
+          Dostępny do pracy &nbsp;·&nbsp; Kraków, Tarnów / Remote
+        </div>
+
+        <h1 class="hero-title reveal delay-1">
+          <span class="title-line">Hej, jestem</span>
+          <span class="title-name">Andrii Torianyk</span>
+        </h1>
+
+        <p class="hero-role reveal delay-2">
+          <span class="role-cursor">_</span>
+          Software Engineer &amp; Student III roku
+        </p>
+
+        <p class="hero-desc reveal delay-3">
+          Buduję aplikacje webowe, mobilne i systemy backendowe.
+          Pasjonuje mnie inżynieria oprogramowania od architektury
+          po interfejs użytkownika.
+        </p>
+
+        <div class="hero-actions reveal delay-4">
+          <a href="/projects/" class="btn btn-primary">
+            Zobacz projekty
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="/contact/" class="btn btn-glass">Napisz do mnie</a>
+        </div>
+
+      </div>
+
+      <!-- GLASS CARD po prawej -->
+      <div class="hero-card reveal delay-2">
+        <div class="glass-card">
+          <div class="card-avatar">AT</div>
+          <div class="card-name">Andrii Torianyk</div>
+          <div class="card-role">Software Engineer</div>
+          <div class="card-divider"></div>
+          <div class="card-stats">
+            <div class="cs">
+              <div class="cs-n">3+</div>
+              <div class="cs-l">lata nauki</div>
+            </div>
+            <div class="cs-sep"></div>
+            <div class="cs">
+              <div class="cs-n">10+</div>
+              <div class="cs-l">projektów</div>
+            </div>
+            <div class="cs-sep"></div>
+            <div class="cs">
+              <div class="cs-n">8</div>
+              <div class="cs-l">technologii</div>
+            </div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">Java</span>
+            <span class="stack-pill">React</span>
+            <span class="stack-pill">TypeScript</span>
+            <span class="stack-pill">SQL</span>
+            <span class="stack-pill">Unity</span>
+            <span class="stack-pill">Android</span>
+            <span class="stack-pill">C++</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ ABOUT STRIP ░░ -->
+    <section class="about-strip">
+      <div class="about-inner">
+        <div class="about-text reveal">
+          <span class="section-eyebrow">O mnie</span>
+          <h2 class="section-title">
+            Student który<br/>
+            <span class="gradient-text">naprawdę koduje</span>
+          </h2>
+          <p class="about-body">
+            Jestem na III roku informatyki na specjalizacji inżynieria
+            oprogramowania. Zajmuję się budowaniem aplikacji od zera —
+            projektuję architekturę, piszę backend i składam interfejsy.
+            Lubię rozwiązywać realne problemy kodem.
+          </p>
+          <p class="about-body">
+            W wolnym czasie tworzę gry w Unity i eksploruję tematy
+            związane z bezpieczeństwem systemów i machine learningiem.
+          </p>
+          <a href="/projects/" class="about-link">
+            Zobacz moje projekty →
+          </a>
+        </div>
+        <div class="about-timeline reveal delay-1">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">2022 – teraz</div>
+              <div class="tl-title">Informatyka – Inżynieria Oprogramowania</div>
+              <div class="tl-sub">Akademia Tarnowska</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">2023</div>
+              <div class="tl-title">Pierwsze projekty komercyjne</div>
+              <div class="tl-sub">Freelance · aplikacje webowe</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-year">2024</div>
+              <div class="tl-title">Projekty zespołowe & game dev</div>
+              <div class="tl-sub">Unity · Android Studio · Spring Boot</div>
+            </div>
+          </div>
+          <div class="tl-item tl-now">
+            <div class="tl-dot tl-dot-pulse"></div>
+            <div class="tl-content">
+              <div class="tl-year">2025 – teraz</div>
+              <div class="tl-title">Szukam pracy</div>
+              <div class="tl-sub">Junior Developer · Full-stack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

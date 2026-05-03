@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSK Expert — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-osk.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/projects/" class="nav-link active">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="../../cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Freelance</span>
+          <div class="proj-badges">
+            <span class="badge-year">2025</span>
+            <span class="badge-team">Projekt indywidualny</span>
+            <span class="badge-uni osk-badge-live">
+              <span class="live-dot"></span>Live
+            </span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">OSK <span>Expert</span></h1>
+
+        <p class="proj-tagline">
+          Kompletna strona internetowa dla ośrodka szkolenia kierowców —
+          od projektu UI po wdrożenie. Panel administracyjny, system aktualności,
+          terminy kursów i statystyki odwiedzin dla właściciela.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://www.osk-expert.com.pl/" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Zobacz na żywo
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">PHP + MySQL</div>
+            <div class="ps-l">Backend</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">HTML/CSS/JS</div>
+            <div class="ps-l">Frontend</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Panel Admina</div>
+            <div class="ps-l">CMS</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">1 osoba</div>
+            <div class="ps-l">Zespół</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Strona w akcji</h2>
+      </div>
+
+      <div class="gallery-grid osk-gallery reveal delay-2">
+
+        <!-- Rząd 1: duży (strona główna) + 2 małe (aktualności, o firmie) -->
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/osk-expert/screen1.png" alt="Strona główna" loading="lazy" />
+          <div class="gallery-overlay"><span>Strona główna</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/osk-expert/screen2.png" alt="Aktualności" loading="lazy" />
+          <div class="gallery-overlay"><span>Aktualności</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/osk-expert/screen3.png" alt="O firmie" loading="lazy" />
+          <div class="gallery-overlay"><span>O firmie</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 2: opinie (wide) + oferta -->
+        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+          <img src="../../assets/osk-expert/screen4.png" alt="Opinie kursantów" loading="lazy" />
+          <div class="gallery-overlay"><span>Opinie kursantów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/osk-expert/screen5.png" alt="Oferta — szkolenia" loading="lazy" />
+          <div class="gallery-overlay"><span>Oferta — szkolenia</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 3: terminy + jak zacząć + FAQ -->
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/osk-expert/screen6.png" alt="Terminy kursów" loading="lazy" />
+          <div class="gallery-overlay"><span>Terminy kursów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/osk-expert/screen7.png" alt="Jak zacząć — timeline" loading="lazy" />
+          <div class="gallery-overlay"><span>Jak zacząć — timeline</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(7)">
+          <img src="../../assets/osk-expert/screen8.png" alt="FAQ — często zadawane pytania" loading="lazy" />
+          <div class="gallery-overlay"><span>FAQ</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 4: galeria (wide) -->
+        <div class="gallery-item gallery-wide" onclick="openLightbox(8)">
+          <img src="../../assets/osk-expert/screen9.png" alt="Galeria zdjęć OSK" loading="lazy" />
+          <div class="gallery-overlay"><span>Galeria zdjęć</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Freelance dla<br/><span class="grad-green">prawdziwego klienta</span></h2>
+          <p class="body-text">
+            Właściciel OSK Expert potrzebował nowoczesnej strony internetowej, która
+            przyciągnie nowych kursantów i jednocześnie ułatwi codzienne zarządzanie
+            treścią bez pomocy programisty.
+          </p>
+          <p class="body-text">
+            Zaprojektowałem i wdrożyłem całą stronę od zera — projekt graficzny,
+            kodowanie frontendu, backend w PHP oraz panel administracyjny
+            dostępny tylko dla właściciela.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📅</div>
+            <div>
+              <div class="feat-title">Zarządzanie kursami</div>
+              <div class="feat-desc">Admin ustawia daty: poprzedniego, najbliższego i kolejnego kursu — automatycznie aktualizują się na stronie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📰</div>
+            <div>
+              <div class="feat-title">System aktualności</div>
+              <div class="feat-desc">Właściciel dodaje posty z panelu — publikacja bez znajomości kodu</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📊</div>
+            <div>
+              <div class="feat-title">Statystyki odwiedzin</div>
+              <div class="feat-desc">Panel pokazuje liczbę odwiedzin w danym dniu — prosta analityka własna</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🗺️</div>
+            <div>
+              <div class="feat-title">Timeline "Jak zacząć"</div>
+              <div class="feat-desc">Krok po kroku: Zapisz się → PKK → Kurs → Egzamin — przejrzysta ścieżka dla kursanta</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">❓</div>
+            <div>
+              <div class="feat-title">FAQ accordion</div>
+              <div class="feat-desc">Najczęściej zadawane pytania w formie rozwijalnych kart — zmniejsza liczbę telefonów do biura</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📱</div>
+            <div>
+              <div class="feat-title">Responsywny design</div>
+              <div class="feat-desc">Strona działa płynnie na telefonach, tabletach i komputerach</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🌐</div>
+            <div class="tech-card-name">HTML5 / CSS3</div>
+            <div class="tech-card-desc">Semantyczny markup i nowoczesny CSS — Flexbox, Grid, animacje, custom properties.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-name">JavaScript</div>
+            <div class="tech-card-desc">Vanilla JS — hamburger menu, FAQ accordion, walidacja formularzy, lightbox galerii.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🐘</div>
+            <div class="tech-card-name">PHP</div>
+            <div class="tech-card-desc">Backend strony, logika panelu admina, routing i obsługa sesji autoryzacji.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-name">MySQL</div>
+            <div class="tech-card-desc">Baza danych dla aktualności, dat kursów i dziennych liczników odwiedzin.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔐</div>
+            <div class="tech-card-name">Panel Admina</div>
+            <div class="tech-card-desc">Chroniony hasłem interfejs — zarządzanie treścią bez dotykania kodu przez klienta.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🚀</div>
+            <div class="tech-card-name">cPanel / Hosting</div>
+            <div class="tech-card-desc">Wdrożenie na hostingu współdzielonym, konfiguracja domeny i certyfikat SSL.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Funkcjonalności</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Terminy kursów — 3 daty</div>
+          <p class="arch-desc">
+            Admin zarządza trzema datami: poprzedni, najbliższy i kolejny kurs.
+            Najbliższy termin pojawia się jako pływający przycisk na każdej podstronie.
+          </p>
+          <div class="code-block">
+<pre>SELECT prev_date, curr_date,
+       next_date
+FROM course_dates
+ORDER BY id DESC LIMIT 1;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">System aktualności</div>
+          <p class="arch-desc">
+            Formularz w panelu admina zapisuje post (tytuł, treść, zdjęcie) do MySQL.
+            Strona wyświetla posty posortowane od najnowszych.
+          </p>
+          <div class="code-block">
+<pre>INSERT INTO news
+  (title, content, image, date)
+VALUES (?, ?, ?, NOW());</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Licznik odwiedzin</div>
+          <p class="arch-desc">
+            Przy każdym wejściu na stronę PHP upsertuje rekord dla dzisiejszej daty.
+            Panel admina wyświetla dzienny wykres.
+          </p>
+          <div class="code-block">
+<pre>INSERT INTO visits (date, count)
+VALUES (CURDATE(), 1)
+ON DUPLICATE KEY UPDATE
+  count = count + 1;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Autoryzacja admina</div>
+          <p class="arch-desc">
+            Panel chroniony przez <code>session_start()</code> i walidację hasła bcrypt.
+            Próba wejścia bez sesji przekierowuje do strony logowania.
+          </p>
+          <div class="code-block">
+<pre>if (!isset($_SESSION['admin'])) {
+  header('Location: /login.php');
+  exit;
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">FAQ Accordion</div>
+          <p class="arch-desc">
+            Rozwijalne pytania i odpowiedzi — CSS transition na <code>max-height</code>,
+            przełączane przez JS bez przeładowania strony.
+          </p>
+          <div class="code-block">
+<pre>item.addEventListener('click',
+  () => item.classList
+    .toggle('open'));</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Timeline "Jak zacząć"</div>
+          <p class="arch-desc">
+            Wizualna ścieżka krok po kroku dla nowego kursanta —
+            karty naprzemiennie lewo/prawo z linią połączenia.
+          </p>
+          <div class="code-block">
+<pre>/* Naprzemienne pozycje */
+.step:nth-child(odd)  { left: 0; }
+.step:nth-child(even) { right: 0; }</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── DELIVERABLES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zakres prac</div>
+      <h2 class="section-h2 reveal delay-1">Co zostało dostarczone</h2>
+      <div class="deliverables-grid reveal delay-2">
+        <div class="deliv-card">
+          <div class="deliv-icon">🎨</div>
+          <div class="deliv-title">Projekt UI/UX</div>
+          <div class="deliv-desc">Cały layout pod brand klienta — niebieska paleta, czytelna typografia, ikony sekcji</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">💻</div>
+          <div class="deliv-title">Frontend</div>
+          <div class="deliv-desc">HTML, CSS, JS — pełna responsywność, animacje, płynna nawigacja z ikonami</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">⚙️</div>
+          <div class="deliv-title">Backend + DB</div>
+          <div class="deliv-desc">PHP + MySQL: aktualności, kursy, licznik odwiedzin, panel admina</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🌍</div>
+          <div class="deliv-title">Wdrożenie</div>
+          <div class="deliv-desc">Konfiguracja hostingu, domeny, SSL — strona live na osk-expert.com.pl</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Autor</div>
+      <h2 class="section-h2 reveal delay-1">Projekt indywidualny</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">Projekt UI · Frontend · Backend · Wdrożenie</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+        <div class="team-card client-card">
+          <div class="team-avatar osk-avatar">OSK</div>
+          <div class="team-name">OSK Expert Brzesko</div>
+          <div class="team-role">Klient — Ośrodek Szkolenia Kierowców</div>
+          <a href="https://www.osk-expert.com.pl/" class="team-gh" target="_blank">osk-expert.com.pl</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="/projects/" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/osk-expert/screen1.png', cap: 'Strona główna' },
+      { src: '../../assets/osk-expert/screen2.png', cap: 'Aktualności' },
+      { src: '../../assets/osk-expert/screen3.png', cap: 'O firmie' },
+      { src: '../../assets/osk-expert/screen4.png', cap: 'Opinie kursantów' },
+      { src: '../../assets/osk-expert/screen5.png', cap: 'Oferta — szkolenia' },
+      { src: '../../assets/osk-expert/screen6.png', cap: 'Terminy kursów' },
+      { src: '../../assets/osk-expert/screen7.png', cap: 'Jak zacząć — timeline' },
+      { src: '../../assets/osk-expert/screen8.png', cap: 'FAQ — częste pytania' },
+      { src: '../../assets/osk-expert/screen9.png', cap: 'Galeria zdjęć' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Racing 3D — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/projects/" class="nav-link active">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="../../cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Game Development · Grafika 3D</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-team">Projekt zespołowy</span>
+            <span class="badge-uni">Akademia Tarnowska</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Racing <span>3D</span></h1>
+
+        <p class="proj-tagline">
+          Autorski silnik wyścigowy napisany w C++ i OpenGL 3.3 —
+          od renderowania shaderów po symulację fizyki Bullet Physics.
+          Zero gotowych silników gier.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Racing3D.git" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">C++17</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">OpenGL 3.3</div>
+            <div class="ps-l">Grafika</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">60+ FPS</div>
+            <div class="ps-l">Wydajność</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">3 osoby</div>
+            <div class="ps-l">Zespół</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Gra w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/racing3d/screen1.png" alt="Racing 3D — Menu główne" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Menu główne</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/racing3d/screen2.png" alt="Wybór samochodu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Garaż — wybór auta</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/racing3d/screen3.png" alt="Widok z kokpitu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Widok kokpit</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/racing3d/screen4.png" alt="Widok TPP" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Widok TPP — Chase camera</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(4)">
+          <img src="../../assets/racing3d/screen5.png" alt="Ekran wygranej" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Ekran wygranej — YOU WIN</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Autorski silnik<br/><span class="grad">od zera</span></h2>
+          <p class="body-text">
+            Kluczowym założeniem było stworzenie trójwymiarowego symulatora wyścigów
+            bez użycia gotowych silników jak Unity czy Unreal Engine. Cały potok renderowania,
+            fizyka i logika gry zostały napisane w C++17 od podstaw.
+          </p>
+          <p class="body-text">
+            Projekt był realizowany w ramach przedmiotu <em>Grafika 3D i programowanie kart graficznych</em>
+            na Akademii Tarnowskiej. Zespół: Andrii Torianyk, Nazar Suslyk, Ilona Hrabowenko.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🎮</div>
+            <div>
+              <div class="feat-title">Rozbudowane menu</div>
+              <div class="feat-desc">Wybór auta, trasy, liczby okrążeń i ustawień grafiki</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📷</div>
+            <div>
+              <div class="feat-title">Dwa tryby kamery</div>
+              <div class="feat-desc">TPP (za samochodem) i FPP (widok z kokpitu)</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🤖</div>
+            <div>
+              <div class="feat-title">Przeciwnik AI</div>
+              <div class="feat-desc">System waypointów z algorytmem P-Controller</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💰</div>
+            <div>
+              <div class="feat-title">System ekonomii</div>
+              <div class="feat-desc">Wirtualna waluta, garaż z 7 samochodami do odblokowania</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔊</div>
+            <div>
+              <div class="feat-title">Dynamiczny dźwięk</div>
+              <div class="feat-desc">Pitch silnika zmienia się proporcjonalnie do prędkości</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-name">C++17</div>
+            <div class="tech-card-desc">Język główny. Pełna kontrola pamięci i wydajność wymagana w aplikacjach czasu rzeczywistego.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🖥️</div>
+            <div class="tech-card-name">OpenGL 3.3</div>
+            <div class="tech-card-desc">Core Profile — nowoczesny potok renderowania z shaderami GLSL, VBO/VAO/EBO.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🧮</div>
+            <div class="tech-card-name">Bullet Physics</div>
+            <div class="tech-card-desc">Symulacja fizyki bryły sztywnej. Model btRaycastVehicle z zawieszeniem i tarciem opon.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🪟</div>
+            <div class="tech-card-name">GLFW + GLAD</div>
+            <div class="tech-card-desc">Tworzenie okna, kontekstu OpenGL i obsługa urządzeń wejścia.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📐</div>
+            <div class="tech-card-name">GLM</div>
+            <div class="tech-card-desc">Biblioteka matematyczna — wektory, macierze transformacji, rzutowanie perspektywiczne.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🖱️</div>
+            <div class="tech-card-name">ImGui</div>
+            <div class="tech-card-desc">Immediate Mode GUI — menu, HUD z licznikiem prędkości, ekrany końcowe.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🔈</div>
+            <div class="tech-card-name">Miniaudio</div>
+            <div class="tech-card-desc">Lekka biblioteka audio do odtwarzania dźwięku silnika z dynamicznym pitchem.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📦</div>
+            <div class="tech-card-name">CMake + vcpkg</div>
+            <div class="tech-card-desc">System budowania i zarządzanie zależnościami niezależny od IDE.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Maszyna stanów</div>
+          <p class="arch-desc">
+            Aplikacja działa w trzech stanach: <code>SPLASH_SCREEN</code>, <code>MAIN_MENU</code>
+            i <code>RACING</code>. Każdy stan determinuje co jest renderowane w danej klatce.
+          </p>
+          <div class="code-block">
+<pre>enum GameState {
+  SPLASH_SCREEN,
+  MAIN_MENU,
+  RACING
+};</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Pętla gry + Delta Time</div>
+          <p class="arch-desc">
+            Każda klatka: przetwarzanie wejścia → aktualizacja fizyki → renderowanie.
+            Delta Time zapewnia tę samą prędkość gry na 30 i 144 FPS.
+          </p>
+          <div class="code-block">
+<pre>float deltaTime =
+  currentFrame - lastFrame;
+// ruch * deltaTime = m/s</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Shader Phonga (GLSL)</div>
+          <p class="arch-desc">
+            Model oświetlenia z trzema składnikami: ambient, diffuse, specular.
+            Autorskie shadery <code>phong.vert</code> i <code>phong.frag</code>.
+          </p>
+          <div class="code-block">
+<pre>vec3 result =
+  (ambient + diffuse
+   + specular)
+  * texColor.rgb;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Własny parser OBJ</div>
+          <p class="arch-desc">
+            Klasa <code>Karting</code> parsuje format Wavefront OBJ linia po linii,
+            z automatycznym generowaniem normalnych przez iloczyn wektorowy.
+          </p>
+          <div class="code-block">
+<pre>glm::vec3 n =
+  glm::normalize(
+    glm::cross(
+      v1-v0, v2-v0));</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Fizyka — btRaycastVehicle</div>
+          <p class="arch-desc">
+            Każde koło rzuca promień (raycast) do podłoża. Siła zawieszenia, tarcie i
+            silnik są obliczane osobno dla każdego koła przez Bullet Physics.
+          </p>
+          <div class="code-block">
+<pre>vehicle->applyEngineForce(
+  force, 2); // tylna oś
+vehicle->setSteeringValue(
+  val, 0);   // przednia oś</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">AI — Waypoints + P-Controller</div>
+          <p class="arch-desc">
+            Przeciwnik podąża za punktami nawigacyjnymi toru.
+            Kąt skrętu obliczany przez <code>atan2</code> i ograniczany przez <code>glm::clamp</code>.
+          </p>
+          <div class="code-block">
+<pre>float steering =
+  glm::clamp(
+    angleDiff / 30.0f,
+    -1.0f, 1.0f);</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CONTROLS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Sterowanie</div>
+      <h2 class="section-h2 reveal delay-1">Klawiatura</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>W</kbd><span>Przyspieszenie</span></div>
+        <div class="ctrl"><kbd>S</kbd><span>Hamowanie / Wsteczny</span></div>
+        <div class="ctrl"><kbd>A</kbd><span>Skręt w lewo</span></div>
+        <div class="ctrl"><kbd>D</kbd><span>Skręt w prawo</span></div>
+        <div class="ctrl"><kbd>SPACJA</kbd><span>Hamulec ręczny (drift)</span></div>
+        <div class="ctrl"><kbd>C</kbd><span>Zmiana kamery TPP / FPP</span></div>
+        <div class="ctrl"><kbd>ESC</kbd><span>Menu / Pauza</span></div>
+        <div class="ctrl ctrl-arrow">
+          <div class="arrows">
+            <span></span><kbd>↑</kbd><span></span>
+            <kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd>
+          </div>
+          <span>Alternatywne sterowanie</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Windows 10/11</span>
+            <span class="req-pill">Visual Studio 2019/2022</span>
+            <span class="req-pill">CMake ≥ 3.16</span>
+            <span class="req-pill">Ninja</span>
+            <span class="req-pill">OpenGL kompatybilne GPU</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/Racing3D.git
+cd Racing3D</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj zależności przez vcpkg</div>
+              <div class="code-block">
+<pre>.\vcpkg\vcpkg install glfw3 glm glew --triplet x64-windows</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Skonfiguruj i zbuduj projekt</div>
+              <div class="code-block">
+<pre>cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_TOOLCHAIN_FILE=.\vcpkg\scripts\buildsystems\vcpkg.cmake
+cmake --build build --config Release</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom grę</div>
+              <div class="code-block">
+<pre>.\build\Racing3D.exe</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zespół</div>
+      <h2 class="section-h2 reveal delay-1">Autorzy projektu</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">Silnik renderowania · Shadery · Fizyka</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">NS</div>
+          <div class="team-name">Nazar Suslyk</div>
+          <div class="team-role">System kolizji · AI · Parser OBJ</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">IH</div>
+          <div class="team-name">Ilona Hrabowenko</div>
+          <div class="team-role">Menu · System ekonomii · Audio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="/projects/" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    const images = [
+      { src: '../../assets/racing3d/screen1.png', cap: 'Menu główne' },
+      { src: '../../assets/racing3d/screen2.png', cap: 'Garaż — wybór samochodu' },
+      { src: '../../assets/racing3d/screen3.png', cap: 'Widok z kokpitu (FPP)' },
+      { src: '../../assets/racing3d/screen4.png', cap: 'Widok TPP — Chase camera' },
+      { src: '../../assets/racing3d/screen5.png', cap: 'Ekran wygranej — YOU WIN' },
+    ];
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>

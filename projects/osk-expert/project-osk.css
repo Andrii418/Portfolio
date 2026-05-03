@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════
+   OSK EXPERT PROJECT · project-osk.css
+   Extends project.css — only OSK-specific overrides
+═══════════════════════════════════════════════ */
+
+/* ── LIVE BADGE ─────────────────────────────── */
+.osk-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #22c55e !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
+  background: rgba(34, 197, 94, 0.06);
+}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  animation: livePulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0   rgba(34, 197, 94, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);   }
+  100% { box-shadow: 0 0 0 0   rgba(34, 197, 94, 0);   }
+}
+
+/* ── GRADIENT OVERRIDE — green accent ───────── */
+.proj-title span {
+  background: linear-gradient(120deg, #3b82f6 0%, #22c55e 60%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grad-green {
+  background: linear-gradient(120deg, #3b82f6, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── GALLERY — 3 col override ───────────────── */
+.osk-gallery {
+  grid-template-columns: repeat(3, 1fr);
+}
+/* gallery-main spans 2 cols (row 1: duży + 2 małe) */
+.osk-gallery .gallery-main {
+  grid-column: span 2;
+}
+/* gallery-wide spans 2 cols */
+.osk-gallery .gallery-wide {
+  grid-column: span 2;
+}
+
+/* ── DELIVERABLES GRID ──────────────────────── */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.deliv-card {
+  padding: 26px 22px;
+  background: var(--g-bg);
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-md);
+  transition: border-color .25s, transform .25s;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.deliv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34,197,94,0.3), transparent);
+}
+.deliv-card:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  transform: translateY(-3px);
+}
+.deliv-icon  { font-size: 28px; margin-bottom: 12px; }
+.deliv-title { font-size: 14px; font-weight: 600; color: var(--t1); margin-bottom: 8px; }
+.deliv-desc  { font-size: 12.5px; color: var(--t2); line-height: 1.55; }
+
+/* ── CLIENT CARD ────────────────────────────── */
+.client-card .team-avatar.osk-avatar {
+  background: linear-gradient(135deg, #3b82f6, #22c55e);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.client-card              { border-color: rgba(34,197,94,0.2) !important; }
+.client-card:hover        { border-color: rgba(34,197,94,0.4) !important; }
+
+/* ── ACCENT OVERRIDES ───────────────────────── */
+.arch-card:hover          { border-color: rgba(34,197,94,0.25) !important; }
+.arch-num                 { color: #22c55e !important; }
+.tech-card:hover          { border-color: rgba(34,197,94,0.3) !important; }
+.feat-item:hover          { border-color: rgba(34,197,94,0.3) !important; }
+.section-label            { color: #22c55e !important; }
+.proj-category            { color: #22c55e !important; }
+
+/* code tint — green */
+.arch-card .code-block pre { color: rgba(134,239,172,0.85); }
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 900px) {
+  .osk-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .osk-gallery .gallery-main,
+  .osk-gallery .gallery-wide {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 500px) {
+  .osk-gallery {
+    grid-template-columns: 1fr;
+  }
+  .osk-gallery .gallery-main,
+  .osk-gallery .gallery-wide {
+    grid-column: span 1;
+  }
+}
