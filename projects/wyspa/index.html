@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wyspa Mystery — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-wyspa.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/projects/" class="nav-link active">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="../../cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category wyspa-category">Game Development · Unity 3D</span>
+          <div class="proj-badges">
+            <span class="badge-year">2024</span>
+            <span class="badge-team">Projekt indywidualny</span>
+            <span class="badge-uni wyspa-badge-live">
+              <span class="live-dot"></span>Survival Mode
+            </span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Wyspa <span>Mystery</span></h1>
+
+        <p class="proj-tagline">
+          Survivalowa gra FPS z systemem zagadek logicznych. Eksploruj niebezpieczną wyspę,
+          unikaj drapieżnika i znajdź sposób na wezwanie pomocy przed zapadnięciem zmroku.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Wyspa.git" target="_blank" class="btn btn-primary wyspa-btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://youtu.be/8G7VcTR1Vvk" target="_blank" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Gameplay Video
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <div class="proj-stats">
+          <div class="ps"><div class="ps-n">Unity 3D</div><div class="ps-l">Silnik</div></div>
+          <div class="ps-sep"></div>
+          <div class="ps"><div class="ps-n">C#</div><div class="ps-l">Skrypty</div></div>
+          <div class="ps-sep"></div>
+          <div class="ps"><div class="ps-n">NavMesh</div><div class="ps-l">Przeciwnicy</div></div>
+          <div class="ps-sep"></div>
+          <div class="ps"><div class="ps-n">FPS</div><div class="ps-l">Kamera</div></div>
+          <div class="ps-sep"></div>
+          <div class="ps"><div class="ps-n">2024</div><div class="ps-l">Rok</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Rzut oka na wyspę</h2>
+      </div>
+
+      <div class="gallery-grid wyspa-gallery reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/wyspa/screen1.jpg" alt="Wulkan i mgła" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Aktywny Wulkan</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/wyspa/screen2.jpg" alt="Wilk w lesie" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Zagrożenie</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/wyspa/screen3.jpg" alt="Widok na dom" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Cel podróży</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+          <img src="../../assets/wyspa/screen4.jpg" alt="Minigra kokosy" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Wyzwanie z kokosami</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/wyspa/screen5.jpg" alt="Wnętrze domu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Zasoby</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/wyspa/screen6.jpg" alt="Ognisko" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Ognisko pomocy</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/wyspa/screen7.jpg" alt="Artefakty" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Zbieranie przedmiotów</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(7)">
+          <img src="../../assets/wyspa/screen8.jpg" alt="Ekrany kontrolne" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>System postępu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(8)">
+          <img src="../../assets/wyspa/screen9.jpg" alt="Mgła na wyspie" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Atmosfera</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(9)">
+          <img src="../../assets/wyspa/screen10.jpg" alt="Wilk atakuje" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Koniec gry</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Przeżyj noc<br/><span class="wyspa-grad">lub zgiń próbując</span></h2>
+          <p class="body-text">
+            Wyspa Mystery to survivalowa gra FPS stworzona w Unity 3D jako projekt indywidualny.
+            Gracz ląduje na tajemniczej wyspie i musi znaleźć sposób na wezwanie ratunku
+            zanim zapadnie zmrok — eksplorując teren, rozwiązując zagadki i unikając drapieżnika.
+          </p>
+          <p class="body-text">
+            Projekt skupia się na budowaniu <em>napięcia atmosferycznego</em> — gęsta mgła,
+            aktywny wulkan i AI wilka tworzą środowisko, w którym każda decyzja ma znaczenie.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item wyspa-feat">
+            <div class="feat-icon">🌋</div>
+            <div>
+              <div class="feat-title">Otwarty świat wyspy</div>
+              <div class="feat-desc">Eksploracja terenu z wulkanem, lasem i domem jako głównym celem</div>
+            </div>
+          </div>
+          <div class="feat-item wyspa-feat">
+            <div class="feat-icon">🐺</div>
+            <div>
+              <div class="feat-title">AI Drapieżnika</div>
+              <div class="feat-desc">Wilk patroluje teren i wykrywa gracza w zasięgu wzroku — Chase AI</div>
+            </div>
+          </div>
+          <div class="feat-item wyspa-feat">
+            <div class="feat-icon">🥥</div>
+            <div>
+              <div class="feat-title">Minigra zręcznościowa</div>
+              <div class="feat-desc">Rzucanie kokosami w 3 cele w ciągu 5 sekund — odblokowanie skrzyni</div>
+            </div>
+          </div>
+          <div class="feat-item wyspa-feat">
+            <div class="feat-icon">🔦</div>
+            <div>
+              <div class="feat-title">System interakcji FPS</div>
+              <div class="feat-desc">Raycasting — podnoszenie przedmiotów, otwieranie drzwi, zapalanie ogniska</div>
+            </div>
+          </div>
+          <div class="feat-item wyspa-feat">
+            <div class="feat-icon">🌫️</div>
+            <div>
+              <div class="feat-title">Atmosfera i efekty</div>
+              <div class="feat-desc">Gęsta mgła ograniczająca widoczność i efekty cząsteczkowe wulkanu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section wyspa-tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card wyspa-tech-card reveal">
+            <div class="tech-card-icon">🎮</div>
+            <div class="tech-card-name">Unity 3D</div>
+            <div class="tech-card-desc">Główny silnik gry. Obsługa scen, fizyki, oświetlenia i systemu cząsteczek.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal delay-1">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-name">C#</div>
+            <div class="tech-card-desc">Skrypty gameplay — sterowanie graczem, logika AI, zarządzanie stanem gry i UI.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal delay-2">
+            <div class="tech-card-icon">🧭</div>
+            <div class="tech-card-name">NavMesh AI</div>
+            <div class="tech-card-desc">Unity Navigation Mesh — automatyczne wyznaczanie tras dla wilka na terenie wyspy.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal">
+            <div class="tech-card-icon">📷</div>
+            <div class="tech-card-name">FPS Controller</div>
+            <div class="tech-card-desc">Własny kontroler pierwszoosobowy z raycastingiem do interakcji z obiektami.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal delay-1">
+            <div class="tech-card-icon">✨</div>
+            <div class="tech-card-name">Particle System</div>
+            <div class="tech-card-desc">Efekty cząsteczkowe — dym wulkanu, płomienie ogniska, unoszące się pyłki.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal delay-2">
+            <div class="tech-card-icon">🎬</div>
+            <div class="tech-card-name">Animator</div>
+            <div class="tech-card-desc">Unity Animator Controller — animacje wilka (patrol, bieg, atak) i otwarcia skrzyni.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal">
+            <div class="tech-card-icon">🖥️</div>
+            <div class="tech-card-name">Unity UI</div>
+            <div class="tech-card-desc">Canvas — HUD z licznikiem zebranych artefaktów, ekrany wygranej i porażki.</div>
+          </div>
+          <div class="tech-card wyspa-tech-card reveal delay-1">
+            <div class="tech-card-icon">💡</div>
+            <div class="tech-card-name">URP Lighting</div>
+            <div class="tech-card-desc">Universal Render Pipeline z dynamicznym oświetleniem i mgłą atmosferyczną.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">AI Wilka — stany</div>
+          <p class="arch-desc">
+            Wilk operuje w trzech stanach: <code>Patrol</code>, <code>Chase</code> i <code>Attack</code>.
+            Przejście między nimi steruje NavMeshAgent w zależności od odległości i pola widzenia gracza.
+          </p>
+          <div class="code-block">
+<pre>if (distToPlayer &lt; chaseRange
+    &amp;&amp; HasLineOfSight())
+  state = WolfState.Chase;
+else
+  state = WolfState.Patrol;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Raycasting — interakcje</div>
+          <p class="arch-desc">
+            Każda klatka kamera rzuca promień w przód. Trafienie w obiekt
+            z tagiem <code>Interactable</code> wyświetla podpowiedź i wywołuje akcję.
+          </p>
+          <div class="code-block">
+<pre>if (Physics.Raycast(
+  cam.position, cam.forward,
+  out hit, interactRange))
+  hit.collider
+    .GetComponent&lt;IInteractable&gt;()
+    ?.Interact();</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Minigra — timer i cele</div>
+          <p class="arch-desc">
+            Skrypt odlicza 5 sekund i zlicza trafienia w 3 cele.
+            Po spełnieniu warunku wywołuje animację otwarcia skrzyni przez <code>Animator</code>.
+          </p>
+          <div class="code-block">
+<pre>timer -= Time.deltaTime;
+if (hitsCount &gt;= 3)
+  anim.SetTrigger("Open");
+else if (timer &lt;= 0)
+  FailMinigame();</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">System postępu</div>
+          <p class="arch-desc">
+            GameManager przechowuje liczbę zebranych artefaktów.
+            Dopiero po zebraniu wszystkich gracz może zapalić ognisko i wygrać grę.
+          </p>
+          <div class="code-block">
+<pre>if (artifactsCollected
+    == totalArtifacts)
+  campfireInteract
+    .SetActive(true);
+else
+  ShowHint("Znajdź artefakty");</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Atmosfera — mgła i oświetlenie</div>
+          <p class="arch-desc">
+            Mgła skonfigurowana przez Unity URP — gęstość rośnie wraz z odległością.
+            Wulkan emituje ciągły system cząsteczek z dymem i popiołem.
+          </p>
+          <div class="code-block">
+<pre>RenderSettings.fog = true;
+RenderSettings.fogDensity
+  = 0.04f;
+// Particle System: rate=25/s</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Warunki wygranej / porażki</div>
+          <p class="arch-desc">
+            Gracz wygrywa zapalając ognisko z zebranymi zapałkami.
+            Przegrywa gdy wilk dotknie go lub gdy minie limit czasu.
+          </p>
+          <div class="code-block">
+<pre>void OnTriggerEnter(Collider c) {
+  if (c.CompareTag("Wolf"))
+    GameManager.GameOver();
+  if (c.CompareTag("Campfire")
+    &amp;&amp; hasMatches)
+    GameManager.Win();
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTROLS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Sterowanie</div>
+      <h2 class="section-h2 reveal delay-1">Klawiatura i mysz</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>W A S D</kbd><span>Ruch postacią</span></div>
+        <div class="ctrl"><kbd>Mysz</kbd><span>Rozglądanie się</span></div>
+        <div class="ctrl"><kbd>E</kbd><span>Interakcja z obiektami</span></div>
+        <div class="ctrl"><kbd>CTRL</kbd><span>Rzut kokosem / akcja</span></div>
+        <div class="ctrl"><kbd>SHIFT</kbd><span>Sprint</span></div>
+        <div class="ctrl"><kbd>ESC</kbd><span>Pauza / Menu</span></div>
+      </div>
+    </section>
+
+    <!-- ── PROJ NAV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="/projects/racing3d/" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Racing 3D
+      </a>
+      <a href="/projects/" class="proj-nav-btn">
+        Wszystkie projekty
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/wyspa/screen1.jpg', cap: 'Wulkan z efektami cząsteczkowymi' },
+      { src: '../../assets/wyspa/screen2.jpg', cap: 'Wilk patrolujący teren' },
+      { src: '../../assets/wyspa/screen3.jpg', cap: 'Główny dom i miejsce na ognisko' },
+      { src: '../../assets/wyspa/screen4.jpg', cap: 'Wyzwanie z kokosami' },
+      { src: '../../assets/wyspa/screen5.jpg', cap: 'Wnętrze domu z zapałkami' },
+      { src: '../../assets/wyspa/screen6.jpg', cap: 'Zapalenie ogniska pomocy' },
+      { src: '../../assets/wyspa/screen7.jpg', cap: 'Lokalizacja krążących artefaktów' },
+      { src: '../../assets/wyspa/screen8.jpg', cap: 'Licznik pasków na budynku' },
+      { src: '../../assets/wyspa/screen9.jpg', cap: 'Gęsta mgła ograniczająca widoczność' },
+      { src: '../../assets/wyspa/screen10.jpg', cap: 'Ekran porażki po ataku wilka' }
+    ];
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>

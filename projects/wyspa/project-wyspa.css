@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════
+   WYSPA PROJECT · project-wyspa.css
+═══════════════════════════════════════════════ */
+
+/* ── BADGE & LIVE DOT ─────────────────────────── */
+.wyspa-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ff4d00 !important;
+  border-color: rgba(255, 77, 0, 0.3) !important;
+  background: rgba(255, 77, 0, 0.06);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff4d00;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0   rgba(255, 77, 0, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(255, 77, 0, 0);   }
+  100% { box-shadow: 0 0 0 0   rgba(255, 77, 0, 0);   }
+}
+
+/* ── HERO ACCENTS ─────────────────────────────── */
+.wyspa-category { color: #ff4d00 !important; }
+
+.proj-title span {
+  background: linear-gradient(120deg, #ff4d00 0%, #c0392b 60%, #7d3f00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wyspa-btn-primary.btn {
+  background: linear-gradient(135deg, #ff4d00, #c0392b);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(255, 77, 0, 0.3);
+}
+.wyspa-btn-primary.btn:hover {
+  box-shadow: 0 6px 28px rgba(255, 77, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+/* ── GRADIENT TEXT ────────────────────────────── */
+.wyspa-grad {
+  background: linear-gradient(120deg, #ff4d00, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── SECTION LABELS ───────────────────────────── */
+.section-label { color: #ff4d00 !important; }
+
+/* ── GALLERY ──────────────────────────────────── */
+.wyspa-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.wyspa-gallery .gallery-main { grid-column: span 2; grid-row: span 1; }
+.wyspa-gallery .gallery-wide { grid-column: span 2; }
+
+.wyspa-gallery .gallery-item:hover {
+  border-color: rgba(255, 77, 0, 0.4) !important;
+}
+
+/* ── FEATURE ITEMS ────────────────────────────── */
+.feat-item.wyspa-feat:hover {
+  border-color: rgba(255, 77, 0, 0.3) !important;
+}
+
+/* ── TECH SECTION ─────────────────────────────── */
+.wyspa-tech-section {
+  background: linear-gradient(110deg,
+    rgba(255, 77, 0, 0.04) 0%,
+    rgba(6, 9, 20, 0) 50%,
+    rgba(180, 60, 0, 0.04) 100%);
+  border-top: 1px solid var(--g-border);
+  border-bottom: 1px solid var(--g-border);
+}
+
+.tech-card.wyspa-tech-card:hover {
+  border-color: rgba(255, 77, 0, 0.3) !important;
+}
+.tech-card.wyspa-tech-card:hover .tech-card-name {
+  color: #ff7a40;
+}
+
+/* ── ARCH CARDS ───────────────────────────────── */
+.arch-card:hover { border-color: rgba(255, 77, 0, 0.3) !important; }
+
+.arch-num { color: #ff4d00 !important; }
+
+.arch-card .code-block pre { color: rgba(255, 140, 60, 0.85); }
+
+/* ── PROJ NAV ROW ─────────────────────────────── */
+.proj-nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 900px) {
+  .wyspa-gallery { grid-template-columns: 1fr 1fr; }
+  .wyspa-gallery .gallery-main { grid-column: span 2; }
+  .wyspa-gallery .gallery-wide { grid-column: span 2; }
+}
+
+@media (max-width: 500px) {
+  .wyspa-gallery { grid-template-columns: 1fr; }
+  .wyspa-gallery .gallery-main,
+  .wyspa-gallery .gallery-wide { grid-column: span 1; }
+}
