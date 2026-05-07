@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAlingo — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-ualingo.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/projects/" class="nav-link active">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="../../cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Mobile Development · Android</span>
+          <div class="proj-badges">
+            <span class="badge-year">2025</span>
+            <span class="badge-uni">Akademia Tarnowska</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">UA<span>lingo</span></h1>
+
+        <p class="proj-tagline">
+          Aplikacja mobilna Android do nauki języka ukraińskiego —
+          interaktywne quizy, gry słowne, memy edukacyjne i system autoryzacji
+          Firebase. Duolingo-like experience w natywnym Javie.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/IlonaHrabovenko/Android" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">Java</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Android SDK</div>
+            <div class="ps-l">Platforma</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Firebase</div>
+            <div class="ps-l">Backend</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">18 ekranów</div>
+            <div class="ps-l">Activities</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid ualingo-gallery reveal delay-2">
+
+        <!-- Rząd 1: logowanie (tall) + menu główne + ekran angielski -->
+        <div class="gallery-item ualingo-tall" onclick="openLightbox(0)">
+          <img src="../../assets/ualingo/screen1.png" alt="Ekran logowania" loading="lazy" />
+          <div class="gallery-overlay"><span>Logowanie</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/ualingo/screen2.png" alt="Menu główne — ukraiński" loading="lazy" />
+          <div class="gallery-overlay"><span>Menu — ukraiński</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/ualingo/screen7.png" alt="Menu główne — angielski" loading="lazy" />
+          <div class="gallery-overlay"><span>Menu — angielski</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 2: temat (tall) + quiz + word search -->
+        <div class="gallery-item ualingo-tall" onclick="openLightbox(2)">
+          <img src="../../assets/ualingo/screen3.png" alt="Ekran tematu" loading="lazy" />
+          <div class="gallery-overlay"><span>Temat 1 — lekcje</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/ualingo/screen4.png" alt="Quiz — pytanie" loading="lazy" />
+          <div class="gallery-overlay"><span>Quiz z timerem</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/ualingo/screen5.png" alt="Gra słowna — Znajdź słowo" loading="lazy" />
+          <div class="gallery-overlay"><span>Znajdź słowo!</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 3: memy (tall) + ustawienia -->
+        <div class="gallery-item ualingo-tall" onclick="openLightbox(5)">
+          <img src="../../assets/ualingo/screen6.png" alt="Sekcja memów" loading="lazy" />
+          <div class="gallery-overlay"><span>Memy edukacyjne</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(7)">
+          <img src="../../assets/ualingo/screen8.png" alt="Ustawienia — zmiana hasła" loading="lazy" />
+          <div class="gallery-overlay"><span>Ustawienia konta</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Nauka języka<br/><span class="ualingo-grad">przez zabawę</span></h2>
+          <p class="body-text">
+            UAlingo to natywna aplikacja Android do nauki języka ukraińskiego,
+            zbudowana w Javie z wykorzystaniem Firebase. Projekt był realizowany
+            na Akademii Tarnowskiej jako kompleksowa aplikacja mobilna.
+          </p>
+          <p class="body-text">
+            Inspirowana Duolingo — łączy quizy z timerem, gry słowne, memy
+            z autentycznym językiem ukraińskim i system postępu, który motywuje
+            do codziennej nauki.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📚</div>
+            <div>
+              <div class="feat-title">10 tematów, 120 pytań</div>
+              <div class="feat-desc">Od pozdrowień po hotele — każdy temat ma 12 pytań quizowych z 4 opcjami</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">⏱️</div>
+            <div>
+              <div class="feat-title">Quiz z timerem 60s</div>
+              <div class="feat-desc">CountDownTimer na każde pytanie, animacje kolorów — zielony/czerwony</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔤</div>
+            <div>
+              <div class="feat-title">Word Search</div>
+              <div class="feat-desc">Interaktywna siatka 7×6 z literami cyrylicy — szukaj ukraińskich słów</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">😂</div>
+            <div>
+              <div class="feat-title">Memy edukacyjne</div>
+              <div class="feat-desc">Nauka przez autentyczne ukraińskie memy i klipy — naturalny kontekst językowy</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌍</div>
+            <div>
+              <div class="feat-title">Dwujęzyczność</div>
+              <div class="feat-desc">Dynamiczne przełączanie między wersją ukraińską i angielską aplikacji</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔐</div>
+            <div>
+              <div class="feat-title">Firebase Auth</div>
+              <div class="feat-desc">Logowanie email/hasło oraz Google OAuth 2.0, reset hasła, persystencja sesji</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">☕</div>
+            <div class="tech-card-name">Java 11</div>
+            <div class="tech-card-desc">100% kodu aplikacji — Activity-based architecture, MVC-like pattern.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-name">Android SDK 35</div>
+            <div class="tech-card-desc">Target API 35 (Android 15), minSdk 23 (Android 6.0) — szeroka kompatybilność.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🔥</div>
+            <div class="tech-card-name">Firebase Auth</div>
+            <div class="tech-card-desc">Email/hasło + Google OAuth 2.0. Persystencja sesji i reset hasła.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📊</div>
+            <div class="tech-card-name">Firebase Analytics</div>
+            <div class="tech-card-desc">Analityka zdarzeń w aplikacji — śledzenie aktywności użytkowników.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">Material Design</div>
+            <div class="tech-card-desc">Material 1.12.0 — komponenty UI, ConstraintLayout, SwipeRefreshLayout.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🔧</div>
+            <div class="tech-card-name">Gradle 8.0+</div>
+            <div class="tech-card-desc">System budowania, ProGuard obfuskacja dla release build, vcpkg zależności.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Logowanie Firebase</div>
+          <p class="arch-desc">
+            Obsługa email/hasło oraz Google OAuth 2.0 przez Firebase Authentication.
+            Po zalogowaniu sesja jest persystowana — użytkownik nie musi logować się przy każdym uruchomieniu.
+          </p>
+          <div class="code-block">
+<pre>mAuth.signInWithEmailAndPassword(
+  email, password)
+  .addOnCompleteListener(task -> {
+    if (task.isSuccessful())
+      startActivity(mainIntent);
+  });</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Quiz — timer 60 sekund</div>
+          <p class="arch-desc">
+            CountDownTimer odlicza 60 sekund na każde pytanie. Po upływie czasu
+            odpowiedzi są blokowane. Animacja kolorów ValueAnimator wizualizuje
+            poprawną/błędną odpowiedź.
+          </p>
+          <div class="code-block">
+<pre>new CountDownTimer(60000, 1000) {
+  public void onTick(long ms) {
+    timerText.setText(
+      "" + ms / 1000);
+  }
+  public void onFinish() {
+    disableAnswers();
+  }
+}.start();</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Animacja odpowiedzi</div>
+          <p class="arch-desc">
+            ValueAnimator płynnie zmienia kolor tekstu odpowiedzi
+            z białego na zielony (poprawna) lub czerwony (błędna)
+            w czasie 500ms.
+          </p>
+          <div class="code-block">
+<pre>ValueAnimator anim =
+  ValueAnimator.ofObject(
+    new ArgbEvaluator(),
+    fromColor, toColor);
+anim.setDuration(500);
+anim.start();</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Przełączanie języków</div>
+          <p class="arch-desc">
+            Oddzielne Activities dla wersji ukraińskiej i angielskiej.
+            Przycisk flagi w menu głównym startuje nową Activity z odpowiednim językiem.
+          </p>
+          <div class="code-block">
+<pre>flagBtn.setOnClickListener(v -> {
+  Intent i = new Intent(this,
+    EngActivity.class);
+  startActivity(i);
+  finish();
+});</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Word Search — siatka 7×6</div>
+          <p class="arch-desc">
+            Interaktywna plansza z literami cyrylicy. Użytkownik zaznacza
+            litery po kolei — po znalezieniu słowa licznik się zwiększa
+            i słowo zostaje podświetlone.
+          </p>
+          <div class="code-block">
+<pre>// Znaleziono słów: 0
+// GridView 7 kolumn × 6 wierszy
+// Litery: cyrylica ukraińska
+// Walidacja poziom/pion/ukos</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">18 Activities — nawigacja</div>
+          <p class="arch-desc">
+            Dolny pasek nawigacyjny z 3 ikonami (Dom, Gry, Profil) dostępny
+            na każdym ekranie. Intent-based routing między wszystkimi 18 Activities.
+          </p>
+          <div class="code-block">
+<pre>// Bottom nav → 3 ikony
+// Dom    → UkrActivity
+// Gry    → WordSearchActivity
+// Profil → SettingsActivity</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SCREENS TABLE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Ekrany</div>
+      <h2 class="section-h2 reveal delay-1">18 Activities</h2>
+      <div class="screens-grid reveal delay-2">
+        <div class="screen-item"><span class="screen-icon">🔐</span><span class="screen-name">LoginEmailActivity</span><span class="screen-desc">Logowanie i rejestracja</span></div>
+        <div class="screen-item"><span class="screen-icon">🏠</span><span class="screen-name">UkrActivity</span><span class="screen-desc">Menu główne — ukraiński</span></div>
+        <div class="screen-item"><span class="screen-icon">🇬🇧</span><span class="screen-name">EngActivity</span><span class="screen-desc">Menu główne — angielski</span></div>
+        <div class="screen-item"><span class="screen-icon">📖</span><span class="screen-name">TopicActivityUkr</span><span class="screen-desc">Szczegóły tematu — UKR</span></div>
+        <div class="screen-item"><span class="screen-icon">📖</span><span class="screen-name">TopicActivityEng</span><span class="screen-desc">Szczegóły tematu — ENG</span></div>
+        <div class="screen-item"><span class="screen-icon">❓</span><span class="screen-name">QuizActivity</span><span class="screen-desc">Quizy — ukraiński</span></div>
+        <div class="screen-item"><span class="screen-icon">❓</span><span class="screen-name">QuizActivityEng</span><span class="screen-desc">Quizy — angielski</span></div>
+        <div class="screen-item"><span class="screen-icon">🏆</span><span class="screen-name">QuizResultActivity</span><span class="screen-desc">Wyniki quizu</span></div>
+        <div class="screen-item"><span class="screen-icon">🔤</span><span class="screen-name">WordSearchActivity</span><span class="screen-desc">Szukaj słów — UKR</span></div>
+        <div class="screen-item"><span class="screen-icon">🔤</span><span class="screen-name">WordSearchEng</span><span class="screen-desc">Szukaj słów — ENG</span></div>
+        <div class="screen-item"><span class="screen-icon">😂</span><span class="screen-name">MemeActivity</span><span class="screen-desc">Memy — ukraiński</span></div>
+        <div class="screen-item"><span class="screen-icon">😂</span><span class="screen-name">MemeActivityEng</span><span class="screen-desc">Memy — angielski</span></div>
+        <div class="screen-item"><span class="screen-icon">✏️</span><span class="screen-name">FillInTheBlanksActivity</span><span class="screen-desc">Uzupełnianie luk</span></div>
+        <div class="screen-item"><span class="screen-icon">🎯</span><span class="screen-name">SelfPracticeActivity</span><span class="screen-desc">Samodzielne ćwiczenia</span></div>
+        <div class="screen-item"><span class="screen-icon">⚙️</span><span class="screen-name">SettingsActivity</span><span class="screen-desc">Ustawienia aplikacji</span></div>
+        <div class="screen-item"><span class="screen-icon">🔑</span><span class="screen-name">ResetPasswordActivity</span><span class="screen-desc">Resetowanie hasła</span></div>
+        <div class="screen-item"><span class="screen-icon">📊</span><span class="screen-name">ResultActivity</span><span class="screen-desc">Wyświetlanie wyników</span></div>
+        <div class="screen-item"><span class="screen-icon">🚪</span><span class="screen-name">MainActivity</span><span class="screen-desc">Ekran przejściowy</span></div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Android Studio Flamingo+</span>
+            <span class="req-pill">JDK 11+</span>
+            <span class="req-pill">Gradle 8.0+</span>
+            <span class="req-pill">Android 6.0+ (API 23)</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/IlonaHrabovenko/Android.git
+cd Android</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Skonfiguruj Firebase</div>
+              <div class="code-block">
+<pre># Pobierz google-services.json z konsoli Firebase
+# Umieść plik w katalogu: app/
+# Dodaj w strings.xml:
+&lt;string name="default_web_client_id"&gt;YOUR_ID&lt;/string&gt;</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Zbuduj projekt</div>
+              <div class="code-block">
+<pre>./gradlew assembleDebug</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj na urządzeniu</div>
+              <div class="code-block">
+<pre>./gradlew installDebug
+# lub otwórz projekt w Android Studio i kliknij Run ▶</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zespół</div>
+      <h2 class="section-h2 reveal delay-1">Autorzy projektu</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+        <div class="team-card me">
+          <div class="team-avatar">TF</div>
+          <div class="team-name">Tamara Fyl</div>
+          <a href="https://github.com/tamarafyl" class="team-gh">github.com/tamarafyl</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar ualingo-avatar">IH</div>
+          <div class="team-name">Ilona Hrabovenko</div>
+          <a href="https://github.com/IlonaHrabovenko" class="team-gh" target="_blank">github.com/IlonaHrabovenko</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="/projects/" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/ualingo/screen1.png', cap: 'Ekran logowania — email i Google OAuth' },
+      { src: '../../assets/ualingo/screen2.png', cap: 'Menu główne — wybór tematu (ukraiński)' },
+      { src: '../../assets/ualingo/screen3.png', cap: 'Temat 1 — lista lekcji i ćwiczeń' },
+      { src: '../../assets/ualingo/screen4.png', cap: 'Quiz z timerem 60s — pytanie wielokrotnego wyboru' },
+      { src: '../../assets/ualingo/screen5.png', cap: 'Gra słowna — Znajdź słowo! (siatka 7×6)' },
+      { src: '../../assets/ualingo/screen6.png', cap: 'Memy edukacyjne z autentycznym językiem ukraińskim' },
+      { src: '../../assets/ualingo/screen7.png', cap: 'Menu główne — wersja angielska (Topics)' },
+      { src: '../../assets/ualingo/screen8.png', cap: 'Ustawienia — zmiana hasła i wylogowanie' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>

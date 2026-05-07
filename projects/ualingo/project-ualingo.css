@@ -1,0 +1,171 @@
+/* ── project-ualingo.css ─────────────────────────────────── */
+
+/* UAlingo accent — niebieski jak w screenshotach aplikacji */
+:root {
+  --ualingo-accent: #3d6ee8;
+  --ualingo-accent2: #5b9af5;
+  --ualingo-grad-start: #3d6ee8;
+  --ualingo-grad-end: #5bc4f5;
+}
+
+/* Category badge */
+.proj-category {
+  color: var(--ualingo-accent2);
+}
+
+/* Title span gradient */
+.proj-title span,
+.ualingo-grad {
+  background: linear-gradient(135deg, var(--ualingo-grad-start), var(--ualingo-grad-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--ualingo-grad-start), var(--ualingo-grad-end));
+  border-color: transparent;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2d5ed8, #3ab4e8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(61,110,232,0.35);
+}
+
+/* ── GALLERY — mobile portrait layout ──────────────────── */
+.ualingo-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Tall items — portrait screenshots taller than normal */
+.ualingo-gallery .ualingo-tall img {
+  aspect-ratio: 9 / 18;
+  object-fit: cover;
+}
+
+.ualingo-gallery .gallery-item img {
+  aspect-ratio: 9 / 18;
+  object-fit: cover;
+}
+
+/* ── SCREENS GRID ───────────────────────────────────────── */
+.screens-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.screen-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.screen-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.screen-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.screen-name {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: var(--ualingo-accent2);
+  font-weight: 600;
+  display: block;
+  line-height: 1.3;
+}
+
+.screen-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  display: block;
+  line-height: 1.3;
+}
+
+.screen-item > div,
+.screen-item {
+  flex-direction: row;
+}
+
+/* stack name + desc vertically */
+.screen-item {
+  flex-wrap: nowrap;
+}
+
+.screen-name,
+.screen-desc {
+  display: block;
+}
+
+.screen-item > span:nth-child(2),
+.screen-item > span:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* workaround — wrap name+desc */
+.screen-item {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.5rem;
+}
+
+.screen-item .screen-icon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.screen-item .screen-name {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.screen-item .screen-desc {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Team avatar accent */
+.ualingo-avatar {
+  background: linear-gradient(135deg, var(--ualingo-grad-start), var(--ualingo-grad-end)) !important;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .screens-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ualingo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ualingo-gallery .ualingo-tall {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .screens-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ualingo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
