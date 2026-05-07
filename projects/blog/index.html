@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog App — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-blog.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/projects/" class="nav-link active">Projekty</a></li>
+        <li><a href="/contact/" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../cv.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="/" class="mob-link">Home</a>
+      <a href="/projects/" class="mob-link">Projekty</a>
+      <a href="/contact/" class="mob-link">Kontakt</a>
+      <a href="../../cv.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Fullstack</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">Akademia Tarnowska</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Blog <span>App</span></h1>
+
+        <p class="proj-tagline">
+          Fullstackowa aplikacja blogowa zbudowana w Angular + Node.js —
+          system postów, komentarzy, ocen i ulubionych. Panel admina,
+          autoryzacja JWT i Server-Side Rendering.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Blog" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">Angular</div>
+            <div class="ps-l">Frontend</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Node.js</div>
+            <div class="ps-l">Backend</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">JWT + SSR</div>
+            <div class="ps-l">Auth &amp; Render</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid blog-gallery reveal delay-2">
+
+        <!-- Rząd 1: duży (home) + 2 małe (blog lista, rejestracja) -->
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/blog/screen1.png" alt="Strona główna" loading="lazy" />
+          <div class="gallery-overlay"><span>Strona główna</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/blog/screen2.png" alt="Lista postów" loading="lazy" />
+          <div class="gallery-overlay"><span>Lista postów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/blog/screen3.png" alt="Rejestracja" loading="lazy" />
+          <div class="gallery-overlay"><span>Rejestracja</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 2: szczegóły posta (wide) + profil -->
+        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+          <img src="../../assets/blog/screen4.png" alt="Szczegóły posta z komentarzami" loading="lazy" />
+          <div class="gallery-overlay"><span>Szczegóły posta — komentarze &amp; oceny</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/blog/screen5.png" alt="Profil użytkownika" loading="lazy" />
+          <div class="gallery-overlay"><span>Profil użytkownika</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 3: aktywność + ulubione + dodaj post -->
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/blog/screen6.png" alt="Moja aktywność" loading="lazy" />
+          <div class="gallery-overlay"><span>Moja aktywność</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/blog/screen7.png" alt="Ulubione posty" loading="lazy" />
+          <div class="gallery-overlay"><span>Ulubione posty</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(7)">
+          <img src="../../assets/blog/screen8.png" alt="Dodaj nowy post" loading="lazy" />
+          <div class="gallery-overlay"><span>Dodaj nowy post</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <!-- Rząd 4: panel admina (wide) -->
+        <div class="gallery-item gallery-wide" onclick="openLightbox(8)">
+          <img src="../../assets/blog/screen9.png" alt="Panel administratora" loading="lazy" />
+          <div class="gallery-overlay"><span>Panel administratora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Fullstack<br/><span class="blog-grad">od loginu po admina</span></h2>
+          <p class="body-text">
+            Blog App to kompletna aplikacja webowa zrealizowana w ramach przedmiotu
+            <em>Technologie aplikacji webowych</em> na Akademii Tarnowskiej.
+            Projekt obejmuje cały stos — od komponentów Angular po REST API w Node.js.
+          </p>
+          <p class="body-text">
+            Każdy zalogowany użytkownik może pisać posty, komentować, oceniać i
+            zapisywać ulubione wpisy. Administrator zarządza użytkownikami i treścią
+            przez dedykowany panel.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📝</div>
+            <div>
+              <div class="feat-title">CRUD postów</div>
+              <div class="feat-desc">Tworzenie, edycja i usuwanie wpisów z uploadem obrazów (multer, max 5MB)</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💬</div>
+            <div>
+              <div class="feat-title">Komentarze i oceny</div>
+              <div class="feat-desc">System komentarzy per post oraz oceny gwiazdkowe z liczeniem średniej</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔐</div>
+            <div>
+              <div class="feat-title">Autoryzacja JWT</div>
+              <div class="feat-desc">Rejestracja, logowanie i ochrona tras przez AuthGuard i AdminGuard</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">❤️</div>
+            <div>
+              <div class="feat-title">Ulubione &amp; aktywność</div>
+              <div class="feat-desc">Zapisywanie ulubionych postów i dziennik wszystkich akcji użytkownika</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔍</div>
+            <div>
+              <div class="feat-title">Wyszukiwanie i filtry</div>
+              <div class="feat-desc">Filtrowanie po kategorii, tagach, autorze i dacie z paginacją listy</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌙</div>
+            <div>
+              <div class="feat-title">Dark / Light mode</div>
+              <div class="feat-desc">Przełącznik motywu z zapisem preferencji w localStorage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🅰️</div>
+            <div class="tech-card-name">Angular 17+</div>
+            <div class="tech-card-desc">Standalone Components, lazy loading tras, Angular Universal (SSR), reactive forms.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🟦</div>
+            <div class="tech-card-name">TypeScript</div>
+            <div class="tech-card-desc">Silne typowanie — modele, serwisy, interfejsy. 41.9% kodu projektu.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">SCSS</div>
+            <div class="tech-card-desc">Globalne style, zmienne CSS, media queries — pełna responsywność i dark mode.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🟩</div>
+            <div class="tech-card-name">Node.js + Express</div>
+            <div class="tech-card-desc">RESTful API — endpointy dla postów, użytkowników, uploadów i aktywności.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔑</div>
+            <div class="tech-card-name">JWT Auth</div>
+            <div class="tech-card-desc">Tokeny 24h, role user/admin, walidacja przy każdym zapytaniu do API.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">📦</div>
+            <div class="tech-card-name">Multer</div>
+            <div class="tech-card-desc">Obsługa multipart upload — obrazy do 5MB zapisywane w backend/uploads/.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-name">JSON Storage</div>
+            <div class="tech-card-desc">Dane postów i aktywności przechowywane w posts.json i activity.json.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🚀</div>
+            <div class="tech-card-name">Angular Universal</div>
+            <div class="tech-card-desc">Server-Side Rendering przez main.server.ts — lepsza wydajność i SEO.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Funkcjonalności</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Autoryzacja — JWT Guards</div>
+          <p class="arch-desc">
+            AuthGuard sprawdza ważność tokena JWT przed wejściem na chronioną trasę.
+            AdminGuard dodatkowo weryfikuje rolę użytkownika z payloadu tokena.
+          </p>
+          <div class="code-block">
+<pre>canActivate(): boolean {
+  const token = this.auth
+    .getToken();
+  return this.auth
+    .isTokenValid(token);
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">System ocen (Rating)</div>
+          <p class="arch-desc">
+            RatingService przechowuje wszystkie głosy per post w localStorage.
+            Średnia obliczana dynamicznie — wyświetlana jako gwiazdki z liczbą głosów.
+          </p>
+          <div class="code-block">
+<pre>getAverage(postId: string) {
+  const ratings =
+    this.data[postId] ?? [];
+  return ratings.reduce(
+    (a,b)=>a+b,0)/ratings.length;
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Upload plików</div>
+          <p class="arch-desc">
+            Multer obsługuje multipart/form-data. Walidacja MIME tylko do obrazów,
+            limit 5MB, sanityzacja nazwy pliku przed zapisem na dysk.
+          </p>
+          <div class="code-block">
+<pre>POST /api/upload
+// multer({ limits: 5MB })
+// fileFilter: image/* only
+// → /uploads/[safe_name]</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Dziennik aktywności</div>
+          <p class="arch-desc">
+            Każda akcja (login, create_post, delete_post) zapisywana z timestampem
+            do activity.json. Użytkownik widzi swój feed akcji w widoku Aktywność.
+          </p>
+          <div class="code-block">
+<pre>{
+  action: "create_post",
+  userId: 1,
+  timestamp: new Date(),
+  meta: { postId, title }
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Paginacja — custom pipe</div>
+          <p class="arch-desc">
+            Niestandardowy Angular pipe dzieli listę postów na strony.
+            Zastosowany w BlogHomeComponent bez dodatkowych bibliotek.
+          </p>
+          <div class="code-block">
+<pre>transform(items: any[],
+  page: number,
+  size: number) {
+  return items.slice(
+    (page-1)*size, page*size);
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Dark / Light Mode</div>
+          <p class="arch-desc">
+            ThemeService przełącza klasę na body i zapisuje preferencje w localStorage.
+            Zmiany CSS przez custom properties — brak przeładowania strony.
+          </p>
+          <div class="code-block">
+<pre>toggle() {
+  this.isDark = !this.isDark;
+  document.body.classList
+    .toggle('dark',this.isDark);
+  localStorage.setItem(
+    'theme', this.isDark
+      ? 'dark':'light');
+}</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ROUTES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Trasy aplikacji</div>
+      <h2 class="section-h2 reveal delay-1">Routing</h2>
+      <div class="routes-grid reveal delay-2">
+        <div class="route-item">
+          <div class="route-path">/</div>
+          <div class="route-name">HomeComponent</div>
+          <div class="route-badge public">Publiczna</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/blog</div>
+          <div class="route-name">BlogHomeComponent</div>
+          <div class="route-badge auth">Auth</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/blog/detail/:id</div>
+          <div class="route-name">BlogItemDetailsComponent</div>
+          <div class="route-badge public">Publiczna</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/add-post</div>
+          <div class="route-name">AddPostComponent</div>
+          <div class="route-badge auth">Auth</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/favorites</div>
+          <div class="route-name">FavoritesComponent</div>
+          <div class="route-badge auth">Auth</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/profile</div>
+          <div class="route-name">ProfileComponent</div>
+          <div class="route-badge auth">Auth</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/activity</div>
+          <div class="route-name">MyActivityComponent</div>
+          <div class="route-badge auth">Auth</div>
+        </div>
+        <div class="route-item">
+          <div class="route-path">/admin</div>
+          <div class="route-name">AdminComponent</div>
+          <div class="route-badge admin">Admin</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 18+</span>
+            <span class="req-pill">Angular CLI</span>
+            <span class="req-pill">npm</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/Blog.git
+cd Blog</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj zależności frontendu</div>
+              <div class="code-block">
+<pre>npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom backend</div>
+              <div class="code-block">
+<pre>cd backend
+npm install
+node server.js
+# Backend: http://localhost:3101</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom frontend</div>
+              <div class="code-block">
+<pre>npm start
+# lub: ng serve
+# Frontend: http://localhost:4200</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Autor</div>
+      <h2 class="section-h2 reveal delay-1">Projekt indywidualny</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">Frontend · Backend · UI Design · Testy</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="/projects/" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/blog/screen1.png', cap: 'Strona główna' },
+      { src: '../../assets/blog/screen2.png', cap: 'Lista postów z filtrowaniem' },
+      { src: '../../assets/blog/screen3.png', cap: 'Rejestracja użytkownika' },
+      { src: '../../assets/blog/screen4.png', cap: 'Szczegóły posta — komentarze i oceny' },
+      { src: '../../assets/blog/screen5.png', cap: 'Profil użytkownika' },
+      { src: '../../assets/blog/screen6.png', cap: 'Moja aktywność' },
+      { src: '../../assets/blog/screen7.png', cap: 'Ulubione posty' },
+      { src: '../../assets/blog/screen8.png', cap: 'Dodaj nowy post' },
+      { src: '../../assets/blog/screen9.png', cap: 'Panel administratora' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>

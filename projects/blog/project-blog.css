@@ -1,0 +1,165 @@
+/* ── project-blog.css ─────────────────────────────────── */
+
+/* Blog accent color — niebieskofioletowy gradient jak w screenshotach */
+:root {
+  --blog-accent: #4f8ef7;
+  --blog-accent2: #a855f7;
+  --blog-grad-start: #4f8ef7;
+  --blog-grad-end: #a855f7;
+}
+
+/* Category badge */
+.proj-category {
+  color: var(--blog-accent);
+}
+
+/* Title span gradient */
+.proj-title span,
+.blog-grad {
+  background: linear-gradient(135deg, var(--blog-grad-start), var(--blog-grad-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--blog-grad-start), var(--blog-grad-end));
+  border-color: transparent;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3a7ef6, #9333ea);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79,142,247,0.35);
+}
+
+/* Gallery grid — identyczny układ jak osk-expert */
+.blog-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.blog-gallery .gallery-main {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.blog-gallery .gallery-main + .gallery-item {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.blog-gallery .gallery-main + .gallery-item + .gallery-item {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Wide items span 2 columns */
+.blog-gallery .gallery-wide {
+  grid-column: span 2;
+}
+
+/* ── ROUTES TABLE ───────────────────────────────────────── */
+.routes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.route-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.route-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.route-path {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--blog-accent);
+  min-width: 180px;
+  font-weight: 600;
+}
+
+.route-name {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  flex: 1;
+}
+
+.route-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+}
+
+.route-badge.public {
+  background: rgba(74,222,128,0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.25);
+}
+
+.route-badge.auth {
+  background: rgba(79,142,247,0.12);
+  color: var(--blog-accent);
+  border: 1px solid rgba(79,142,247,0.25);
+}
+
+.route-badge.admin {
+  background: rgba(239,68,68,0.12);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .blog-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog-gallery .gallery-main {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .route-path {
+    min-width: 120px;
+    font-size: 0.75rem;
+  }
+
+  .route-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-gallery .gallery-wide,
+  .blog-gallery .gallery-main {
+    grid-column: span 1;
+  }
+
+  .route-item {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .route-path {
+    min-width: unset;
+    width: 100%;
+  }
+}
