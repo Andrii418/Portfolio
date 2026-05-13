@@ -62,11 +62,34 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
-.wyspa-gallery .gallery-main { grid-column: span 2; grid-row: span 1; }
-.wyspa-gallery .gallery-wide { grid-column: span 2; }
+.wyspa-gallery .gallery-main { grid-column: span 1; grid-row: span 1; }
+.wyspa-gallery .gallery-wide { grid-column: span 1; }
 
 .wyspa-gallery .gallery-item:hover {
   border-color: rgba(255, 77, 0, 0.4) !important;
+}
+
+/* Responsive for Wyspa gallery */
+@media (max-width: 900px) {
+  .wyspa-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .wyspa-gallery .gallery-main,
+  .wyspa-gallery .gallery-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .wyspa-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .wyspa-gallery .gallery-main,
+  .wyspa-gallery .gallery-wide {
+    grid-column: span 1;
+  }
 }
 
 /* ── FEATURE ITEMS ────────────────────────────── */

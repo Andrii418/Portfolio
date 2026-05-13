@@ -45,13 +45,34 @@
 .osk-gallery {
   grid-template-columns: repeat(3, 1fr);
 }
-/* gallery-main spans 2 cols (row 1: duży + 2 małe) */
+/* gallery-main spans 1 col (all same size) */
 .osk-gallery .gallery-main {
-  grid-column: span 2;
+  grid-column: span 1;
 }
-/* gallery-wide spans 2 cols */
+/* gallery-wide spans 1 col */
 .osk-gallery .gallery-wide {
-  grid-column: span 2;
+  grid-column: span 1;
+}
+
+/* Responsive for OSK gallery */
+@media (max-width: 900px) {
+  .osk-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .osk-gallery .gallery-main,
+  .osk-gallery .gallery-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .osk-gallery {
+    grid-template-columns: 1fr;
+  }
+  .osk-gallery .gallery-main,
+  .osk-gallery .gallery-wide {
+    grid-column: span 1;
+  }
 }
 
 /* ── DELIVERABLES GRID ──────────────────────── */

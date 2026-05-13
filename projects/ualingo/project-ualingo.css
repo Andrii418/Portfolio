@@ -42,13 +42,36 @@
 
 /* Tall items — portrait screenshots taller than normal */
 .ualingo-gallery .ualingo-tall img {
-  aspect-ratio: 9 / 18;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
 }
 
 .ualingo-gallery .gallery-item img {
-  aspect-ratio: 9 / 18;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .ualingo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .ualingo-gallery .ualingo-tall img,
+  .ualingo-gallery .gallery-item img {
+    aspect-ratio: 9 / 14; /* Slightly shorter for tablets */
+  }
+}
+
+@media (max-width: 500px) {
+  .ualingo-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ualingo-gallery .ualingo-tall img,
+  .ualingo-gallery .gallery-item img {
+    aspect-ratio: 9 / 12; /* Even shorter for mobile */
+  }
 }
 
 /* ── SCREENS GRID ───────────────────────────────────────── */
