@@ -247,6 +247,31 @@
   z-index: 1;
 }
 
+.form-status {
+  margin-top: 18px;
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t1);
+  min-height: 22px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.form-status.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success {
+  color: #7dd3fc;
+}
+
+.form-status.error {
+  color: #fb7185;
+}
+
 /* ── RESPONSIVE ───────────────────────────────── */
 @media (max-width: 900px) {
   .contact-inner {

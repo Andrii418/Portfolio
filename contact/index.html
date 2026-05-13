@@ -87,26 +87,32 @@
           </div>
         </div>
 
-        <!-- PRAWA: FORMULARZ (placeholder — podepniesz Formspree / EmailJS) -->
+        <!-- PRAWA: FORMULARZ -->
         <div class="contact-form-wrap reveal delay-2">
-          <div class="contact-form-card">
+          <form id="contactForm" class="contact-form-card" action="https://formsubmit.co/ajax/andrewtorianyk@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nowa wiadomość z formularza portfolio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_honey" value="" />
+
             <div class="form-field">
               <label class="form-label" for="name">Imię i nazwisko</label>
-              <input class="form-input" id="name" type="text" placeholder="Anna Nowak" />
+              <input class="form-input" id="name" name="name" type="text" placeholder="Anna Nowak" required />
             </div>
             <div class="form-field">
               <label class="form-label" for="email">Email</label>
-              <input class="form-input" id="email" type="email" placeholder="anna@firma.pl" />
+              <input class="form-input" id="email" name="email" type="email" placeholder="anna@firma.pl" required />
             </div>
             <div class="form-field">
               <label class="form-label" for="message">Wiadomość</label>
-              <textarea class="form-input form-textarea" id="message" placeholder="Cześć Andrii, chciałem/am..."></textarea>
+              <textarea class="form-input form-textarea" id="message" name="message" placeholder="Cześć Andrii, chciałem/am..." required></textarea>
             </div>
-            <button class="btn btn-primary form-submit" type="button">
+            <button class="btn btn-primary form-submit" type="submit">
               Wyślij wiadomość
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
-          </div>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
         </div>
 
       </div>

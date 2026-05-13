@@ -238,7 +238,70 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   });
 })();
 
-/* ── 9. STACK PILL STAGGER ────────────────────── */
+/* ── 9. CONTACT FORM ─────────────────────────── */
+(function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const status = form.querySelector('.form-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  if (window.location.protocol === 'file:') {
+    if (status) {
+      status.textContent = 'Formularz wymaga uruchomienia strony przez serwer HTTP. Użyj lokalnego serwera lub wdroż stronę online.';
+      status.classList.add('error');
+    }
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('disabled');
+    }
+    return;
+  }
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!submitBtn) return;
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add('disabled');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Wysyłanie...';
+    status.textContent = '';
+    status.classList.remove('success', 'error');
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+
+      const data = await response.json();
+      if (data.success === 'true' || response.status === 200) {
+        status.textContent = '✅ Wiadomość została wysłana. Dziękuję za kontakt!';
+        status.classList.add('success', 'visible');
+        status.classList.remove('error');
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      status.textContent = '⚠️ Wystąpił błąd podczas wysyłania. Spróbuj jeszcze raz.';
+      status.classList.add('error', 'visible');
+      status.classList.remove('success');
+      console.warn('Contact form error:', error);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
+})();
+
+/* ── 10. STACK PILL STAGGER ────────────────────── */
 document.querySelectorAll('.stack-pill').forEach((p, i) => {
   p.style.transitionDelay = (i * 18) + 'ms';
 });
