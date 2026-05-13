@@ -142,6 +142,34 @@ window.I18N = (function () {
     'racing.ctrl.6': { pl: 'Zmiana kamery TPP / FPP',     en: 'Switch camera TPP/FPP'},
     'racing.ctrl.7': { pl: 'Menu / Pauza',                 en: 'Menu / Pause'        },
     'racing.ctrl.8': { pl: 'Alternatywne sterowanie',      en: 'Alternative controls'},
+    'racing.tech.1.name': { pl: 'C++17', en: 'C++17' },
+    'racing.tech.1.desc': { pl: 'Język główny. Pełna kontrola pamięci i wydajność wymagana w aplikacjach czasu rzeczywistego.', en: 'Main language. Full memory control and performance needed in real-time applications.' },
+    'racing.tech.2.name': { pl: 'OpenGL 3.3', en: 'OpenGL 3.3' },
+    'racing.tech.2.desc': { pl: 'Core Profile — nowoczesny potok renderowania z shaderami GLSL, VBO/VAO/EBO.', en: 'Core Profile — modern rendering pipeline with GLSL shaders, VBO/VAO/EBO.' },
+    'racing.tech.3.name': { pl: 'Bullet Physics', en: 'Bullet Physics' },
+    'racing.tech.3.desc': { pl: 'Symulacja fizyki bryły sztywnej. Model btRaycastVehicle z zawieszeniem i tarciem opon.', en: 'Rigid body physics simulation. btRaycastVehicle model with suspension and tire friction.' },
+    'racing.tech.4.name': { pl: 'GLFW + GLAD', en: 'GLFW + GLAD' },
+    'racing.tech.4.desc': { pl: 'Tworzenie okna, kontekstu OpenGL i obsługa urządzeń wejścia.', en: 'Window/context creation and input device handling.' },
+    'racing.tech.5.name': { pl: 'GLM', en: 'GLM' },
+    'racing.tech.5.desc': { pl: 'Biblioteka matematyczna — wektory, macierze transformacji, rzutowanie perspektywiczne.', en: 'Math library — vectors, transform matrices, perspective projection.' },
+    'racing.tech.6.name': { pl: 'ImGui', en: 'ImGui' },
+    'racing.tech.6.desc': { pl: 'Immediate Mode GUI — menu, HUD z licznikiem prędkości, ekrany końcowe.', en: 'Immediate Mode GUI — menu, speedometer HUD, end screens.' },
+    'racing.tech.7.name': { pl: 'Miniaudio', en: 'Miniaudio' },
+    'racing.tech.7.desc': { pl: 'Lekka biblioteka audio do odtwarzania dźwięku silnika z dynamicznym pitchem.', en: 'Light audio library for engine sound playback with dynamic pitch.' },
+    'racing.tech.8.name': { pl: 'CMake + vcpkg', en: 'CMake + vcpkg' },
+    'racing.tech.8.desc': { pl: 'System budowania i zarządzanie zależnościami niezależny od IDE.', en: 'Build system and dependency management independent of IDE.' },
+    'racing.arch.1.title': { pl: 'Maszyna stanów', en: 'State machine' },
+    'racing.arch.1.desc': { pl: 'Aplikacja działa w trzech stanach: SPLASH_SCREEN, MAIN_MENU i RACING. Każdy stan determinuje co jest renderowane w danej klatce.', en: 'The app runs in three states: SPLASH_SCREEN, MAIN_MENU and RACING. Each state determines what is rendered in each frame.' },
+    'racing.arch.2.title': { pl: 'Pętla gry + Delta Time', en: 'Game loop + Delta Time' },
+    'racing.arch.2.desc': { pl: 'Każda klatka: przetwarzanie wejścia → aktualizacja fizyki → renderowanie. Delta Time zapewnia tę samą prędkość gry na 30 i 144 FPS.', en: 'Each frame: input processing → physics update → rendering. Delta Time keeps the same game speed at 30 and 144 FPS.' },
+    'racing.arch.3.title': { pl: 'Shader Phonga (GLSL)', en: 'Phong shader (GLSL)' },
+    'racing.arch.3.desc': { pl: 'Model oświetlenia z trzema składnikami: ambient, diffuse, specular. Autorskie shadery phong.vert i phong.frag.', en: 'Lighting model with ambient, diffuse and specular components. Custom shaders phong.vert and phong.frag.' },
+    'racing.arch.4.title': { pl: 'Własny parser OBJ', en: 'Custom OBJ parser' },
+    'racing.arch.4.desc': { pl: 'Klasa Karting parsuje format Wavefront OBJ linia po linii, z automatycznym generowaniem normalnych przez iloczyn wektorowy.', en: 'Karting class parses Wavefront OBJ line by line, auto-generating normals via cross product.' },
+    'racing.arch.5.title': { pl: 'Fizyka — btRaycastVehicle', en: 'Physics — btRaycastVehicle' },
+    'racing.arch.5.desc': { pl: 'Każde koło rzuca promień (raycast) do podłoża. Siła zawieszenia, tarcie i silnik są obliczane osobno dla każdego koła przez Bullet Physics.', en: 'Each wheel casts a ray to the ground. Suspension force, friction and engine are computed per wheel by Bullet Physics.' },
+    'racing.arch.6.title': { pl: 'AI — Waypoints + P-Controller', en: 'AI — Waypoints + P-Controller' },
+    'racing.arch.6.desc': { pl: 'Przeciwnik podąża za punktami nawigacyjnymi toru. Kąt skrętu obliczany przez atan2 i ograniczany przez glm::clamp.', en: 'The opponent follows track waypoints. Steering angle is calculated by atan2 and clamped using glm::clamp.' },
 
     /* ════ WYSPA MYSTERY ════ */
     'wyspa.category': { pl: 'Game Development · Unity 3D', en: 'Game Development · Unity 3D' },
@@ -169,6 +197,34 @@ window.I18N = (function () {
     'wyspa.ctrl.4': { pl: 'Rzut kokosem / akcja',       en: 'Throw coconut / action'},
     'wyspa.ctrl.5': { pl: 'Sprint',                     en: 'Sprint'               },
     'wyspa.ctrl.6': { pl: 'Pauza / Menu',               en: 'Pause / Menu'         },
+    'wyspa.tech.1.name': { pl: 'Unity 3D', en: 'Unity 3D' },
+    'wyspa.tech.1.desc': { pl: 'Główny silnik gry. Obsługa scen, fizyki, oświetlenia i systemu cząsteczek.', en: 'Main game engine. Scene, physics, lighting and particle system support.' },
+    'wyspa.tech.2.name': { pl: 'C#', en: 'C#' },
+    'wyspa.tech.2.desc': { pl: 'Skrypty gameplay — sterowanie graczem, logika AI, zarządzanie stanem gry i UI.', en: 'Gameplay scripts — player control, AI logic, game state and UI management.' },
+    'wyspa.tech.3.name': { pl: 'NavMesh AI', en: 'NavMesh AI' },
+    'wyspa.tech.3.desc': { pl: 'Unity Navigation Mesh — automatyczne wyznaczanie tras dla wilka na terenie wyspy.', en: 'Unity Navigation Mesh — automatic pathfinding for the wolf across the island.' },
+    'wyspa.tech.4.name': { pl: 'FPS Controller', en: 'FPS Controller' },
+    'wyspa.tech.4.desc': { pl: 'Własny kontroler pierwszoosobowy z raycastingiem do interakcji z obiektami.', en: 'Custom first-person controller with raycasting for object interactions.' },
+    'wyspa.tech.5.name': { pl: 'Particle System', en: 'Particle System' },
+    'wyspa.tech.5.desc': { pl: 'Efekty cząsteczkowe — dym wulkanu, płomienie ogniska, unoszące się pyłki.', en: 'Particle effects — volcano smoke, campfire flames, floating dust.' },
+    'wyspa.tech.6.name': { pl: 'Animator', en: 'Animator' },
+    'wyspa.tech.6.desc': { pl: 'Unity Animator Controller — animacje wilka (patrol, bieg, atak) i otwarcia skrzyni.', en: 'Unity Animator Controller — wolf animations (patrol, run, attack) and chest opening.' },
+    'wyspa.tech.7.name': { pl: 'Unity UI', en: 'Unity UI' },
+    'wyspa.tech.7.desc': { pl: 'Canvas — HUD z licznikiem zebranych artefaktów, ekrany wygranej i porażki.', en: 'Canvas — HUD with collected artifact counter, victory and defeat screens.' },
+    'wyspa.tech.8.name': { pl: 'URP Lighting', en: 'URP Lighting' },
+    'wyspa.tech.8.desc': { pl: 'Universal Render Pipeline z dynamicznym oświetleniem i mgłą atmosferyczną.', en: 'Universal Render Pipeline with dynamic lighting and atmospheric fog.' },
+    'wyspa.arch.1.title': { pl: 'AI Wilka — stany', en: 'Wolf AI — states' },
+    'wyspa.arch.1.desc': { pl: 'Wilk operuje w trzech stanach: Patrol, Chase i Attack. Przejście między nimi steruje NavMeshAgent w zależności od odległości i pola widzenia gracza.', en: 'The wolf operates in three states: Patrol, Chase and Attack. Transitions are controlled by NavMeshAgent based on distance and player line of sight.' },
+    'wyspa.arch.2.title': { pl: 'Raycasting — interakcje', en: 'Raycasting — interactions' },
+    'wyspa.arch.2.desc': { pl: 'Każda klatka kamera rzuca promień w przód. Trafienie w obiekt z tagiem Interactable wyświetla podpowiedź i wywołuje akcję.', en: 'Each frame the camera casts a forward ray. Hitting an Interactable object shows a hint and triggers an action.' },
+    'wyspa.arch.3.title': { pl: 'Minigra — timer i cele', en: 'Minigame — timer and targets' },
+    'wyspa.arch.3.desc': { pl: 'Skrypt odlicza 5 sekund i zlicza trafienia w 3 cele. Po spełnieniu warunku wywołuje animację otwarcia skrzyni przez Animator.', en: 'The script counts down 5 seconds and tracks hits on 3 targets. On success it triggers the chest open animation via Animator.' },
+    'wyspa.arch.4.title': { pl: 'System postępu', en: 'Progress system' },
+    'wyspa.arch.4.desc': { pl: 'GameManager przechowuje liczbę zebranych artefaktów. Dopiero po zebraniu wszystkich gracz może zapalić ognisko i wygrać grę.', en: 'GameManager stores the number of collected artifacts. Only after collecting all can the player light the campfire and win.' },
+    'wyspa.arch.5.title': { pl: 'Atmosfera — mgła i oświetlenie', en: 'Atmosphere — fog and lighting' },
+    'wyspa.arch.5.desc': { pl: 'Mgła skonfigurowana przez Unity URP — gęstość rośnie wraz z odległością. Wulkan emituje ciągły system cząsteczek z dymem i popiołem.', en: 'Fog is configured through Unity URP — density increases with distance. The volcano emits a continuous particle system of smoke and ash.' },
+    'wyspa.arch.6.title': { pl: 'Warunki wygranej / porażki', en: 'Win / lose conditions' },
+    'wyspa.arch.6.desc': { pl: 'Gracz wygrywa zapalając ognisko z zebranymi zapałkami. Przegrywa gdy wilk dotknie go lub gdy minie limit czasu.', en: 'The player wins by lighting the campfire with matches. They lose if the wolf touches them or time runs out.' },
 
     /* ════ BLOG APP ════ */
     'blog.category':  { pl: 'Web Development · Fullstack', en: 'Web Development · Fullstack' },
@@ -196,6 +252,34 @@ window.I18N = (function () {
     'blog.routes.public': { pl: 'Publiczna', en: 'Public' },
     'blog.routes.auth':   { pl: 'Auth',      en: 'Auth'   },
     'blog.routes.admin':  { pl: 'Admin',     en: 'Admin'  },
+    'blog.tech.1.name': { pl: 'Angular 17+', en: 'Angular 17+' },
+    'blog.tech.1.desc': { pl: 'Standalone Components, lazy loading tras, Angular Universal (SSR), reactive forms.', en: 'Standalone Components, lazy route loading, Angular Universal (SSR), reactive forms.' },
+    'blog.tech.2.name': { pl: 'TypeScript', en: 'TypeScript' },
+    'blog.tech.2.desc': { pl: 'Silne typowanie — modele, serwisy, interfejsy. 41.9% kodu projektu.', en: 'Strong typing — models, services, interfaces. 41.9% of project code.' },
+    'blog.tech.3.name': { pl: 'SCSS', en: 'SCSS' },
+    'blog.tech.3.desc': { pl: 'Globalne style, zmienne CSS, media queries — pełna responsywność i dark mode.', en: 'Global styles, CSS variables, media queries — full responsiveness and dark mode.' },
+    'blog.tech.4.name': { pl: 'Node.js + Express', en: 'Node.js + Express' },
+    'blog.tech.4.desc': { pl: 'RESTful API — endpointy dla postów, użytkowników, uploadów i aktywności.', en: 'RESTful API — endpoints for posts, users, uploads and activity.' },
+    'blog.tech.5.name': { pl: 'JWT Auth', en: 'JWT Auth' },
+    'blog.tech.5.desc': { pl: 'Tokeny 24h, role user/admin, walidacja przy każdym zapytaniu do API.', en: '24h tokens, user/admin roles, validation on every API request.' },
+    'blog.tech.6.name': { pl: 'Multer', en: 'Multer' },
+    'blog.tech.6.desc': { pl: 'Obsługa multipart upload — obrazy do 5MB zapisywane w backend/uploads/.', en: 'Multipart upload support — images up to 5MB saved in backend/uploads/.' },
+    'blog.tech.7.name': { pl: 'JSON Storage', en: 'JSON Storage' },
+    'blog.tech.7.desc': { pl: 'Dane postów i aktywności przechowywane w posts.json i activity.json.', en: 'Post and activity data stored in posts.json and activity.json.' },
+    'blog.tech.8.name': { pl: 'Angular Universal', en: 'Angular Universal' },
+    'blog.tech.8.desc': { pl: 'Server-Side Rendering przez main.server.ts — lepsza wydajność i SEO.', en: 'Server-Side Rendering via main.server.ts — better performance and SEO.' },
+    'blog.arch.1.title': { pl: 'Autoryzacja — JWT Guards', en: 'Authorization — JWT Guards' },
+    'blog.arch.1.desc': { pl: 'AuthGuard sprawdza ważność tokena JWT przed wejściem na chronioną trasę. AdminGuard dodatkowo weryfikuje rolę użytkownika z payloadu tokena.', en: 'AuthGuard checks JWT validity before entering a protected route. AdminGuard also verifies the user role from the token payload.' },
+    'blog.arch.2.title': { pl: 'System ocen (Rating)', en: 'Rating system' },
+    'blog.arch.2.desc': { pl: 'RatingService przechowuje wszystkie głosy per post w localStorage. Średnia obliczana dynamicznie — wyświetlana jako gwiazdki z liczbą głosów.', en: 'RatingService stores all votes per post in localStorage. The average is calculated dynamically — shown as stars with vote count.' },
+    'blog.arch.3.title': { pl: 'Upload plików', en: 'File upload' },
+    'blog.arch.3.desc': { pl: 'Multer obsługuje multipart/form-data. Walidacja MIME tylko do obrazów, limit 5MB, sanityzacja nazwy pliku przed zapisem na dysk.', en: 'Multer handles multipart/form-data. MIME validation for images only, 5MB limit, filename sanitization before disk save.' },
+    'blog.arch.4.title': { pl: 'Dziennik aktywności', en: 'Activity log' },
+    'blog.arch.4.desc': { pl: 'Każda akcja (login, create_post, delete_post) zapisywana z timestampem do activity.json. Użytkownik widzi swój feed akcji w widoku Aktywność.', en: 'Each action (login, create_post, delete_post) is saved with a timestamp to activity.json. The user sees their action feed in the Activity view.' },
+    'blog.arch.5.title': { pl: 'Paginacja — custom pipe', en: 'Pagination — custom pipe' },
+    'blog.arch.5.desc': { pl: 'Niestandardowy Angular pipe dzieli listę postów na strony. Zastosowany w BlogHomeComponent bez dodatkowych bibliotek.', en: 'Custom Angular pipe splits the post list into pages. Used in BlogHomeComponent without extra libraries.' },
+    'blog.arch.6.title': { pl: 'Dark / Light Mode', en: 'Dark / Light Mode' },
+    'blog.arch.6.desc': { pl: 'ThemeService przełącza klasę na body i zapisuje preferencje w localStorage. Zmiany CSS przez custom properties — brak przeładowania strony.', en: 'ThemeService toggles a class on body and saves preferences to localStorage. CSS changes via custom properties — no page reload.' },
 
     /* ════ OSK EXPERT ════ */
     'osk.category':  { pl: 'Web Development · Freelance', en: 'Web Development · Freelance' },
@@ -232,6 +316,30 @@ window.I18N = (function () {
     'osk.deliv.4.desc':  { pl: 'Konfiguracja hostingu, domeny, SSL — strona live na osk-expert.com.pl', en: 'Hosting, domain, SSL configuration — site live at osk-expert.com.pl' },
     'osk.team.role': { pl: 'Projekt UI · Frontend · Backend · Wdrożenie', en: 'UI Design · Frontend · Backend · Deployment' },
     'osk.client.role': { pl: 'Klient — Ośrodek Szkolenia Kierowców', en: 'Client — Driving School' },
+    'osk.tech.1.name': { pl: 'HTML5 / CSS3', en: 'HTML5 / CSS3' },
+    'osk.tech.1.desc': { pl: 'Semantyczny markup i nowoczesny CSS — Flexbox, Grid, animacje, custom properties.', en: 'Semantic markup and modern CSS — Flexbox, Grid, animations, custom properties.' },
+    'osk.tech.2.name': { pl: 'JavaScript', en: 'JavaScript' },
+    'osk.tech.2.desc': { pl: 'Vanilla JS — hamburger menu, FAQ accordion, walidacja formularzy, lightbox galerii.', en: 'Vanilla JS — hamburger menu, FAQ accordion, form validation, gallery lightbox.' },
+    'osk.tech.3.name': { pl: 'PHP', en: 'PHP' },
+    'osk.tech.3.desc': { pl: 'Backend strony, logika panelu admina, routing i obsługa sesji autoryzacji.', en: 'Site backend, admin panel logic, routing and authentication session handling.' },
+    'osk.tech.4.name': { pl: 'MySQL', en: 'MySQL' },
+    'osk.tech.4.desc': { pl: 'Baza danych dla aktualności, dat kursów i dziennych liczników odwiedzin.', en: 'Database for news, course dates and daily visit counters.' },
+    'osk.tech.5.name': { pl: 'Panel Admina', en: 'Admin Panel' },
+    'osk.tech.5.desc': { pl: 'Chroniony hasłem interfejs — zarządzanie treścią bez dotykania kodu przez klienta.', en: 'Password-protected interface — content management without touching code.' },
+    'osk.tech.6.name': { pl: 'cPanel / Hosting', en: 'cPanel / Hosting' },
+    'osk.tech.6.desc': { pl: 'Wdrożenie na hostingu współdzielonym, konfiguracja domeny i certyfikat SSL.', en: 'Deployed on shared hosting, domain configuration and SSL setup.' },
+    'osk.arch.1.title': { pl: 'Terminy kursów — 3 daty', en: 'Course dates — 3 timestamps' },
+    'osk.arch.1.desc': { pl: 'Admin zarządza trzema datami: poprzedni, najbliższy i kolejny kurs. Najbliższy termin pojawia się jako pływający przycisk na każdej podstronie.', en: 'Admin manages three dates: previous, next and upcoming course. The nearest date appears as a floating button on every subpage.' },
+    'osk.arch.2.title': { pl: 'System aktualności', en: 'News system' },
+    'osk.arch.2.desc': { pl: 'Formularz w panelu admina zapisuje post (tytuł, treść, zdjęcie) do MySQL. Strona wyświetla posty posortowane od najnowszych.', en: 'The admin panel form saves a post (title, content, image) to MySQL. The site displays posts sorted newest first.' },
+    'osk.arch.3.title': { pl: 'Licznik odwiedzin', en: 'Visit counter' },
+    'osk.arch.3.desc': { pl: 'Przy każdym wejściu na stronę PHP upsertuje rekord dla dzisiejszej daty. Panel admina wyświetla dzienny wykres.', en: 'On each page visit PHP upserts a record for today’s date. The admin panel shows a daily chart.' },
+    'osk.arch.4.title': { pl: 'Autoryzacja admina', en: 'Admin authorization' },
+    'osk.arch.4.desc': { pl: 'Panel dostępny jest tylko po zalogowaniu. Sesja trwa do wylogowania lub zamknięcia przeglądarki.', en: 'The panel is available only after login. The session lasts until logout or browser close.' },
+    'osk.arch.5.title': { pl: 'FAQ Accordion', en: 'FAQ Accordion' },
+    'osk.arch.5.desc': { pl: 'Najczęściej zadawane pytania w formie rozwijalnych kart — zmniejsza liczbę telefonów do biura.', en: 'Frequently asked questions as expandable cards — reduces office phone calls.' },
+    'osk.arch.6.title': { pl: 'Timeline "Jak zacząć"', en: 'Timeline "How to start"' },
+    'osk.arch.6.desc': { pl: 'Krok po kroku: Zapisz się → PKK → Kurs → Egzamin', en: 'Step by step: Sign up → PKK → Course → Exam' },
 
     /* ════ UALINGO ════ */
     'ualingo.category': { pl: 'Mobile Development · Android', en: 'Mobile Development · Android' },
@@ -257,6 +365,30 @@ window.I18N = (function () {
     'ualingo.feat.6.desc':  { pl: 'Logowanie email/hasło oraz Google OAuth 2.0, reset hasła, persystencja sesji', en: 'Email/password login and Google OAuth 2.0, password reset, session persistence' },
     'ualingo.screens.label': { pl: 'Ekrany', en: 'Screens' },
     'ualingo.screens.title': { pl: '18 Activities', en: '18 Activities' },
+    'ualingo.tech.1.name': { pl: 'Java 11', en: 'Java 11' },
+    'ualingo.tech.1.desc': { pl: '100% kodu aplikacji — Activity-based architecture, MVC-like pattern.', en: '100% app code — Activity-based architecture, MVC-like pattern.' },
+    'ualingo.tech.2.name': { pl: 'Android SDK 35', en: 'Android SDK 35' },
+    'ualingo.tech.2.desc': { pl: 'Target API 35 (Android 15), minSdk 23 (Android 6.0) — szeroka kompatybilność.', en: 'Target API 35 (Android 15), minSdk 23 (Android 6.0) — wide compatibility.' },
+    'ualingo.tech.3.name': { pl: 'Firebase Auth', en: 'Firebase Auth' },
+    'ualingo.tech.3.desc': { pl: 'Email/hasło + Google OAuth 2.0. Persystencja sesji i reset hasła.', en: 'Email/password + Google OAuth 2.0. Session persistence and password reset.' },
+    'ualingo.tech.4.name': { pl: 'Firebase Analytics', en: 'Firebase Analytics' },
+    'ualingo.tech.4.desc': { pl: 'Analityka zdarzeń w aplikacji — śledzenie aktywności użytkowników.', en: 'In-app event analytics — tracking user activity.' },
+    'ualingo.tech.5.name': { pl: 'Material Design', en: 'Material Design' },
+    'ualingo.tech.5.desc': { pl: 'Material 1.12.0 — komponenty UI, ConstraintLayout, SwipeRefreshLayout.', en: 'Material 1.12.0 — UI components, ConstraintLayout, SwipeRefreshLayout.' },
+    'ualingo.tech.6.name': { pl: 'Gradle 8.0+', en: 'Gradle 8.0+' },
+    'ualingo.tech.6.desc': { pl: 'System budowania, ProGuard obfuskacja dla release build, vcpkg zależności.', en: 'Build system, ProGuard obfuscation for release builds, dependency management.' },
+    'ualingo.arch.1.title': { pl: 'Logowanie Firebase', en: 'Firebase login' },
+    'ualingo.arch.1.desc': { pl: 'Obsługa email/hasło oraz Google OAuth 2.0 przez Firebase Authentication. Po zalogowaniu sesja jest persystowana — użytkownik nie musi logować się przy każdym uruchomieniu.', en: 'Email/password and Google OAuth 2.0 handled by Firebase Authentication. Session is persisted — the user does not need to log in on every launch.' },
+    'ualingo.arch.2.title': { pl: 'Quiz — timer 60 sekund', en: 'Quiz — 60 second timer' },
+    'ualingo.arch.2.desc': { pl: 'CountDownTimer odlicza 60 sekund na każde pytanie. Po upływie czasu odpowiedzi są blokowane. Animacja kolorów ValueAnimator wizualizuje poprawną/błędną odpowiedź.', en: 'CountDownTimer counts 60 seconds for each question. When time runs out answers are locked. ValueAnimator color animation shows correct/wrong answers.' },
+    'ualingo.arch.3.title': { pl: 'Animacja odpowiedzi', en: 'Answer animation' },
+    'ualingo.arch.3.desc': { pl: 'ValueAnimator płynnie zmienia kolor tekstu odpowiedzi z białego na zielony (poprawna) lub czerwony (błędna) w czasie 500ms.', en: 'ValueAnimator smoothly changes answer text color from white to green (correct) or red (wrong) over 500ms.' },
+    'ualingo.arch.4.title': { pl: 'Przełączanie języków', en: 'Language switch' },
+    'ualingo.arch.4.desc': { pl: 'Oddzielne Activities dla wersji ukraińskiej i angielskiej. Przycisk flagi w menu głównym startuje nową Activity z odpowiednim językiem.', en: 'Separate Activities for Ukrainian and English versions. The flag button in the main menu starts a new Activity with the chosen language.' },
+    'ualingo.arch.5.title': { pl: 'Word Search — siatka 7×6', en: 'Word Search — 7×6 grid' },
+    'ualingo.arch.5.desc': { pl: 'Interaktywna plansza z literami cyrylicy. Użytkownik zaznacza litery po kolei — po znalezieniu słowa licznik się zwiększa i słowo zostaje podświetlone.', en: 'Interactive Cyrillic board. The user selects letters in order — when a word is found the counter increases and the word is highlighted.' },
+    'ualingo.arch.6.title': { pl: '18 Activities — nawigacja', en: '18 Activities — navigation' },
+    'ualingo.arch.6.desc': { pl: 'Dolny pasek nawigacyjny z 3 ikonami (Dom, Gry, Profil) dostępny na każdym ekranie. Intent-based routing między wszystkimi 18 Activities.', en: 'Bottom navigation bar with 3 icons (Home, Games, Profile) available on every screen. Intent-based routing between all 18 Activities.' },
   };
 
   /* ── DETECT CURRENT PAGE ─────────────────────── */
@@ -302,17 +434,18 @@ window.I18N = (function () {
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(a => {
       const href = a.getAttribute('href') || '';
-      if (/projects/.test(href))     setText(a, 'nav.projects', lang);
-      else if (/contact/.test(href)) setText(a, 'nav.contact', lang);
-      else if (/index\.html$/.test(href) || href === '../' || href === '../../' || href.endsWith('/') && !href.includes('projects') && !href.includes('contact'))
-        setText(a, 'nav.home', lang);
+      const targetPath = new URL(href, location.href).pathname;
+      if (/\/projects(\/index\.html)?$/.test(targetPath))     setText(a, 'nav.projects', lang);
+      else if (/\/contact(\/index\.html)?$/.test(targetPath)) setText(a, 'nav.contact', lang);
+      else if (/\/(index\.html)?$/.test(targetPath))           setText(a, 'nav.home', lang);
     });
     const mobLinks = document.querySelectorAll('.mob-link');
     mobLinks.forEach(a => {
       const href = a.getAttribute('href') || '';
-      if (/projects/.test(href))     setText(a, 'nav.projects', lang);
-      else if (/contact/.test(href)) setText(a, 'nav.contact', lang);
-      else if (/CV/.test(href))      setText(a, 'nav.cv', lang);
+      const targetPath = new URL(href, location.href).pathname;
+      if (/\/projects(\/index\.html)?$/.test(targetPath))     setText(a, 'nav.projects', lang);
+      else if (/\/contact(\/index\.html)?$/.test(targetPath)) setText(a, 'nav.contact', lang);
+      else if (/CV\.pdf$/.test(href) || /CV\.pdf$/.test(targetPath)) setText(a, 'nav.cv', lang);
     });
     const navCta = document.querySelector('.nav-cta');
     if (navCta) {
@@ -497,6 +630,26 @@ window.I18N = (function () {
     setText(document.querySelector('.req-title'), 'proj.req.title', lang);
   }
 
+  function applyTechStack(page, lang, count) {
+    const cards = document.querySelectorAll('.tech-card');
+    for (let i = 0; i < count; i++) {
+      const card = cards[i];
+      if (!card) continue;
+      setText(card.querySelector('.tech-card-name'), `${page}.tech.${i+1}.name`, lang);
+      setText(card.querySelector('.tech-card-desc'), `${page}.tech.${i+1}.desc`, lang);
+    }
+  }
+
+  function applyArchInfo(page, lang, count) {
+    const cards = document.querySelectorAll('.arch-card');
+    for (let i = 0; i < count; i++) {
+      const card = cards[i];
+      if (!card) continue;
+      setText(card.querySelector('.arch-title'), `${page}.arch.${i+1}.title`, lang);
+      setText(card.querySelector('.arch-desc'),  `${page}.arch.${i+1}.desc`,  lang);
+    }
+  }
+
   /* ── RACING ──────────────────────────────────── */
   function applyRacing(lang) {
     applySharedDetail(lang);
@@ -522,6 +675,8 @@ window.I18N = (function () {
     });
     const ctrlH2 = document.querySelector('.controls-grid')?.closest('section')?.querySelector('.section-h2');
     if (ctrlH2) setText(ctrlH2, 'proj.controls.kbd', lang);
+    applyTechStack('racing', lang, 8);
+    applyArchInfo('racing', lang, 6);
   }
 
   /* ── WYSPA ───────────────────────────────────── */
@@ -549,6 +704,8 @@ window.I18N = (function () {
     }
     const ctrlH2 = document.querySelector('.controls-grid')?.closest('section')?.querySelector('.section-h2');
     if (ctrlH2) setText(ctrlH2, 'proj.controls.kbdmouse', lang);
+    applyTechStack('wyspa', lang, 8);
+    applyArchInfo('wyspa', lang, 6);
 
     /* prev/next nav */
     document.querySelectorAll('.proj-nav-btn').forEach(btn => {
@@ -596,6 +753,8 @@ window.I18N = (function () {
     if (routesLabel) setText(routesLabel, 'proj.routes.label', lang);
     const routingH2 = [...document.querySelectorAll('.section-h2')].find(el => el.textContent.trim() === 'Routing' || el.textContent.trim() === 'Routing');
     if (routingH2) setText(routingH2, 'proj.routing', lang);
+    applyTechStack('blog', lang, 8);
+    applyArchInfo('blog', lang, 6);
 
     /* team role */
     const teamRole = document.querySelector('.team-role');
@@ -642,6 +801,8 @@ window.I18N = (function () {
     const teamRoles = document.querySelectorAll('.team-role');
     if (teamRoles[0]) setText(teamRoles[0], 'osk.team.role',   lang);
     if (teamRoles[1]) setText(teamRoles[1], 'osk.client.role', lang);
+    applyTechStack('osk', lang, 6);
+    applyArchInfo('osk', lang, 6);
   }
 
   /* ── UALINGO ─────────────────────────────────── */
@@ -667,6 +828,8 @@ window.I18N = (function () {
     if (screensLabel) setText(screensLabel, 'ualingo.screens.label', lang);
     const screensH2 = [...document.querySelectorAll('.section-h2')].find(el => el.textContent.includes('Activities'));
     if (screensH2) setText(screensH2, 'ualingo.screens.title', lang);
+    applyTechStack('ualingo', lang, 6);
+    applyArchInfo('ualingo', lang, 6);
   }
 
   /* ── PUBLIC API ──────────────────────────────── */
