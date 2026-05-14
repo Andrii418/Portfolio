@@ -277,14 +277,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   const ajaxAction = form.action.replace(/\/$/, '') + '/ajax';
   const originalSubmitText = submitBtn?.innerHTML || 'Wyślij wiadomość';
-  let nativeSubmitFallback = false;
 
   form.addEventListener('submit', async event => {
-    if (nativeSubmitFallback) {
-      nativeSubmitFallback = false;
-      return;
-    }
-
     event.preventDefault();
     if (!submitBtn) return;
 
@@ -323,10 +317,11 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
       }
     } catch (error) {
       console.warn('Contact form error:', error);
-      status.textContent = '⚠️ Wystąpił problem z wysyłką AJAX. Kliknij przycisk jeszcze raz, aby spróbować standardowej wysyłki.';
+      status.textContent = '⚠️ Wystąpił problem z wysyłką AJAX. Wysyłam formularz standardowo...';
       status.classList.add('error', 'visible');
       status.classList.remove('success');
-      nativeSubmitFallback = true;
+      form.submit();
+      return;
     } finally {
       submitBtn.disabled = false;
       submitBtn.classList.remove('disabled');
