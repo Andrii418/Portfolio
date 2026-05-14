@@ -245,6 +245,23 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
+  const nextInput = form.querySelector('input[name="_next"]');
+
+  if (nextInput) {
+    nextInput.value = `${window.location.origin}${window.location.pathname}?sent=1`;
+  }
+
+  if (status) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      status.textContent = '✅ Wiadomość została wysłana. Dziękuję za kontakt!';
+      status.classList.add('success', 'visible');
+      status.classList.remove('error');
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+  }
 
   if (window.location.protocol === 'file:') {
     if (status) {
@@ -258,7 +275,16 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
     return;
   }
 
+  const ajaxAction = form.action.replace(/\/$/, '') + '/ajax';
+  const originalSubmitText = submitBtn?.innerHTML || 'Wyślij wiadomość';
+  let nativeSubmitFallback = false;
+
   form.addEventListener('submit', async event => {
+    if (nativeSubmitFallback) {
+      nativeSubmitFallback = false;
+      return;
+    }
+
     event.preventDefault();
     if (!submitBtn) return;
 
@@ -270,7 +296,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
     status.classList.remove('success', 'error');
 
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(ajaxAction, {
         method: 'POST',
         body: new FormData(form),
         headers: {
@@ -280,8 +306,14 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
       if (!response.ok) throw new Error('Network response was not ok');
 
-      const data = await response.json();
-      if (data.success === 'true' || response.status === 200) {
+      let data = null;
+      try {
+        data = await response.json();
+      } catch (parseError) {
+        console.warn('Contact form JSON parse failed', parseError);
+      }
+
+      if (data?.success === 'true' || response.status === 200) {
         status.textContent = '✅ Wiadomość została wysłana. Dziękuję za kontakt!';
         status.classList.add('success', 'visible');
         status.classList.remove('error');
@@ -290,13 +322,15 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
         throw new Error('Form submission failed');
       }
     } catch (error) {
-      status.textContent = '⚠️ Wystąpił błąd podczas wysyłania. Spróbuj jeszcze raz.';
+      console.warn('Contact form error:', error);
+      status.textContent = '⚠️ Wystąpił problem z wysyłką AJAX. Kliknij przycisk jeszcze raz, aby spróbować standardowej wysyłki.';
       status.classList.add('error', 'visible');
       status.classList.remove('success');
-      console.warn('Contact form error:', error);
+      nativeSubmitFallback = true;
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
+      submitBtn.classList.remove('disabled');
+      submitBtn.innerHTML = originalSubmitText;
     }
   });
 })();
