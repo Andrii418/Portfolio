@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eventHubAPI — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-eventhub.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+        <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../assets/CV.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="../../index.html" class="mob-link">Home</a>
+      <a href="../index.html" class="mob-link">Projekty</a>
+      <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+      <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="../index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Backend Development · REST API</span>
+          <div class="proj-badges">
+            <span class="badge-year">2025</span>
+            <span class="badge-uni">Akademia Tarnowska</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">eventHub<span>API</span></h1>
+
+        <p class="proj-tagline">
+          Kompleksowy backend REST API do zarządzania eventami —
+          Spring Boot 3.3, JWT, PostgreSQL, Swagger. System ról,
+          zaproszeń, powiadomień i multimediów w jednym serwisie.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/DominikFa/eventHubAPI" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#endpoints" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Endpointy
+          </a>
+          <a href="#schema" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            Schemat DB
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">Java 21</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Spring Boot 3.3</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">PostgreSQL</div>
+            <div class="ps-l">Baza danych</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">JWT + Swagger</div>
+            <div class="ps-l">Auth &amp; Docs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Backend<br/><span class="eventhub-grad">od zera do API</span></h2>
+          <p class="body-text">
+            eventHubAPI to w pełni funkcjonalny serwis backendowy do zarządzania
+            eventami, zbudowany w Spring Boot 3.3. Projekt był realizowany
+            na Akademii Tarnowskiej jako aplikacja backendowa.
+          </p>
+          <p class="body-text">
+            Architektura warstwowa — Controller → Service → Repository — z
+            pełną dokumentacją Swagger UI, hierarchicznym systemem ról
+            i bazą PostgreSQL z dobrze zaprojektowanym schematem relacyjnym.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🎪</div>
+            <div>
+              <div class="feat-title">Zarządzanie eventami</div>
+              <div class="feat-desc">CRUD eventów z filtrami po nazwie i dacie, publiczne i prywatne eventy</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔐</div>
+            <div>
+              <div class="feat-title">JWT + role RBAC</div>
+              <div class="feat-desc">Bearer token 24h, trzy role: ADMIN / ORGANIZER / USER z różnymi uprawnieniami</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💌</div>
+            <div>
+              <div class="feat-title">System zaproszeń</div>
+              <div class="feat-desc">Wysyłanie, akceptacja, odrzucanie i wycofywanie zaproszeń do eventów</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔔</div>
+            <div>
+              <div class="feat-title">Powiadomienia</div>
+              <div class="feat-desc">Paginowane powiadomienia z statusami UNREAD / READ / ARCHIVED per użytkownik</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📸</div>
+            <div>
+              <div class="feat-title">Upload multimediów</div>
+              <div class="feat-desc">Galeria, logo i harmonogram eventu — pliki binarne w PostgreSQL (bytea)</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📖</div>
+            <div>
+              <div class="feat-title">Swagger UI</div>
+              <div class="feat-desc">Pełna dokumentacja OpenAPI 3.0 z autoryzacją Bearer JWT pod /swagger-ui.html</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">☕</div>
+            <div class="tech-card-name">Java 21</div>
+            <div class="tech-card-desc">Najnowszy LTS — records, sealed classes, pattern matching. Cały backend w Javie.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🍃</div>
+            <div class="tech-card-name">Spring Boot 3.3</div>
+            <div class="tech-card-desc">Web, Data JPA (Hibernate), Security, Validation, Actuator — pełny ekosystem Spring.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🐘</div>
+            <div class="tech-card-name">PostgreSQL</div>
+            <div class="tech-card-desc">Relacyjna baza danych z Hibernate ORM. DDL strategy: validate — schemat nienaruszony.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🔑</div>
+            <div class="tech-card-name">JWT Security</div>
+            <div class="tech-card-desc">JwtAuthenticationFilter, JwtTokenProvider — Bearer token 24h, Spring Security config.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📋</div>
+            <div class="tech-card-name">Swagger / OpenAPI</div>
+            <div class="tech-card-desc">springdoc-openapi 2.5.0 — interaktywna dokumentacja API z możliwością testowania.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🏗️</div>
+            <div class="tech-card-name">Maven + Lombok</div>
+            <div class="tech-card-desc">Maven build system, Lombok 1.18.32 eliminuje boilerplate — gettery, konstruktory, buildery.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">JWT Authentication Filter</div>
+          <p class="arch-desc">
+            Każde żądanie przechodzi przez <code>JwtAuthenticationFilter</code>.
+            Token wyciągany z nagłówka <code>Authorization: Bearer</code>,
+            walidowany i mapowany na <code>SecurityContext</code>.
+          </p>
+          <div class="code-block">
+<pre>// SecurityConfiguration
+.requestMatchers("/api/auth/**")
+  .permitAll()
+.anyRequest()
+  .authenticated()
+// Filter: JwtAuthenticationFilter
+//   → JwtTokenProvider.validate()
+//   → SecurityContextHolder.set()</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Role-Based Access Control</div>
+          <p class="arch-desc">
+            Trzy poziomy dostępu: <code>USER</code>, <code>ORGANIZER</code>, <code>ADMIN</code>.
+            Każdy endpoint zabezpieczony przez <code>@PreAuthorize</code>
+            lub konfigurację SecurityFilterChain.
+          </p>
+          <div class="code-block">
+<pre>// Tylko ORGANIZER i ADMIN
+@PreAuthorize(
+  "hasAnyRole('ORGANIZER','ADMIN')")
+public EventDto createEvent(...) {}
+
+// Tylko ADMIN
+@PreAuthorize("hasRole('ADMIN')")
+public void deleteAccount(...) {}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Composite Key — Participant</div>
+          <p class="arch-desc">
+            Encja <code>Participant</code> używa złożonego klucza głównego
+            <code>ParticipantId (userId + eventId)</code> — jeden użytkownik
+            może być uczestnikiem eventu tylko raz.
+          </p>
+          <div class="code-block">
+<pre>@Entity
+@IdClass(ParticipantId.class)
+public class Participant {
+  @Id private Long userId;
+  @Id private Long eventId;
+  private ParticipantStatus status;
+  private EventRole eventRole;
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Media — bytea w PostgreSQL</div>
+          <p class="arch-desc">
+            Pliki multimedialne przechowywane bezpośrednio w bazie jako
+            <code>bytea</code>. Trzy typy użycia: GALLERY, LOGO, SCHEDULE —
+            enum <code>MediaUsage</code>.
+          </p>
+          <div class="code-block">
+<pre>@Entity
+public class Media {
+  @Lob
+  private byte[] mediaFile;
+  private MediaType mediaType;
+  // IMAGE | DOCUMENT | VIDEO
+  private MediaUsage usage;
+  // GALLERY | LOGO | SCHEDULE
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Hierarchia geograficzna</div>
+          <p class="arch-desc">
+            Lokalizacje zbudowane w pełnej hierarchii:
+            Country → Region → City → PostalCode → Location → MapLocation
+            z geolokacją jako osobna encja 1:1.
+          </p>
+          <div class="code-block">
+<pre>Location
+  └─ PostalCode
+       └─ City
+            └─ Region
+                 └─ Country
+  └─ MapLocation (lat/lng)
+  └─ street_name
+  └─ street_number</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Powiadomienia N:M</div>
+          <p class="arch-desc">
+            Tabela join <code>account_notification</code> łączy użytkowników
+            z powiadomieniami ze statusem per para.
+            Jeden komunikat może trafić do wielu odbiorców.
+          </p>
+          <div class="code-block">
+<pre>// account_notification (join table)
+account_id      (FK → Account)
+notification_id (FK → Notification)
+status          (UNREAD|READ|ARCHIVED)
+
+// Endpoint paginowany:
+GET /api/notifications?page=0&size=20</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ENDPOINTS ── -->
+    <section class="section-wrap content-section" id="endpoints">
+      <div class="section-label reveal">API</div>
+      <h2 class="section-h2 reveal delay-1">Endpointy</h2>
+
+      <div class="endpoints-wrap reveal delay-2">
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">🔐</span> Auth
+            <span class="endpoint-base">/api/auth</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/login</span>
+            <span class="ep-desc">Logowanie — zwraca JWT token</span>
+            <span class="ep-role public">Public</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/register</span>
+            <span class="ep-desc">Rejestracja nowego użytkownika</span>
+            <span class="ep-role public">Public</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">👤</span> Użytkownicy
+            <span class="endpoint-base">/api/account</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/me</span>
+            <span class="ep-desc">Profil zalogowanego użytkownika</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method put">PUT</span>
+            <span class="ep-path">/me</span>
+            <span class="ep-desc">Update profilu</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/me/profile-image</span>
+            <span class="ep-desc">Upload zdjęcia profilowego</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/change-password</span>
+            <span class="ep-desc">Zmiana hasła</span>
+            <span class="ep-role user">User</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">🎪</span> Eventy
+            <span class="endpoint-base">/api/events</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/</span>
+            <span class="ep-desc">Tworzenie eventu</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/public</span>
+            <span class="ep-desc">Lista publicznych eventów (z filtrami)</span>
+            <span class="ep-role public">Public</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/{id}</span>
+            <span class="ep-desc">Szczegóły eventu</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method put">PUT</span>
+            <span class="ep-path">/{id}</span>
+            <span class="ep-desc">Update eventu</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method delete">DELETE</span>
+            <span class="ep-path">/{id}</span>
+            <span class="ep-desc">Usunięcie eventu</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/all</span>
+            <span class="ep-desc">Wszystkie eventy</span>
+            <span class="ep-role admin">Admin</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">👥</span> Uczestnicy
+            <span class="endpoint-base">/api/events/{eventId}/participants</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/</span>
+            <span class="ep-desc">Dołączenie do eventu</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/</span>
+            <span class="ep-desc">Lista uczestników</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/me</span>
+            <span class="ep-desc">Mój status uczestnictwa</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method delete">DELETE</span>
+            <span class="ep-path">/me</span>
+            <span class="ep-desc">Opuszczenie eventu</span>
+            <span class="ep-role user">User</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">💌</span> Zaproszenia
+            <span class="endpoint-base">/api/invitations</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/</span>
+            <span class="ep-desc">Wysłanie zaproszenia</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/my</span>
+            <span class="ep-desc">Moje zaproszenia</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/{id}/accept</span>
+            <span class="ep-desc">Przyjęcie zaproszenia</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/{id}/decline</span>
+            <span class="ep-desc">Odrzucenie zaproszenia</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/{id}/revoke</span>
+            <span class="ep-desc">Wycofanie zaproszenia</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">🔔</span> Powiadomienia
+            <span class="endpoint-base">/api/notifications</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/</span>
+            <span class="ep-desc">Pobieranie powiadomień (paginacja)</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method patch">PATCH</span>
+            <span class="ep-path">/{id}/status</span>
+            <span class="ep-desc">Update statusu (READ / ARCHIVED)</span>
+            <span class="ep-role user">User</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">📸</span> Media
+            <span class="endpoint-base">/api/events/{id}/media</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/gallery</span>
+            <span class="ep-desc">Upload zdjęcia do galerii</span>
+            <span class="ep-role user">User</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/logo</span>
+            <span class="ep-desc">Upload logo eventu</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/schedule</span>
+            <span class="ep-desc">Upload harmonogramu (PDF)</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method delete">DELETE</span>
+            <span class="ep-path">/api/media/{fileId}</span>
+            <span class="ep-desc">Usunięcie pliku</span>
+            <span class="ep-role organizer">Organizer</span>
+          </div>
+        </div>
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span class="endpoint-group-icon">🛡️</span> Admin
+            <span class="endpoint-base">/api/admin</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method patch">PATCH</span>
+            <span class="ep-path">/accounts/{id}/status</span>
+            <span class="ep-desc">Zmiana statusu konta (ACTIVE/BANNED)</span>
+            <span class="ep-role admin">Admin</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method patch">PATCH</span>
+            <span class="ep-path">/accounts/{id}/role</span>
+            <span class="ep-desc">Zmiana roli użytkownika</span>
+            <span class="ep-role admin">Admin</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method delete">DELETE</span>
+            <span class="ep-path">/accounts/{id}</span>
+            <span class="ep-desc">Usunięcie konta</span>
+            <span class="ep-role admin">Admin</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method delete">DELETE</span>
+            <span class="ep-path">/events/{id}</span>
+            <span class="ep-desc">Usunięcie dowolnego eventu</span>
+            <span class="ep-role admin">Admin</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── DB SCHEMA ── -->
+    <section class="section-wrap content-section" id="schema">
+      <div class="section-label reveal">Baza danych</div>
+      <h2 class="section-h2 reveal delay-1">Schemat encji</h2>
+
+      <div class="schema-grid reveal delay-2">
+
+        <div class="schema-card">
+          <div class="schema-table-name">account</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field">login</div>
+            <div class="schema-field">email</div>
+            <div class="schema-field">password</div>
+            <div class="schema-field enum">roles <span>ADMIN | ORGANIZER | USER</span></div>
+            <div class="schema-field enum">status <span>ACTIVE | INACTIVE | BANNED</span></div>
+            <div class="schema-field">created_at</div>
+          </div>
+          <div class="schema-relations">
+            <span>1:1 → profile</span>
+            <span>1:N → event</span>
+            <span>N:M → participant</span>
+            <span>N:M → notification</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">event</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field">name</div>
+            <div class="schema-field">description</div>
+            <div class="schema-field">start_date</div>
+            <div class="schema-field">end_date</div>
+            <div class="schema-field">is_public</div>
+            <div class="schema-field">max_participants</div>
+            <div class="schema-field fk">organizer_id <span>FK → account</span></div>
+            <div class="schema-field fk">location_id <span>FK → location</span></div>
+          </div>
+          <div class="schema-relations">
+            <span>N:1 → account</span>
+            <span>1:1 → location</span>
+            <span>1:N → participant</span>
+            <span>1:N → media</span>
+            <span>1:N → invitation</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">participant</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">user_id <span>PK, FK</span></div>
+            <div class="schema-field pk">event_id <span>PK, FK</span></div>
+            <div class="schema-field enum">status <span>JOINED | DECLINED | PENDING</span></div>
+            <div class="schema-field enum">event_role <span>ATTENDEE | SPEAKER | ORGANIZER</span></div>
+            <div class="schema-field">joined_at</div>
+          </div>
+          <div class="schema-relations">
+            <span>Composite PK</span>
+            <span>N:1 → account</span>
+            <span>N:1 → event</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">invitation</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field fk">event_id <span>FK → event</span></div>
+            <div class="schema-field fk">invited_user_id <span>FK → account</span></div>
+            <div class="schema-field enum">status <span>PENDING | ACCEPTED | DECLINED</span></div>
+            <div class="schema-field">sent_at</div>
+            <div class="schema-field">responded_at</div>
+          </div>
+          <div class="schema-relations">
+            <span>N:1 → event</span>
+            <span>N:1 → account</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">media</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field">media_file <span class="bytea">bytea</span></div>
+            <div class="schema-field enum">media_type <span>IMAGE | DOCUMENT | VIDEO</span></div>
+            <div class="schema-field enum">usage <span>GALLERY | LOGO | SCHEDULE</span></div>
+            <div class="schema-field fk">event_id <span>FK → event</span></div>
+            <div class="schema-field fk">uploader_id <span>FK → account</span></div>
+            <div class="schema-field">uploaded_at</div>
+          </div>
+          <div class="schema-relations">
+            <span>N:1 → event</span>
+            <span>N:1 → account</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">location</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field">street_name</div>
+            <div class="schema-field">street_number</div>
+            <div class="schema-field">apartment</div>
+            <div class="schema-field fk">postal_code_id <span>FK → postal_code</span></div>
+          </div>
+          <div class="schema-relations">
+            <span>1:1 → map_location</span>
+            <span>N:1 → postal_code → city → region → country</span>
+          </div>
+        </div>
+
+        <div class="schema-card">
+          <div class="schema-table-name">notification</div>
+          <div class="schema-fields">
+            <div class="schema-field pk">id <span>PK</span></div>
+            <div class="schema-field">title</div>
+            <div class="schema-field">message</div>
+            <div class="schema-field">created_at</div>
+          </div>
+          <div class="schema-relations">
+            <span>N:M → account (via account_notification)</span>
+          </div>
+        </div>
+
+        <div class="schema-card schema-join">
+          <div class="schema-table-name">account_notification <span class="join-label">join table</span></div>
+          <div class="schema-fields">
+            <div class="schema-field pk">account_id <span>PK, FK</span></div>
+            <div class="schema-field pk">notification_id <span>PK, FK</span></div>
+            <div class="schema-field enum">status <span>UNREAD | READ | ARCHIVED</span></div>
+          </div>
+          <div class="schema-relations">
+            <span>N:1 → account</span>
+            <span>N:1 → notification</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Java 21+</span>
+            <span class="req-pill">Maven 3.6+</span>
+            <span class="req-pill">PostgreSQL 12+</span>
+            <span class="req-pill">Git</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/DominikFa/eventHubAPI.git
+cd eventHubAPI</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Skonfiguruj bazę danych</div>
+              <div class="code-block">
+<pre># src/main/resources/application.properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/event_hub
+spring.datasource.username=YOUR_USER
+spring.datasource.password=YOUR_PASSWORD</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Zbuduj i uruchom</div>
+              <div class="code-block">
+<pre>./mvnw clean package
+./mvnw spring-boot:run</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Otwórz dokumentację Swagger</div>
+              <div class="code-block">
+<pre># Swagger UI:
+http://localhost:8080/swagger-ui.html
+
+# OpenAPI JSON:
+http://localhost:8080/v3/api-docs</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zespół</div>
+      <h2 class="section-h2 reveal delay-1">Autorzy projektu</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">Backend · Security · Database · API Design</div>
+          <a href="https://github.com/Andrii418" class="team-gh" target="_blank">github.com/Andrii418</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar eventhub-avatar">DF</div>
+          <div class="team-name">Dominik Fa</div>
+          <div class="team-role">Backend · Architecture · Spring Boot</div>
+          <a href="https://github.com/DominikFa" class="team-gh" target="_blank">github.com/DominikFa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BACK TO PROJECTS ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+</body>
+</html>
