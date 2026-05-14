@@ -389,6 +389,106 @@ window.I18N = (function () {
     'ualingo.arch.5.desc': { pl: 'Interaktywna plansza z literami cyrylicy. Użytkownik zaznacza litery po kolei — po znalezieniu słowa licznik się zwiększa i słowo zostaje podświetlone.', en: 'Interactive Cyrillic board. The user selects letters in order — when a word is found the counter increases and the word is highlighted.' },
     'ualingo.arch.6.title': { pl: '18 Activities — nawigacja', en: '18 Activities — navigation' },
     'ualingo.arch.6.desc': { pl: 'Dolny pasek nawigacyjny z 3 ikonami (Dom, Gry, Profil) dostępny na każdym ekranie. Intent-based routing między wszystkimi 18 Activities.', en: 'Bottom navigation bar with 3 icons (Home, Games, Profile) available on every screen. Intent-based routing between all 18 Activities.' },
+    /* ════ EVENTHUB API ════ */
+    'eventhub.category': { pl: 'Backend Development · REST API', en: 'Backend Development · REST API' },
+    'eventhub.tagline':  { pl: 'Kompleksowy backend REST API do zarządzania eventami — Spring Boot 3.3, JWT, PostgreSQL, Swagger. System ról, zaproszeń, powiadomień i multimediów w jednym serwisie.',
+                          en: 'Comprehensive REST API backend for event management — Spring Boot 3.3, JWT, PostgreSQL, Swagger. Roles, invitations, notifications and media in one service.' },
+    'eventhub.goal.h2':  { pl: 'Backend<br/><span class="eventhub-grad">od zera do API</span>', en: 'Backend<br/><span class="eventhub-grad">from zero to API</span>' },
+    'eventhub.goal.p1':  { pl: 'eventHubAPI to w pełni funkcjonalny serwis backendowy do zarządzania eventami, zbudowany w Spring Boot 3.3. Projekt był realizowany na Akademii Tarnowskiej jako aplikacja backendowa.',
+                          en: 'eventHubAPI is a fully functional backend service for event management, built with Spring Boot 3.3. The project was completed at Tarnów Academy as a backend application.' },
+    'eventhub.goal.p2':  { pl: 'Architektura warstwowa — Controller → Service → Repository — z pełną dokumentacją Swagger UI, hierarchicznym systemem ról i bazą PostgreSQL z dobrze zaprojektowanym schematem relacyjnym.',
+                          en: 'Layered architecture — Controller → Service → Repository — with full Swagger UI documentation, hierarchical role system and PostgreSQL with a well designed relational schema.' },
+    'eventhub.btn.endpoints': { pl: 'Endpointy', en: 'Endpoints' },
+    'eventhub.btn.schema':    { pl: 'Schemat DB', en: 'DB schema' },
+    'eventhub.stats.lang':      { pl: 'Język',         en: 'Language' },
+    'eventhub.stats.framework': { pl: 'Framework',     en: 'Framework' },
+    'eventhub.stats.db':        { pl: 'Baza danych',   en: 'Database' },
+    'eventhub.stats.auth':      { pl: 'Auth & Docs',  en: 'Auth & Docs' },
+
+    'eventhub.feat.1.title': { pl: 'Zarządzanie eventami', en: 'Event management' },
+    'eventhub.feat.1.desc':  { pl: 'CRUD eventów z filtrami po nazwie i dacie, publiczne i prywatne eventy', en: 'CRUD events with name and date filters, public and private events' },
+    'eventhub.feat.2.title': { pl: 'JWT + role RBAC', en: 'JWT + RBAC roles' },
+    'eventhub.feat.2.desc':  { pl: 'Bearer token 24h, trzy role: ADMIN / ORGANIZER / USER z różnymi uprawnieniami', en: '24h bearer token, three roles: ADMIN / ORGANIZER / USER with different permissions' },
+    'eventhub.feat.3.title': { pl: 'System zaproszeń', en: 'Invitation system' },
+    'eventhub.feat.3.desc':  { pl: 'Wysyłanie, akceptacja, odrzucenie i wycofanie zaproszeń do eventów', en: 'Send, accept, decline and revoke event invitations' },
+    'eventhub.feat.4.title': { pl: 'Powiadomienia', en: 'Notifications' },
+    'eventhub.feat.4.desc':  { pl: 'Paginowane powiadomienia z statusami UNREAD / READ / ARCHIVED per użytkownik', en: 'Paginated notifications with UNREAD / READ / ARCHIVED statuses per user' },
+    'eventhub.feat.5.title': { pl: 'Upload multimediów', en: 'Media upload' },
+    'eventhub.feat.5.desc':  { pl: 'Galeria, logo i harmonogram eventu — pliki binarne w PostgreSQL (bytea)', en: 'Gallery, logo and schedule upload — binary files in PostgreSQL (bytea)' },
+    'eventhub.feat.6.title': { pl: 'Swagger UI', en: 'Swagger UI' },
+    'eventhub.feat.6.desc':  { pl: 'Pełna dokumentacja OpenAPI 3.0 z autoryzacją Bearer JWT pod /swagger-ui.html', en: 'Full OpenAPI 3.0 documentation with Bearer JWT authorization at /swagger-ui.html' },
+
+    'eventhub.tech.1.name': { pl: 'Java 21', en: 'Java 21' },
+    'eventhub.tech.1.desc': { pl: 'Najnowszy LTS — records, sealed classes, pattern matching. Cały backend w Javie.', en: 'Latest LTS — records, sealed classes, pattern matching. Full backend in Java.' },
+    'eventhub.tech.2.name': { pl: 'Spring Boot 3.3', en: 'Spring Boot 3.3' },
+    'eventhub.tech.2.desc': { pl: 'Web, Data JPA, Security, Validation, Actuator — pełny ekosystem Spring.', en: 'Web, Data JPA, Security, Validation, Actuator — full Spring ecosystem.' },
+    'eventhub.tech.3.name': { pl: 'PostgreSQL', en: 'PostgreSQL' },
+    'eventhub.tech.3.desc': { pl: 'Relacyjna baza danych z Hibernate ORM. DDL strategy: validate — schemat nienaruszony.', en: 'Relational database with Hibernate ORM. DDL strategy: validate — schema unchanged.' },
+    'eventhub.tech.4.name': { pl: 'JWT Security', en: 'JWT Security' },
+    'eventhub.tech.4.desc': { pl: 'JwtAuthenticationFilter, JwtTokenProvider — Bearer token 24h, Spring Security config.', en: 'JwtAuthenticationFilter, JwtTokenProvider — 24h bearer token, Spring Security config.' },
+    'eventhub.tech.5.name': { pl: 'Swagger / OpenAPI', en: 'Swagger / OpenAPI' },
+    'eventhub.tech.5.desc': { pl: 'springdoc-openapi — interaktywna dokumentacja API z możliwością testowania.', en: 'springdoc-openapi — interactive API documentation with test capabilities.' },
+    'eventhub.tech.6.name': { pl: 'Maven + Lombok', en: 'Maven + Lombok' },
+    'eventhub.tech.6.desc': { pl: 'Maven build system, Lombok eliminuje boilerplate — gettery, konstruktory, buildery.', en: 'Maven build system, Lombok removes boilerplate — getters, constructors, builders.' },
+
+    'eventhub.arch.1.title': { pl: 'JWT Authentication Filter', en: 'JWT Authentication Filter' },
+    'eventhub.arch.1.desc': { pl: 'Każde żądanie przechodzi przez JwtAuthenticationFilter. Token wyciągany z nagłówka Authorization: Bearer, walidowany i mapowany na SecurityContext.', en: 'Each request passes through JwtAuthenticationFilter. The token is taken from Authorization: Bearer, validated and mapped to SecurityContext.' },
+    'eventhub.arch.2.title': { pl: 'Role-Based Access Control', en: 'Role-Based Access Control' },
+    'eventhub.arch.2.desc': { pl: 'Trzy poziomy dostępu: USER, ORGANIZER, ADMIN. Każdy endpoint zabezpieczony przez @PreAuthorize lub konfigurację SecurityFilterChain.', en: 'Three access levels: USER, ORGANIZER, ADMIN. Each endpoint is secured with @PreAuthorize or SecurityFilterChain configuration.' },
+    'eventhub.arch.3.title': { pl: 'Composite Key — Participant', en: 'Composite Key — Participant' },
+    'eventhub.arch.3.desc': { pl: 'Encja Participant używa złożonego klucza głównego ParticipantId (userId + eventId) — jeden użytkownik może być uczestnikiem eventu tylko raz.', en: 'Participant entity uses a composite primary key ParticipantId (userId + eventId) — one user can join an event only once.' },
+    'eventhub.arch.4.title': { pl: 'Media — bytea w PostgreSQL', en: 'Media — bytea in PostgreSQL' },
+    'eventhub.arch.4.desc': { pl: 'Pliki multimedialne przechowywane bezpośrednio w bazie jako bytea. Trzy typy użycia: GALLERY, LOGO, SCHEDULE.', en: 'Media files stored directly in the database as bytea. Three usage types: GALLERY, LOGO, SCHEDULE.' },
+    'eventhub.arch.5.title': { pl: 'Hierarchia geograficzna', en: 'Geographic hierarchy' },
+    'eventhub.arch.5.desc': { pl: 'Lokalizacje zbudowane w pełnej hierarchii: Country → Region → City → PostalCode → Location → MapLocation z geolokacją jako osobna encja 1:1.', en: 'Locations built in a full hierarchy: Country → Region → City → PostalCode → Location → MapLocation with geolocation as a separate 1:1 entity.' },
+    'eventhub.arch.6.title': { pl: 'Powiadomienia N:M', en: 'Notifications N:M' },
+    'eventhub.arch.6.desc': { pl: 'Tabela join account_notification łączy użytkowników z powiadomieniami ze statusem per para. Jeden komunikat może trafić do wielu odbiorców.', en: 'Join table account_notification links users to notifications with status per pair. One notification can be sent to multiple recipients.' },
+
+    'eventhub.endpoints.title': { pl: 'Endpointy', en: 'Endpoints' },
+    'eventhub.group.auth': { pl: 'Auth', en: 'Auth' },
+    'eventhub.group.users': { pl: 'Użytkownicy', en: 'Users' },
+    'eventhub.group.events': { pl: 'Eventy', en: 'Events' },
+    'eventhub.group.participants': { pl: 'Uczestnicy', en: 'Participants' },
+    'eventhub.group.invitations': { pl: 'Zaproszenia', en: 'Invitations' },
+    'eventhub.group.notifications': { pl: 'Powiadomienia', en: 'Notifications' },
+    'eventhub.group.media': { pl: 'Media', en: 'Media' },
+    'eventhub.group.admin': { pl: 'Admin', en: 'Admin' },
+    'eventhub.ep.auth.login': { pl: 'Logowanie — zwraca JWT token', en: 'Login — returns a JWT token' },
+    'eventhub.ep.auth.register': { pl: 'Rejestracja nowego użytkownika', en: 'Register a new user' },
+    'eventhub.ep.account.me': { pl: 'Profil zalogowanego użytkownika', en: 'Logged in user profile' },
+    'eventhub.ep.account.update': { pl: 'Update profilu', en: 'Update profile' },
+    'eventhub.ep.account.upload': { pl: 'Upload zdjęcia profilowego', en: 'Upload profile image' },
+    'eventhub.ep.account.password': { pl: 'Zmiana hasła', en: 'Change password' },
+    'eventhub.ep.events.create': { pl: 'Tworzenie eventu', en: 'Create an event' },
+    'eventhub.ep.events.public': { pl: 'Lista publicznych eventów (z filtrami)', en: 'Public events list (with filters)' },
+    'eventhub.ep.events.details': { pl: 'Szczegóły eventu', en: 'Event details' },
+    'eventhub.ep.events.update': { pl: 'Update eventu', en: 'Update event' },
+    'eventhub.ep.events.delete': { pl: 'Usunięcie eventu', en: 'Delete event' },
+    'eventhub.ep.events.all': { pl: 'Wszystkie eventy', en: 'All events' },
+    'eventhub.ep.participants.join': { pl: 'Dołączenie do eventu', en: 'Join event' },
+    'eventhub.ep.participants.list': { pl: 'Lista uczestników', en: 'Participants list' },
+    'eventhub.ep.participants.me': { pl: 'Mój status uczestnictwa', en: 'My participation status' },
+    'eventhub.ep.participants.leave': { pl: 'Opuszczenie eventu', en: 'Leave event' },
+    'eventhub.ep.invitations.send': { pl: 'Wysłanie zaproszenia', en: 'Send invitation' },
+    'eventhub.ep.invitations.my': { pl: 'Moje zaproszenia', en: 'My invitations' },
+    'eventhub.ep.invitations.accept': { pl: 'Przyjęcie zaproszenia', en: 'Accept invitation' },
+    'eventhub.ep.invitations.decline': { pl: 'Odrzucenie zaproszenia', en: 'Decline invitation' },
+    'eventhub.ep.invitations.revoke': { pl: 'Wycofanie zaproszenia', en: 'Revoke invitation' },
+    'eventhub.ep.notifications.list': { pl: 'Pobieranie powiadomień (paginacja)', en: 'Fetch notifications (paginated)' },
+    'eventhub.ep.notifications.status': { pl: 'Update statusu (READ / ARCHIVED)', en: 'Update status (READ / ARCHIVED)' },
+    'eventhub.ep.media.gallery': { pl: 'Upload zdjęcia do galerii', en: 'Upload image to gallery' },
+    'eventhub.ep.media.logo': { pl: 'Upload logo eventu', en: 'Upload event logo' },
+    'eventhub.ep.media.schedule': { pl: 'Upload harmonogramu (PDF)', en: 'Upload schedule (PDF)' },
+    'eventhub.ep.media.delete': { pl: 'Usunięcie pliku', en: 'Delete file' },
+    'eventhub.ep.admin.status': { pl: 'Zmiana statusu konta (ACTIVE/BANNED)', en: 'Change account status (ACTIVE/BANNED)' },
+    'eventhub.ep.admin.role': { pl: 'Zmiana roli użytkownika', en: 'Change user role' },
+    'eventhub.ep.admin.deleteAcct': { pl: 'Usunięcie konta', en: 'Delete account' },
+    'eventhub.ep.admin.deleteEvent': { pl: 'Usunięcie dowolnego eventu', en: 'Delete any event' },
+    'eventhub.schema.label': { pl: 'Baza danych', en: 'Database' },
+    'eventhub.schema.h2': { pl: 'Schemat encji', en: 'Entity schema' },
+    'eventhub.build.label': { pl: 'Instalacja', en: 'Installation' },
+    'eventhub.build.title': { pl: 'Jak uruchomić', en: 'How to run' },
+    'eventhub.team.title': { pl: 'Autorzy projektu', en: 'Project authors' },
   };
 
   /* ── DETECT CURRENT PAGE ─────────────────────── */
@@ -397,6 +497,7 @@ window.I18N = (function () {
     if (/\/projects\/blog/.test(p))        return 'blog';
     if (/\/projects\/osk-expert/.test(p))  return 'osk';
     if (/\/projects\/racing3d/.test(p))    return 'racing';
+    if (/\/projects\/eventhubapi/.test(p)) return 'eventhub';
     if (/\/projects\/ualingo/.test(p))     return 'ualingo';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
@@ -462,6 +563,7 @@ window.I18N = (function () {
     if (page === 'contact')  applyContact(lang);
     if (page === 'projects') applyProjects(lang);
     if (page === 'blog')     applyBlog(lang);
+    if (page === 'eventhub')  applyEventhub(lang);
     if (page === 'osk')      applyOsk(lang);
     if (page === 'racing')   applyRacing(lang);
     if (page === 'ualingo')  applyUalingo(lang);
@@ -759,6 +861,119 @@ window.I18N = (function () {
     /* team role */
     const teamRole = document.querySelector('.team-role');
     if (teamRole) setText(teamRole, 'blog.team.role', lang);
+  }
+
+  /* ── EVENTHUB API ───────────────────────────── */
+  function applyEventhub(lang) {
+    applySharedDetail(lang);
+    setText(document.querySelector('.proj-category'), 'eventhub.category', lang);
+    setText(document.querySelector('.proj-tagline'), 'eventhub.tagline', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'eventhub.goal.h2', lang);
+
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    setText(goalPs[0], 'eventhub.goal.p1', lang);
+    setText(goalPs[1], 'eventhub.goal.p2', lang);
+
+    const actionBtns = document.querySelectorAll('.proj-actions .btn-glass');
+    if (actionBtns[0]) { const svg = actionBtns[0].querySelector('svg'); actionBtns[0].textContent = t('eventhub.btn.endpoints', lang); if (svg) actionBtns[0].appendChild(svg); }
+    if (actionBtns[1]) { const svg = actionBtns[1].querySelector('svg'); actionBtns[1].textContent = t('eventhub.btn.schema', lang); if (svg) actionBtns[1].appendChild(svg); }
+
+    const stats = document.querySelectorAll('.proj-stats .ps-l');
+    setText(stats[0], 'eventhub.stats.lang', lang);
+    setText(stats[1], 'eventhub.stats.framework', lang);
+    setText(stats[2], 'eventhub.stats.db', lang);
+    setText(stats[3], 'eventhub.stats.auth', lang);
+
+    const feats = document.querySelectorAll('.feature-list .feat-item');
+    ['eventhub.feat.1','eventhub.feat.2','eventhub.feat.3','eventhub.feat.4','eventhub.feat.5','eventhub.feat.6'].forEach((key, i) => {
+      if (!feats[i]) return;
+      setText(feats[i].querySelector('.feat-title'), `${key}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `${key}.desc`,  lang);
+    });
+
+    applyTechStack('eventhub', lang, 6);
+    applyArchInfo('eventhub', lang, 6);
+
+    setText(document.querySelector('#endpoints .section-h2'), 'eventhub.endpoints.title', lang);
+
+    document.querySelectorAll('#endpoints .endpoint-group').forEach(group => {
+      const title = group.querySelector('.endpoint-group-title');
+      const icon = title?.querySelector('.endpoint-group-icon');
+      const base = title?.querySelector('.endpoint-base');
+      if (!title || !icon || !base) return;
+      const text = title.textContent || '';
+      let key = null;
+      if (/Auth|Auth/i.test(text)) key = 'eventhub.group.auth';
+      else if (/Użytkownicy|Users/i.test(text)) key = 'eventhub.group.users';
+      else if (/Eventy|Events/i.test(text)) key = 'eventhub.group.events';
+      else if (/Uczestnicy|Participants/i.test(text)) key = 'eventhub.group.participants';
+      else if (/Zaproszenia|Invitations/i.test(text)) key = 'eventhub.group.invitations';
+      else if (/Powiadomienia|Notifications/i.test(text)) key = 'eventhub.group.notifications';
+      else if (/Media/i.test(text)) key = 'eventhub.group.media';
+      else if (/Admin/i.test(text)) key = 'eventhub.group.admin';
+      if (key) title.innerHTML = `${icon.outerHTML} ${t(key, lang)} ${base.outerHTML}`;
+    });
+
+    const endpointMap = {
+      'POST|/login|/api/auth': 'eventhub.ep.auth.login',
+      'POST|/register|/api/auth': 'eventhub.ep.auth.register',
+      'GET|/me|/api/account': 'eventhub.ep.account.me',
+      'PUT|/me|/api/account': 'eventhub.ep.account.update',
+      'POST|/me/profile-image|/api/account': 'eventhub.ep.account.upload',
+      'POST|/change-password|/api/account': 'eventhub.ep.account.password',
+      'POST|/|/api/events': 'eventhub.ep.events.create',
+      'GET|/public|/api/events': 'eventhub.ep.events.public',
+      'GET|/{id}|/api/events': 'eventhub.ep.events.details',
+      'PUT|/{id}|/api/events': 'eventhub.ep.events.update',
+      'DELETE|/{id}|/api/events': 'eventhub.ep.events.delete',
+      'GET|/all|/api/events': 'eventhub.ep.events.all',
+      'POST|/|/api/events/{eventId}/participants': 'eventhub.ep.participants.join',
+      'GET|/|/api/events/{eventId}/participants': 'eventhub.ep.participants.list',
+      'GET|/me|/api/events/{eventId}/participants': 'eventhub.ep.participants.me',
+      'DELETE|/me|/api/events/{eventId}/participants': 'eventhub.ep.participants.leave',
+      'POST|/|/api/invitations': 'eventhub.ep.invitations.send',
+      'GET|/my|/api/invitations': 'eventhub.ep.invitations.my',
+      'POST|/{id}/accept|/api/invitations': 'eventhub.ep.invitations.accept',
+      'POST|/{id}/decline|/api/invitations': 'eventhub.ep.invitations.decline',
+      'POST|/{id}/revoke|/api/invitations': 'eventhub.ep.invitations.revoke',
+      'GET|/|/api/notifications': 'eventhub.ep.notifications.list',
+      'PATCH|/{id}/status|/api/notifications': 'eventhub.ep.notifications.status',
+      'POST|/gallery|/api/events/{id}/media': 'eventhub.ep.media.gallery',
+      'POST|/logo|/api/events/{id}/media': 'eventhub.ep.media.logo',
+      'POST|/schedule|/api/events/{id}/media': 'eventhub.ep.media.schedule',
+      'DELETE|/api/media/{fileId}|': 'eventhub.ep.media.delete',
+      'PATCH|/accounts/{id}/status|/api/admin': 'eventhub.ep.admin.status',
+      'PATCH|/accounts/{id}/role|/api/admin': 'eventhub.ep.admin.role',
+      'DELETE|/accounts/{id}|/api/admin': 'eventhub.ep.admin.deleteAcct',
+      'DELETE|/events/{id}|/api/admin': 'eventhub.ep.admin.deleteEvent',
+    };
+
+    document.querySelectorAll('#endpoints .endpoint-item').forEach(item => {
+      const method = item.querySelector('.method')?.textContent.trim();
+      const path = item.querySelector('.ep-path')?.textContent.trim();
+      const desc = item.querySelector('.ep-desc');
+      const base = item.closest('.endpoint-group')?.querySelector('.endpoint-base')?.textContent.trim() || '';
+      if (!method || !path || !desc) return;
+      const key = endpointMap[`${method}|${path}|${base}`] || endpointMap[`${method}|${path}|`];
+      if (key) setText(desc, key, lang);
+    });
+
+    const schemaSection = document.querySelector('#schema');
+    if (schemaSection) {
+      setText(schemaSection.querySelector('.section-label'), 'eventhub.schema.label', lang);
+      setText(schemaSection.querySelector('.section-h2'), 'eventhub.schema.h2', lang);
+    }
+
+    const buildSection = document.querySelector('.build-steps')?.closest('section');
+    if (buildSection) {
+      setText(buildSection.querySelector('.section-label'), 'eventhub.build.label', lang);
+      setText(buildSection.querySelector('.section-h2'), 'eventhub.build.title', lang);
+    }
+
+    const teamSection = document.querySelector('.team-grid')?.closest('section');
+    if (teamSection) {
+      setText(teamSection.querySelector('.section-h2'), 'eventhub.team.title', lang);
+    }
   }
 
   /* ── OSK ─────────────────────────────────────── */
