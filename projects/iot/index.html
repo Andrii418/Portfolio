@@ -675,15 +675,18 @@ npm run ios</pre>
   <script src="../../main.js"></script>
   <script>
     const images = [
-      { src: '../../assets/iot/screen1.png', cap: 'Devices — pusta lista z przyciskiem dodawania (+)' },
-      { src: '../../assets/iot/screen2.png', cap: 'New device — formularz z nazwą, miejscem, komendą i wyborem koloru' },
-      { src: '../../assets/iot/screen3.png', cap: 'Devices — widok z urządzeniami: Lampa, Roleta 1/2/3 w różnych kolorach' },
+      { src: '../../assets/iot/screen1.png' },
+      { src: '../../assets/iot/screen2.png' },
+      { src: '../../assets/iot/screen3.png' },
     ];
     let lbIdx = 0;
     function openLightbox(i) {
       lbIdx = i;
       document.getElementById('lbImg').src = images[i].src;
-      document.getElementById('lbCaption').textContent = images[i].cap;
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : document.documentElement.lang || 'pl';
+      const capKey = `iot.img.${i+1}.cap`;
+      const cap = (window.I18N && window.I18N.t) ? window.I18N.t(capKey, lang) : '';
+      document.getElementById('lbCaption').textContent = cap || '';
       document.getElementById('lightbox').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -694,7 +697,10 @@ npm run ios</pre>
     function lbNav(dir) {
       lbIdx = (lbIdx + dir + images.length) % images.length;
       document.getElementById('lbImg').src = images[lbIdx].src;
-      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : document.documentElement.lang || 'pl';
+      const capKey = `iot.img.${lbIdx+1}.cap`;
+      const cap = (window.I18N && window.I18N.t) ? window.I18N.t(capKey, lang) : '';
+      document.getElementById('lbCaption').textContent = cap || '';
     }
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();

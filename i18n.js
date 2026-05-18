@@ -389,6 +389,66 @@ window.I18N = (function () {
     'ualingo.arch.5.desc': { pl: 'Interaktywna plansza z literami cyrylicy. Użytkownik zaznacza litery po kolei — po znalezieniu słowa licznik się zwiększa i słowo zostaje podświetlone.', en: 'Interactive Cyrillic board. The user selects letters in order — when a word is found the counter increases and the word is highlighted.' },
     'ualingo.arch.6.title': { pl: '18 Activities — nawigacja', en: '18 Activities — navigation' },
     'ualingo.arch.6.desc': { pl: 'Dolny pasek nawigacyjny z 3 ikonami (Dom, Gry, Profil) dostępny na każdym ekranie. Intent-based routing między wszystkimi 18 Activities.', en: 'Bottom navigation bar with 3 icons (Home, Games, Profile) available on every screen. Intent-based routing between all 18 Activities.' },
+    /* ════ IOT APP ════ */
+    'iot.category': { pl: 'Mobile Development · React Native · IoT', en: 'Mobile Development · React Native · IoT' },
+    'iot.tagline':  { pl: 'Cross-platform aplikacja mobilna do sterowania urządzeniami smart home — dodawaj lampy, rolety i inne urządzenia, przypisuj im miejsce, kolor i komendy sterujące.',
+              en: 'Cross-platform mobile app for smart home control — add lights, blinds and other devices, assign room, color and control commands.' },
+    'iot.goal.h2':  { pl: 'Smart home<br/><span class="iot-grad">w zasięgu ręki</span>', en: 'Smart home<br/><span class="iot-grad">at your fingertips</span>' },
+    'iot.goal.p1':  { pl: 'IoT App to cross-platform aplikacja mobilna do sterowania urządzeniami smart home — lampami, roletami i innymi urządzeniami IoT. Użytkownik sam definiuje urządzenia, nadaje im nazwy, przypisuje pomieszczenie, komendy sterujące i kolor identyfikacyjny.',
+              en: 'IoT App is a cross-platform mobile application for controlling smart home devices — lights, blinds and other IoT gadgets. Users define devices, give them names, assign rooms, control commands and an identifying color.' },
+    'iot.goal.p2':  { pl: 'Dolny pasek nawigacyjny przełącza między widokiem urządzeń (Devices) a konfiguracją połączenia (Connection). Aplikacja działa natywnie na Androidzie i iOS z jednej bazy kodu React Native.',
+              en: 'The bottom navigation switches between Devices view and Connection settings. The app runs natively on Android and iOS from a single React Native codebase.' },
+    'iot.gallery':  { pl: 'Aplikacja w akcji', en: 'App in action' },
+    'iot.feat.1.title': { pl: 'Cross-platform', en: 'Cross-platform' },
+    'iot.feat.1.desc':  { pl: 'Jedna baza kodu działa natywnie na Androidzie i iOS — React Native 0.83.1', en: 'One codebase runs natively on Android and iOS — React Native 0.83.1' },
+    'iot.feat.2.title': { pl: 'Dodawanie urządzeń', en: 'Add devices' },
+    'iot.feat.2.desc':  { pl: 'Formularz z nazwą (np. Lampa), miejscem (np. Kuchnia) i komendą sterującą', en: 'Form with name (e.g. Lamp), location (e.g. Kitchen) and control command' },
+    'iot.feat.3.title': { pl: 'Wybór koloru', en: 'Color selection' },
+    'iot.feat.3.desc':  { pl: '8 pastelowych kolorów do oznaczenia urządzeń — szybka identyfikacja na liście', en: '8 pastel colours to mark devices — quick identification in the list' },
+    'iot.feat.4.title': { pl: 'Siatka urządzeń', en: 'Devices grid' },
+    'iot.feat.4.desc':  { pl: 'Przejrzysty grid z kafelkami — każde urządzenie z nazwą, miejscem i kolorem tła', en: 'Clear grid of tiles — each device shows name, room and background colour' },
+    'iot.feat.5.title': { pl: 'Usuwanie urządzeń', en: 'Remove devices' },
+    'iot.feat.5.desc':  { pl: 'Przycisk ✕ na każdym kafelku do szybkiego usunięcia urządzenia z listy', en: 'A ✕ button on each tile for quick removal from the list' },
+    'iot.feat.6.title': { pl: 'Zakładka Connection', en: 'Connection tab' },
+    'iot.feat.6.desc':  { pl: 'Dolny pasek nawigacyjny — Devices i Connection do konfiguracji połączenia IoT', en: 'Bottom navigation — Devices and Connection for configuring IoT connection' },
+    'iot.tech.1.name': { pl: 'React Native', en: 'React Native' },
+    'iot.tech.1.desc': { pl: 'Framework mobilny — Android i iOS z jednej bazy kodu.', en: 'Mobile framework — Android and iOS from one codebase.' },
+    'iot.tech.2.name': { pl: 'TypeScript', en: 'TypeScript' },
+    'iot.tech.2.desc': { pl: 'Statyczna typizacja i lepsze podpowiedzi IDE.', en: 'Static typing and better IDE hints.' },
+    'iot.tech.3.name': { pl: 'Kotlin / Swift', en: 'Kotlin / Swift' },
+    'iot.tech.3.desc': { pl: 'Warstwy natywne dla Androida i iOS.', en: 'Native layers for Android and iOS.' },
+    'iot.tech.4.name': { pl: 'Metro Bundler', en: 'Metro Bundler' },
+    'iot.tech.4.desc': { pl: 'JavaScript bundler zoptymalizowany dla React Native.', en: 'JavaScript bundler optimized for React Native.' },
+    'iot.tech.5.name': { pl: 'Jest', en: 'Jest' },
+    'iot.tech.5.desc': { pl: 'Unit testy i snapshoty.', en: 'Unit tests and snapshots.' },
+    'iot.tech.6.name': { pl: 'TypeScript tooling', en: 'TypeScript tooling' },
+    'iot.tech.6.desc': { pl: 'ESLint, Prettier i konfiguracja TS.', en: 'ESLint, Prettier and TS configuration.' },
+    'iot.arch.1.title': { pl: 'Punkt wejścia — index.js', en: 'Entry point — index.js' },
+    'iot.arch.1.desc':  { pl: 'Aplikacja startuje z index.js, który rejestruje główny komponent App w React Native runtime.', en: 'The app starts from index.js which registers the main App component in the React Native runtime.' },
+    'iot.arch.2.title': { pl: 'Dark Mode — useColorScheme', en: 'Dark Mode — useColorScheme' },
+    'iot.arch.2.desc':  { pl: 'Hook useColorScheme() odczytuje motyw systemowy i dostosowuje StatusBar oraz style komponentów.', en: 'The useColorScheme() hook reads the system theme and adapts StatusBar and component styles.' },
+    /* ════ IOT — LANGUAGES / IMAGE CAPTIONS ════ */
+    'iot.langs.label': { pl: 'Skład projektu', en: 'Project composition' },
+    'iot.lang.1.name': { pl: 'Kotlin', en: 'Kotlin' },
+    'iot.lang.1.pct':  { pl: '26.1%', en: '26.1%' },
+    'iot.lang.2.name': { pl: 'Ruby', en: 'Ruby' },
+    'iot.lang.2.pct':  { pl: '23.1%', en: '23.1%' },
+    'iot.lang.3.name': { pl: 'Swift', en: 'Swift' },
+    'iot.lang.3.pct':  { pl: '19.9%', en: '19.9%' },
+    'iot.lang.4.name': { pl: 'TypeScript', en: 'TypeScript' },
+    'iot.lang.4.pct':  { pl: '18.5%', en: '18.5%' },
+    'iot.lang.5.name': { pl: 'JavaScript', en: 'JavaScript' },
+    'iot.lang.5.pct':  { pl: '12.4%', en: '12.4%' },
+    'iot.lang.1.title': { pl: 'Kotlin — natywny Android', en: 'Kotlin — native Android' },
+    'iot.lang.1.desc':  { pl: 'Logika biznesowa Androida, integracje z systemem, natywne moduły', en: 'Android business logic, system integrations, native modules' },
+    'iot.lang.2.title': { pl: 'Ruby — CocoaPods iOS', en: 'Ruby — CocoaPods iOS' },
+    'iot.lang.2.desc':  { pl: 'Zarządzanie zależnościami iOS przez Gemfile i CocoaPods', en: 'iOS dependency management via Gemfile and CocoaPods' },
+    'iot.lang.3.title': { pl: 'Swift — natywny iOS', en: 'Swift — native iOS' },
+    'iot.lang.3.desc':  { pl: 'Natywna funkcjonalność iOS, moduły wymagające dostępu do systemu', en: 'Native iOS functionality, modules requiring system access' },
+    /* image captions */
+    'iot.img.1.cap': { pl: 'Devices — pusta lista z przyciskiem dodawania (+)', en: 'Devices — empty list with add (+) button' },
+    'iot.img.2.cap': { pl: 'New device — formularz z nazwą, miejscem, komendą i wyborem koloru', en: 'New device — form with name, location, command and colour picker' },
+    'iot.img.3.cap': { pl: 'Devices — widok z urządzeniami: Lampa, Roleta 1/2/3 w różnych kolorach', en: 'Devices — list view: Lamp, Blind 1/2/3 in different colours' },
     /* ════ EVENTHUB API ════ */
     'eventhub.category': { pl: 'Backend Development · REST API', en: 'Backend Development · REST API' },
     'eventhub.tagline':  { pl: 'Kompleksowy backend REST API do zarządzania eventami — Spring Boot 3.3, JWT, PostgreSQL, Swagger. System ról, zaproszeń, powiadomień i multimediów w jednym serwisie.',
@@ -499,6 +559,7 @@ window.I18N = (function () {
     if (/\/projects\/racing3d/.test(p))    return 'racing';
     if (/\/projects\/eventhubapi/.test(p)) return 'eventhub';
     if (/\/projects\/ualingo/.test(p))     return 'ualingo';
+    if (/\/projects\/iot/.test(p))         return 'iot';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
@@ -566,6 +627,7 @@ window.I18N = (function () {
     if (page === 'eventhub')  applyEventhub(lang);
     if (page === 'osk')      applyOsk(lang);
     if (page === 'racing')   applyRacing(lang);
+    if (page === 'iot')      applyIot(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
 
@@ -1046,6 +1108,48 @@ window.I18N = (function () {
     applyTechStack('ualingo', lang, 6);
     applyArchInfo('ualingo', lang, 6);
   }
+
+  /* ── IOT ────────────────────────────────────── */
+  function applyIot(lang) {
+    applySharedDetail(lang);
+    setText(document.querySelector('.proj-category'), 'iot.category', lang);
+    setText(document.querySelector('.proj-tagline'),  'iot.tagline',  lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'iot.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    if (goalPs[0]) setText(goalPs[0], 'iot.goal.p1', lang);
+    if (goalPs[1]) setText(goalPs[1], 'iot.goal.p2', lang);
+    const galH2 = document.querySelector('.gallery-section .section-h2');
+    if (galH2) setText(galH2, 'iot.gallery', lang);
+
+    const feats = document.querySelectorAll('.feat-item');
+    for (let i = 0; i < 6; i++) {
+      if (!feats[i]) continue;
+      setText(feats[i].querySelector('.feat-title'), `iot.feat.${i+1}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `iot.feat.${i+1}.desc`,  lang);
+    }
+    applyTechStack('iot', lang, 6);
+    applyArchInfo('iot', lang, 2);
+
+    /* ── LANGUAGES block (lang bars + right-side descriptions) ── */
+    const langBars = document.querySelector('.lang-bars');
+    if (langBars) {
+      const section = langBars.closest('.section-wrap') || document;
+      setText(section.querySelector('.section-label'), 'iot.langs.label', lang);
+
+      const items = Array.from(langBars.querySelectorAll('.lang-bar-item'));
+      items.forEach((it, i) => {
+        setText(it.querySelector('.lang-bar-name'), `iot.lang.${i+1}.name`, lang);
+        setText(it.querySelector('.lang-bar-pct'),  `iot.lang.${i+1}.pct`,  lang);
+      });
+
+      const rightFeats = section.querySelectorAll('.feature-list .feat-item');
+      rightFeats.forEach((f, i) => {
+        setText(f.querySelector('.feat-title'), `iot.lang.${i+1}.title`, lang);
+        setText(f.querySelector('.feat-desc'),  `iot.lang.${i+1}.desc`,  lang);
+      });
+    }
+  }
+
 
   /* ── PUBLIC API ──────────────────────────────── */
   return {
