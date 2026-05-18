@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IoT App — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-iot.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+        <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../assets/CV.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="../../index.html" class="mob-link">Home</a>
+      <a href="../index.html" class="mob-link">Projekty</a>
+      <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+      <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="../index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Mobile Development · React Native · IoT</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">Projekt własny</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">IoT<span>App</span></h1>
+
+        <p class="proj-tagline">
+          Cross-platform aplikacja mobilna do sterowania urządzeniami smart home —
+          dodawaj lampy, rolety i inne urządzenia, przypisuj im miejsce,
+          kolor i komendy sterujące. React Native 0.83, TypeScript, Android + iOS.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/IoT" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+          <a href="#stack" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Stack
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">React Native</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Android + iOS</div>
+            <div class="ps-l">Platformy</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">5 języków</div>
+            <div class="ps-l">W projekcie</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid iot-gallery reveal delay-2">
+
+        <div class="gallery-item iot-tall" onclick="openLightbox(0)">
+          <img src="../../assets/iot/screen1.png" alt="Devices — pusta lista" loading="lazy" />
+          <div class="gallery-overlay"><span>Devices — start</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item iot-tall" onclick="openLightbox(1)">
+          <img src="../../assets/iot/screen2.png" alt="Formularz nowego urządzenia" loading="lazy" />
+          <div class="gallery-overlay"><span>New device</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item iot-tall" onclick="openLightbox(2)">
+          <img src="../../assets/iot/screen3.png" alt="Devices — lampa, rolety" loading="lazy" />
+          <div class="gallery-overlay"><span>Devices — widok</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Smart home<br/><span class="iot-grad">w zasięgu ręki</span></h2>
+          <p class="body-text">
+            IoT App to cross-platform aplikacja mobilna do sterowania
+            urządzeniami smart home — lampami, roletami i innymi urządzeniami IoT.
+            Użytkownik sam definiuje urządzenia, nadaje im nazwy, przypisuje
+            pomieszczenie, komendy sterujące i kolor identyfikacyjny.
+          </p>
+          <p class="body-text">
+            Dolny pasek nawigacyjny przełącza między widokiem urządzeń
+            (Devices) a konfiguracją połączenia (Connection).
+            Aplikacja działa natywnie na Androidzie i iOS z jednej bazy kodu React Native.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📱</div>
+            <div>
+              <div class="feat-title">Cross-platform</div>
+              <div class="feat-desc">Jedna baza kodu działa natywnie na Androidzie i iOS — React Native 0.83.1</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">➕</div>
+            <div>
+              <div class="feat-title">Dodawanie urządzeń</div>
+              <div class="feat-desc">Formularz z nazwą (np. Lampa), miejscem (np. Kuchnia) i komendą sterującą</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🎨</div>
+            <div>
+              <div class="feat-title">Wybór koloru</div>
+              <div class="feat-desc">8 pastelowych kolorów do oznaczenia urządzeń — szybka identyfikacja na liście</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🗂️</div>
+            <div>
+              <div class="feat-title">Siatka urządzeń</div>
+              <div class="feat-desc">Przejrzysty grid z kafelkami — każde urządzenie z nazwą, miejscem i kolorem tła</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🗑️</div>
+            <div>
+              <div class="feat-title">Usuwanie urządzeń</div>
+              <div class="feat-desc">Przycisk ✕ na każdym kafelku do szybkiego usunięcia urządzenia z listy</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔌</div>
+            <div>
+              <div class="feat-title">Zakładka Connection</div>
+              <div class="feat-desc">Dolny pasek nawigacyjny — Devices i Connection do konfiguracji połączenia IoT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LANGUAGES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Języki</div>
+      <h2 class="section-h2 reveal delay-1">Skład projektu</h2>
+      <div class="two-col reveal delay-2">
+        <div class="lang-bars">
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Kotlin</span>
+              <span class="lang-bar-pct">26.1%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill kotlin" style="width: 26.1%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Ruby</span>
+              <span class="lang-bar-pct">23.1%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill ruby" style="width: 23.1%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Swift</span>
+              <span class="lang-bar-pct">19.9%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill swift" style="width: 19.9%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">TypeScript</span>
+              <span class="lang-bar-pct">18.5%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill typescript" style="width: 18.5%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">JavaScript</span>
+              <span class="lang-bar-pct">12.4%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill javascript" style="width: 12.4%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="feat-item">
+            <div class="feat-icon">🤖</div>
+            <div>
+              <div class="feat-title">Kotlin — natywny Android</div>
+              <div class="feat-desc">Logika biznesowa Androida, integracje z systemem, natywne moduły</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💎</div>
+            <div>
+              <div class="feat-title">Ruby — CocoaPods iOS</div>
+              <div class="feat-desc">Zarządzanie zależnościami iOS przez Gemfile i CocoaPods</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🍎</div>
+            <div>
+              <div class="feat-title">Swift — natywny iOS</div>
+              <div class="feat-desc">Natywna funkcjonalność iOS, moduły wymagające dostępu do systemu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section" id="stack">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚛️</div>
+            <div class="tech-card-name">React Native 0.83</div>
+            <div class="tech-card-desc">Najnowsza wersja — nowa architektura, lepsza wydajność, React 19.2.0.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔷</div>
+            <div class="tech-card-name">TypeScript 5.8</div>
+            <div class="tech-card-desc">Statyczna typizacja, strict mode — bezpieczniejszy kod i lepsze podpowiedzi IDE.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-name">Android (Kotlin)</div>
+            <div class="tech-card-desc">Natywna warstwa Android z Kotlin — integracje z systemem i API urządzenia.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🍎</div>
+            <div class="tech-card-name">iOS (Swift)</div>
+            <div class="tech-card-desc">Natywna warstwa iOS z Swift i CocoaPods do zarządzania zależnościami.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-name">Metro Bundler</div>
+            <div class="tech-card-desc">JavaScript bundler zoptymalizowany dla React Native — Hot Reload i Fast Refresh.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🧪</div>
+            <div class="tech-card-name">Jest 29</div>
+            <div class="tech-card-desc">Unit testy i snapshot testy z react-test-renderer bez potrzeby DOM.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Punkt wejścia — index.js</div>
+          <p class="arch-desc">
+            Aplikacja startuje z <code>index.js</code>, który rejestruje
+            główny komponent <code>App</code> w React Native runtime.
+            Metro bundluje JavaScript i przekazuje go do natywnego hosta.
+          </p>
+          <div class="code-block">
+<pre>// index.js
+import {AppRegistry} from 'react-native';
+import App from './App';
+import {name} from './app.json';
+
+AppRegistry.registerComponent(
+  name, () => App
+);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Dark Mode — useColorScheme</div>
+          <p class="arch-desc">
+            Hook <code>useColorScheme()</code> odczytuje motyw systemowy
+            i dostosowuje <code>StatusBar</code> oraz style komponentów
+            bez potrzeby ręcznego przełączania.
+          </p>
+          <div class="code-block">
+<pre>function App() {
+  const isDarkMode =
+    useColorScheme() === 'dark';
+
+  return (
+    &lt;SafeAreaProvider&gt;
+      &lt;StatusBar barStyle={
+        isDarkMode
+          ? 'light-content'
+          : 'dark-content'
+      } /&gt;
+      &lt;AppContent /&gt;
+    &lt;/SafeAreaProvider&gt;
+  );
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Safe Area Context</div>
+          <p class="arch-desc">
+            <code>SafeAreaProvider</code> opakowuje całą aplikację,
+            a <code>useSafeAreaInsets()</code> dostarcza marginesy
+            dla notchów, Dynamic Island i pasków systemowych.
+          </p>
+          <div class="code-block">
+<pre>function AppContent() {
+  const safeAreaInsets =
+    useSafeAreaInsets();
+
+  return (
+    &lt;View style={styles.container}&gt;
+      &lt;NewAppScreen
+        safeAreaInsets={
+          safeAreaInsets
+        }
+      /&gt;
+    &lt;/View&gt;
+  );
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Build — Android (Gradle)</div>
+          <p class="arch-desc">
+            Metro tworzy JavaScript bundle, Gradle kompiluje Kotlin
+            i pakuje wszystko do APK/AAB. Pełny pipeline
+            przez React Native Community CLI.
+          </p>
+          <div class="code-block">
+<pre># Dev build
+npx react-native run-android
+
+# Release build
+cd android
+./gradlew assembleRelease
+
+# Wynik: app-release.apk</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Build — iOS (Xcode)</div>
+          <p class="arch-desc">
+            CocoaPods zarządza zależnościami Swift/ObjC,
+            Xcode kompiluje natywny kod iOS.
+            Metro dostarcza JavaScript bundle dla symulatora i urządzenia.
+          </p>
+          <div class="code-block">
+<pre># Instalacja zależności
+cd ios && pod install
+
+# Dev build
+npx react-native run-ios
+
+# Release: Xcode →
+# Product → Archive</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">TypeScript — konfiguracja</div>
+          <p class="arch-desc">
+            Strict mode TypeScript z konfiguracją
+            <code>@react-native/typescript-config</code>
+            i ESLint do statycznej analizy kodu.
+          </p>
+          <div class="code-block">
+<pre>// tsconfig.json (skrót)
+{
+  "extends":
+    "@react-native/typescript-config",
+  "compilerOptions": {
+    "strict": true
+  }
+}
+
+// ESLint: @react-native/eslint-config</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── DEPENDENCIES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zależności</div>
+      <h2 class="section-h2 reveal delay-1">Biblioteki</h2>
+
+      <div class="deps-grid reveal delay-2">
+
+        <div class="deps-group">
+          <div class="deps-group-title">📦 Production</div>
+          <div class="deps-item">
+            <span class="deps-name">react</span>
+            <span class="deps-version">19.2.0</span>
+            <span class="deps-desc">Core library UI</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">react-native</span>
+            <span class="deps-version">0.83.1</span>
+            <span class="deps-desc">Framework mobilny</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">react-native-safe-area-context</span>
+            <span class="deps-version">^5.5.2</span>
+            <span class="deps-desc">Obsługa notchów i safe areas</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">@react-native/new-app-screen</span>
+            <span class="deps-version">0.83.1</span>
+            <span class="deps-desc">Gotowe ekrany startowe</span>
+          </div>
+        </div>
+
+        <div class="deps-group">
+          <div class="deps-group-title">🔧 Development</div>
+          <div class="deps-item">
+            <span class="deps-name">typescript</span>
+            <span class="deps-version">^5.8.3</span>
+            <span class="deps-desc">Statyczna typizacja</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">jest</span>
+            <span class="deps-version">^29.6.3</span>
+            <span class="deps-desc">Framework testowy</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">eslint</span>
+            <span class="deps-version">^8.19.0</span>
+            <span class="deps-desc">Statyczna analiza kodu</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">prettier</span>
+            <span class="deps-version">2.8.8</span>
+            <span class="deps-desc">Formatowanie kodu</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">@babel/core</span>
+            <span class="deps-version">^7.25.2</span>
+            <span class="deps-desc">Transpilacja JS/TS</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">@react-native-community/cli</span>
+            <span class="deps-version">20.0.0</span>
+            <span class="deps-desc">CLI do build i run</span>
+          </div>
+          <div class="deps-item">
+            <span class="deps-name">react-test-renderer</span>
+            <span class="deps-version">19.2.0</span>
+            <span class="deps-desc">Renderowanie komponentów w testach</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 20+</span>
+            <span class="req-pill">React Native CLI</span>
+            <span class="req-pill">Android Studio</span>
+            <span class="req-pill">Xcode (iOS)</span>
+            <span class="req-pill">Ruby 2.6+ (iOS)</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj i zainstaluj zależności</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/IoT.git
+cd IoT
+npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj zależności iOS (tylko macOS)</div>
+              <div class="code-block">
+<pre>cd ios && pod install && cd ..</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom Metro dev server</div>
+              <div class="code-block">
+<pre>npm start
+# lub
+yarn start</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom na platformie</div>
+              <div class="code-block">
+<pre># Android
+npm run android
+
+# iOS
+npm run ios</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCRIPTS TABLE -->
+        <div style="margin-top: 2rem;">
+          <div class="section-label" style="margin-bottom: 1rem;">Dostępne komendy</div>
+          <table class="scripts-table">
+            <thead>
+              <tr>
+                <th>Komenda</th>
+                <th>Opis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>npm start</td>
+                <td>Uruchomienie Metro dev server</td>
+              </tr>
+              <tr>
+                <td>npm run android</td>
+                <td>Build i uruchomienie na Androidzie</td>
+              </tr>
+              <tr>
+                <td>npm run ios</td>
+                <td>Build i uruchomienie na iOS</td>
+              </tr>
+              <tr>
+                <td>npm test</td>
+                <td>Uruchomienie testów Jest</td>
+              </tr>
+              <tr>
+                <td>npm run lint</td>
+                <td>Statyczna analiza kodu ESLint</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BACK TO PROJECTS ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/iot/screen1.png', cap: 'Devices — pusta lista z przyciskiem dodawania (+)' },
+      { src: '../../assets/iot/screen2.png', cap: 'New device — formularz z nazwą, miejscem, komendą i wyborem koloru' },
+      { src: '../../assets/iot/screen3.png', cap: 'Devices — widok z urządzeniami: Lampa, Roleta 1/2/3 w różnych kolorach' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>
