@@ -427,8 +427,47 @@ window.I18N = (function () {
     'iot.arch.1.desc':  { pl: 'Aplikacja startuje z index.js, który rejestruje główny komponent App w React Native runtime.', en: 'The app starts from index.js which registers the main App component in the React Native runtime.' },
     'iot.arch.2.title': { pl: 'Dark Mode — useColorScheme', en: 'Dark Mode — useColorScheme' },
     'iot.arch.2.desc':  { pl: 'Hook useColorScheme() odczytuje motyw systemowy i dostosowuje StatusBar oraz style komponentów.', en: 'The useColorScheme() hook reads the system theme and adapts StatusBar and component styles.' },
+    'iot.arch.3.title': { pl: 'Safe Area Context', en: 'Safe Area Context' },
+    'iot.arch.3.desc':  { pl: 'SafeAreaProvider opakowuje całą aplikację, a useSafeAreaInsets() dostarcza marginesy dla notchów, Dynamic Island i pasków systemowych.', en: 'SafeAreaProvider wraps the entire app, and useSafeAreaInsets() provides inset values for notches, Dynamic Island, and system bars.' },
+    'iot.arch.4.title': { pl: 'Build — Android (Gradle)', en: 'Build — Android (Gradle)' },
+    'iot.arch.4.desc':  { pl: 'Metro tworzy JavaScript bundle, Gradle kompiluje Kotlin i pakuje wszystko do APK/AAB. Pełny pipeline przez React Native Community CLI.', en: 'Metro creates the JavaScript bundle, Gradle compiles Kotlin and packages everything into APK/AAB. Full pipeline via React Native Community CLI.' },
+    'iot.arch.5.title': { pl: 'Build — iOS (Xcode)', en: 'Build — iOS (Xcode)' },
+    'iot.arch.5.desc':  { pl: 'CocoaPods zarządza zależnościami Swift/ObjC, Xcode kompiluje natywny kod iOS. Metro dostarcza JavaScript bundle dla symulatora i urządzenia.', en: 'CocoaPods manages Swift/ObjC dependencies, Xcode compiles native iOS code. Metro delivers the JavaScript bundle for simulator and device.' },
+    'iot.arch.6.title': { pl: 'TypeScript — konfiguracja', en: 'TypeScript — configuration' },
+    'iot.arch.6.desc':  { pl: 'Strict mode TypeScript z konfiguracją @react-native/typescript-config i ESLint do statycznej analizy kodu.', en: 'TypeScript strict mode with @react-native/typescript-config and ESLint for static code analysis.' },
     /* ════ IOT — LANGUAGES / IMAGE CAPTIONS ════ */
     'iot.langs.label': { pl: 'Skład projektu', en: 'Project composition' },
+    'iot.stats.framework': { pl: 'Framework', en: 'Framework' },
+    'iot.stats.language': { pl: 'Język', en: 'Language' },
+    'iot.stats.platforms': { pl: 'Platformy', en: 'Platforms' },
+    'iot.stats.project': { pl: 'W projekcie', en: 'In the project' },
+    'iot.stats.languages': { pl: '5 języków', en: '5 languages' },
+    'iot.deps.label': { pl: 'Zależności', en: 'Dependencies' },
+    'iot.deps.title': { pl: 'Biblioteki', en: 'Libraries' },
+    'iot.dep.react.desc': { pl: 'Biblioteka UI', en: 'Core UI library' },
+    'iot.dep.react-native.desc': { pl: 'Framework mobilny', en: 'Mobile framework' },
+    'iot.dep.safearea.desc': { pl: 'Obsługa notchów i safe areas', en: 'Notch and safe area support' },
+    'iot.dep.newapp.desc': { pl: 'Gotowe ekrany startowe', en: 'Ready-made start screens' },
+    'iot.dep.typescript.desc': { pl: 'Statyczna typizacja', en: 'Static typing' },
+    'iot.dep.jest.desc': { pl: 'Framework testowy', en: 'Test framework' },
+    'iot.dep.eslint.desc': { pl: 'Statyczna analiza kodu', en: 'Static code analysis' },
+    'iot.dep.prettier.desc': { pl: 'Formatowanie kodu', en: 'Code formatting' },
+    'iot.dep.babel.desc': { pl: 'Transpilacja JS/TS', en: 'JS/TS transpilation' },
+    'iot.dep.cli.desc': { pl: 'CLI do build i run', en: 'CLI for build and run' },
+    'iot.dep.renderer.desc': { pl: 'Renderowanie komponentów w testach', en: 'Component rendering in tests' },
+    'iot.step.1.title': { pl: 'Klonuj i zainstaluj zależności', en: 'Clone and install dependencies' },
+    'iot.step.2.title': { pl: 'Zainstaluj zależności iOS (tylko macOS)', en: 'Install iOS dependencies (macOS only)' },
+    'iot.step.3.title': { pl: 'Uruchom Metro dev server', en: 'Run Metro dev server' },
+    'iot.step.4.title': { pl: 'Uruchom na platformie', en: 'Run on platform' },
+    'iot.scripts.label': { pl: 'Dostępne komendy', en: 'Available commands' },
+    'iot.scripts.command': { pl: 'Komenda', en: 'Command' },
+    'iot.scripts.desc': { pl: 'Opis', en: 'Description' },
+    'iot.script.start': { pl: 'Uruchomienie Metro dev server', en: 'Start Metro dev server' },
+    'iot.script.android': { pl: 'Build i uruchomienie na Androidzie', en: 'Build and run on Android' },
+    'iot.script.ios': { pl: 'Build i uruchomienie na iOS', en: 'Build and run on iOS' },
+    'iot.script.test': { pl: 'Uruchomienie testów Jest', en: 'Run Jest tests' },
+    'iot.script.lint': { pl: 'Statyczna analiza kodu ESLint', en: 'ESLint static code analysis' },
+    'iot.badge.project': { pl: 'Projekt własny', en: 'Individual project' },
     'iot.lang.1.name': { pl: 'Kotlin', en: 'Kotlin' },
     'iot.lang.1.pct':  { pl: '26.1%', en: '26.1%' },
     'iot.lang.2.name': { pl: 'Ruby', en: 'Ruby' },
@@ -630,6 +669,15 @@ window.I18N = (function () {
     if (page === 'iot')      applyIot(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
+
+    /* ── DATA ATTR TRANSLATIONS ── */
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (!key) return;
+      if (el.dataset.i18nHtml !== undefined) setHTML(el, key, lang);
+      else if (el.dataset.i18nPlaceholder !== undefined) setPlaceholder(el, key, lang);
+      else setText(el, key, lang);
+    });
 
     /* ── Update html lang attr ── */
     document.documentElement.lang = lang;
@@ -1128,7 +1176,7 @@ window.I18N = (function () {
       setText(feats[i].querySelector('.feat-desc'),  `iot.feat.${i+1}.desc`,  lang);
     }
     applyTechStack('iot', lang, 6);
-    applyArchInfo('iot', lang, 2);
+    applyArchInfo('iot', lang, 6);
 
     /* ── LANGUAGES block (lang bars + right-side descriptions) ── */
     const langBars = document.querySelector('.lang-bars');
