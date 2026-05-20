@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-quiz.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+        <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../assets/CV.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="../../index.html" class="mob-link">Home</a>
+      <a href="../index.html" class="mob-link">Projekty</a>
+      <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+      <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="../index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Mobile Development · React Native · Education</span>
+          <div class="proj-badges">
+            <span class="badge-year">2025</span>
+            <span class="badge-uni">Projekt własny</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Quiz<span>App</span></h1>
+
+        <p class="proj-tagline">
+          Mobilna aplikacja edukacyjna do rozwiązywania testów wielokrotnego wyboru —
+          timer na każde pytanie, ranking wyników, tryb offline z SQLite
+          i synchronizacja z REST API. React Native 0.82, TypeScript 91%.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Quiz" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+          <a href="#api" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            API
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">React Native</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">91% TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">SQLite + API</div>
+            <div class="ps-l">Storage</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Offline-first</div>
+            <div class="ps-l">Tryb pracy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid quiz-gallery reveal delay-2">
+
+        <div class="gallery-item" onclick="openLightbox(0)">
+          <img src="../../assets/quiz/screen1.png" alt="HomeScreen — lista testów" loading="lazy" />
+          <div class="gallery-overlay"><span>Lista testów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/quiz/screen2.png" alt="QuizScreen — pytanie z timerem" loading="lazy" />
+          <div class="gallery-overlay"><span>Quiz z timerem</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/quiz/screen3.png" alt="ResultsScreen — ranking" loading="lazy" />
+          <div class="gallery-overlay"><span>Wyniki</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Nauka przez<br/><span class="quiz-grad">quizy i ranking</span></h2>
+          <p class="body-text">
+            Quiz App to mobilna aplikacja edukacyjna do rozwiązywania testów
+            wielokrotnego wyboru z zewnętrznego API tgryl.pl. Każde pytanie
+            ma własny timer, a wyniki trafiają do globalnego rankingu.
+          </p>
+          <p class="body-text">
+            Aplikacja działa w pełni offline dzięki lokalnemu cache SQLite —
+            testy są synchronizowane raz dziennie i dostępne bez połączenia
+            z internetem.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📝</div>
+            <div>
+              <div class="feat-title">Testy wielokrotnego wyboru</div>
+              <div class="feat-desc">4 opcje odpowiedzi (A/B/C/D), pytania i odpowiedzi losowane przy każdym uruchomieniu</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">⏱️</div>
+            <div>
+              <div class="feat-title">Timer na pytanie</div>
+              <div class="feat-desc">Odliczanie czasu per pytanie, kolor czerwony gdy zostaje &lt;5 sekund, auto-skip po upływie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📊</div>
+            <div>
+              <div class="feat-title">Globalny ranking</div>
+              <div class="feat-desc">Top 20 wyników z serwera, wynik użytkownika podświetlony na żółto, pull-to-refresh</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌐</div>
+            <div>
+              <div class="feat-title">Offline-first</div>
+              <div class="feat-desc">SQLite cache — testy dostępne bez internetu, synchronizacja automatyczna raz dziennie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🎲</div>
+            <div>
+              <div class="feat-title">Losowy quiz</div>
+              <div class="feat-desc">Drawer z 5 losowymi testami i przyciskiem "Losowy Quiz" — nowe wyzwanie za każdym razem</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📋</div>
+            <div>
+              <div class="feat-title">Onboarding</div>
+              <div class="feat-desc">Regulamin przy pierwszym uruchomieniu, stan zapisywany w AsyncStorage — pokazuje się tylko raz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚛️</div>
+            <div class="tech-card-name">React Native 0.82</div>
+            <div class="tech-card-desc">Cross-platform framework — jeden kod dla Androida i iOS. React 19.1.1.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔷</div>
+            <div class="tech-card-name">TypeScript 5.9</div>
+            <div class="tech-card-desc">91% projektu w TypeScript — statyczne typowanie, strict mode, pełne bezpieczeństwo.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-name">SQLite</div>
+            <div class="tech-card-desc">react-native-sqlite-storage 6.0.1 — lokalna baza danych dla offline cache testów.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🧭</div>
+            <div class="tech-card-name">React Navigation 7</div>
+            <div class="tech-card-desc">Stack Navigator — Onboarding → Home → Quiz → Results. Side Drawer menu.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📡</div>
+            <div class="tech-card-name">NetInfo</div>
+            <div class="tech-card-desc">@react-native-community/netinfo 11.4.1 — detekcja stanu sieci, przełączanie offline/online.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">💾</div>
+            <div class="tech-card-name">AsyncStorage</div>
+            <div class="tech-card-desc">Preferencje użytkownika — stan onboardingu, lokalne wyniki i synchronizacja danych.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Startup — initApp()</div>
+          <p class="arch-desc">
+            App.tsx inicjalizuje bazę danych, tworzy tabele SQLite,
+            sprawdza onboarding w AsyncStorage i synchronizuje dane
+            z API jeśli minął dzień od ostatniej synchronizacji.
+          </p>
+          <div class="code-block">
+<pre>// App.tsx
+async function initApp() {
+  const db = await getDBConnection();
+  await createTables(db);
+  await checkOnboarding();
+  // Check lastFetchDate in meta table
+  await fetchAndSaveTestsDaily();
+  SplashScreen.hide();
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Offline-first — quizService</div>
+          <p class="arch-desc">
+            Każde zapytanie o dane sprawdza najpierw lokalną bazę SQLite.
+            Jeśli dane są — zwraca je bez wywołania API.
+            NetInfo decyduje czy sieć jest dostępna.
+          </p>
+          <div class="code-block">
+<pre>// quizService.ts
+async fetchTestDetails(id) {
+  const local = await getTestFromDb(id);
+  if (local) return local;
+
+  const net = await NetInfo.fetch();
+  if (!net.isConnected)
+    throw new Error('Brak sieci i danych');
+
+  const data = await fetch(API + id);
+  await saveTest(data);
+  return data;
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">QuizScreen — timer</div>
+          <p class="arch-desc">
+            Każde pytanie ma własny timer (np. 30s z API).
+            Gdy zostaje &lt;5 sekund — kolor czerwony.
+            Po upływie czasu odpowiedzi blokowane, przejście dalej.
+          </p>
+          <div class="code-block">
+<pre>useEffect(() => {
+  const interval = setInterval(() => {
+    setTimeLeft(t => {
+      if (t <= 1) {
+        clearInterval(interval);
+        nextQuestion();
+        return 0;
+      }
+      return t - 1;
+    });
+  }, 1000);
+  return () => clearInterval(interval);
+}, [currentQuestionIndex]);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">SQLite — schemat</div>
+          <p class="arch-desc">
+            Tabela <code>tests</code> przechowuje całe dane testu jako JSON,
+            tabela <code>meta</code> przechowuje datę ostatniej synchronizacji.
+          </p>
+          <div class="code-block">
+<pre>CREATE TABLE tests (
+  id        TEXT PRIMARY KEY,
+  name      TEXT,
+  description TEXT,
+  tags      TEXT, -- JSON string
+  tasks     TEXT, -- JSON string
+  updatedAt TEXT
+);
+
+CREATE TABLE meta (
+  key   TEXT PRIMARY KEY,
+  value TEXT -- lastFetchDate
+);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">ResultsScreen — wyniki</div>
+          <p class="arch-desc">
+            Wynik wysyłany na serwer przez POST po zakończeniu quizu.
+            Tabela top 20 z API, wynik użytkownika podświetlony na żółto.
+            Pull-to-refresh aktualizuje ranking.
+          </p>
+          <div class="code-block">
+<pre>// POST wynik
+await fetch('http://tgryl.pl/quiz/result', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    nick: 'Ty',
+    score: 15,
+    total: 20,
+    type: 'Historia'
+  })
+});</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Drawer — side menu</div>
+          <p class="arch-desc">
+            Animowany drawer z lewej strony — 5 losowych testów,
+            przycisk "Losowy Quiz", synchronizacja i nawigacja.
+            Obsługuje offline — wyświetla z SQLite gdy brak sieci.
+          </p>
+          <div class="code-block">
+<pre>// Drawer.tsx
+// 5 losowych testów z lodash shuffle
+const random = _.shuffle(allTests)
+  .slice(0, 5);
+
+// Losowy quiz
+const pick = _.sample(allTests);
+navigation.navigate('Quiz', {
+  testId: pick.id
+});</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SCREENS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Ekrany</div>
+      <h2 class="section-h2 reveal delay-1">Struktura aplikacji</h2>
+      <div class="screens-grid reveal delay-2">
+        <div class="screen-item">
+          <span class="screen-icon">📋</span>
+          <span class="screen-name">OnboardingScreen</span>
+          <span class="screen-desc">Regulamin — pokazuje się tylko raz</span>
+        </div>
+        <div class="screen-item">
+          <span class="screen-icon">🏠</span>
+          <span class="screen-name">HomeScreen</span>
+          <span class="screen-desc">Lista dostępnych testów z tagami</span>
+        </div>
+        <div class="screen-item">
+          <span class="screen-icon">❓</span>
+          <span class="screen-name">QuizScreen</span>
+          <span class="screen-desc">Pytania A/B/C/D z timerem i progress bar</span>
+        </div>
+        <div class="screen-item">
+          <span class="screen-icon">🏆</span>
+          <span class="screen-name">ResultsScreen</span>
+          <span class="screen-desc">Top 20 globalny ranking z serwera</span>
+        </div>
+        <div class="screen-item">
+          <span class="screen-icon">☰</span>
+          <span class="screen-name">Drawer</span>
+          <span class="screen-desc">Side menu — losowe testy i sync</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OFFLINE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Offline</div>
+      <h2 class="section-h2 reveal delay-1">Tryb offline</h2>
+      <div class="offline-grid reveal delay-2">
+
+        <div class="offline-card">
+          <div class="offline-card-title">🏠 HomeScreen</div>
+          <div class="offline-row"><span class="ok">✓</span> Online: pobiera z API, zapisuje do SQLite</div>
+          <div class="offline-row"><span class="ok">✓</span> Offline: wyświetla z lokalnej bazy</div>
+          <div class="offline-row"><span class="err">✗</span> Offline + pusta baza: komunikat błędu</div>
+        </div>
+
+        <div class="offline-card">
+          <div class="offline-card-title">❓ QuizScreen</div>
+          <div class="offline-row"><span class="ok">✓</span> Online: pobiera szczegóły z API</div>
+          <div class="offline-row"><span class="ok">✓</span> Offline: pobiera pytania z SQLite</div>
+          <div class="offline-row"><span class="err">✗</span> Offline + brak w bazie: błąd</div>
+        </div>
+
+        <div class="offline-card">
+          <div class="offline-card-title">🏆 ResultsScreen</div>
+          <div class="offline-row"><span class="ok">✓</span> Online: top 20 z API + lokalne</div>
+          <div class="offline-row"><span class="ok">✓</span> Offline: tylko lokalne wyniki</div>
+          <div class="offline-row"><span class="ok">✓</span> Wyniki cache'owane w AsyncStorage</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── API ── -->
+    <section class="section-wrap content-section" id="api">
+      <div class="section-label reveal">API</div>
+      <h2 class="section-h2 reveal delay-1">Endpointy — tgryl.pl</h2>
+
+      <div class="endpoints-wrap reveal delay-2">
+
+        <div class="endpoint-group">
+          <div class="endpoint-group-title">
+            <span>📡</span> Quiz API
+            <span class="endpoint-base">https://tgryl.pl/quiz</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/tests</span>
+            <span class="ep-desc">Lista dostępnych testów z tagami i liczbą pytań</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/test/{testId}</span>
+            <span class="ep-desc">Szczegóły testu — pytania, odpowiedzi, czas (duration)</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method get">GET</span>
+            <span class="ep-path">/results?last=20</span>
+            <span class="ep-desc">Top 20 wyników globalnego rankingu</span>
+          </div>
+          <div class="endpoint-item">
+            <span class="method post">POST</span>
+            <span class="ep-path">/result</span>
+            <span class="ep-desc">Wysłanie wyniku — nick, score, total, type</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reveal delay-2" style="margin-top: 1.5rem;">
+        <div class="code-block">
+<pre>// Typy danych
+type ApiTestListItem = {
+  id: string;  name: string;
+  description: string;
+  tags: string[];  level: string;
+  tasks: number;          // liczba pytań
+};
+
+type ApiTestTask = {
+  id: string;  question: string;
+  answers: ApiTaskAnswer[];
+  duration: number;       // czas w sekundach
+};
+
+type ApiTaskAnswer = {
+  id: string;  content: string;
+  isCorrect: boolean;
+};
+
+type ResultItem = {
+  id: string;  nick: string;
+  score: number;  total: number;
+  type: string;  date: string;
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LANGUAGES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Języki</div>
+      <h2 class="section-h2 reveal delay-1">Skład projektu</h2>
+      <div class="two-col reveal delay-2">
+        <div class="lang-bars">
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">TypeScript</span>
+              <span class="lang-bar-pct">91%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill typescript" style="width: 91%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Kotlin</span>
+              <span class="lang-bar-pct">3.4%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill kotlin" style="width: 3.4%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Ruby</span>
+              <span class="lang-bar-pct">2.3%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill ruby" style="width: 2.3%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">Swift</span>
+              <span class="lang-bar-pct">2%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill swift" style="width: 2%"></div>
+            </div>
+          </div>
+          <div class="lang-bar-item">
+            <div class="lang-bar-header">
+              <span class="lang-bar-name">JavaScript</span>
+              <span class="lang-bar-pct">1.3%</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill javascript" style="width: 1.3%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="feat-item">
+            <div class="feat-icon">🔷</div>
+            <div>
+              <div class="feat-title">TypeScript — logika aplikacji</div>
+              <div class="feat-desc">Screens, services, database layer, typy danych — 91% całego kodu</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🤖</div>
+            <div>
+              <div class="feat-title">Kotlin — natywny Android</div>
+              <div class="feat-desc">Natywne moduły i konfiguracja Gradle dla warstwy Android</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💎</div>
+            <div>
+              <div class="feat-title">Ruby — CocoaPods iOS</div>
+              <div class="feat-desc">Gemfile i CocoaPods do zarządzania zależnościami iOS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 20+</span>
+            <span class="req-pill">React Native CLI</span>
+            <span class="req-pill">Android Studio</span>
+            <span class="req-pill">Xcode (iOS)</span>
+            <span class="req-pill">Ruby 2.3+</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj i zainstaluj zależności</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/Quiz.git
+cd Quiz
+npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj zależności iOS (tylko macOS)</div>
+              <div class="code-block">
+<pre>cd ios && pod install && cd ..</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom Metro i aplikację</div>
+              <div class="code-block">
+<pre>npm start
+
+# W osobnym terminalu:
+npm run android   # Android
+npm run ios       # iOS</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BACK TO PROJECTS ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/quiz/screen1.png', cap: 'HomeScreen — lista dostępnych testów z tagami' },
+      { src: '../../assets/quiz/screen2.png', cap: 'QuizScreen — pytanie z 4 odpowiedziami, timer i progress bar' },
+      { src: '../../assets/quiz/screen3.png', cap: 'ResultsScreen — globalny ranking top 20, wynik użytkownika na żółto' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>
