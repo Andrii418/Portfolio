@@ -114,6 +114,119 @@ window.I18N = (function () {
     'proj.controls.kbdmouse': { pl: 'Klawiatura i mysz', en: 'Keyboard & mouse'  },
     'proj.screens.label': { pl: 'Ekrany',               en: 'Screens'             },
 
+    /* ════ QUIZ APP ════ */
+    'quiz.category':        { pl: 'Mobile Development · React Native · Education', en: 'Mobile Development · React Native · Education' },
+    'quiz.badge.uni':       { pl: 'Projekt własny', en: 'Personal project' },
+    'quiz.tagline':         { pl: 'Mobilna aplikacja edukacyjna do rozwiązywania testów wielokrotnego wyboru — timer na każde pytanie, ranking wyników, tryb offline z SQLite i synchronizacja z REST API. React Native 0.82, TypeScript 91%.',
+                              en: 'Mobile educational app for solving multiple-choice quizzes — per-question timer, score ranking, offline mode with SQLite and REST API sync. React Native 0.82, TypeScript 91%.' },
+    'quiz.gallery.label':   { pl: 'Screenshoty', en: 'Screenshots' },
+    'quiz.gallery.title':   { pl: 'Aplikacja w akcji', en: 'App in action' },
+    'quiz.overlay.1':       { pl: 'Lista testów', en: 'Tests list' },
+    'quiz.overlay.2':       { pl: 'Quiz z timerem', en: 'Timer quiz' },
+    'quiz.overlay.3':       { pl: 'Wyniki', en: 'Results' },
+    'quiz.lightbox.1':       { pl: 'HomeScreen — lista dostępnych testów z tagami', en: 'HomeScreen — list of available quizzes with tags' },
+    'quiz.lightbox.2':       { pl: 'QuizScreen — pytanie z 4 odpowiedziami, timer i progress bar', en: 'QuizScreen — question with 4 answers, timer and progress bar' },
+    'quiz.lightbox.3':       { pl: 'ResultsScreen — globalny ranking top 20, wynik użytkownika na żółto', en: 'ResultsScreen — global top 20 ranking, user score highlighted in yellow' },
+    'quiz.goal.label':      { pl: 'Cel projektu', en: 'Project goal' },
+    'quiz.goal.h2':         { pl: 'Nauka przez<br><span class="quiz-grad">quizy i ranking</span>', en: 'Learn through<br><span class="quiz-grad">quizzes and ranking</span>' },
+    'quiz.goal.p1':         { pl: 'Quiz App to mobilna aplikacja edukacyjna do rozwiązywania testów wielokrotnego wyboru z zewnętrznego API tgryl.pl. Każde pytanie ma własny timer, a wyniki trafiają do globalnego rankingu.',
+                              en: 'Quiz App is a mobile educational application for solving multiple-choice quizzes from the external tgryl.pl API. Each question has its own timer, and results are added to a global ranking.' },
+    'quiz.goal.p2':         { pl: 'Aplikacja działa w pełni offline dzięki lokalnemu cache SQLite — testy są synchronizowane raz dziennie i dostępne bez połączenia z internetem.',
+                              en: 'The app works fully offline thanks to a local SQLite cache — quizzes sync once per day and remain available without internet.' },
+    'quiz.feat.1.title':    { pl: 'Testy wielokrotnego wyboru', en: 'Multiple-choice quizzes' },
+    'quiz.feat.1.desc':     { pl: '4 opcje odpowiedzi (A/B/C/D), pytania i odpowiedzi losowane przy każdym uruchomieniu', en: '4 answer options (A/B/C/D), questions and answers randomized every launch' },
+    'quiz.feat.2.title':    { pl: 'Timer na pytanie', en: 'Per-question timer' },
+    'quiz.feat.2.desc':     { pl: 'Odliczanie czasu per pytanie, kolor czerwony gdy zostaje <5 sekund, auto-skip po upływie', en: 'Countdown per question, red color under 5 seconds, auto-skip when time expires' },
+    'quiz.feat.3.title':    { pl: 'Globalny ranking', en: 'Global ranking' },
+    'quiz.feat.3.desc':     { pl: 'Top 20 wyników z serwera, wynik użytkownika podświetlony na żółto, pull-to-refresh', en: 'Top 20 server results, user score highlighted in yellow, pull-to-refresh' },
+    'quiz.feat.4.title':    { pl: 'Offline-first', en: 'Offline-first' },
+    'quiz.feat.4.desc':     { pl: 'SQLite cache — testy dostępne bez internetu, synchronizacja automatyczna raz dziennie', en: 'SQLite cache — quizzes available offline, automatic daily sync' },
+    'quiz.feat.5.title':    { pl: 'Losowy quiz', en: 'Random quiz' },
+    'quiz.feat.5.desc':     { pl: 'Drawer z 5 losowymi testami i przyciskiem "Losowy Quiz" — nowe wyzwanie za każdym razem', en: 'Drawer with 5 random tests and a "Random Quiz" button — a new challenge every time' },
+    'quiz.feat.6.title':    { pl: 'Onboarding', en: 'Onboarding' },
+    'quiz.feat.6.desc':     { pl: 'Regulamin przy pierwszym uruchomieniu, stan zapisywany w AsyncStorage — pokazuje się tylko raz', en: 'Terms shown on first launch, state saved in AsyncStorage — shown only once' },
+    'quiz.tech.1.name':     { pl: 'React Native 0.82', en: 'React Native 0.82' },
+    'quiz.tech.1.desc':     { pl: 'Cross-platform framework — jeden kod dla Androida i iOS. React 19.1.1.', en: 'Cross-platform framework — one codebase for Android and iOS. React 19.1.1.' },
+    'quiz.tech.2.name':     { pl: 'TypeScript 5.9', en: 'TypeScript 5.9' },
+    'quiz.tech.2.desc':     { pl: '91% projektu w TypeScript — statyczne typowanie, strict mode, pełne bezpieczeństwo.', en: '91% of the project in TypeScript — static typing, strict mode, strong safety.' },
+    'quiz.tech.3.name':     { pl: 'SQLite', en: 'SQLite' },
+    'quiz.tech.3.desc':     { pl: 'react-native-sqlite-storage 6.0.1 — lokalna baza danych dla offline cache testów.', en: 'react-native-sqlite-storage 6.0.1 — local database for offline quiz cache.' },
+    'quiz.tech.4.name':     { pl: 'React Navigation 7', en: 'React Navigation 7' },
+    'quiz.tech.4.desc':     { pl: 'Stack Navigator — Onboarding → Home → Quiz → Results. Side Drawer menu.', en: 'Stack Navigator — Onboarding → Home → Quiz → Results. Side drawer menu.' },
+    'quiz.tech.5.name':     { pl: 'NetInfo', en: 'NetInfo' },
+    'quiz.tech.5.desc':     { pl: '@react-native-community/netinfo 11.4.1 — detekcja stanu sieci, przełączanie offline/online.', en: '@react-native-community/netinfo 11.4.1 — network state detection, offline/online switching.' },
+    'quiz.tech.6.name':     { pl: 'AsyncStorage', en: 'AsyncStorage' },
+    'quiz.tech.6.desc':     { pl: 'Preferencje użytkownika — stan onboardingu, lokalne wyniki i synchronizacja danych.', en: 'User preferences — onboarding state, local results and data sync.' },
+    'quiz.arch.1.title':   { pl: 'Startup — initApp()', en: 'Startup — initApp()' },
+    'quiz.arch.1.desc':    { pl: 'App.tsx inicjalizuje bazę danych, tworzy tabele SQLite, sprawdza onboarding w AsyncStorage i synchronizuje dane z API jeśli minął dzień od ostatniej synchronizacji.', en: 'App.tsx initializes the database, creates SQLite tables, checks onboarding status in AsyncStorage and syncs data from the API when a day has passed.' },
+    'quiz.arch.2.title':   { pl: 'Offline-first — quizService', en: 'Offline-first — quizService' },
+    'quiz.arch.2.desc':    { pl: 'Każde zapytanie o dane sprawdza najpierw lokalną bazę SQLite. Jeśli dane są — zwraca je bez wywołania API. NetInfo decyduje czy sieć jest dostępna.', en: 'Each data request checks the local SQLite database first. If data exists it returns it without calling the API. NetInfo decides if the network is available.' },
+    'quiz.arch.3.title':   { pl: 'QuizScreen — timer', en: 'QuizScreen — timer' },
+    'quiz.arch.3.desc':    { pl: 'Każde pytanie ma własny timer (np. 30s z API). Gdy zostaje <5 sekund — kolor czerwony. Po upływie czasu odpowiedzi blokowane, przejście dalej.', en: 'Each question has its own timer (e.g. 30s from the API). When less than 5 seconds remain it turns red. After time runs out answers lock and moves on.' },
+    'quiz.arch.4.title':   { pl: 'SQLite — schemat', en: 'SQLite — schema' },
+    'quiz.arch.4.desc':    { pl: 'Tabela tests przechowuje całe dane testu jako JSON, tabela meta przechowuje datę ostatniej synchronizacji.', en: 'The tests table stores full quiz data as JSON, the meta table stores the last synchronization date.' },
+    'quiz.arch.5.title':   { pl: 'ResultsScreen — wyniki', en: 'ResultsScreen — results' },
+    'quiz.arch.5.desc':    { pl: 'Wynik wysyłany na serwer przez POST po zakończeniu quizu. Tabela top 20 z API, wynik użytkownika podświetlony na żółto. Pull-to-refresh aktualizuje ranking.', en: 'Result is sent to the server via POST after the quiz. Top 20 table from the API, user result highlighted in yellow. Pull-to-refresh updates the ranking.' },
+    'quiz.arch.6.title':   { pl: 'Drawer — side menu', en: 'Drawer — side menu' },
+    'quiz.arch.6.desc':    { pl: 'Animowany drawer z lewej strony — 5 losowych testów, przycisk "Losowy Quiz", synchronizacja i nawigacja. Obsługuje offline — wyświetla z SQLite gdy brak sieci.', en: 'Animated drawer from the left — 5 random tests, "Random Quiz" button, sync and navigation. Supports offline — shows SQLite data when no network.' },
+    'quiz.screens.label':   { pl: 'Ekrany', en: 'Screens' },
+    'quiz.screens.title':   { pl: 'Struktura aplikacji', en: 'App structure' },
+    'quiz.screen.1.desc':   { pl: 'Regulamin — pokazuje się tylko raz', en: 'Terms shown once' },
+    'quiz.screen.2.desc':   { pl: 'Lista dostępnych testów z tagami', en: 'List of available quizzes with tags' },
+    'quiz.screen.3.desc':   { pl: 'Pytania A/B/C/D z timerem i progress bar', en: 'A/B/C/D questions with timer and progress bar' },
+    'quiz.screen.4.desc':   { pl: 'Top 20 globalny ranking z serwera', en: 'Top 20 global ranking from the server' },
+    'quiz.screen.5.desc':   { pl: 'Side menu — losowe testy i sync', en: 'Side menu — random tests and sync' },
+    'quiz.offline.label':   { pl: 'Offline', en: 'Offline' },
+    'quiz.offline.title':   { pl: 'Tryb offline', en: 'Offline mode' },
+    'quiz.offline.card1.title': { pl: '🏠 HomeScreen', en: '🏠 HomeScreen' },
+    'quiz.offline.card1.online': { pl: 'Online: pobiera z API, zapisuje do SQLite', en: 'Online: fetches from API, saves to SQLite' },
+    'quiz.offline.card1.offline': { pl: 'Offline: wyświetla z lokalnej bazy', en: 'Offline: displays from local DB' },
+    'quiz.offline.card1.error': { pl: 'Offline + pusta baza: komunikat błędu', en: 'Offline + empty DB: error message' },
+    'quiz.offline.card2.title': { pl: '❓ QuizScreen', en: '❓ QuizScreen' },
+    'quiz.offline.card2.online': { pl: 'Online: pobiera szczegóły z API', en: 'Online: fetches details from API' },
+    'quiz.offline.card2.offline': { pl: 'Offline: pobiera pytania z SQLite', en: 'Offline: fetches questions from SQLite' },
+    'quiz.offline.card2.error': { pl: 'Offline + brak w bazie: błąd', en: 'Offline + missing cache: error' },
+    'quiz.offline.card3.title': { pl: '🏆 ResultsScreen', en: '🏆 ResultsScreen' },
+    'quiz.offline.card3.online': { pl: 'Online: top 20 z API + lokalne', en: 'Online: top 20 from API + local' },
+    'quiz.offline.card3.offline': { pl: 'Offline: tylko lokalne wyniki', en: 'Offline: local results only' },
+    'quiz.offline.card3.cache': { pl: 'Wyniki cache\'owane w AsyncStorage', en: 'Results cached in AsyncStorage' },
+    'quiz.stats.framework': { pl: 'Framework', en: 'Framework' },
+    'quiz.stats.language':  { pl: 'Język', en: 'Language' },
+    'quiz.stats.storage':   { pl: 'Storage', en: 'Storage' },
+    'quiz.stats.mode':      { pl: 'Tryb pracy', en: 'Mode' },
+    'quiz.api.label':       { pl: 'API', en: 'API' },
+    'quiz.api.title':       { pl: 'Endpointy — tgryl.pl', en: 'Endpoints — tgryl.pl' },
+    'quiz.api.name':        { pl: 'Quiz API', en: 'Quiz API' },
+    'quiz.api.ep.tests':    { pl: 'Lista dostępnych testów z tagami i liczbą pytań', en: 'List of available quizzes with tags and question count' },
+    'quiz.api.ep.test':     { pl: 'Szczegóły testu — pytania, odpowiedzi, czas (duration)', en: 'Quiz details — questions, answers, duration' },
+    'quiz.api.ep.results':  { pl: 'Top 20 wyników globalnego rankingu', en: 'Top 20 global ranking results' },
+    'quiz.api.ep.result':   { pl: 'Wysłanie wyniku — nick, score, total, type', en: 'Send result — nick, score, total, type' },
+    'quiz.langs.label':     { pl: 'Języki', en: 'Languages' },
+    'quiz.langs.title':     { pl: 'Skład projektu', en: 'Project composition' },
+    'quiz.lang.1.name':     { pl: 'TypeScript', en: 'TypeScript' },
+    'quiz.lang.1.pct':      { pl: '91%', en: '91%' },
+    'quiz.lang.1.title':    { pl: 'TypeScript — logika aplikacji', en: 'TypeScript — application logic' },
+    'quiz.lang.1.desc':     { pl: 'Screens, services, database layer, typy danych — 91% całego kodu', en: 'Screens, services, database layer, data types — 91% of code' },
+    'quiz.lang.2.name':     { pl: 'Kotlin', en: 'Kotlin' },
+    'quiz.lang.2.pct':      { pl: '3.4%', en: '3.4%' },
+    'quiz.lang.2.title':    { pl: 'Kotlin — natywny Android', en: 'Kotlin — native Android' },
+    'quiz.lang.2.desc':     { pl: 'Natywne moduły i konfiguracja Gradle dla warstwy Android', en: 'Native modules and Gradle configuration for Android layer' },
+    'quiz.lang.3.name':     { pl: 'Ruby', en: 'Ruby' },
+    'quiz.lang.3.pct':      { pl: '2.3%', en: '2.3%' },
+    'quiz.lang.3.title':    { pl: 'Ruby — CocoaPods iOS', en: 'Ruby — CocoaPods iOS' },
+    'quiz.lang.3.desc':     { pl: 'Gemfile i CocoaPods do zarządzania zależnościami iOS', en: 'Gemfile and CocoaPods for iOS dependency management' },
+    'quiz.lang.4.name':     { pl: 'Swift', en: 'Swift' },
+    'quiz.lang.4.pct':      { pl: '2%', en: '2%' },
+    'quiz.lang.5.name':     { pl: 'JavaScript', en: 'JavaScript' },
+    'quiz.lang.5.pct':      { pl: '1.3%', en: '1.3%' },
+    'quiz.build.label':     { pl: 'Instalacja', en: 'Installation' },
+    'quiz.build.title':     { pl: 'Jak uruchomić', en: 'How to run' },
+    'quiz.req.title':       { pl: 'Wymagania', en: 'Requirements' },
+    'quiz.step.1.title':    { pl: 'Klonuj i zainstaluj zależności', en: 'Clone and install dependencies' },
+    'quiz.step.2.title':    { pl: 'Zainstaluj zależności iOS (tylko macOS)', en: 'Install iOS dependencies (macOS only)' },
+    'quiz.step.3.title':    { pl: 'Uruchom Metro i aplikację', en: 'Run Metro and the app' },
+    'quiz.btn.api':         { pl: 'API', en: 'API' },
+
     /* ════ RACING 3D ════ */
     'racing.category':  { pl: 'Game Development · Grafika 3D', en: 'Game Development · 3D Graphics' },
     'racing.tagline':   { pl: 'Autorski silnik wyścigowy napisany w C++ i OpenGL 3.3 — od renderowania shaderów po symulację fizyki Bullet Physics.',
@@ -598,6 +711,7 @@ window.I18N = (function () {
     if (/\/projects\/racing3d/.test(p))    return 'racing';
     if (/\/projects\/eventhubapi/.test(p)) return 'eventhub';
     if (/\/projects\/ualingo/.test(p))     return 'ualingo';
+    if (/\/projects\/quiz/.test(p))        return 'quiz';
     if (/\/projects\/iot/.test(p))         return 'iot';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
@@ -666,6 +780,7 @@ window.I18N = (function () {
     if (page === 'eventhub')  applyEventhub(lang);
     if (page === 'osk')      applyOsk(lang);
     if (page === 'racing')   applyRacing(lang);
+    if (page === 'quiz')     applyQuiz(lang);
     if (page === 'iot')      applyIot(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
@@ -1155,6 +1270,39 @@ window.I18N = (function () {
     if (screensH2) setText(screensH2, 'ualingo.screens.title', lang);
     applyTechStack('ualingo', lang, 6);
     applyArchInfo('ualingo', lang, 6);
+  }
+
+  /* ── QUIZ ────────────────────────────────────── */
+  function applyQuiz(lang) {
+    applySharedDetail(lang);
+    setText(document.querySelector('.proj-category'), 'quiz.category', lang);
+    setText(document.querySelector('.badge-uni'), 'quiz.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'quiz.tagline', lang);
+
+    const stats = document.querySelectorAll('.proj-stats .ps-l');
+    if (stats[0]) setText(stats[0], 'quiz.stats.framework', lang);
+    if (stats[1]) setText(stats[1], 'quiz.stats.language', lang);
+    if (stats[2]) setText(stats[2], 'quiz.stats.storage', lang);
+    if (stats[3]) setText(stats[3], 'quiz.stats.mode', lang);
+
+    setText(document.querySelector('.gallery-section .section-label'), 'quiz.gallery.label', lang);
+    setText(document.querySelector('.gallery-section .section-h2'), 'quiz.gallery.title', lang);
+
+    const overlaySpans = document.querySelectorAll('.gallery-overlay span[data-i18n]');
+    overlaySpans.forEach(span => {
+      const key = span.dataset.i18n;
+      if (key) setText(span, key, lang);
+    });
+
+    const features = document.querySelectorAll('.feat-item');
+    for (let i = 0; i < 6; i++) {
+      if (!features[i]) continue;
+      setText(features[i].querySelector('.feat-title'), `quiz.feat.${i+1}.title`, lang);
+      setText(features[i].querySelector('.feat-desc'),  `quiz.feat.${i+1}.desc`,  lang);
+    }
+
+    applyTechStack('quiz', lang, 6);
+    applyArchInfo('quiz', lang, 6);
   }
 
   /* ── IOT ────────────────────────────────────── */
