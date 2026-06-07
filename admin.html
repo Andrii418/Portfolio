@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel statystyk — AT</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px; }
+    .admin-panel { max-width: 680px; width: 100%; background: rgba(12, 18, 28, .92); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px; box-shadow: 0 24px 80px rgba(0,0,0,.25); }
+    .admin-panel h1 { margin-bottom: 18px; font-size: clamp(2rem, 2.4vw, 2.6rem); }
+    .admin-panel p { color: var(--t3); line-height: 1.75; margin-bottom: 18px; }
+    .admin-panel label { display: block; margin-bottom: 12px; font-family: var(--f-mono); letter-spacing: .05em; font-size: .9rem; color: var(--t2); }
+    .admin-panel input { width: 100%; padding: 14px 16px; border-radius: var(--r-sm); border: 1px solid var(--border); background: var(--surface); color: var(--t1); margin-bottom: 14px; }
+    .admin-panel button { padding: 12px 18px; border: none; border-radius: var(--r-sm); background: linear-gradient(90deg, var(--chrome-1), var(--chrome-2)); color: #fff; cursor: pointer; font-family: var(--f-mono); letter-spacing: .04em; }
+    .admin-panel button:hover { opacity: .92; }
+    .admin-message { margin-bottom: 20px; color: var(--t3); }
+    .stats-grid { display: grid; gap: 16px; margin-top: 24px; }
+    .stat-card { padding: 20px; border: 1px solid var(--border); border-radius: var(--r-md); background: rgba(255,255,255,.03); }
+    .stat-card h2 { margin: 0 0 8px; font-size: 1rem; color: var(--t3); }
+    .stat-card strong { display: block; margin-top: 10px; font-size: 2.2rem; color: var(--t1); }
+    @media (max-width: 720px) { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <div class="admin-panel">
+    <h1>Panel statystyk</h1>
+    <p>Ta strona jest ukryta i nie ma linku w menu. Wpisz hasło, aby zobaczyć statystyki odwiedzin strony.</p>
+
+    <div id="authBlock">
+      <label for="adminPassword">Hasło administratora</label>
+      <input id="adminPassword" type="password" placeholder="Wpisz hasło" autocomplete="current-password" />
+      <button id="authButton">Zaloguj</button>
+      <div class="admin-message" id="authMessage"></div>
+    </div>
+
+    <div id="statsBlock" style="display:none;">
+      <p>Statystyki oparte na wizytach, które zostały policzone przy ładowaniu strony.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h2>Dzisiaj</h2>
+          <strong id="visitsDay">—</strong>
+        </div>
+        <div class="stat-card">
+          <h2>Ten tydzień</h2>
+          <strong id="visitsWeek">—</strong>
+        </div>
+        <div class="stat-card">
+          <h2>Ten miesiąc</h2>
+          <strong id="visitsMonth">—</strong>
+        </div>
+        <div class="stat-card">
+          <h2>Łącznie</h2>
+          <strong id="visitsTotal">—</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ADMIN_HASH = '9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b';
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function isoWeekNumber(date) {
+      const target = new Date(date.valueOf());
+      target.setHours(0, 0, 0, 0);
+      target.setDate(target.getDate() + 3 - ((target.getDay() + 6) % 7));
+      const firstThursday = new Date(target.getFullYear(), 0, 4);
+      const diff = target - firstThursday + ((firstThursday.getDay() + 6) % 7) * 86400000;
+      return 1 + Math.round(diff / 604800000);
+    }
+
+    function getKeys() {
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const week = String(isoWeekNumber(date)).padStart(2, '0');
+      return {
+        total: 'site-total',
+        day: `site-day-${year}-${month}-${day}`,
+        week: `site-week-${year}-W${week}`,
+        month: `site-month-${year}-${month}`
+      };
+    }
+
+    function getCount(key) {
+      const api = `https://api.countapi.xyz/get/andrii-portfolio-at/${key}`;
+      return fetch(api).then(res => res.ok ? res.json() : { value: 0 }).then(data => Number(data.value || 0)).catch(() => 0);
+    }
+
+    async function loadStats() {
+      const keys = getKeys();
+      const [day, week, month, total] = await Promise.all([
+        getCount(keys.day),
+        getCount(keys.week),
+        getCount(keys.month),
+        getCount(keys.total)
+      ]);
+
+      document.getElementById('visitsDay').textContent = day;
+      document.getElementById('visitsWeek').textContent = week;
+      document.getElementById('visitsMonth').textContent = month;
+      document.getElementById('visitsTotal').textContent = total;
+    }
+
+    document.getElementById('authButton').addEventListener('click', async () => {
+      const password = document.getElementById('adminPassword').value.trim();
+      const hash = await sha256(password);
+      const message = document.getElementById('authMessage');
+      if (hash === ADMIN_HASH) {
+        document.getElementById('authBlock').style.display = 'none';
+        document.getElementById('statsBlock').style.display = 'block';
+        message.textContent = '';
+        loadStats();
+      } else {
+        message.textContent = 'Błędne hasło. Spróbuj ponownie.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -61,7 +61,41 @@
   });
 })();
 
-/* ── 3. LANGUAGE TOGGLE ───────────────────────── */
+/* ── 3. VISIT COUNTER ─────────────────────────── */
+(function initVisitCounter() {
+  const path = window.location.pathname;
+  if (path.endsWith('/admin.html') || path.endsWith('admin.html')) return;
+
+  const namespace = 'andrii-portfolio-at';
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  function isoWeekNumber(d) {
+    const dateCopy = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const dayNum = (dateCopy.getUTCDay() + 6) % 7;
+    dateCopy.setUTCDate(dateCopy.getUTCDate() - dayNum + 3);
+    const firstThursday = new Date(Date.UTC(dateCopy.getUTCFullYear(), 0, 4));
+    const diff = dateCopy - firstThursday + ((firstThursday.getUTCDay() + 6) % 7) * 86400000;
+    return 1 + Math.round(diff / 604800000);
+  }
+
+  const week = String(isoWeekNumber(date)).padStart(2, '0');
+  const keys = [
+    'site-total',
+    `site-day-${year}-${month}-${day}`,
+    `site-week-${year}-W${week}`,
+    `site-month-${year}-${month}`
+  ];
+
+  keys.forEach(key => {
+    const api = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+    fetch(api).catch(() => { /* ignore errors */ });
+  });
+})();
+
+/* ── 4. LANGUAGE TOGGLE ───────────────────────── */
 (function initLang() {
   /* i18n.js must be loaded before main.js */
   if (!window.I18N) {
