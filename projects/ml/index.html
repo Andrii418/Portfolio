@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Rozpoznawania Emocji z Wyrazu Twarzy — Bohdan Kovalchuk & Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-ml2.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="../index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Deep Learning · Praca akademicka</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-team">Akademia Tarnowska · ML II</span>
+            <span class="badge-uni ml2-badge-classes">7 klas emocji</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Rozpoznawanie <span>Emocji</span><br/>z Wyrazu Twarzy</h1>
+
+        <p class="proj-tagline">
+          End-to-end pipeline deep learningu na zbiorze FER-2013 — od eksploracji
+          danych i augmentacji, przez CNN i automatyczne strojenie hiperparametrów
+          (Keras Tuner Hyperband), po wdrożenie w aplikacji Gradio z wizualizacją
+          Grad-CAM.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/jpDG1/ML2" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.89-.02 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0z"/></svg>
+            Repozytorium GitHub
+          </a>
+          <a href="#pipeline" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Zobacz pipeline
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">35 887</div>
+            <div class="ps-l">Obrazów FER-2013</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">CNN + Hyperband</div>
+            <div class="ps-l">Architektura</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Grad-CAM</div>
+            <div class="ps-l">Interpretowalność</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">2 osoby</div>
+            <div class="ps-l">Zespół</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EMOTION CLASSES STRIP ── -->
+    <section class="ml2-classes-strip reveal">
+      <div class="section-wrap">
+        <div class="emo-strip">
+          <div class="emo-chip"><span class="emo-dot" style="--c:#f59e0b"></span>happy</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#a855f7"></span>sad</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#ef4444"></span>angry</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#22c55e"></span>fear</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#06b6d4"></span>disgust</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#eab308"></span>surprise</div>
+          <div class="emo-chip"><span class="emo-dot" style="--c:#94a3b8"></span>neutral</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Wizualizacje</div>
+        <h2 class="section-h2 reveal delay-1">Analiza danych i wyniki modelu</h2>
+        <p class="body-text reveal delay-1 gallery-note">
+          Zrzuty ekranu zostaną uzupełnione po wygenerowaniu wykresów przez skrypty
+          <code>zajecia2_data_analysis.py</code> i <code>zajecia2_cnn.py</code> oraz
+          po nagraniu działania aplikacji Gradio.
+        </p>
+      </div>
+
+      <div class="gallery-grid ml2-gallery reveal delay-2">
+
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/ml2/screen1.png" alt="Rozkład klas FER-2013" loading="lazy" />
+          <div class="gallery-overlay"><span>Rozkład klas emocji</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/ml2/screen2.png" alt="Przykładowe obrazy per klasa" loading="lazy" />
+          <div class="gallery-overlay"><span>Przykładowe obrazy</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/ml2/screen3.png" alt="Warianty augmentacji danych" loading="lazy" />
+          <div class="gallery-overlay"><span>Augmentacja danych</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+          <img src="../../assets/ml2/screen4.png" alt="Krzywe uczenia — model bazowy vs Hyperband" loading="lazy" />
+          <div class="gallery-overlay"><span>Krzywe uczenia: bazowy vs Hyperband</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/ml2/screen5.png" alt="Aplikacja Gradio — predykcja emocji" loading="lazy" />
+          <div class="gallery-overlay"><span>Aplikacja Gradio</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/ml2/screen6.png" alt="Wykres prawdopodobieństwa Softmax" loading="lazy" />
+          <div class="gallery-overlay"><span>Wykres Softmax (7 klas)</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/ml2/screen7.png" alt="Mapa Grad-CAM Inferno na twarzy" loading="lazy" />
+          <div class="gallery-overlay"><span>Grad-CAM — mapa Inferno</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(7)">
+          <img src="../../assets/ml2/screen8.png" alt="Detekcja twarzy Haar Cascade z bounding boxem" loading="lazy" />
+          <div class="gallery-overlay"><span>Detekcja twarzy (ROI)</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Praca zaliczeniowa<br/><span class="grad-inferno">z uczenia maszynowego II</span></h2>
+          <p class="body-text">
+            Celem projektu było zaprojektowanie i wytrenowanie konwolucyjnej sieci
+            neuronowej klasyfikującej siedem kategorii emocji na podstawie zdjęć
+            twarzy ze zbioru FER-2013, a następnie wdrożenie modelu jako
+            interaktywnej aplikacji webowej.
+          </p>
+          <p class="body-text">
+            Pipeline obejmuje eksploracyjną analizę danych, augmentację w locie,
+            bazową architekturę CNN, automatyczne strojenie hiperparametrów
+            algorytmem Hyperband oraz wizualną interpretowalność predykcji
+            techniką Grad-CAM.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📊</div>
+            <div>
+              <div class="feat-title">EDA i niezbalansowanie klas</div>
+              <div class="feat-desc">Analiza struktury FER-2013 — klasa happy zdecydowanie najliczniejsza, disgust wielokrotnie rzadszy</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔄</div>
+            <div>
+              <div class="feat-title">Augmentacja w locie</div>
+              <div class="feat-desc">Rotacja, przesunięcie, odbicie lustrzane, zoom i jasność — ImageDataGenerator redukujący overfitting</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🧠</div>
+            <div>
+              <div class="feat-title">CNN — 3 bloki konwolucyjne</div>
+              <div class="feat-desc">Conv2D + BatchNorm + MaxPool + Dropout, klasyfikator Dense 256 jednostek, wyjście Softmax 7 klas</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🎛️</div>
+            <div>
+              <div class="feat-title">Keras Tuner Hyperband</div>
+              <div class="feat-desc">Automatyczne przeszukiwanie hiperparametrów metodą successive halving — 5–10× mniej epok niż Grid Search</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔥</div>
+            <div>
+              <div class="feat-title">Grad-CAM</div>
+              <div class="feat-desc">Mapy cieplne Inferno wskazujące, które obszary twarzy decydują o predykcji emocji</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌐</div>
+            <div>
+              <div class="feat-title">Wdrożenie w Gradio</div>
+              <div class="feat-desc">Interaktywna aplikacja webowa z obsługą kamery, wykresem Softmax i adnotacją bounding boxa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DATASET ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zbiór danych</div>
+      <h2 class="section-h2 reveal delay-1">FER-2013</h2>
+
+      <div class="dataset-grid reveal delay-2">
+        <div class="data-stat-card">
+          <div class="data-stat-n">35 887</div>
+          <div class="data-stat-l">Obrazów łącznie</div>
+        </div>
+        <div class="data-stat-card">
+          <div class="data-stat-n">28 709</div>
+          <div class="data-stat-l">Zbiór treningowy</div>
+        </div>
+        <div class="data-stat-card">
+          <div class="data-stat-n">7 178</div>
+          <div class="data-stat-l">Zbiór testowy</div>
+        </div>
+        <div class="data-stat-card">
+          <div class="data-stat-n">48 × 48 px</div>
+          <div class="data-stat-l">Skala szarości</div>
+        </div>
+      </div>
+
+      <div class="code-block ml2-code-wide reveal delay-2">
+<pre>train_datagen = ImageDataGenerator(
+    rescale            = 1./255,   # Normalizacja pikseli do [0,1]
+    rotation_range     = 15,       # Losowa rotacja +-15 stopni
+    width_shift_range  = 0.1,      # Przesuniecie poziome do 10%
+    height_shift_range = 0.1,      # Przesuniecie pionowe do 10%
+    horizontal_flip    = True,     # Odbicie lustrzane
+    zoom_range         = 0.1,      # Losowy zoom 90-110%
+    brightness_range   = [0.8, 1.2]  # Losowa jasnosc 80-120%
+)</pre>
+      </div>
+    </section>
+
+    <!-- ── PIPELINE ── -->
+    <section class="section-wrap content-section" id="pipeline">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Potok inferencji emocji</h2>
+
+      <div class="pipeline-flow reveal delay-2">
+        <div class="pf-step">
+          <div class="pf-icon">🖼️</div>
+          <div class="pf-label">Obraz wejściowy<br/><span>RGB / PIL</span></div>
+        </div>
+        <div class="pf-arrow">→</div>
+        <div class="pf-step">
+          <div class="pf-icon">🔲</div>
+          <div class="pf-label">Detekcja twarzy<br/><span>Haar Cascade</span></div>
+        </div>
+        <div class="pf-arrow">→</div>
+        <div class="pf-step">
+          <div class="pf-icon">⚙️</div>
+          <div class="pf-label">Preprocessing<br/><span>resize 48×48, /255.0</span></div>
+        </div>
+        <div class="pf-arrow">→</div>
+        <div class="pf-step">
+          <div class="pf-icon">🧠</div>
+          <div class="pf-label">CNN predict()<br/><span>Softmax, 7 klas</span></div>
+        </div>
+        <div class="pf-arrow">→</div>
+        <div class="pf-step">
+          <div class="pf-icon">🔥</div>
+          <div class="pf-label">Grad-CAM<br/><span>+ wykres + adnotacja</span></div>
+        </div>
+      </div>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Blok konwolucyjny 1</div>
+          <p class="arch-desc">
+            2× Conv2D(32) z aktywacją ReLU, BatchNormalization, MaxPooling2D
+            i Dropout(0.25). Wyjście: 12×12×32.
+          </p>
+          <div class="code-block">
+<pre>Conv2D(32) x2 + BN
+MaxPool2D + Dropout(0.25)
+-> 12x12x32</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Blok konwolucyjny 2</div>
+          <p class="arch-desc">
+            2× Conv2D(64), BatchNormalization, MaxPooling2D i Dropout(0.25).
+            Wyjście: 6×6×64.
+          </p>
+          <div class="code-block">
+<pre>Conv2D(64) x2 + BN
+MaxPool2D + Dropout(0.25)
+-> 6x6x64</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Blok konwolucyjny 3</div>
+          <p class="arch-desc">
+            2× Conv2D(128), BatchNormalization, MaxPooling2D i Dropout(0.40).
+            Wyjście: 3×3×128, dalej Flatten → 1152.
+          </p>
+          <div class="code-block">
+<pre>Conv2D(128) x2 + BN
+MaxPool2D + Dropout(0.40)
+-> 3x3x128 -> Flatten 1152</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Klasyfikator Dense</div>
+          <p class="arch-desc">
+            Warstwa Dense 256 jednostek z ReLU, BatchNormalization
+            i Dropout(0.50), zakończona warstwą Softmax na 7 klas.
+          </p>
+          <div class="code-block">
+<pre>Dense(256, relu) + BN
+Dropout(0.50)
+-> Dense(7, softmax)</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Hyperband — przestrzeń przeszukiwania</div>
+          <p class="arch-desc">
+            Filtry Conv2D, dropout konwolucyjny i klasyfikatora, liczba
+            neuronów Dense oraz learning rate Adama strojone automatycznie.
+          </p>
+          <div class="code-block">
+<pre>kt.Hyperband(
+  build_model,
+  objective='val_accuracy',
+  max_epochs=15, factor=3)</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Grad-CAM — hooki gradientowe</div>
+          <p class="arch-desc">
+            Automatyczne wykrywanie ostatniej warstwy Conv2D modelu —
+            odporne na zmiany architektury bez ręcznej aktualizacji.
+          </p>
+          <div class="code-block">
+<pre>for layer in reversed(model.layers):
+  if isinstance(layer, Conv2D):
+    return layer.name</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── RESULTS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Wyniki</div>
+      <h2 class="section-h2 reveal delay-1">Model bazowy vs Hyperband</h2>
+
+      <div class="results-table-wrap reveal delay-2">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Val Accuracy</th>
+              <th>Val Loss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Model bazowy</td>
+              <td>~60–65%</td>
+              <td>~1.05–1.20</td>
+            </tr>
+            <tr>
+              <td>Model po Hyperband</td>
+              <td>~63–68%</td>
+              <td>~0.95–1.10</td>
+            </tr>
+            <tr class="results-delta">
+              <td>Poprawa</td>
+              <td>+3–5%</td>
+              <td>~−0.10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="body-text reveal delay-2 results-note">
+        Wyniki mieszczą się w typowym zakresie dla CNN trenowanych bezpośrednio
+        na FER-2013 bez transfer learningu (state-of-the-art ok. 73–75% przy
+        dużych architekturach pretrenowanych). Strojenie Hyperband potwierdziło
+        mierzalną poprawę dokładności walidacyjnej przy akceptowalnym koszcie
+        obliczeniowym.
+      </p>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🧮</div>
+            <div class="tech-card-name">TensorFlow / Keras</div>
+            <div class="tech-card-desc">Budowa i trening konwolucyjnej sieci neuronowej, warstwy Conv2D, BatchNorm, Dropout.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎛️</div>
+            <div class="tech-card-name">Keras Tuner</div>
+            <div class="tech-card-desc">Algorytm Hyperband do automatycznego strojenia hiperparametrów modelu.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🌐</div>
+            <div class="tech-card-name">Gradio</div>
+            <div class="tech-card-desc">Interaktywna aplikacja webowa — Premium Dark UI, obsługa kamery i wykresów.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">👁️</div>
+            <div class="tech-card-name">OpenCV</div>
+            <div class="tech-card-desc">Detekcja twarzy Haar Cascade, nakładanie map cieplnych Grad-CAM (alpha blending).</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📈</div>
+            <div class="tech-card-name">Matplotlib / Seaborn</div>
+            <div class="tech-card-desc">Wizualizacje EDA, krzywe uczenia, wykresy rozkładu Softmax.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🐍</div>
+            <div class="tech-card-name">Python / NumPy / Pandas</div>
+            <div class="tech-card-desc">Przetwarzanie danych, pipeline augmentacji i analiza wyników.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DELIVERABLES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Repozytorium</div>
+      <h2 class="section-h2 reveal delay-1">Struktura projektu</h2>
+      <div class="deliverables-grid reveal delay-2">
+        <div class="deliv-card">
+          <div class="deliv-icon">📊</div>
+          <div class="deliv-title">zajecia2_data_analysis.py</div>
+          <div class="deliv-desc">EDA: analiza struktury FER-2013, wykresy, augmentacja</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🔄</div>
+          <div class="deliv-title">zajecia2_deep_learning.py</div>
+          <div class="deliv-desc">Data pipeline, konfiguracja generatora danych</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🧠</div>
+          <div class="deliv-title">zajecia2_cnn.py</div>
+          <div class="deliv-desc">Budowa CNN, trening bazowy, Keras Tuner Hyperband</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">📉</div>
+          <div class="deliv-title">zajecia4_klasyfikacja.py</div>
+          <div class="deliv-desc">Macierz pomyłek, ROC, permutation importance</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🌐</div>
+          <div class="deliv-title">app.py</div>
+          <div class="deliv-desc">Aplikacja Gradio — detekcja emocji + wizualizacja Grad-CAM</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">💾</div>
+          <div class="deliv-title">best_model.keras</div>
+          <div class="deliv-desc">Najlepszy wytrenowany model (plik binarny Keras)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Zespół</div>
+      <h2 class="section-h2 reveal delay-1">Autorzy projektu</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">CNN, Keras Tuner Hyperband, Grad-CAM, aplikacja Gradio</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar ml2-avatar">BK</div>
+          <div class="team-name">Bohdan Kovalchuk</div>
+          <div class="team-role">EDA, pipeline danych, augmentacja, ewaluacja modelu</div>
+          <a href="https://github.com/jpDG1" class="team-gh" target="_blank">github.com/jpDG1</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/ml2/screen1.png', cap: 'Rozkład klas emocji' },
+      { src: '../../assets/ml2/screen2.png', cap: 'Przykładowe obrazy per klasa' },
+      { src: '../../assets/ml2/screen3.png', cap: 'Augmentacja danych' },
+      { src: '../../assets/ml2/screen4.png', cap: 'Krzywe uczenia: bazowy vs Hyperband' },
+      { src: '../../assets/ml2/screen5.png', cap: 'Aplikacja Gradio' },
+      { src: '../../assets/ml2/screen6.png', cap: 'Wykres Softmax (7 klas)' },
+      { src: '../../assets/ml2/screen7.png', cap: 'Grad-CAM — mapa Inferno' },
+      { src: '../../assets/ml2/screen8.png', cap: 'Detekcja twarzy (ROI)' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>

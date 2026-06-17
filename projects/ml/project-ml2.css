@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════════
+   ML2 EMOTION RECOGNITION PROJECT · project-ml2.css
+   Extends project.css — paleta inspirowana
+   colormapą Inferno użytą w wizualizacji Grad-CAM
+═══════════════════════════════════════════════ */
+
+/* ── CLASSES BADGE (hero) ───────────────────── */
+.ml2-badge-classes {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+  background: rgba(245, 158, 11, 0.07);
+}
+
+/* ── GRADIENT OVERRIDE — Inferno accent ─────── */
+.proj-title span {
+  background: linear-gradient(120deg, #a855f7 0%, #f59e0b 55%, #fde047 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── HERO TITLE — smaller, fits long PL title ── */
+.proj-hero .proj-title {
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.18;
+}
+.grad-inferno {
+  background: linear-gradient(120deg, #a855f7, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── EMOTION CLASSES STRIP ──────────────────── */
+.ml2-classes-strip {
+  padding: 4px 0 36px;
+}
+.emo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.emo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--t1);
+  background: var(--g-bg);
+  border: 1px solid var(--g-border);
+  border-radius: 999px;
+  transition: border-color .25s, transform .25s;
+}
+.emo-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--c, rgba(245, 158, 11, 0.4));
+}
+.emo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c, #f59e0b);
+  box-shadow: 0 0 8px var(--c, #f59e0b);
+  flex-shrink: 0;
+}
+
+/* ── GALLERY NOTE ────────────────────────────── */
+.gallery-note {
+  max-width: 640px;
+  margin: 8px 0 28px;
+  font-size: 13.5px;
+  color: var(--t2);
+}
+.gallery-note code {
+  font-family: var(--mono, 'Courier New', monospace);
+  font-size: 12.5px;
+  padding: 2px 6px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 4px;
+  color: #fbbf24;
+}
+
+/* ── GALLERY — 3 col override ───────────────── */
+.ml2-gallery {
+  grid-template-columns: repeat(3, 1fr);
+}
+.ml2-gallery .gallery-main {
+  grid-column: span 1;
+}
+.ml2-gallery .gallery-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .ml2-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ml2-gallery .gallery-main,
+  .ml2-gallery .gallery-wide {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 500px) {
+  .ml2-gallery {
+    grid-template-columns: 1fr;
+  }
+  .ml2-gallery .gallery-main,
+  .ml2-gallery .gallery-wide {
+    grid-column: span 1;
+  }
+}
+
+/* ── DATASET STATS GRID ─────────────────────── */
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.data-stat-card {
+  padding: 22px 18px;
+  text-align: center;
+  background: var(--g-bg);
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-md);
+  transition: border-color .25s, transform .25s;
+}
+.data-stat-card:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  transform: translateY(-3px);
+}
+.data-stat-n {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.data-stat-l {
+  font-size: 12px;
+  color: var(--t2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ml2-code-wide {
+  max-width: 640px;
+}
+
+/* ── PIPELINE FLOW ───────────────────────────── */
+.pipeline-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 40px;
+  padding: 28px 20px;
+  background: radial-gradient(120% 140% at 50% 0%, rgba(168, 85, 247, 0.06), transparent 60%),
+              var(--g-bg);
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-md);
+}
+.pf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 108px;
+  padding: 10px 8px;
+}
+.pf-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.pf-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--t1);
+  line-height: 1.4;
+}
+.pf-label span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--t2);
+  margin-top: 2px;
+}
+.pf-arrow {
+  font-size: 16px;
+  color: #f59e0b;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+@media (max-width: 760px) {
+  .pipeline-flow {
+    flex-direction: column;
+  }
+  .pf-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* ── RESULTS TABLE ───────────────────────────── */
+.results-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 18px;
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-md);
+}
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.results-table th,
+.results-table td {
+  padding: 14px 18px;
+  text-align: left;
+  white-space: nowrap;
+}
+.results-table thead th {
+  color: var(--t2);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--g-border);
+}
+.results-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--g-border);
+}
+.results-table tbody td {
+  color: var(--t1);
+}
+.results-table tbody tr.results-delta td {
+  color: #fbbf24;
+  font-weight: 600;
+}
+.results-note {
+  max-width: 680px;
+  font-size: 13.5px;
+}
+
+/* ── CLIENT/PARTNER AVATAR ──────────────────── */
+.team-avatar.ml2-avatar {
+  background: linear-gradient(135deg, #a855f7, #f59e0b);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+/* ── ACCENT OVERRIDES ───────────────────────── */
+.arch-card:hover          { border-color: rgba(245, 158, 11, 0.3) !important; }
+.arch-num                 { color: #f59e0b !important; }
+.tech-card:hover          { border-color: rgba(168, 85, 247, 0.3) !important; }
+.feat-item:hover          { border-color: rgba(245, 158, 11, 0.3) !important; }
+.deliv-card:hover         { border-color: rgba(168, 85, 247, 0.3) !important; transform: translateY(-3px); }
+.deliv-card::before       { background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.3), transparent); }
+.section-label            { color: #f59e0b !important; }
+.proj-category             { color: #f59e0b !important; }
+
+/* code tint — amber */
+.arch-card .code-block pre { color: rgba(253, 230, 138, 0.85); }
+
+/* ── DELIVERABLES GRID (shared with OSK pattern) ── */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.deliv-card {
+  padding: 26px 22px;
+  background: var(--g-bg);
+  border: 1px solid var(--g-border);
+  border-radius: var(--radius-md);
+  transition: border-color .25s, transform .25s;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.deliv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+}
+.deliv-icon  { font-size: 28px; margin-bottom: 12px; }
+.deliv-title { font-size: 13.5px; font-weight: 600; color: var(--t1); margin-bottom: 8px; font-family: var(--mono, 'Courier New', monospace); }
+.deliv-desc  { font-size: 12.5px; color: var(--t2); line-height: 1.55; }
