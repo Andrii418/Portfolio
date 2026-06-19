@@ -701,6 +701,153 @@ window.I18N = (function () {
     'eventhub.build.label': { pl: 'Instalacja', en: 'Installation' },
     'eventhub.build.title': { pl: 'Jak uruchomić', en: 'How to run' },
     'eventhub.team.title': { pl: 'Autorzy projektu', en: 'Project authors' },
+
+    /* ════ ML — EMOTION RECOGNITION ════ */
+    'ml.category': { pl: 'Machine Learning · Deep Learning', en: 'Machine Learning · Deep Learning' },
+    'ml.badge.uni': { pl: 'Akademia Tarnowska · ML II', en: 'Tarnów Academy · ML II' },
+    'ml.tagline': { pl: 'Deep learning na zbiorze FER-2013 — klasyfikacja 7 emocji z wyrazu twarzy przy użyciu CNN, automatyczne strojenie hiperparametrów Hyperband i wizualizacja Grad-CAM w aplikacji Gradio.',
+                    en: 'Deep learning on FER-2013 — 7-emotion facial expression classification using CNN, automatic Hyperband hyperparameter tuning and Grad-CAM visualization in Gradio.' },
+    
+    'ml.stats.1.label': { pl: 'Obrazów FER-2013', en: 'FER-2013 images' },
+    'ml.stats.2.label': { pl: 'Architektura', en: 'Architecture' },
+    'ml.stats.3.label': { pl: 'Interpretowalność', en: 'Explainability' },
+    'ml.stats.4.label': { pl: 'Zespół', en: 'Team' },
+    
+    'ml.goal.label': { pl: 'Cel projektu', en: 'Project goal' },
+    'ml.goal.h2': { pl: 'Praca zaliczeniowa<br><span class="grad-inferno">z uczenia maszynowego II</span>', en: 'Machine Learning II<br><span class="grad-inferno">course project</span>' },
+    'ml.goal.p1': { pl: 'Celem projektu było zaprojektowanie i wytrenowanie konwolucyjnej sieci neuronowej klasyfikującej siedem kategorii emocji na podstawie zdjęć twarzy ze zbioru FER-2013, a następnie wdrożenie modelu jako interaktywnej aplikacji webowej.',
+                    en: 'The goal was to design and train a convolutional neural network classifying seven emotion categories from facial expression images in the FER-2013 dataset, then deploy it as an interactive web application.' },
+    'ml.goal.p2': { pl: 'Pipeline obejmuje eksploracyjną analizę danych, augmentację w locie, bazową architekturę CNN, automatyczne strojenie hiperparametrów algorytmem Hyperband oraz wizualną interpretowalność predykcji techniką Grad-CAM.',
+                    en: 'The pipeline includes exploratory data analysis, on-the-fly augmentation, baseline CNN architecture, automatic Hyperband hyperparameter tuning and visual explainability via Grad-CAM.' },
+    
+    'ml.gallery': { pl: 'Projekt w akcji', en: 'Project in action' },
+    'ml.gallery.title': { pl: 'Analiza danych i wyniki modelu', en: 'Data analysis and model results' },
+    'ml.gallery.note': { pl: 'Zrzuty ekranu zostaną uzupełnione po wygenerowaniu wykresów przez skrypty <code>zajecia2_data_analysis.py</code> i <code>zajecia2_cnn.py</code> oraz po nagraniu działania aplikacji Gradio.',
+                         en: 'Screenshots will be added after generating plots with <code>zajecia2_data_analysis.py</code> and <code>zajecia2_cnn.py</code> scripts and recording Gradio app demo.' },
+    'ml.emotion.1': { pl: 'szczęśliwy', en: 'happy' },
+    'ml.emotion.2': { pl: 'smutny', en: 'sad' },
+    'ml.emotion.3': { pl: 'zły', en: 'angry' },
+    'ml.emotion.4': { pl: 'strach', en: 'fear' },
+    'ml.emotion.5': { pl: 'niesmak', en: 'disgust' },
+    'ml.emotion.6': { pl: 'zaskoczenie', en: 'surprise' },
+    'ml.emotion.7': { pl: 'neutralny', en: 'neutral' },
+    'ml.gallery.1': { pl: 'Rozkład klas emocji', en: 'Emotion class distribution' },
+    'ml.gallery.2': { pl: 'Przykładowe obrazy', en: 'Sample images' },
+    'ml.gallery.3': { pl: 'Augmentacja danych', en: 'Data augmentation' },
+    'ml.gallery.4': { pl: 'Krzywe uczenia: bazowy vs Hyperband', en: 'Learning curves: baseline vs Hyperband' },
+    'ml.gallery.5': { pl: 'Aplikacja Gradio', en: 'Gradio app' },
+    'ml.gallery.6': { pl: 'Wykres Softmax (7 klas)', en: 'Softmax graph (7 classes)' },
+    'ml.gallery.7': { pl: 'Grad-CAM — mapa Inferno', en: 'Grad-CAM — Inferno map' },
+    'ml.gallery.8': { pl: 'Detekcja twarzy (ROI)', en: 'Face detection (ROI)' },
+    
+    'ml.feat.1.title': { pl: 'EDA i niezbalansowanie klas', en: 'EDA and class imbalance' },
+    'ml.feat.1.desc': { pl: 'Analiza struktury FER-2013 — klasa happy zdecydowanie najliczniejsza, disgust wielokrotnie rzadszy',
+                        en: 'Analysis of FER-2013 structure — happy class dominant, disgust significantly rarer' },
+    'ml.feat.2.title': { pl: 'Augmentacja w locie', en: 'On-the-fly augmentation' },
+    'ml.feat.2.desc': { pl: 'Rotacja, przesunięcie, odbicie lustrzane, zoom i jasność — ImageDataGenerator redukujący overfitting',
+                        en: 'Rotation, shift, flip, zoom, brightness — ImageDataGenerator reducing overfitting' },
+    'ml.feat.3.title': { pl: 'CNN — 3 bloki konwolucyjne', en: 'CNN — 3 conv blocks' },
+    'ml.feat.3.desc': { pl: 'Conv2D + BatchNorm + MaxPool + Dropout, klasyfikator Dense 256 jednostek, wyjście Softmax 7 klas',
+                        en: 'Conv2D + BatchNorm + MaxPool + Dropout, Dense 256 classifier, Softmax output 7 classes' },
+    'ml.feat.4.title': { pl: 'Keras Tuner Hyperband', en: 'Keras Tuner Hyperband' },
+    'ml.feat.4.desc': { pl: 'Automatyczne przeszukiwanie hiperparametrów metodą successive halving — 5–10× mniej epok niż Grid Search',
+                        en: 'Automatic hyperparameter search using successive halving — 5–10× fewer epochs than Grid Search' },
+    'ml.feat.5.title': { pl: 'Grad-CAM', en: 'Grad-CAM' },
+    'ml.feat.5.desc': { pl: 'Mapy cieplne Inferno wskazujące, które obszary twarzy decydują o predykcji emocji',
+                        en: 'Inferno heatmaps showing which facial regions drive emotion predictions' },
+    'ml.feat.6.title': { pl: 'Wdrożenie w Gradio', en: 'Gradio deployment' },
+    'ml.feat.6.desc': { pl: 'Interaktywna aplikacja webowa z obsługą kamery, wykresem Softmax i adnotacją bounding boxa',
+                        en: 'Interactive web app with camera support, Softmax graph and bounding box annotation' },
+    
+    'ml.dataset.label': { pl: 'Zbiór danych', en: 'Dataset' },
+    'ml.dataset.title': { pl: 'FER-2013', en: 'FER-2013' },
+    'ml.dataset.stat.1.l': { pl: 'Obrazów łącznie', en: 'Total images' },
+    'ml.dataset.stat.2.l': { pl: 'Zbiór treningowy', en: 'Training set' },
+    'ml.dataset.stat.3.l': { pl: 'Zbiór testowy', en: 'Test set' },
+    'ml.dataset.stat.4.l': { pl: 'Skala szarości', en: 'Grayscale' },
+    
+    'ml.pipeline.label': { pl: 'Architektura', en: 'Architecture' },
+    'ml.pipeline.title': { pl: 'Potok inferencji emocji', en: 'Emotion inference pipeline' },
+    'ml.pipeline.step.1': { pl: 'Obraz wejściowy<br><span>RGB / PIL</span>', en: 'Input image<br><span>RGB / PIL</span>' },
+    'ml.pipeline.step.2': { pl: 'Detekcja twarzy<br><span>Haar Cascade</span>', en: 'Face detection<br><span>Haar Cascade</span>' },
+    'ml.pipeline.step.3': { pl: 'Preprocessing<br><span>resize 48×48, /255.0</span>', en: 'Preprocessing<br><span>resize 48×48, /255.0</span>' },
+    'ml.pipeline.step.4': { pl: 'CNN predict()<br><span>Softmax, 7 klas</span>', en: 'CNN predict()<br><span>Softmax, 7 classes</span>' },
+    'ml.pipeline.step.5': { pl: 'Grad-CAM<br><span>+ wykres + adnotacja</span>', en: 'Grad-CAM<br><span>+ graph + annotation</span>' },
+    
+    'ml.results.label': { pl: 'Wyniki', en: 'Results' },
+    'ml.results.title': { pl: 'Model bazowy vs Hyperband', en: 'Baseline vs Hyperband' },
+    'ml.results.table.model': { pl: 'Model', en: 'Model' },
+    'ml.results.table.accuracy': { pl: 'Val Accuracy', en: 'Val Accuracy' },
+    'ml.results.table.loss': { pl: 'Val Loss', en: 'Val Loss' },
+    'ml.results.table.baseline': { pl: 'Model bazowy', en: 'Baseline model' },
+    'ml.results.table.hyperband': { pl: 'Model po Hyperband', en: 'Model after Hyperband' },
+    'ml.results.table.improvement': { pl: 'Poprawa', en: 'Improvement' },
+    'ml.results.note': { pl: 'Wyniki mieszczą się w typowym zakresie dla CNN trenowanych bezpośrednio na FER-2013 bez transfer learningu (state-of-the-art ok. 73–75% przy dużych architekturach pretrenowanych). Strojenie Hyperband potwierdziło mierzalną poprawę dokładności walidacyjnej przy akceptowalnym koszcie obliczeniowym.',
+                         en: 'Results fall within the typical range for CNNs trained directly on FER-2013 without transfer learning (state-of-the-art ~73–75% with large pretrained architectures). Hyperband tuning confirmed measurable improvement in validation accuracy at acceptable computational cost.' },
+    
+    'ml.deliverables.label': { pl: 'Repozytorium', en: 'Repository' },
+    'ml.deliverables.title': { pl: 'Struktura projektu', en: 'Project structure' },
+    'ml.deliverables.1.title': { pl: 'zajecia2_data_analysis.py', en: 'zajecia2_data_analysis.py' },
+    'ml.deliverables.1.desc': { pl: 'EDA: analiza struktury FER-2013, wykresy, augmentacja', en: 'EDA: FER-2013 structure analysis, plots, augmentation' },
+    'ml.deliverables.2.title': { pl: 'zajecia2_deep_learning.py', en: 'zajecia2_deep_learning.py' },
+    'ml.deliverables.2.desc': { pl: 'Data pipeline, konfiguracja generatora danych', en: 'Data pipeline, data generator configuration' },
+    'ml.deliverables.3.title': { pl: 'zajecia2_cnn.py', en: 'zajecia2_cnn.py' },
+    'ml.deliverables.3.desc': { pl: 'Budowa CNN, trening bazowy, Keras Tuner Hyperband', en: 'CNN building, baseline training, Keras Tuner Hyperband' },
+    'ml.deliverables.4.title': { pl: 'zajecia4_klasyfikacja.py', en: 'zajecia4_klasyfikacja.py' },
+    'ml.deliverables.4.desc': { pl: 'Macierz pomyłek, ROC, permutation importance', en: 'Confusion matrix, ROC, permutation importance' },
+    'ml.deliverables.5.title': { pl: 'app.py', en: 'app.py' },
+    'ml.deliverables.5.desc': { pl: 'Aplikacja Gradio — detekcja emocji + wizualizacja Grad-CAM', en: 'Gradio app — emotion detection + Grad-CAM visualization' },
+    'ml.deliverables.6.title': { pl: 'best_model.keras', en: 'best_model.keras' },
+    'ml.deliverables.6.desc': { pl: 'Najlepszy wytrenowany model (plik binarny Keras)', en: 'Best trained model (Keras binary file)' },
+    
+    'ml.team.label': { pl: 'Zespół', en: 'Team' },
+    'ml.team.title': { pl: 'Autorzy projektu', en: 'Project authors' },
+    'ml.team.1.name': { pl: 'Andrii Torianyk', en: 'Andrii Torianyk' },
+    'ml.team.1.role': { pl: 'CNN, Keras Tuner Hyperband, Grad-CAM, aplikacja Gradio', en: 'CNN, Keras Tuner Hyperband, Grad-CAM, Gradio app' },
+    'ml.team.2.name': { pl: 'Bohdan Kovalchuk', en: 'Bohdan Kovalchuk' },
+    'ml.team.2.role': { pl: 'Eksploracyjna analiza danych, augmentacja, wizualizacje EDA', en: 'Exploratory data analysis, augmentation, EDA visualizations' },
+    
+    'ml.results.label': { pl: 'Wyniki', en: 'Results' },
+    'ml.results.title': { pl: 'Model bazowy vs Hyperband', en: 'Baseline vs Hyperband' },
+    
+    'ml.tech.label': { pl: 'Technologie', en: 'Technologies' },
+    'ml.tech.1.name': { pl: 'TensorFlow / Keras', en: 'TensorFlow / Keras' },
+    'ml.tech.1.desc': { pl: 'Budowa i trening konwolucyjnej sieci neuronowej, warstwy Conv2D, BatchNorm, Dropout.',
+                        en: 'CNN building and training, Conv2D, BatchNorm, Dropout layers.' },
+    'ml.tech.2.name': { pl: 'Keras Tuner', en: 'Keras Tuner' },
+    'ml.tech.2.desc': { pl: 'Algorytm Hyperband do automatycznego strojenia hiperparametrów modelu.',
+                        en: 'Hyperband algorithm for automatic model hyperparameter tuning.' },
+    'ml.tech.3.name': { pl: 'Gradio', en: 'Gradio' },
+    'ml.tech.3.desc': { pl: 'Interaktywna aplikacja webowa — Premium Dark UI, obsługa kamery i wykresów.',
+                        en: 'Interactive web app — Premium Dark UI, camera support and graphs.' },
+    'ml.tech.4.name': { pl: 'OpenCV', en: 'OpenCV' },
+    'ml.tech.4.desc': { pl: 'Detekcja twarzy Haar Cascade, nakładanie map cieplnych Grad-CAM (alpha blending).',
+                        en: 'Haar Cascade face detection, Grad-CAM heatmap overlays (alpha blending).' },
+    'ml.tech.5.name': { pl: 'Matplotlib / Seaborn', en: 'Matplotlib / Seaborn' },
+    'ml.tech.5.desc': { pl: 'Wizualizacje EDA, krzywe uczenia, wykresy rozkładu Softmax.',
+                        en: 'EDA visualizations, learning curves, Softmax distribution plots.' },
+    'ml.tech.6.name': { pl: 'Python / NumPy / Pandas', en: 'Python / NumPy / Pandas' },
+    'ml.tech.6.desc': { pl: 'Przetwarzanie danych, pipeline augmentacji i analiza wyników.',
+                        en: 'Data processing, augmentation pipeline and results analysis.' },
+    
+    'ml.arch.1.title': { pl: 'Blok konwolucyjny 1', en: 'Conv block 1' },
+    'ml.arch.1.desc': { pl: '2× Conv2D(32) z aktywacją ReLU, BatchNormalization, MaxPooling2D i Dropout(0.25). Wyjście: 12×12×32.',
+                        en: '2× Conv2D(32) with ReLU, BatchNormalization, MaxPooling2D and Dropout(0.25). Output: 12×12×32.' },
+    'ml.arch.2.title': { pl: 'Blok konwolucyjny 2', en: 'Conv block 2' },
+    'ml.arch.2.desc': { pl: '2× Conv2D(64), BatchNormalization, MaxPooling2D i Dropout(0.25). Wyjście: 6×6×64.',
+                        en: '2× Conv2D(64), BatchNormalization, MaxPooling2D and Dropout(0.25). Output: 6×6×64.' },
+    'ml.arch.3.title': { pl: 'Blok konwolucyjny 3', en: 'Conv block 3' },
+    'ml.arch.3.desc': { pl: '2× Conv2D(128), BatchNormalization, MaxPooling2D i Dropout(0.40). Wyjście: 3×3×128, dalej Flatten → 1152.',
+                        en: '2× Conv2D(128), BatchNormalization, MaxPooling2D and Dropout(0.40). Output: 3×3×128, then Flatten → 1152.' },
+    'ml.arch.4.title': { pl: 'Klasyfikator Dense', en: 'Dense classifier' },
+    'ml.arch.4.desc': { pl: 'Warstwa Dense 256 jednostek z ReLU, BatchNormalization i Dropout(0.50), zakończona warstwą Softmax na 7 klas.',
+                        en: 'Dense layer 256 units with ReLU, BatchNormalization and Dropout(0.50), ending with Softmax on 7 classes.' },
+    'ml.arch.5.title': { pl: 'Hyperband — przestrzeń przeszukiwania', en: 'Hyperband — search space' },
+    'ml.arch.5.desc': { pl: 'Filtry Conv2D, dropout konwolucyjny i klasyfikatora, liczba neuronów Dense oraz learning rate Adama strojone automatycznie.',
+                        en: 'Conv2D filters, conv and classifier dropout, Dense units and Adam learning rate auto-tuned.' },
+    'ml.arch.6.title': { pl: 'Grad-CAM — hooki gradientowe', en: 'Grad-CAM — gradient hooks' },
+    'ml.arch.6.desc': { pl: 'Automatyczne wykrywanie ostatniej warstwy Conv2D modelu — odporne na zmiany architektury bez ręcznej aktualizacji.',
+                        en: 'Auto-detect model\'s last Conv2D layer — robust to architecture changes without manual updates.' },
   };
 
   /* ── DETECT CURRENT PAGE ─────────────────────── */
@@ -713,6 +860,7 @@ window.I18N = (function () {
     if (/\/projects\/ualingo/.test(p))     return 'ualingo';
     if (/\/projects\/quiz/.test(p))        return 'quiz';
     if (/\/projects\/iot/.test(p))         return 'iot';
+    if (/\/projects\/ml/.test(p))          return 'ml';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
@@ -782,6 +930,7 @@ window.I18N = (function () {
     if (page === 'racing')   applyRacing(lang);
     if (page === 'quiz')     applyQuiz(lang);
     if (page === 'iot')      applyIot(lang);
+    if (page === 'ml')       applyMl(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
 
@@ -876,7 +1025,7 @@ window.I18N = (function () {
   function applyProjects(lang) {
     setText(document.querySelector('.section-eyebrow'),  'projects.eyebrow', lang);
     setText(document.querySelector('.projects-title'),   'projects.title',   lang);
-    setText(document.querySelector('.projects-desc'),    'projects.desc',    lang);
+    setText(document.querySelector('.projects.desc'),    'projects.desc',    lang);
 
     const cards = document.querySelectorAll('.project-card');
     const descKeys = ['projects.osk.desc','projects.racing.desc','projects.wyspa.desc','projects.blog.desc','projects.ualingo.desc'];
@@ -1346,6 +1495,187 @@ window.I18N = (function () {
     }
   }
 
+  /* ── ML ──────────────────────────────────────── */
+  function applyMl(lang) {
+    applySharedDetail(lang);
+    
+    // Hero section
+    setText(document.querySelector('.proj-category'), 'ml.category', lang);
+    setText(document.querySelector('.badge-uni'), 'ml.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'ml.tagline', lang);
+
+    // Hero stats labels
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    if (statLabels[0]) setText(statLabels[0], 'ml.stats.1.label', lang);
+    if (statLabels[1]) setText(statLabels[1], 'ml.stats.2.label', lang);
+    if (statLabels[2]) setText(statLabels[2], 'ml.stats.3.label', lang);
+    if (statLabels[3]) setText(statLabels[3], 'ml.stats.4.label', lang);
+
+    // Gallery section
+    setText(document.querySelector('.gallery-section .section-label'), 'ml.gallery', lang);
+    
+    const galleryH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Analiza danych') || el.textContent.includes('Analysis')
+    );
+    if (galleryH2) setText(galleryH2, 'ml.gallery.title', lang);
+    
+    const galleryNote = document.querySelector('.gallery-note');
+    if (galleryNote) setText(galleryNote, 'ml.gallery.note', lang);
+    
+    const galOverlays = document.querySelectorAll('.gallery-overlay span');
+    const galleryLabels = ['ml.gallery.1', 'ml.gallery.2', 'ml.gallery.3', 'ml.gallery.4', 'ml.gallery.5', 'ml.gallery.6', 'ml.gallery.7', 'ml.gallery.8'];
+    galOverlays.forEach((span, i) => {
+      if (galleryLabels[i]) setText(span, galleryLabels[i], lang);
+    });
+
+    // Emotion class names
+    const emoChips = document.querySelectorAll('.emo-chip');
+    const emotionLabels = ['ml.emotion.1', 'ml.emotion.2', 'ml.emotion.3', 'ml.emotion.4', 'ml.emotion.5', 'ml.emotion.6', 'ml.emotion.7'];
+    emoChips.forEach((chip, i) => {
+      if (emotionLabels[i]) {
+        const textNode = [...chip.childNodes].find(n => n.nodeType === 3);
+        if (textNode) {
+          const val = t(emotionLabels[i], lang);
+          if (val) textNode.textContent = val;
+        }
+      }
+    });
+
+    // Goal section
+    const goalLabel = document.querySelector('.two-col .section-label');
+    if (goalLabel) setText(goalLabel, 'ml.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'ml.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    if (goalPs[0]) setText(goalPs[0], 'ml.goal.p1', lang);
+    if (goalPs[1]) setText(goalPs[1], 'ml.goal.p2', lang);
+
+    // Features
+    const feats = document.querySelectorAll('.two-col .feat-item');
+    for (let i = 0; i < 6; i++) {
+      if (!feats[i]) continue;
+      setText(feats[i].querySelector('.feat-title'), `ml.feat.${i+1}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `ml.feat.${i+1}.desc`,  lang);
+    }
+
+    // Dataset section
+    const dsLabel = [...document.querySelectorAll('.section-label')].find(el => 
+      el.textContent.includes('Zbiór danych') || el.textContent.includes('Dataset')
+    );
+    if (dsLabel) setText(dsLabel, 'ml.dataset.label', lang);
+    
+    const dsH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('FER-2013')
+    );
+    if (dsH2) setText(dsH2, 'ml.dataset.title', lang);
+
+    const dsStats = document.querySelectorAll('.data-stat-l');
+    if (dsStats[0]) setText(dsStats[0], 'ml.dataset.stat.1.l', lang);
+    if (dsStats[1]) setText(dsStats[1], 'ml.dataset.stat.2.l', lang);
+    if (dsStats[2]) setText(dsStats[2], 'ml.dataset.stat.3.l', lang);
+    if (dsStats[3]) setText(dsStats[3], 'ml.dataset.stat.4.l', lang);
+
+    // Pipeline section
+    const pipelineLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Architektura') || el.textContent.includes('Architecture')
+    );
+    if (pipelineLabel) setText(pipelineLabel, 'ml.pipeline.label', lang);
+    
+    const pipelineH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Potok') || el.textContent.includes('Pipeline')
+    );
+    if (pipelineH2) setText(pipelineH2, 'ml.pipeline.title', lang);
+
+    // Pipeline steps
+    const pipelineSteps = document.querySelectorAll('.pf-step .pf-label');
+    const pipelineStepLabels = ['ml.pipeline.step.1', 'ml.pipeline.step.2', 'ml.pipeline.step.3', 'ml.pipeline.step.4', 'ml.pipeline.step.5'];
+    pipelineSteps.forEach((step, i) => {
+      if (pipelineStepLabels[i]) setText(step, pipelineStepLabels[i], lang);
+    });
+
+    // Results section
+    const resultsLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Wyniki') || el.textContent.includes('Results')
+    );
+    if (resultsLabel) setText(resultsLabel, 'ml.results.label', lang);
+    
+    const resultsH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Model bazowy') || el.textContent.includes('Baseline')
+    );
+    if (resultsH2) setText(resultsH2, 'ml.results.title', lang);
+
+    // Results table headers
+    const tableHeaders = document.querySelectorAll('.results-table thead th');
+    if (tableHeaders[0]) setText(tableHeaders[0], 'ml.results.table.model', lang);
+    if (tableHeaders[1]) setText(tableHeaders[1], 'ml.results.table.accuracy', lang);
+    if (tableHeaders[2]) setText(tableHeaders[2], 'ml.results.table.loss', lang);
+
+    // Results table rows
+    const tableBodyRows = document.querySelectorAll('.results-table tbody tr');
+    if (tableBodyRows[0] && tableBodyRows[0].querySelectorAll('td')[0]) {
+      setText(tableBodyRows[0].querySelectorAll('td')[0], 'ml.results.table.baseline', lang);
+    }
+    if (tableBodyRows[1] && tableBodyRows[1].querySelectorAll('td')[0]) {
+      setText(tableBodyRows[1].querySelectorAll('td')[0], 'ml.results.table.hyperband', lang);
+    }
+    if (tableBodyRows[2] && tableBodyRows[2].querySelectorAll('td')[0]) {
+      setText(tableBodyRows[2].querySelectorAll('td')[0], 'ml.results.table.improvement', lang);
+    }
+
+    // Results note
+    const resultsNote = document.querySelector('.results-note');
+    if (resultsNote) setText(resultsNote, 'ml.results.note', lang);
+
+    // Tech section
+    const techLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Technologie') || el.textContent.includes('Technologies')
+    );
+    if (techLabel) setText(techLabel, 'ml.tech.label', lang);
+
+    applyTechStack('ml', lang, 6);
+    applyArchInfo('ml', lang, 6);
+
+    // Deliverables section
+    const delivLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Repozytorium') || el.textContent.includes('Repository')
+    );
+    if (delivLabel) setText(delivLabel, 'ml.deliverables.label', lang);
+    
+    const delivH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Struktura') || el.textContent.includes('structure')
+    );
+    if (delivH2) setText(delivH2, 'ml.deliverables.title', lang);
+
+    // Deliverables cards
+    const delivCards = document.querySelectorAll('.deliv-card');
+    const delivKeys = ['ml.deliverables.1', 'ml.deliverables.2', 'ml.deliverables.3', 'ml.deliverables.4', 'ml.deliverables.5', 'ml.deliverables.6'];
+    delivCards.forEach((card, i) => {
+      if (delivKeys[i]) {
+        setText(card.querySelector('.deliv-title'), `${delivKeys[i]}.title`, lang);
+        setText(card.querySelector('.deliv-desc'), `${delivKeys[i]}.desc`, lang);
+      }
+    });
+
+    // Team section
+    const teamLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Zespół') || el.textContent.includes('Team')
+    );
+    if (teamLabel) setText(teamLabel, 'ml.team.label', lang);
+    
+    const teamH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Autorzy') || el.textContent.includes('authors')
+    );
+    if (teamH2) setText(teamH2, 'ml.team.title', lang);
+
+    // Team members
+    const teamCards = document.querySelectorAll('.team-card');
+    const teamMembers = ['ml.team.1', 'ml.team.2'];
+    teamCards.forEach((card, i) => {
+      if (teamMembers[i]) {
+        setText(card.querySelector('.team-name'), `${teamMembers[i]}.name`, lang);
+        setText(card.querySelector('.team-role'), `${teamMembers[i]}.role`, lang);
+      }
+    });
+  }
 
   /* ── PUBLIC API ──────────────────────────────── */
   return {
