@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Planner — AI App · Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../racing3d/project.css" />
+  <link rel="stylesheet" href="project-aiplanner.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../../index.html">
+        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+        <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="../../assets/CV.pdf" class="nav-cta" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Pobierz CV
+      </a>
+      <button class="hamburger" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="../../index.html" class="mob-link">Home</a>
+      <a href="../index.html" class="mob-link">Projekty</a>
+      <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+      <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── BACK ── -->
+    <div class="back-wrap">
+      <a href="../index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Mobile · React Native · AI</span>
+          <div class="proj-badges">
+            <span class="badge-year">2025</span>
+            <span class="badge-team">Projekt indywidualny</span>
+            <span class="badge-uni ap-badge-ai">
+              <span class="ap-ai-dot"></span>AI-powered
+            </span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Smart <span>Planner</span></h1>
+
+        <p class="proj-tagline">
+          Cross-platform aplikacja mobilna do planowania nauki, zadań i podróży
+          z wbudowanym asystentem AI (LLaMA 3.1 via GROQ API). Real-time sync
+          przez Firebase, animowane wykresy statystyk i pełny dark mode.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/AIPlannerApp" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.89-.02 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0z"/></svg>
+            Repozytorium GitHub
+          </a>
+          <a href="#screens" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            Ekrany aplikacji
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">React Native</div>
+            <div class="ps-l">iOS + Android</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">LLaMA 3.1</div>
+            <div class="ps-l">GROQ API</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Firebase</div>
+            <div class="ps-l">Auth + Firestore</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">5 ekranów</div>
+            <div class="ps-l">Tab Navigator</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TAB STRIP ── -->
+    <section class="ap-tabs-strip reveal">
+      <div class="section-wrap">
+        <div class="ap-tabs">
+          <div class="ap-tab"><span class="ap-tab-icon">✅</span>Zadania</div>
+          <div class="ap-tab"><span class="ap-tab-icon">📚</span>Nauka</div>
+          <div class="ap-tab ap-tab-active"><span class="ap-tab-icon">🏠</span>Dashboard</div>
+          <div class="ap-tab"><span class="ap-tab-icon">✈️</span>Podróże</div>
+          <div class="ap-tab"><span class="ap-tab-icon">📊</span>Statystyki</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="screens">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid ap-gallery reveal delay-2">
+
+        <div class="gallery-item" onclick="openLightbox(0)">
+          <img src="../../assets/smart-planner/screen1.png" alt="Dashboard — pulpit główny" loading="lazy" />
+          <div class="gallery-overlay"><span>Dashboard</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/smart-planner/screen2.png" alt="Ekran zadań z filtrami" loading="lazy" />
+          <div class="gallery-overlay"><span>Ekran zadań</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/smart-planner/screen3.png" alt="Planer nauki — lista kursów" loading="lazy" />
+          <div class="gallery-overlay"><span>Planer nauki</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/smart-planner/screen4.png" alt="Szczegóły kursu — harmonogram w akordeonach" loading="lazy" />
+          <div class="gallery-overlay"><span>Szczegóły kursu</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(4)">
+          <img src="../../assets/smart-planner/screen5.png" alt="Planer podróży — karty wyjazdów" loading="lazy" />
+          <div class="gallery-overlay"><span>Planer podróży</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/smart-planner/screen6.png" alt="Asystent AI — chat z LLaMA" loading="lazy" />
+          <div class="gallery-overlay"><span>Asystent AI</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/smart-planner/screen7.png" alt="Ekran statystyk — wykresy i trendy" loading="lazy" />
+          <div class="gallery-overlay"><span>Statystyki</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(7)">
+          <img src="../../assets/smart-planner/screen8.png" alt="Logowanie i rejestracja — Firebase Auth" loading="lazy" />
+          <div class="gallery-overlay"><span>Logowanie</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Jeden hub do<br/><span class="grad-cyber">wszystkiego co ważne</span></h2>
+          <p class="body-text">
+            Smart Planner łączy w jednej aplikacji mobilnej trzy obszary organizacji
+            życia — naukę, zadania i podróże — z wbudowanym asystentem AI,
+            który generuje gotowe harmonogramy i plany wycieczek na życzenie.
+          </p>
+          <p class="body-text">
+            Backend oparty w całości na Firebase (Authentication + Cloud Firestore)
+            zapewnia real-time sync między urządzeniami, pełny cykl
+            uwierzytelniania i działanie na iOS oraz Androidzie bez osobnego serwera.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🤖</div>
+            <div>
+              <div class="feat-title">Asystent AI (LLaMA 3.1)</div>
+              <div class="feat-desc">GROQ API z modelem llama-3.1-8b-instant — generuje plan nauki dzień po dniu lub itinerary wycieczki, temperatura 0.6</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔥</div>
+            <div>
+              <div class="feat-title">Firebase real-time</div>
+              <div class="feat-desc">onSnapshot na każdym ekranie — dane aktualizują się bez przeładowania, cleanup w useEffect zapobiega wyciekom pamięci</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📚</div>
+            <div>
+              <div class="feat-title">Planer nauki</div>
+              <div class="feat-desc">Kursy z paskami postępu, harmonogram w akordeonach DZIEŃ 1/2/..., licznik godzin nauki, odhaczanie tematów</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">✈️</div>
+            <div>
+              <div class="feat-title">Planer podróży</div>
+              <div class="feat-desc">Karty z dynamicznymi zdjęciami Unsplash CDN, odliczanie dni, lista pakowania z paskiem postępu, checkpointy AI</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📊</div>
+            <div>
+              <div class="feat-title">Statystyki z wykresami</div>
+              <div class="feat-desc">Animowany wykres liniowy trendu (buildSmoothPath), wykresy słupkowe z gradientami, zakres Dzień/Tydzień/Miesiąc</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌙</div>
+            <div>
+              <div class="feat-title">Dark mode + powiadomienia</div>
+              <div class="feat-desc">Globalny przełącznik motywu przekazywany jako prop do wszystkich ekranów, kontekstowe alerty o zaległościach</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SCREENS DETAIL ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Ekrany</div>
+      <h2 class="section-h2 reveal delay-1">Szczegóły funkcjonalności</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Dashboard</div>
+          <p class="arch-desc">
+            Centrum dowodzenia — statystyki zadań, kursów i wypraw, lista zadań
+            na dziś, postęp planów nauki, najbliższa podróż z odliczaniem dni.
+            TopBar z powiadomieniami i przełącznikiem dark mode.
+          </p>
+          <div class="code-block">
+<pre>calcDaysLeft(startDate)
+avgStudyProgress(plans)
+overallScore(tasks, plans)</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Zadania (TaskScreen)</div>
+          <p class="arch-desc">
+            Lista to-do z filtrami (Wszystkie / Do zrobienia / Zrobione),
+            wyszukiwarką live, statystykami aktywne/ukończone/postęp %
+            i szybkim dodawaniem z pola na dole ekranu.
+          </p>
+          <div class="code-block">
+<pre>subscribeToTasks(uid, cb)
+toggleTask(uid, taskId)
+deleteTask(uid, taskId)</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Planer nauki</div>
+          <p class="arch-desc">
+            Karty kursów z AnimatedProgressBar, widok szczegółowy z harmonogramem
+            tematów w akordeonach (DZIEŃ 1, DZIEŃ 2...), licznik godzin nauki,
+            odhaczanie tematów z auto-przeliczeniem postępu.
+          </p>
+          <div class="code-block">
+<pre>users/{uid}/studyPlans
+topicsList: [{name, completed,
+              isHeader?}]</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Planer podróży</div>
+          <p class="arch-desc">
+            Karty wyjazdów z deterministycznym doborem zdjęć Unsplash
+            (resolveTripImageUri na podstawie trip.id), odliczanie dni,
+            lista pakowania z checkboxami i checkpointy generowane przez AI.
+          </p>
+          <div class="code-block">
+<pre>users/{uid}/trips
+packingList: [{name, packed}]
+checkpoints: [{name, completed}]</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Asystent AI</div>
+          <p class="arch-desc">
+            Chat z LLaMA 3.1 via GROQ API — tryb study generuje harmonogram
+            DZIEŃ X + lista tematów, tryb travel generuje DZIEŃ X + atrakcje.
+            Odpowiedź parsowana i zapisywana do Firestore przez modal.
+          </p>
+          <div class="code-block">
+<pre>api.groq.com/openai/v1/
+  chat/completions
+model: llama-3.1-8b-instant
+temperature: 0.6</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Statystyki</div>
+          <p class="arch-desc">
+            Koło postępu z ogólnym wynikiem %, wskaźnik trendu (+X% vs poprzedni
+            okres), animowany wykres liniowy, wykresy słupkowe planów
+            i priorytetów, filtr Dzień / Tydzień / Miesiąc.
+          </p>
+          <div class="code-block">
+<pre>buildSmoothPath(dataPoints)
+filterPlansByRange(plans, range)
+useMemo(() => rangeInsights)</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Firestore — struktura danych</h2>
+
+      <div class="ap-firestore reveal delay-2">
+        <div class="fs-collection">
+          <div class="fs-col-header">
+            <span class="fs-col-icon">📁</span>
+            <span class="fs-col-name">users/{uid}/tasks</span>
+          </div>
+          <div class="fs-fields">
+            <div class="fs-field"><span class="fs-key">text</span><span class="fs-type">string</span></div>
+            <div class="fs-field"><span class="fs-key">completed</span><span class="fs-type">boolean</span></div>
+            <div class="fs-field"><span class="fs-key">priority</span><span class="fs-type">low / medium / high</span></div>
+            <div class="fs-field"><span class="fs-key">createdAt</span><span class="fs-type">Timestamp</span></div>
+          </div>
+        </div>
+        <div class="fs-collection">
+          <div class="fs-col-header">
+            <span class="fs-col-icon">📁</span>
+            <span class="fs-col-name">users/{uid}/studyPlans</span>
+          </div>
+          <div class="fs-fields">
+            <div class="fs-field"><span class="fs-key">name</span><span class="fs-type">string</span></div>
+            <div class="fs-field"><span class="fs-key">progress</span><span class="fs-type">number (0–100)</span></div>
+            <div class="fs-field"><span class="fs-key">topicsList</span><span class="fs-type">array [{name, completed}]</span></div>
+            <div class="fs-field"><span class="fs-key">hours</span><span class="fs-type">number</span></div>
+            <div class="fs-field"><span class="fs-key">date</span><span class="fs-type">string (egzamin)</span></div>
+          </div>
+        </div>
+        <div class="fs-collection">
+          <div class="fs-col-header">
+            <span class="fs-col-icon">📁</span>
+            <span class="fs-col-name">users/{uid}/trips</span>
+          </div>
+          <div class="fs-fields">
+            <div class="fs-field"><span class="fs-key">destination</span><span class="fs-type">string</span></div>
+            <div class="fs-field"><span class="fs-key">startDate / endDate</span><span class="fs-type">string DD.MM.YYYY</span></div>
+            <div class="fs-field"><span class="fs-key">packingList</span><span class="fs-type">array [{name, packed}]</span></div>
+            <div class="fs-field"><span class="fs-key">checkpoints</span><span class="fs-type">array [{name, completed}]</span></div>
+            <div class="fs-field"><span class="fs-key">status</span><span class="fs-type">Nadchodząca / Zakończona</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📱</div>
+            <div class="tech-card-name">React Native 0.73</div>
+            <div class="tech-card-desc">Cross-platform iOS + Android. Hooks: useState, useEffect, useCallback, useMemo. Komponenty funkcyjne.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔷</div>
+            <div class="tech-card-name">TypeScript 5.x</div>
+            <div class="tech-card-desc">Typowanie statyczne, interfejsy Task, DashboardProps, TripItem, StudyPlan — bezpieczeństwo typów w całym projekcie.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🔥</div>
+            <div class="tech-card-name">Firebase</div>
+            <div class="tech-card-desc">Authentication (login, rejestracja, reset hasła), Cloud Firestore z real-time listenerami onSnapshot.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-name">GROQ API</div>
+            <div class="tech-card-desc">LLaMA 3.1 8B Instant — generowanie harmonogramów nauki i planów podróży. Klucz API przez env variable.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🗺️</div>
+            <div class="tech-card-name">React Navigation</div>
+            <div class="tech-card-desc">Tab Navigator (5 ekranów) + Stack Navigator dla auth. Nawigacja przez route.params.mode (study / travel).</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🖼️</div>
+            <div class="tech-card-name">Unsplash CDN</div>
+            <div class="tech-card-desc">15 rotujących zdjęć podróży — deterministyczny wybór przez resolveTripImageUri(), fallback chain przez handleImageError.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DELIVERABLES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Projekt</div>
+      <h2 class="section-h2 reveal delay-1">Co zostało dostarczone</h2>
+      <div class="deliverables-grid reveal delay-2">
+        <div class="deliv-card">
+          <div class="deliv-icon">🔐</div>
+          <div class="deliv-title">Auth flow</div>
+          <div class="deliv-desc">Rejestracja, logowanie, reset hasła przez Firebase — obsługa błędów auth/email-already-in-use</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🧠</div>
+          <div class="deliv-title">AI Planner</div>
+          <div class="deliv-desc">Chat z LLaMA 3.1, parsowanie odpowiedzi i zapis gotowego planu do Firestore przez modal</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">📈</div>
+          <div class="deliv-title">Wykresy animowane</div>
+          <div class="deliv-desc">AnimatedLineChart, GradientBarChart, CircleProgress, RangeTabs, TrendIndicator</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🌙</div>
+          <div class="deliv-title">Dark mode</div>
+          <div class="deliv-desc">Globalny isDarkMode przekazywany jako prop do wszystkich ekranów — spójny motyw wizualny</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">🔔</div>
+          <div class="deliv-title">Powiadomienia</div>
+          <div class="deliv-desc">Kontekstowe alerty o zaległościach i postępach — dynamicznie wyliczane na podstawie danych z Firestore</div>
+        </div>
+        <div class="deliv-card">
+          <div class="deliv-icon">⚡</div>
+          <div class="deliv-title">Real-time sync</div>
+          <div class="deliv-desc">onSnapshot na wszystkich ekranach, cleanup useEffect — zero wycieków pamięci przy odmontowaniu</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Autor</div>
+      <h2 class="section-h2 reveal delay-1">Projekt indywidualny</h2>
+      <div class="team-grid reveal delay-2">
+        <div class="team-card me">
+          <div class="team-avatar">AT</div>
+          <div class="team-name">Andrii Torianyk</div>
+          <div class="team-role">UI · React Native · Firebase · GROQ AI · Wykresy · Nawigacja</div>
+          <a href="https://github.com/Andrii418" class="team-gh">github.com/Andrii418</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NAV ROW ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    const images = [
+      { src: '../../assets/smart-planner/screen1.png', cap: 'Dashboard — pulpit główny' },
+      { src: '../../assets/smart-planner/screen2.png', cap: 'Ekran zadań z filtrami' },
+      { src: '../../assets/smart-planner/screen3.png', cap: 'Planer nauki — lista kursów' },
+      { src: '../../assets/smart-planner/screen4.png', cap: 'Szczegóły kursu — akordeony' },
+      { src: '../../assets/smart-planner/screen5.png', cap: 'Planer podróży — karty wyjazdów' },
+      { src: '../../assets/smart-planner/screen6.png', cap: 'Asystent AI — chat z LLaMA 3.1' },
+      { src: '../../assets/smart-planner/screen7.png', cap: 'Statystyki — wykresy i trendy' },
+      { src: '../../assets/smart-planner/screen8.png', cap: 'Logowanie — Firebase Auth' },
+    ];
+    let lbIdx = 0;
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>
