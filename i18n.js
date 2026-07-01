@@ -848,6 +848,130 @@ window.I18N = (function () {
     'ml.arch.6.title': { pl: 'Grad-CAM — hooki gradientowe', en: 'Grad-CAM — gradient hooks' },
     'ml.arch.6.desc': { pl: 'Automatyczne wykrywanie ostatniej warstwy Conv2D modelu — odporne na zmiany architektury bez ręcznej aktualizacji.',
                         en: 'Auto-detect model\'s last Conv2D layer — robust to architecture changes without manual updates.' },
+    
+    /* ════ AIPLANNER — SMART PLANNER APP ════ */
+    'aiplanner.category': { pl: 'Mobile · React Native · AI', en: 'Mobile · React Native · AI' },
+    'aiplanner.badge.uni': { pl: 'Projekt indywidualny', en: 'Solo project' },
+    'aiplanner.tagline': { pl: 'Cross-platform aplikacja mobilna do planowania nauki, zadań i podróży z wbudowanym asystentem AI (LLaMA 3.1 via GROQ API). Real-time sync przez Firebase, animowane wykresy statystyk i pełny dark mode.',
+                           en: 'Cross-platform mobile app for learning, task and travel planning with built-in AI assistant (LLaMA 3.1 via GROQ API). Real-time sync via Firebase, animated charts and full dark mode.' },
+    
+    'aiplanner.stats.1.label': { pl: 'iOS + Android', en: 'iOS + Android' },
+    'aiplanner.stats.2.label': { pl: 'GROQ API', en: 'GROQ API' },
+    'aiplanner.stats.3.label': { pl: 'Auth + Firestore', en: 'Auth + Firestore' },
+    'aiplanner.stats.4.label': { pl: 'Tab Navigator', en: 'Tab Navigator' },
+    
+    'aiplanner.tabs.1': { pl: 'Zadania', en: 'Tasks' },
+    'aiplanner.tabs.2': { pl: 'Nauka', en: 'Learning' },
+    'aiplanner.tabs.3': { pl: 'Dashboard', en: 'Dashboard' },
+    'aiplanner.tabs.4': { pl: 'Podróże', en: 'Trips' },
+    'aiplanner.tabs.5': { pl: 'Statystyki', en: 'Stats' },
+    
+    'aiplanner.gallery.label': { pl: 'Screenshoty', en: 'Screenshots' },
+    'aiplanner.gallery.title': { pl: 'Aplikacja w akcji', en: 'App in action' },
+    'aiplanner.gallery.1': { pl: 'Dashboard', en: 'Dashboard' },
+    'aiplanner.gallery.2': { pl: 'Ekran zadań', en: 'Tasks screen' },
+    'aiplanner.gallery.3': { pl: 'Planer nauki', en: 'Study planner' },
+    'aiplanner.gallery.4': { pl: 'Szczegóły kursu', en: 'Course details' },
+    'aiplanner.gallery.5': { pl: 'Planer podróży', en: 'Trip planner' },
+    'aiplanner.gallery.6': { pl: 'Asystent AI', en: 'AI assistant' },
+    'aiplanner.gallery.7': { pl: 'Statystyki', en: 'Statistics' },
+    'aiplanner.gallery.8': { pl: 'Logowanie', en: 'Login' },
+    
+    'aiplanner.goal.label': { pl: 'Cel projektu', en: 'Project goal' },
+    'aiplanner.goal.h2': { pl: 'Jeden hub do<br><span class="grad-cyber">wszystkiego co ważne</span>', en: 'One hub for<br><span class="grad-cyber">everything important</span>' },
+    'aiplanner.goal.p1': { pl: 'Smart Planner łączy w jednej aplikacji mobilnej trzy obszary organizacji życia — naukę, zadania i podróże — z wbudowanym asystentem AI, który generuje gotowe harmonogramy i plany wycieczek na życzenie.',
+                           en: 'Smart Planner combines three areas of life organization — learning, tasks and travel — in one mobile app with built-in AI assistant that generates ready-made schedules and trip plans on demand.' },
+    'aiplanner.goal.p2': { pl: 'Backend oparty w całości na Firebase (Authentication + Cloud Firestore) zapewnia real-time sync między urządzeniami, pełny cykl uwierzytelniania i działanie na iOS oraz Androidzie bez osobnego serwera.',
+                           en: 'Backend built entirely on Firebase (Authentication + Cloud Firestore) provides real-time sync between devices, full authentication cycle and works on iOS and Android without a separate server.' },
+    
+    'aiplanner.feat.1.title': { pl: 'Asystent AI (LLaMA 3.1)', en: 'AI Assistant (LLaMA 3.1)' },
+    'aiplanner.feat.1.desc': { pl: 'GROQ API z modelem llama-3.1-8b-instant — generuje plan nauki dzień po dniu lub itinerary wycieczki, temperatura 0.6',
+                              en: 'GROQ API with llama-3.1-8b-instant model — generates day-by-day study plan or trip itinerary, temperature 0.6' },
+    'aiplanner.feat.2.title': { pl: 'Firebase real-time', en: 'Firebase real-time' },
+    'aiplanner.feat.2.desc': { pl: 'onSnapshot na każdym ekranie — dane aktualizują się bez przeładowania, cleanup w useEffect zapobiega wyciekom pamięci',
+                              en: 'onSnapshot on every screen — data updates without reload, useEffect cleanup prevents memory leaks' },
+    'aiplanner.feat.3.title': { pl: 'Planer nauki', en: 'Study planner' },
+    'aiplanner.feat.3.desc': { pl: 'Kursy z paskami postępu, harmonogram w akordeonach DZIEŃ 1/2/..., licznik godzin nauki, odhaczanie tematów',
+                              en: 'Courses with progress bars, accordion schedule DAY 1/2/..., study hours counter, topic checkmarks' },
+    'aiplanner.feat.4.title': { pl: 'Planer podróży', en: 'Trip planner' },
+    'aiplanner.feat.4.desc': { pl: 'Karty z dynamicznymi zdjęciami Unsplash CDN, odliczanie dni, lista pakowania z paskiem postępu, checkpointy AI',
+                              en: 'Cards with dynamic Unsplash CDN images, countdown, packing list with progress bar, AI checkpoints' },
+    'aiplanner.feat.5.title': { pl: 'Statystyki z wykresami', en: 'Stats with charts' },
+    'aiplanner.feat.5.desc': { pl: 'Animowany wykres liniowy trendu (buildSmoothPath), wykresy słupkowe z gradientami, zakres Dzień/Tydzień/Miesiąc',
+                              en: 'Animated trend line chart (buildSmoothPath), gradient bar charts, Day/Week/Month range' },
+    'aiplanner.feat.6.title': { pl: 'Dark mode + powiadomienia', en: 'Dark mode + notifications' },
+    'aiplanner.feat.6.desc': { pl: 'Globalny przełącznik motywu przekazywany jako prop do wszystkich ekranów, kontekstowe alerty o zaległościach',
+                              en: 'Global theme toggle passed as prop to all screens, contextual alerts about backlog' },
+    
+    'aiplanner.screens.label': { pl: 'Ekrany', en: 'Screens' },
+    'aiplanner.screens.title': { pl: 'Szczegóły funkcjonalności', en: 'Feature details' },
+    'aiplanner.arch.1.title': { pl: 'Dashboard', en: 'Dashboard' },
+    'aiplanner.arch.1.desc': { pl: 'Centrum dowodzenia — statystyki zadań, kursów i wypraw, lista zadań na dziś, postęp planów nauki, najbliższa podróż z odliczaniem dni. TopBar z powiadomieniami i przełącznikiem dark mode.',
+                              en: 'Command center — task, course and trip stats, today\'s task list, study plan progress, next trip with countdown. TopBar with notifications and dark mode toggle.' },
+    'aiplanner.arch.2.title': { pl: 'Zadania (TaskScreen)', en: 'Tasks (TaskScreen)' },
+    'aiplanner.arch.2.desc': { pl: 'Lista to-do z filtrami (Wszystkie / Do zrobienia / Zrobione), wyszukiwarką live, statystykami aktywne/ukończone/postęp % i szybkim dodawaniem z pola na dole ekranu.',
+                              en: 'To-do list with filters (All / TODO / Done), live search, stats active/completed/progress % and quick add field at bottom.' },
+    'aiplanner.arch.3.title': { pl: 'Planer nauki', en: 'Study planner' },
+    'aiplanner.arch.3.desc': { pl: 'Karty kursów z AnimatedProgressBar, widok szczegółowy z harmonogramem tematów w akordeonach (DZIEŃ 1, DZIEŃ 2...), licznik godzin nauki, odhaczanie tematów z auto-przeliczeniem postępu.',
+                              en: 'Course cards with AnimatedProgressBar, detail view with topic schedule in accordions (DAY 1, DAY 2...), study hours counter, topic checkmarks with auto progress recalc.' },
+    'aiplanner.arch.4.title': { pl: 'Planer podróży', en: 'Trip planner' },
+    'aiplanner.arch.4.desc': { pl: 'Karty wyjazdów z deterministycznym doborem zdjęć Unsplash (resolveTripImageUri na podstawie trip.id), odliczanie dni, lista pakowania z checkboxami i checkpointy generowane przez AI.',
+                              en: 'Trip cards with deterministic Unsplash image selection (resolveTripImageUri by trip.id), countdown, packing list with checkboxes and AI-generated checkpoints.' },
+    'aiplanner.arch.5.title': { pl: 'Asystent AI', en: 'AI assistant' },
+    'aiplanner.arch.5.desc': { pl: 'Chat z LLaMA 3.1 via GROQ API — tryb study generuje harmonogram DZIEŃ X + lista tematów, tryb travel generuje DZIEŃ X + atrakcje. Odpowiedź parsowana i zapisywana do Firestore przez modal.',
+                              en: 'Chat with LLaMA 3.1 via GROQ API — study mode generates DAY X + topic list, travel mode generates DAY X + attractions. Response parsed and saved to Firestore via modal.' },
+    'aiplanner.arch.6.title': { pl: 'Statystyki', en: 'Statistics' },
+    'aiplanner.arch.6.desc': { pl: 'Koło postępu z ogólnym wynikiem %, wskaźnik trendu (+X% vs poprzedni okres), animowany wykres liniowy, wykresy słupkowe planów i priorytetów, filtr Dzień / Tydzień / Miesiąc.',
+                              en: 'Progress circle with overall score %, trend indicator (+X% vs prev period), animated line chart, plan and priority bar charts, Day / Week / Month filter.' },
+    
+    'aiplanner.firestore.label': { pl: 'Architektura', en: 'Architecture' },
+    'aiplanner.firestore.title': { pl: 'Firestore — struktura danych', en: 'Firestore — data structure' },
+    
+    'aiplanner.tech.label': { pl: 'Technologie', en: 'Technologies' },
+    'aiplanner.tech.1.name': { pl: 'React Native 0.73', en: 'React Native 0.73' },
+    'aiplanner.tech.1.desc': { pl: 'Cross-platform iOS + Android. Hooks: useState, useEffect, useCallback, useMemo. Komponenty funkcyjne.',
+                              en: 'Cross-platform iOS + Android. Hooks: useState, useEffect, useCallback, useMemo. Functional components.' },
+    'aiplanner.tech.2.name': { pl: 'TypeScript 5.x', en: 'TypeScript 5.x' },
+    'aiplanner.tech.2.desc': { pl: 'Typowanie statyczne, interfejsy Task, DashboardProps, TripItem, StudyPlan — bezpieczeństwo typów w całym projekcie.',
+                              en: 'Static typing, interfaces Task, DashboardProps, TripItem, StudyPlan — type safety across project.' },
+    'aiplanner.tech.3.name': { pl: 'Firebase', en: 'Firebase' },
+    'aiplanner.tech.3.desc': { pl: 'Authentication (login, rejestracja, reset hasła), Cloud Firestore z real-time listenerami onSnapshot.',
+                              en: 'Authentication (login, signup, password reset), Cloud Firestore with real-time onSnapshot listeners.' },
+    'aiplanner.tech.4.name': { pl: 'GROQ API', en: 'GROQ API' },
+    'aiplanner.tech.4.desc': { pl: 'LLaMA 3.1 8B Instant — generowanie harmonogramów nauki i planów podróży. Klucz API przez env variable.',
+                              en: 'LLaMA 3.1 8B Instant — study schedule and trip plan generation. API key via env variable.' },
+    'aiplanner.tech.5.name': { pl: 'React Navigation', en: 'React Navigation' },
+    'aiplanner.tech.5.desc': { pl: 'Tab Navigator (5 ekranów) + Stack Navigator dla auth. Nawigacja przez route.params.mode (study / travel).',
+                              en: 'Tab Navigator (5 screens) + Stack Navigator for auth. Navigation via route.params.mode (study / travel).' },
+    'aiplanner.tech.6.name': { pl: 'Unsplash CDN', en: 'Unsplash CDN' },
+    'aiplanner.tech.6.desc': { pl: '15 rotujących zdjęć podróży — deterministyczny wybór przez resolveTripImageUri(), fallback chain przez handleImageError.',
+                              en: '15 rotating travel photos — deterministic selection via resolveTripImageUri(), fallback chain via handleImageError.' },
+    
+    'aiplanner.deliverables.label': { pl: 'Projekt', en: 'Project' },
+    'aiplanner.deliverables.title': { pl: 'Co zostało dostarczone', en: 'What was delivered' },
+    'aiplanner.deliverables.1.title': { pl: 'Auth flow', en: 'Auth flow' },
+    'aiplanner.deliverables.1.desc': { pl: 'Rejestracja, logowanie, reset hasła przez Firebase — obsługa błędów auth/email-already-in-use',
+                                       en: 'Signup, login, password reset via Firebase — auth/email-already-in-use error handling' },
+    'aiplanner.deliverables.2.title': { pl: 'AI Planner', en: 'AI Planner' },
+    'aiplanner.deliverables.2.desc': { pl: 'Chat z LLaMA 3.1, parsowanie odpowiedzi i zapis gotowego planu do Firestore przez modal',
+                                       en: 'Chat with LLaMA 3.1, parse response and save plan to Firestore via modal' },
+    'aiplanner.deliverables.3.title': { pl: 'Wykresy animowane', en: 'Animated charts' },
+    'aiplanner.deliverables.3.desc': { pl: 'AnimatedLineChart, GradientBarChart, CircleProgress, RangeTabs, TrendIndicator',
+                                       en: 'AnimatedLineChart, GradientBarChart, CircleProgress, RangeTabs, TrendIndicator' },
+    'aiplanner.deliverables.4.title': { pl: 'Dark mode', en: 'Dark mode' },
+    'aiplanner.deliverables.4.desc': { pl: 'Globalny isDarkMode przekazywany jako prop do wszystkich ekranów — spójny motyw wizualny',
+                                       en: 'Global isDarkMode passed as prop to all screens — consistent visual theme' },
+    'aiplanner.deliverables.5.title': { pl: 'Powiadomienia', en: 'Notifications' },
+    'aiplanner.deliverables.5.desc': { pl: 'Kontekstowe alerty o zaległościach i postępach — dynamicznie wyliczane na podstawie danych z Firestore',
+                                       en: 'Contextual alerts for backlog and progress — dynamically calculated from Firestore data' },
+    'aiplanner.deliverables.6.title': { pl: 'Real-time sync', en: 'Real-time sync' },
+    'aiplanner.deliverables.6.desc': { pl: 'onSnapshot na wszystkich ekranach, cleanup useEffect — zero wycieków pamięci przy odmontowaniu',
+                                       en: 'onSnapshot on all screens, useEffect cleanup — zero memory leaks on unmount' },
+    
+    'aiplanner.team.label': { pl: 'Autor', en: 'Author' },
+    'aiplanner.team.title': { pl: 'Projekt indywidualny', en: 'Solo project' },
+    'aiplanner.team.name': { pl: 'Andrii Torianyk', en: 'Andrii Torianyk' },
+    'aiplanner.team.role': { pl: 'UI · React Native · Firebase · GROQ AI · Wykresy · Nawigacja', en: 'UI · React Native · Firebase · GROQ AI · Charts · Navigation' },
   };
 
   /* ── DETECT CURRENT PAGE ─────────────────────── */
@@ -861,6 +985,7 @@ window.I18N = (function () {
     if (/\/projects\/quiz/.test(p))        return 'quiz';
     if (/\/projects\/iot/.test(p))         return 'iot';
     if (/\/projects\/ml/.test(p))          return 'ml';
+    if (/\/projects\/aiplanner/.test(p))   return 'aiplanner';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
@@ -933,6 +1058,7 @@ window.I18N = (function () {
     if (page === 'ml')       applyMl(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
+    if (page === 'aiplanner') applyAiplanner(lang);
 
     /* ── DATA ATTR TRANSLATIONS ── */
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1675,6 +1801,141 @@ window.I18N = (function () {
         setText(card.querySelector('.team-role'), `${teamMembers[i]}.role`, lang);
       }
     });
+  }
+
+  /* ── AIPLANNER ─────────────────────────────── */
+  function applyAiplanner(lang) {
+    applySharedDetail(lang);
+    
+    // Hero section
+    setText(document.querySelector('.proj-category'), 'aiplanner.category', lang);
+    setText(document.querySelector('.badge-uni'), 'aiplanner.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'aiplanner.tagline', lang);
+
+    // Hero stats labels
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    if (statLabels[0]) setText(statLabels[0], 'aiplanner.stats.1.label', lang);
+    if (statLabels[1]) setText(statLabels[1], 'aiplanner.stats.2.label', lang);
+    if (statLabels[2]) setText(statLabels[2], 'aiplanner.stats.3.label', lang);
+    if (statLabels[3]) setText(statLabels[3], 'aiplanner.stats.4.label', lang);
+
+    // Tabs
+    const tabs = document.querySelectorAll('.ap-tab');
+    const tabLabels = ['aiplanner.tabs.1', 'aiplanner.tabs.2', 'aiplanner.tabs.3', 'aiplanner.tabs.4', 'aiplanner.tabs.5'];
+    tabs.forEach((tab, i) => {
+      if (tabLabels[i]) {
+        const textNode = [...tab.childNodes].find(n => n.nodeType === 3);
+        if (textNode) {
+          const val = t(tabLabels[i], lang);
+          if (val) textNode.textContent = val;
+        }
+      }
+    });
+
+    // Gallery section
+    setText(document.querySelector('.gallery-section .section-label'), 'aiplanner.gallery.label', lang);
+    
+    const galleryH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Aplikacja w akcji') || el.textContent.includes('App in action')
+    );
+    if (galleryH2) setText(galleryH2, 'aiplanner.gallery.title', lang);
+    
+    const galOverlays = document.querySelectorAll('.gallery-overlay span');
+    const galleryLabels = ['aiplanner.gallery.1', 'aiplanner.gallery.2', 'aiplanner.gallery.3', 'aiplanner.gallery.4', 'aiplanner.gallery.5', 'aiplanner.gallery.6', 'aiplanner.gallery.7', 'aiplanner.gallery.8'];
+    galOverlays.forEach((span, i) => {
+      if (galleryLabels[i]) setText(span, galleryLabels[i], lang);
+    });
+
+    // Goal section
+    const goalLabel = document.querySelector('.two-col .section-label');
+    if (goalLabel) setText(goalLabel, 'aiplanner.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'aiplanner.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    if (goalPs[0]) setText(goalPs[0], 'aiplanner.goal.p1', lang);
+    if (goalPs[1]) setText(goalPs[1], 'aiplanner.goal.p2', lang);
+
+    // Features
+    const feats = document.querySelectorAll('.two-col .feat-item');
+    for (let i = 0; i < 6; i++) {
+      if (!feats[i]) continue;
+      setText(feats[i].querySelector('.feat-title'), `aiplanner.feat.${i+1}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `aiplanner.feat.${i+1}.desc`,  lang);
+    }
+
+    // Screens section
+    const screensLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Ekrany') || el.textContent.includes('Screens')
+    );
+    if (screensLabel) setText(screensLabel, 'aiplanner.screens.label', lang);
+    
+    const screensH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Szczegóły funkcjonalności') || el.textContent.includes('Feature details')
+    );
+    if (screensH2) setText(screensH2, 'aiplanner.screens.title', lang);
+
+    // Architecture cards (screens/features)
+    const archCards = document.querySelectorAll('.arch-grid .arch-card');
+    for (let i = 0; i < Math.min(6, archCards.length); i++) {
+      const card = archCards[i];
+      setText(card.querySelector('.arch-title'), `aiplanner.arch.${i+1}.title`, lang);
+      setText(card.querySelector('.arch-desc'), `aiplanner.arch.${i+1}.desc`, lang);
+    }
+
+    // Firestore section
+    const fsLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Architektura') || el.textContent.includes('Architecture')
+    );
+    if (fsLabel) setText(fsLabel, 'aiplanner.firestore.label', lang);
+    
+    const fsH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Firestore') || el.textContent.includes('firestore')
+    );
+    if (fsH2) setText(fsH2, 'aiplanner.firestore.title', lang);
+
+    // Tech section
+    const techLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Technologie') || el.textContent.includes('Technologies')
+    );
+    if (techLabel) setText(techLabel, 'aiplanner.tech.label', lang);
+
+    applyTechStack('aiplanner', lang, 6);
+
+    // Deliverables section
+    const delivLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Projekt') || el.textContent.includes('Project')
+    );
+    if (delivLabel) setText(delivLabel, 'aiplanner.deliverables.label', lang);
+    
+    const delivH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Co zostało dostarczone') || el.textContent.includes('What was delivered')
+    );
+    if (delivH2) setText(delivH2, 'aiplanner.deliverables.title', lang);
+
+    // Deliverables cards
+    const delivCards = document.querySelectorAll('.deliv-card');
+    for (let i = 0; i < Math.min(6, delivCards.length); i++) {
+      const card = delivCards[i];
+      setText(card.querySelector('.deliv-title'), `aiplanner.deliverables.${i+1}.title`, lang);
+      setText(card.querySelector('.deliv-desc'), `aiplanner.deliverables.${i+1}.desc`, lang);
+    }
+
+    // Team section
+    const teamLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.includes('Autor') || el.textContent.includes('Author')
+    );
+    if (teamLabel) setText(teamLabel, 'aiplanner.team.label', lang);
+    
+    const teamH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('indywidualny') || el.textContent.includes('Solo')
+    );
+    if (teamH2) setText(teamH2, 'aiplanner.team.title', lang);
+
+    // Team member (solo project - only one)
+    const teamCard = document.querySelector('.team-card');
+    if (teamCard) {
+      setText(teamCard.querySelector('.team-name'), 'aiplanner.team.name', lang);
+      setText(teamCard.querySelector('.team-role'), 'aiplanner.team.role', lang);
+    }
   }
 
   /* ── PUBLIC API ──────────────────────────────── */
