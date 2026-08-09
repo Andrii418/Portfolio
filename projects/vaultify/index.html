@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaultify</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Bezpieczeństwo</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">Projekt własny</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Vault<span>ify</span></h1>
+
+        <p class="proj-tagline">
+          Zero-knowledge aplikacja webowa do jednorazowego udostępniania sekretów —
+          hasła, klucze API i pliki szyfrowane lokalnie w przeglądarce, zanim cokolwiek trafi na serwer.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Vaultify.git" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Next.js 16</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">AES-256-GCM</div>
+            <div class="ps-l">Szyfrowanie</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Zero-Knowledge</div>
+            <div class="ps-l">Architektura</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/vaultify/screen1.png" alt="Vaultify — Ekran główny" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Ekran główny</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/vaultify/screen2.png" alt="Formularz tworzenia sekretu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Tworzenie sekretu — opcje</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/vaultify/screen3.png" alt="Wygenerowany link" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Link gotowy do wysłania</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/vaultify/screen4.png" alt="Ekran hasła" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Sekret chroniony hasłem</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(4)">
+          <img src="../../assets/vaultify/screen5.png" alt="Sekret odczytany i zniszczony" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Read-once — sekret zniszczony po odczycie</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Sekret, którego<br/><span class="grad">serwer nie widzi</span></h2>
+          <p class="body-text">
+            Vaultify pozwala utworzyć link zawierający zaszyfrowany sekret, który może zostać
+            odszyfrowany wyłącznie przez posiadacza klucza. Klucz nigdy nie trafia do serwera —
+            żyje jedynie we fragmencie adresu URL (<code>#k=...</code>), którego przeglądarki nie wysyłają.
+          </p>
+          <p class="body-text">
+            Cała logika kryptograficzna działa lokalnie przez Web Crypto API, a backend
+            przechowuje wyłącznie zaszyfrowany ciphertext i realizuje bezpieczny,
+            jednorazowy odczyt danych z bazy.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🔒</div>
+            <div>
+              <div class="feat-title">Szyfrowanie w przeglądarce</div>
+              <div class="feat-desc">AES-256-GCM przez Web Crypto API — serwer nigdy nie widzi treści ani klucza</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔥</div>
+            <div>
+              <div class="feat-title">Read-once</div>
+              <div class="feat-desc">Atomowy odczyt-i-usunięcie (SELECT ... FOR UPDATE + DELETE) eliminuje race conditions</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔑</div>
+            <div>
+              <div class="feat-title">Ochrona hasłem</div>
+              <div class="feat-desc">Klucz wyprowadzany z hasła przez PBKDF2 (600 000 iteracji), nie trafia do URL</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🧩</div>
+            <div>
+              <div class="feat-title">Podział sekretu (Shamir)</div>
+              <div class="feat-desc">Klucz dzielony na udziały (threshold scheme) nad GF(256)</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🕵️</div>
+            <div>
+              <div class="feat-title">Tryb wabika (duress)</div>
+              <div class="feat-desc">Jedno hasło, dwa niezależne szyfrowania — bez ujawniania, która ścieżka trafiła</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-name">TypeScript</div>
+            <div class="tech-card-desc">Język główny projektu — pełne typowanie logiki kryptograficznej i UI.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">▲</div>
+            <div class="tech-card-name">Next.js 16</div>
+            <div class="tech-card-desc">App Router — strony, routy API i layouty renderowane po stronie klienta i serwera.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">Tailwind CSS</div>
+            <div class="tech-card-desc">Utility-first stylowanie komponentów interfejsu.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🧱</div>
+            <div class="tech-card-name">shadcn/ui</div>
+            <div class="tech-card-desc">Gotowe, dostępne komponenty UI budowane na Radix i Tailwind.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎞️</div>
+            <div class="tech-card-name">Framer Motion</div>
+            <div class="tech-card-desc">Animacje przejść i mikrointerakcji w interfejsie.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🔐</div>
+            <div class="tech-card-name">Web Crypto API</div>
+            <div class="tech-card-desc">Natywne API przeglądarki — AES-GCM 256-bit oraz PBKDF2 do wyprowadzania kluczy.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-name">Supabase (Postgres)</div>
+            <div class="tech-card-desc">Baza danych z Row Level Security i funkcjami SECURITY DEFINER do bezpiecznego odczytu.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">⏱️</div>
+            <div class="tech-card-name">pg_cron</div>
+            <div class="tech-card-desc">Cykliczne usuwanie przeterminowanych wpisów co ~15 minut.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">▽</div>
+            <div class="tech-card-name">Vercel</div>
+            <div class="tech-card-desc">Hosting aplikacji Next.js z automatycznym deploymentem.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Klucz nigdy nie trafia na serwer</div>
+          <p class="arch-desc">
+            W trybie bez hasła losowy klucz AES-GCM jest eksportowany do Base64URL
+            i umieszczany wyłącznie we fragmencie adresu URL (<code>#k=...</code>).
+          </p>
+          <div class="code-block">
+<pre>const key =
+  await generateEncryptionKey();
+// url = `/s/${id}#k=${exportedKey}`</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Szyfrowanie lokalne</div>
+          <p class="arch-desc">
+            Tekst lub plik jest szyfrowany w przeglądarce (AES-GCM, 12-bajtowy IV)
+            zanim ciphertext trafi do Supabase.
+          </p>
+          <div class="code-block">
+<pre>const { ciphertext, iv } =
+  await encryptData(plaintext, key);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Tryb z hasłem — PBKDF2</div>
+          <p class="arch-desc">
+            Klucz jest wyprowadzany z hasła przy użyciu PBKDF2 z solą (600 000 iteracji).
+            Klucz nie opuszcza wtedy odbiorcy.
+          </p>
+          <div class="code-block">
+<pre>const key = await deriveKeyFromPassword(
+  password, salt, 600000);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Read-once na poziomie bazy</div>
+          <p class="arch-desc">
+            Odczyt sekretu i jego usunięcie są atomowe, co eliminuje wyścig
+            między dwiema równoczesnymi próbami odczytu.
+          </p>
+          <div class="code-block">
+<pre>SELECT ... FOR UPDATE;
+DELETE FROM secrets
+WHERE id = $1;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Shamir's Secret Sharing</div>
+          <p class="arch-desc">
+            Klucz może zostać podzielony na udziały nad GF(256), zgodnie
+            z arytmetyką używaną przez AES.
+          </p>
+          <div class="code-block">
+<pre>const shares = splitSecretBytes(
+  keyBytes, totalShares, threshold);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Tryb duress</div>
+          <p class="arch-desc">
+            Pod jednym hasłem ukryte są dwa niezależne szyfrowania. Aplikacja
+            najpierw próbuje odszyfrować „prawdziwy” sekret, w razie niepowodzenia — wabik.
+          </p>
+          <div class="code-block">
+<pre>await decryptDuressSecret(
+  ciphertext, password);</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECURITY ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Bezpieczeństwo</div>
+      <h2 class="section-h2 reveal delay-1">Operacyjne środki ochrony</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>RLS</kbd><span>Brak publicznego SELECT — dostęp tylko przez funkcje SECURITY DEFINER</span></div>
+        <div class="ctrl"><kbd>1x</kbd><span>Sekret usuwany atomowo po pierwszym odczycie</span></div>
+        <div class="ctrl"><kbd>IV</kbd><span>Losowy 12-bajtowy wektor inicjalizujący dla każdego szyfrowania</span></div>
+        <div class="ctrl"><kbd>⏱</kbd><span>pg_cron czyści przeterminowane wpisy co ~15 minut</span></div>
+        <div class="ctrl"><kbd>🔑</kbd><span>Service role key nigdy nie trafia do klienta</span></div>
+        <div class="ctrl"><kbd>#k=</kbd><span>Fragment URL z kluczem nigdy nie jest wysyłany do serwera</span></div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 18+</span>
+            <span class="req-pill">npm</span>
+            <span class="req-pill">Konto Supabase</span>
+            <span class="req-pill">Przeglądarka z Web Crypto API</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium i zainstaluj zależności</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/Vaultify.git
+cd Vaultify
+npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Skonfiguruj zmienne środowiskowe</div>
+              <div class="code-block">
+<pre>cp .env.example .env.local
+# uzupełnij klucze projektu Supabase (anon / service role)</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom w trybie deweloperskim</div>
+              <div class="code-block">
+<pre>npm run dev</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Build produkcyjny</div>
+              <div class="code-block">
+<pre>npm run build
+npm run start</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    const images = [
+      { src: '../../assets/vaultify/screen1.png', cap: 'Ekran główny' },
+      { src: '../../assets/vaultify/screen2.png', cap: 'Tworzenie sekretu — opcje' },
+      { src: '../../assets/vaultify/screen3.png', cap: 'Link gotowy do wysłania' },
+      { src: '../../assets/vaultify/screen4.png', cap: 'Sekret chroniony hasłem' },
+      { src: '../../assets/vaultify/screen5.png', cap: 'Read-once — sekret zniszczony po odczycie' },
+    ];
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>
