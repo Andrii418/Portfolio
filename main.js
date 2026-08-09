@@ -4,69 +4,387 @@
    lub jako moduł. GitHub Pages: oba pliki w root.
 ═══════════════════════════════════════════════ */
 
-/* ── 0. LANG SWITCH — INJECT STYLES (raz na stronę) ──
-   Animowany segmentowany przełącznik PL / EN / UA.
-   Samowystarczalny — nie wymaga zmian w style.css.
+/* ── 0. NAVBAR — PREMIUM GLASSMORPHISM STYLES (raz na stronę) ──
+   Floating pill navbar w stylu Apple / Vercel / Linear:
+   - szklany, rozmyty kontener wyśrodkowany u góry
+   - animowany gradientowy border-ring
+   - logo z gradientowym fillem tekstu
+   - sliding pill-indicator pod linkami nawigacji
+   - neonowy CTA z shimmerem i pulsującą poświatą
+   - okrągłe glass-ikony (motyw) z rotacją na hover
+   - odświeżony przełącznik języka PL/EN/UA
+   Samowystarczalne — nie wymaga zmian w style.css ani HTML.
 ─────────────────────────────────────────────── */
-(function injectLangSwitchStyles() {
-  if (document.getElementById('lang-switch-styles')) return;
+(function injectNavbarPremiumStyles() {
+  if (document.getElementById('navbar-premium-styles')) return;
   const style = document.createElement('style');
-  style.id = 'lang-switch-styles';
+  style.id = 'navbar-premium-styles';
   style.textContent = `
+    :root {
+      --nav-bg: rgba(10, 10, 15, 0.68);
+      --nav-bg-scrolled: rgba(8, 8, 13, 0.82);
+      --nav-border: rgba(255, 255, 255, 0.08);
+      --nav-glow: rgba(125, 255, 212, 0.32);
+      --nav-radius: 9999px;
+      --nav-ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --accent-1: #7dffd4;
+      --accent-2: #a8edff;
+      --accent-3: #c9b8ff;
+      --accent-4: #ffc2e3;
+    }
+
+    /* ═══ FLOATING PILL CONTAINER ═══ */
+    #navbar {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: max-content;
+      max-width: calc(100vw - 1.5rem);
+    }
+
+    #navbar .nav-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1.9rem;
+      padding: 0.55rem 0.55rem 0.55rem 1.35rem;
+      border-radius: var(--nav-radius);
+      background: var(--nav-bg);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border: 1px solid var(--nav-border);
+      box-shadow:
+        0 8px 32px -14px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+        0 0 26px -10px var(--nav-glow);
+      transition: background-color .5s ease, box-shadow .5s var(--nav-ease),
+                  border-color .5s ease, padding .4s var(--nav-ease);
+    }
+
+    /* animowany gradientowy ring-border */
+    #navbar .nav-inner::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(120deg,
+        rgba(125,255,212,.55), rgba(168,237,255,.30),
+        rgba(201,184,255,.55), rgba(255,194,227,.30),
+        rgba(125,255,212,.55));
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: .45;
+      animation: navGradientRing 9s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes navGradientRing {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    #navbar.scrolled .nav-inner {
+      background: var(--nav-bg-scrolled);
+      box-shadow:
+        0 14px 44px -14px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+        0 0 30px -8px var(--nav-glow);
+    }
+    #navbar .nav-inner:hover {
+      box-shadow:
+        0 10px 40px -12px rgba(0, 0, 0, 0.7),
+        0 0 34px -6px var(--nav-glow),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+    #navbar .nav-inner:hover::before { opacity: .75; }
+
+    /* ═══ LOGO ═══ */
+    .nav-logo {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 700;
+      letter-spacing: .01em;
+      background: linear-gradient(120deg, var(--accent-1), var(--accent-2) 55%, var(--accent-3));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: transform .45s var(--nav-ease), filter .45s var(--nav-ease), background-position .6s ease;
+    }
+    .nav-logo .logo-bracket {
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background: inherit;
+    }
+    .nav-logo:hover {
+      transform: scale(1.06);
+      background-position: 100% 50%;
+      filter: drop-shadow(0 0 10px rgba(125, 255, 212, .55));
+    }
+
+    /* ═══ NAV LINKS + SLIDING PILL INDICATOR ═══ */
+    .nav-links {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: .15rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links li { position: relative; z-index: 1; list-style: none; }
+
+    .nav-link-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.075);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset, 0 0 18px -3px rgba(125,255,212,.4);
+      transition: transform .5s var(--nav-ease), width .5s var(--nav-ease), opacity .3s ease;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform, width;
+    }
+    .nav-links.indicator-ready .nav-link-indicator { opacity: 1; }
+
+    .nav-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      padding: .5rem .95rem;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.58);
+      transition: color .35s ease;
+      white-space: nowrap;
+    }
+    .nav-link:hover,
+    .nav-link.active { color: #f4fbff; }
+
+    /* ═══ CTA "Pobierz CV" — neon premium button ═══ */
+    .nav-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .58rem 1.15rem .58rem 1rem;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      color: #05140f;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      background-size: 220% 220%;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.15) inset, 0 6px 20px -8px rgba(125,255,212,.5);
+      transition: transform .4s var(--nav-ease), box-shadow .4s var(--nav-ease), background-position .6s ease;
+      animation: ctaBreathe 3.4s ease-in-out infinite;
+    }
+    @keyframes ctaBreathe {
+      0%, 100% { box-shadow: 0 0 0 1px rgba(255,255,255,.15) inset, 0 6px 20px -8px rgba(125,255,212,.42); }
+      50%      { box-shadow: 0 0 0 1px rgba(255,255,255,.15) inset, 0 9px 28px -6px rgba(125,255,212,.78); }
+    }
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.65) 48%, transparent 66%);
+      transform: translateX(-130%);
+      transition: transform .8s ease;
+    }
+    /* magnetyczna poświata pod kursorem */
+    .nav-cta.wow-glow-ready::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0;
+      background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.55), transparent 65%);
+      transition: opacity .35s ease;
+    }
+    .nav-cta:hover::after { opacity: 1; }
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.035);
+      background-position: 100% 0%;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.25) inset, 0 0 22px rgba(0,255,170,.45), 0 12px 30px -8px rgba(125,255,212,.6);
+    }
+    .nav-cta:hover::before { transform: translateX(130%); }
+    .nav-cta:active { transform: translateY(0) scale(.97); }
+    .nav-cta svg { transition: transform .35s var(--nav-ease); }
+    .nav-cta:hover svg { transform: translateY(2px); }
+
+    /* ═══ ICON BUTTONS (theme toggle) — circular glass ═══ */
+    .nav-icon-btn {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: rgba(255, 255, 255, 0.62);
+      transition: transform .4s var(--nav-ease), color .3s ease, border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+    }
+    .nav-icon-btn::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(168,237,255,.28), transparent 70%);
+      opacity: 0;
+      transform: scale(.6);
+      transition: opacity .3s ease, transform .3s ease;
+      z-index: -1;
+    }
+    .nav-icon-btn:hover {
+      transform: rotate(15deg) scale(1.07);
+      color: var(--accent-2);
+      border-color: rgba(168, 237, 255, 0.4);
+      background: rgba(168, 237, 255, 0.06);
+      box-shadow: 0 0 16px -2px rgba(168, 237, 255, .5);
+    }
+    .nav-icon-btn:hover::after { opacity: 1; transform: scale(1); }
+    .nav-icon-btn:active { transform: rotate(15deg) scale(.94); }
+
+    /* ═══ LANGUAGE SWITCHER — glass pill, sliding highlight ═══ */
     .lang-switch {
       position: relative;
       display: inline-flex;
       align-items: center;
-      padding: 4px;
+      padding: 3px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       overflow: hidden;
       user-select: none;
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+    .lang-switch:hover {
+      border-color: rgba(168, 237, 255, 0.35);
+      box-shadow: 0 0 0 1px rgba(168, 237, 255, 0.16), 0 6px 20px -10px rgba(168, 237, 255, .4);
     }
     .lang-switch-indicator {
       position: absolute;
-      top: 4px;
-      left: 4px;
-      bottom: 4px;
-      width: calc((100% - 8px) / 3);
+      top: 3px;
+      left: 3px;
+      bottom: 3px;
+      width: calc((100% - 6px) / 3);
       border-radius: 999px;
-      background: linear-gradient(135deg, #7dffd4, #a8edff);
-      transition: transform .38s cubic-bezier(.22,.85,.2,1);
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      box-shadow: 0 0 14px rgba(168, 237, 255, .55);
+      transition: transform .42s var(--nav-ease);
       z-index: 0;
       will-change: transform;
     }
     .lang-switch-btn {
       position: relative;
       z-index: 1;
-      min-width: 34px;
-      padding: 6px 10px;
+      min-width: 32px;
+      padding: 6px 9px;
       border: none;
       background: transparent;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255, 255, 255, 0.55);
       font: 600 11px/1 'JetBrains Mono', ui-monospace, monospace;
       letter-spacing: .04em;
       border-radius: 999px;
       cursor: pointer;
       transition: color .25s ease;
     }
-    .lang-switch-btn.active {
-      color: #05131a;
+    .lang-switch-btn.active { color: #05131a; }
+    .lang-switch-btn:hover:not(.active) { color: #fff; }
+
+    html.light .lang-switch { background: rgba(10,10,20,0.05); border-color: rgba(10,10,20,0.12); }
+    html.light .lang-switch-btn { color: rgba(10,10,20,0.5); }
+    html.light .lang-switch-btn:hover:not(.active) { color: rgba(10,10,20,0.85); }
+
+    /* ═══ HAMBURGER — matching glass skin ═══ */
+    .hamburger {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      display: none !important;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: transform .35s var(--nav-ease), background-color .3s ease, border-color .3s ease;
     }
-    .lang-switch-btn:hover:not(.active) {
-      color: rgba(255,255,255,0.9);
+    .hamburger::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(201, 184, 255, .28), transparent 70%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      z-index: -1;
     }
-    html.light .lang-switch {
-      background: rgba(10,10,20,0.05);
-      border-color: rgba(10,10,20,0.12);
+    .hamburger span { transition: background-color .3s ease, transform .3s ease; }
+    .hamburger:hover { border-color: rgba(201, 184, 255, .35); }
+    .hamburger:hover::after { opacity: 1; }
+    .hamburger:hover span { background-color: var(--accent-3); }
+    /* usuń wszystkie stare podkreślenia linków */
+  #navbar .nav-link,
+  #navbar .nav-link:hover,
+  #navbar .nav-link:focus,
+  #navbar .nav-link:active,
+  #navbar .nav-link.active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  }
+
+#navbar .nav-link::after,
+#navbar .nav-link::before {
+  content: none !important;
+  display: none !important;
+}
+    
+    /* ═══ RESPONSIVE ═══ */
+    
+    @media (max-width: 860px) {
+  #navbar .nav-inner {
+    gap: .8rem;
+    padding: .5rem .5rem .5rem 1.1rem;
+  }
+
+  /* Hamburger tylko na urządzeniach mobilnych */
+  #navbar .hamburger {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 861px) {
+  #navbar .hamburger {
+    display: none !important;
+  }
+}
+    @media (max-width: 640px) {
+      #navbar { top: .7rem; max-width: calc(100vw - 1rem); }
     }
-    html.light .lang-switch-btn {
-      color: rgba(10,10,20,0.5);
-    }
-    html.light .lang-switch-btn:hover:not(.active) {
-      color: rgba(10,10,20,0.85);
+
+    @media (prefers-reduced-motion: reduce) {
+      #navbar .nav-inner::before,
+      .nav-cta { animation: none !important; }
+      .nav-logo, .nav-link, .nav-cta, .nav-cta::before,
+      .nav-icon-btn, .hamburger, .lang-switch-btn, .lang-switch-indicator,
+      .nav-link-indicator { transition: none !important; }
     }
   `;
   document.head.appendChild(style);
@@ -79,8 +397,8 @@
 ─────────────────────────────────────────────── */
 (function injectNavButtons() {
   const navInner = document.querySelector('.nav-inner');
-  const ham      = document.getElementById('ham');
-  if (!navInner || !ham) return;
+  if (!navInner) return;
+  let ham = document.getElementById('ham');
 
   /* Theme toggle */
   const themeBtn = document.createElement('button');
@@ -131,10 +449,151 @@
     langSwitch.appendChild(btn);
   });
 
-  navInner.insertBefore(langSwitch, ham);
+  // Prefer inserting before hamburger if present, otherwise append to the end
+  if (ham) navInner.insertBefore(langSwitch, ham);
+  else navInner.appendChild(langSwitch);
+
+  // If there's a mobile drawer, add a mobile copy of the language switch (without duplicate id)
+  const drawer = document.getElementById('drawer');
+  if (drawer) {
+    const mobileLang = langSwitch.cloneNode(true);
+    mobileLang.id = 'langSwitchMobile';
+    drawer.appendChild(mobileLang);
+  }
 })();
 
-/* ── 2. THEME TOGGLE ──────────────────────────── */
+/* ── 2. NAV LINKS — SLIDING PILL INDICATOR ────────
+   Śledzi hover/active link i płynnie przesuwa
+   podświetloną „kapsułę" pod właściwy element.
+─────────────────────────────────────────────── */
+(function initNavIndicator() {
+  const nav = document.querySelector('.nav-links');
+  if (!nav) return;
+
+  const indicator = document.createElement('span');
+  indicator.className = 'nav-link-indicator';
+  nav.prepend(indicator);
+
+  const links = [...nav.querySelectorAll('.nav-link')];
+
+  function normalize(path) {
+    path = path.replace(/\/index\.html$/, '/');
+    path = path.replace(/\.html$/, '');
+    path = path.replace(/\/$/, '');
+    return path || '/';
+  }
+
+  function getCurrentLink() {
+    // Prefer an element already marked active in the server-rendered HTML
+    const preactive = links.find(l => l.classList.contains('active'));
+    if (preactive) return preactive;
+
+    const current = normalize(window.location.pathname);
+
+    return links.find(link => {
+      const href = link.getAttribute('href') || '';
+      const url = new URL(href, window.location.href);
+
+      return normalize(url.pathname) === current;
+    }) || links[0];
+  }
+
+  // Extra fallback: try to match by the last path segment if exact match fails
+  function findBySegment() {
+    const seg = normalize(window.location.pathname).split('/').pop();
+    if (!seg) return null;
+    return links.find(link => {
+      const href = (link.getAttribute('href') || '').replace(/\\/g, '/');
+      return href.endsWith(seg) || href.endsWith(seg + '/');
+    }) || null;
+  }
+
+  function moveTo(link, animate = true) {
+    if (!link) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const x = linkRect.left - navRect.left + nav.scrollLeft;
+
+    // set width using bounding width for precision
+    indicator.style.width = `${Math.round(linkRect.width)}px`;
+
+    if (!animate) {
+      indicator.style.transition = 'none';
+      indicator.style.transform = `translateX(${Math.round(x)}px)`;
+      // force layout and restore transition
+      void indicator.offsetWidth;
+      indicator.style.transition = '';
+      return;
+    }
+
+    indicator.style.transform = `translateX(${Math.round(x)}px)`;
+  }
+
+  function setActive(link) {
+    links.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    moveTo(link);
+  }
+
+  let currentLink = getCurrentLink();
+  if (!currentLink || currentLink === links[0]) {
+    // try a segment-based fallback
+    const fb = findBySegment();
+    if (fb) currentLink = fb;
+  }
+
+  links.forEach(link => {
+    link.classList.remove('active');
+
+    link.addEventListener('mouseenter', () => {
+      moveTo(link);
+    });
+
+    link.addEventListener('mouseleave', () => {
+      moveTo(getCurrentLink());
+    });
+
+    link.addEventListener('click', () => {
+      setActive(link);
+    });
+  });
+
+  // Ensure active state is set consistently and the indicator is positioned
+  setActive(currentLink);
+
+  requestAnimationFrame(() => {
+    moveTo(getCurrentLink(), false);
+    nav.classList.add('indicator-ready');
+  });
+
+  // Recompute position when page is returned from bfcache or fully loaded
+  window.addEventListener('pageshow', () => moveTo(getCurrentLink(), false));
+  window.addEventListener('load', () => moveTo(getCurrentLink(), false));
+
+  // Also recompute shortly after DOM ready in case fonts/layout shift
+  document.addEventListener('readystatechange', () => {
+    if (document.readyState === 'complete') setTimeout(() => moveTo(getCurrentLink(), false), 80);
+  });
+
+  window.addEventListener('resize', () => {
+    moveTo(getCurrentLink(), false);
+  });
+})();
+
+/* ── 3. CTA — MAGNETYCZNA POŚWIATA PODĄŻAJĄCA ZA KURSOREM ── */
+(function initCtaGlow() {
+  const cta = document.querySelector('.nav-cta');
+  if (!cta) return;
+  cta.classList.add('wow-glow-ready');
+  cta.addEventListener('mousemove', e => {
+    const r = cta.getBoundingClientRect();
+    cta.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`);
+    cta.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`);
+  });
+})();
+
+/* ── 4. THEME TOGGLE ──────────────────────────── */
 (function initTheme() {
   const root = document.documentElement;
   if (localStorage.getItem('theme') === 'light') root.classList.add('light');
@@ -145,7 +604,7 @@
   });
 })();
 
-/* ── 3. VISIT COUNTER ─────────────────────────── */
+/* ── 5. VISIT COUNTER ─────────────────────────── */
 (function initVisitCounter() {
   const path = window.location.pathname;
   if (path.endsWith('/admin.html') || path.endsWith('admin.html')) return;
@@ -179,7 +638,7 @@
   });
 })();
 
-/* ── 4. LANGUAGE TOGGLE ───────────────────────── */
+/* ── 6. LANGUAGE TOGGLE ───────────────────────── */
 (function initLang() {
   /* i18n.js must be loaded before main.js */
   if (!window.I18N) {
@@ -188,8 +647,10 @@
   }
 
   const switchEl  = document.getElementById('langSwitch');
+  const mobileSwitchEl = document.getElementById('langSwitchMobile');
   const indicator = switchEl?.querySelector('.lang-switch-indicator');
   const buttons   = switchEl ? Array.from(switchEl.querySelectorAll('.lang-switch-btn')) : [];
+  const mobileButtons = mobileSwitchEl ? Array.from(mobileSwitchEl.querySelectorAll('.lang-switch-btn')) : [];
   const langs     = window.I18N.supportedLangs || ['pl', 'en', 'ua'];
 
   function moveIndicator(lang, animate) {
@@ -200,7 +661,6 @@
     if (!animate) {
       indicator.style.transition = 'none';
       indicator.style.transform = `translateX(${idx * 100}%)`;
-      /* wymuszenie reflow, żeby kolejna zmiana już się animowała */
       void indicator.offsetWidth;
       indicator.style.transition = '';
     } else {
@@ -214,11 +674,15 @@
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
+    mobileButtons.forEach(btn => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
   }
 
   let lang = window.I18N.getLang();
 
-  /* Zastosuj zapisany język i ustaw pozycję suwaka BEZ animacji na starcie */
   if (lang !== 'pl') window.I18N.apply(lang);
   setActive(lang);
   moveIndicator(lang, false);
@@ -236,7 +700,26 @@
     });
   });
 
-  /* Reaguj na zmianę języka wywołaną z innego miejsca (np. i18n.apply()) */
+  // Wire mobile buttons if present
+  mobileButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.lang;
+      if (next === lang) return;
+
+      lang = next;
+      localStorage.setItem('lang', lang);
+      window.I18N.apply(lang);
+      setActive(lang);
+      // keep desktop indicator in sync if exists
+      moveIndicator(lang, true);
+      // close drawer if it's open
+      const drawer = document.getElementById('drawer');
+      if (drawer) drawer.classList.remove('open');
+      const hamEl = document.getElementById('ham');
+      if (hamEl) hamEl.classList.remove('open');
+    });
+  });
+
   document.addEventListener('i18n:changed', e => {
     const newLang = e.detail?.lang;
     if (!newLang || newLang === lang) return;
@@ -246,13 +729,13 @@
   });
 })();
 
-/* ── 5. NAVBAR SCROLL ─────────────────────────── */
+/* ── 7. NAVBAR SCROLL ─────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar?.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-/* ── 6. HAMBURGER MENU ────────────────────────── */
+/* ── 8. HAMBURGER MENU ────────────────────────── */
 const ham    = document.getElementById('ham');
 const drawer = document.getElementById('drawer');
 
@@ -269,7 +752,7 @@ drawer?.querySelectorAll('.mob-link').forEach(link => {
   });
 });
 
-/* ── 7. SCROLL-REVEAL ─────────────────────────── */
+/* ── 9. SCROLL-REVEAL ─────────────────────────── */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -281,7 +764,7 @@ const revealObs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-/* ── 8. CANVAS — STAR FIELD + SHOOTING STARS ──── */
+/* ── 10. CANVAS — STAR FIELD + SHOOTING STARS ──── */
 (function initCanvas() {
   const canvas = document.getElementById('bgCanvas');
   if (!canvas) return;
@@ -374,7 +857,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   requestAnimationFrame(draw);
 })();
 
-/* ── 9. GLASS CARD TILT ───────────────────────── */
+/* ── 11. GLASS CARD TILT ───────────────────────── */
 (function cardTilt() {
   const card = document.querySelector('.glass-card');
   if (!card) return;
@@ -394,7 +877,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   });
 })();
 
-/* ── 10. CONTACT FORM ─────────────────────────── */
+/* ── 12. CONTACT FORM ─────────────────────────── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -486,7 +969,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   });
 })();
 
-/* ── 11. STACK PILL STAGGER ────────────────────── */
+/* ── 13. STACK PILL STAGGER ────────────────────── */
 document.querySelectorAll('.stack-pill').forEach((p, i) => {
   p.style.transitionDelay = (i * 18) + 'ms';
 });
