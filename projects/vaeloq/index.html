@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaeloq — Andrii Torianyk</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · RAG / AI</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-status"><span class="status-dot"></span>W realizacji</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Vael<span>oq</span></h1>
+
+        <p class="proj-tagline">
+          Aplikacja Next.js realizująca pełny pipeline RAG — wgrywasz PDF, system tnie go
+          na fragmenty, indeksuje jako wektory w pgvector i odpowiada na pytania,
+          osadzając odpowiedź w konkretnych cytatach ze źródła.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/vaeloq" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Next.js 16</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Gemini</div>
+            <div class="ps-l">LLM + Embeddingi</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">pgvector</div>
+            <div class="ps-l">Wyszukiwanie</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/vaeloq/screen1.png" alt="Vaeloq — ekran wgrywania dokumentu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Ekran startowy — wgraj PDF</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/vaeloq/screen2.png" alt="Dokument przetworzony, gotowy do rozmowy" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Dokument zaindeksowany</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/vaeloq/screen3.png" alt="Odpowiedź z cytatami źródłowymi" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Odpowiedź z cytatami</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+          <img src="../../assets/vaeloq/screen4.png" alt="Wielotorowa rozmowa z dokumentem" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Rozmowa wielotorowa z dokumentem</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Dokument,<br/><span class="grad">z którym można rozmawiać</span></h2>
+          <p class="body-text">
+            Vaeloq zamienia statyczny PDF w źródło, które można odpytywać w języku naturalnym.
+            Zamiast przeszukiwać dokument ręcznie, użytkownik zadaje pytanie, a model generuje
+            odpowiedź opartą wyłącznie na fragmentach faktycznie obecnych w treści.
+          </p>
+          <p class="body-text">
+            Każda odpowiedź jest strumieniowana na żywo i osadzona w konkretnych
+            fragmentach źródłowych wraz z numerem strony i procentowym dopasowaniem —
+            dzięki czemu można zweryfikować, skąd pochodzi informacja.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">📄</div>
+            <div>
+              <div class="feat-title">Parsowanie PDF</div>
+              <div class="feat-desc">Ekstrakcja tekstu i podział na logiczne fragmenty (chunking)</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🧠</div>
+            <div>
+              <div class="feat-title">Embeddingi Gemini</div>
+              <div class="feat-desc">Każdy fragment zamieniany na wektor i zapisywany w Supabase</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🔎</div>
+            <div>
+              <div class="feat-title">Wyszukiwanie wektorowe</div>
+              <div class="feat-desc">pgvector znajduje fragmenty najbardziej podobne do pytania</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💬</div>
+            <div>
+              <div class="feat-title">Strumieniowane odpowiedzi</div>
+              <div class="feat-desc">Odpowiedź generowana na żywo, token po tokenie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🏷️</div>
+            <div>
+              <div class="feat-title">Cytaty źródłowe</div>
+              <div class="feat-desc">Każda odpowiedź linkuje do fragmentów ze stroną i % dopasowania</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-name">TypeScript</div>
+            <div class="tech-card-desc">Główny język projektu — API routes, komponenty i logika biblioteczna.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">▲</div>
+            <div class="tech-card-name">Next.js 16</div>
+            <div class="tech-card-desc">App Router — split-screen layout, API routes process-document i chat.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">✨</div>
+            <div class="tech-card-name">@google/genai (Gemini)</div>
+            <div class="tech-card-desc">Model do generacji odpowiedzi oraz do liczenia embeddingów fragmentów.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-name">Supabase + pgvector</div>
+            <div class="tech-card-desc">Postgres z rozszerzeniem pgvector do przechowywania i przeszukiwania wektorów.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">📑</div>
+            <div class="tech-card-name">pdf-parse</div>
+            <div class="tech-card-desc">Ekstrakcja tekstu z plików PDF po stronie serwera.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🧱</div>
+            <div class="tech-card-name">shadcn/ui</div>
+            <div class="tech-card-desc">Komponenty interfejsu — panel dokumentu, panel czatu, dialogi.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🎞️</div>
+            <div class="tech-card-name">Framer Motion</div>
+            <div class="tech-card-desc">Animacje przejść i mikrointerakcji w interfejsie czatu.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎯</div>
+            <div class="tech-card-name">Lucide React</div>
+            <div class="tech-card-desc">Zestaw ikon używany w całym interfejsie.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Pipeline RAG krok po kroku</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Wgranie dokumentu</div>
+          <p class="arch-desc">
+            <code>document-panel.tsx</code> wysyła plik PDF do API route
+            <code>app/api/process-document</code>.
+          </p>
+          <div class="code-block">
+<pre>POST /api/process-document
+Content-Type: multipart/form-data</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Ekstrakcja i chunking</div>
+          <p class="arch-desc">
+            <code>lib/document-processor.ts</code> wyciąga tekst przez pdf-parse
+            i dzieli dokument na logiczne fragmenty.
+          </p>
+          <div class="code-block">
+<pre>const chunks =
+  chunkText(rawText, {
+    maxTokens: 500
+  });</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Embeddingi</div>
+          <p class="arch-desc">
+            <code>lib/embeddings.ts</code> wysyła każdy fragment do modelu
+            Gemini i otrzymuje wektor reprezentujący jego treść.
+          </p>
+          <div class="code-block">
+<pre>const vector =
+  await embedChunk(chunk.text);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Zapis w pgvector</div>
+          <p class="arch-desc">
+            <code>lib/supabase.ts</code> zapisuje fragmenty i wektory
+            w tabeli Postgres z rozszerzeniem pgvector.
+          </p>
+          <div class="code-block">
+<pre>insert into chunks
+  (content, embedding, page)
+values ($1, $2, $3);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Wyszukiwanie podobieństwa</div>
+          <p class="arch-desc">
+            API <code>chat</code> zamienia pytanie na wektor i pobiera
+            najbardziej podobne fragmenty (cosine similarity).
+          </p>
+          <div class="code-block">
+<pre>order by embedding <=> $1
+limit 5;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Generacja i streaming</div>
+          <p class="arch-desc">
+            Fragmenty + pytanie trafiają do Gemini, a odpowiedź jest
+            strumieniowana do <code>chat-panel.tsx</code> wraz z cytatami.
+          </p>
+          <div class="code-block">
+<pre>for await (const part of stream)
+  send(part.text);</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── NOTES / LIMITATIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Uwagi techniczne</div>
+      <h2 class="section-h2 reveal delay-1">Co warto wiedzieć</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>ext</kbd><span>pdf-parse, pdfjs-dist i @napi-rs/canvas są w serverExternalPackages, by Next.js ich nie bundlował</span></div>
+        <div class="ctrl"><kbd>sql</kbd><span>Wymagane rozszerzenie pgvector w projekcie Supabase</span></div>
+        <div class="ctrl"><kbd>⚠</kbd><span>Skrypt supabase/schema.sql trzeba dodać ręcznie — nie ma go jeszcze w repo</span></div>
+        <div class="ctrl"><kbd>key</kbd><span>Service role key używany tylko po stronie serwera, nigdy w kliencie</span></div>
+        <div class="ctrl"><kbd>src</kbd><span>Każda odpowiedź zawiera źródło — numer fragmentu, stronę i % dopasowania</span></div>
+        <div class="ctrl"><kbd>WIP</kbd><span>Projekt aktywnie rozwijany — interfejs i pipeline mogą się jeszcze zmieniać</span></div>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 18+</span>
+            <span class="req-pill">npm</span>
+            <span class="req-pill">Projekt Supabase z pgvector</span>
+            <span class="req-pill">Klucz Gemini API</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Klonuj repozytorium i zainstaluj zależności</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/vaeloq
+cd vaeloq
+npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Utwórz plik .env.local</div>
+              <div class="code-block">
+<pre>GEMINI_API_KEY=your_gemini_api_key
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_publishable_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_secret_key</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Przygotuj bazę danych Supabase</div>
+              <div class="code-block">
+<pre>-- w SQL Editorze Supabase
+-- uruchom supabase/schema.sql
+-- (tworzy tabelę fragmentów + rozszerzenie pgvector)</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom dewelopersko</div>
+              <div class="code-block">
+<pre>npm run dev
+# otwórz http://localhost:3000</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    const images = [
+      { src: '../../assets/vaeloq/screen1.png', cap: 'Ekran startowy — wgraj PDF' },
+      { src: '../../assets/vaeloq/screen2.png', cap: 'Dokument zaindeksowany' },
+      { src: '../../assets/vaeloq/screen3.png', cap: 'Odpowiedź z cytatami' },
+      { src: '../../assets/vaeloq/screen4.png', cap: 'Rozmowa wielotorowa z dokumentem' },
+    ];
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>
