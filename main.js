@@ -359,21 +359,21 @@
     /* ═══ RESPONSIVE ═══ */
     
     @media (max-width: 860px) {
-  /* Make navbar full-width and compact on mobile so controls remain visible */
-  #navbar {
-    left: 0;
-    transform: none;
-    width: 100%;
-    max-width: 100%;
-    top: .6rem;
-  }
+    /* Compact mobile navbar: keep the pill centered and items grouped */
+    #navbar {
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: calc(100vw - 1rem);
+      top: .6rem;
+    }
 
-  #navbar .nav-inner {
-    gap: .6rem;
-    padding: .4rem .75rem;
-    justify-content: space-between;
-    align-items: center;
-  }
+    #navbar .nav-inner {
+      gap: .6rem;
+      padding: .4rem .75rem;
+      justify-content: center;
+      align-items: center;
+    }
 
   /* Hide full nav links to prevent overflow and free space for icons */
   .nav-links { display: none !important; }
@@ -387,8 +387,8 @@
   /* Hamburger visible on mobile */
   #navbar .hamburger { display: inline-flex !important; }
 
-  /* Ensure mobile quick actions are visible inside nav */
-  #mobileQuick { display: flex !important; margin-left: auto; }
+  /* Ensure mobile quick actions are visible and not pushed to the edge */
+  #mobileQuick { display: flex !important; margin-left: 0; }
 }
 
 @media (min-width: 861px) {
@@ -525,18 +525,8 @@
   cvBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
 
   // Language cycle button (icon)
-  const langQuick = document.createElement('button');
-  langQuick.className = 'nav-icon-btn';
-  langQuick.style.width = '36px';
-  langQuick.style.height = '36px';
-  langQuick.style.display = 'inline-flex';
-  langQuick.style.alignItems = 'center';
-  langQuick.style.justifyContent = 'center';
-  langQuick.setAttribute('aria-label', 'Zmień język');
-  langQuick.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`;
-
+  // (removed mobile language quick-button to avoid duplicate/unwanted icon)
   mobileQuick.appendChild(cvBtn);
-  mobileQuick.appendChild(langQuick);
 
   // Insert mobileQuick into navInner at the end
   navInner.appendChild(mobileQuick);
@@ -549,18 +539,8 @@
   window.addEventListener('resize', updateMobileQuickVisibility, { passive: true });
 
   // langQuick cycles language using i18n API
-  langQuick.addEventListener('click', () => {
-    if (window.I18N && window.I18N.cycleLang) {
-      window.I18N.cycleLang();
-    } else {
-      // fallback: toggle pl/en/ua
-      const cur = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : (localStorage.getItem('lang') || 'pl');
-      const next = cur === 'pl' ? 'en' : (cur === 'en' ? 'ua' : 'pl');
-      try { localStorage.setItem('lang', next); } catch (e) {}
-      if (window.I18N && window.I18N.apply) window.I18N.apply(next);
-      document.dispatchEvent(new CustomEvent('i18n:changed', { detail: { lang: next } }));
-    }
-  });
+  // mobile quick language button removed — language switching handled by
+  // the main lang switch and drawer buttons to avoid duplicated controls.
 })();
 
 /* ── 2. NAV LINKS — SLIDING PILL INDICATOR ────────
