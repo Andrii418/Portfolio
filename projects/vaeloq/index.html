@@ -458,15 +458,25 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_secret_key</pre>
   <script src="../../main.js"></script>
   <script>
     // ── LIGHTBOX ──────────────────────────────────────────
-    const images = [
-      { src: '../../assets/vaeloq/screen1.png', cap: 'Ekran startowy — wgraj PDF' },
-      { src: '../../assets/vaeloq/screen2.png', cap: 'Dokument zaindeksowany' },
-      { src: '../../assets/vaeloq/screen3.png', cap: 'Odpowiedź z cytatami' },
-      { src: '../../assets/vaeloq/screen4.png', cap: 'Rozmowa wielotorowa z dokumentem' },
+    const imageKeys = [
+      { src: '../../assets/vaeloq/screen1.png', key: 'vaeloq.overlay.1' },
+      { src: '../../assets/vaeloq/screen2.png', key: 'vaeloq.overlay.2' },
+      { src: '../../assets/vaeloq/screen3.png', key: 'vaeloq.overlay.3' },
+      { src: '../../assets/vaeloq/screen4.png', key: 'vaeloq.overlay.4' },
     ];
+
+    function getImages() {
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
+      return imageKeys.map(i => ({
+        src: i.src,
+        cap: window.I18N ? window.I18N.t(i.key, lang) : i.key
+      }));
+    }
+
     let lbIdx = 0;
 
     function openLightbox(i) {
+      const images = getImages();
       lbIdx = i;
       document.getElementById('lbImg').src = images[i].src;
       document.getElementById('lbCaption').textContent = images[i].cap;
@@ -478,6 +488,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_secret_key</pre>
       document.body.style.overflow = '';
     }
     function lbNav(dir) {
+      const images = getImages();
       lbIdx = (lbIdx + dir + images.length) % images.length;
       document.getElementById('lbImg').src = images[lbIdx].src;
       document.getElementById('lbCaption').textContent = images[lbIdx].cap;

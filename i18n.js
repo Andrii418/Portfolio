@@ -972,6 +972,175 @@ window.I18N = (function () {
     'aiplanner.team.title': { pl: 'Projekt indywidualny', en: 'Solo project' },
     'aiplanner.team.name': { pl: 'Andrii Torianyk', en: 'Andrii Torianyk' },
     'aiplanner.team.role': { pl: 'UI · React Native · Firebase · GROQ AI · Wykresy · Nawigacja', en: 'UI · React Native · Firebase · GROQ AI · Charts · Navigation' },
+
+    /* ════ VAULTIFY ════ */
+    'vaultify.category':  { pl: 'Web Development · Bezpieczeństwo', en: 'Web Development · Security' },
+    'vaultify.badge.uni': { pl: 'Projekt własny', en: 'Personal project' },
+    'vaultify.tagline':   { pl: 'Zero-knowledge aplikacja webowa do jednorazowego udostępniania sekretów — hasła, klucze API i pliki szyfrowane lokalnie w przeglądarce, zanim cokolwiek trafi na serwer.',
+                            en: 'Zero-knowledge web app for one-time secret sharing — passwords, API keys and files encrypted locally in the browser before anything reaches the server.' },
+
+    'vaultify.stats.1.label': { pl: 'Język',           en: 'Language' },
+    'vaultify.stats.2.label': { pl: 'Framework',        en: 'Framework' },
+    'vaultify.stats.3.label': { pl: 'Szyfrowanie',      en: 'Encryption' },
+    'vaultify.stats.4.label': { pl: 'Architektura',     en: 'Architecture' },
+
+    'vaultify.gallery':   { pl: 'Aplikacja w akcji', en: 'App in action' },
+    'vaultify.overlay.1': { pl: 'Ekran główny', en: 'Home screen' },
+    'vaultify.overlay.2': { pl: 'Tworzenie sekretu — opcje', en: 'Creating a secret — options' },
+    'vaultify.overlay.3': { pl: 'Link gotowy do wysłania', en: 'Link ready to send' },
+    'vaultify.overlay.4': { pl: 'Sekret chroniony hasłem', en: 'Password-protected secret' },
+    'vaultify.overlay.5': { pl: 'Read-once — sekret zniszczony po odczycie', en: 'Read-once — secret destroyed after reading' },
+
+    'vaultify.goal.h2': { pl: 'Sekret, którego<br><span class="grad">serwer nie widzi</span>',
+                          en: 'A secret the<br><span class="grad">server never sees</span>' },
+    'vaultify.goal.p1': { pl: 'Vaultify pozwala utworzyć link zawierający zaszyfrowany sekret, który może zostać odszyfrowany wyłącznie przez posiadacza klucza. Klucz nigdy nie trafia do serwera — żyje jedynie we fragmencie adresu URL (#k=...), którego przeglądarki nie wysyłają.',
+                          en: 'Vaultify lets you create a link containing an encrypted secret that only the key holder can decrypt. The key never reaches the server — it lives only in the URL fragment (#k=...), which browsers never send.' },
+    'vaultify.goal.p2': { pl: 'Cała logika kryptograficzna działa lokalnie przez Web Crypto API, a backend przechowuje wyłącznie zaszyfrowany ciphertext i realizuje bezpieczny, jednorazowy odczyt danych z bazy.',
+                          en: 'All cryptographic logic runs locally via the Web Crypto API, while the backend stores only the encrypted ciphertext and performs a secure, one-time read from the database.' },
+
+    'vaultify.feat.1.title': { pl: 'Szyfrowanie w przeglądarce', en: 'In-browser encryption' },
+    'vaultify.feat.1.desc':  { pl: 'AES-256-GCM przez Web Crypto API — serwer nigdy nie widzi treści ani klucza', en: 'AES-256-GCM via Web Crypto API — the server never sees the content or the key' },
+    'vaultify.feat.2.title': { pl: 'Read-once', en: 'Read-once' },
+    'vaultify.feat.2.desc':  { pl: 'Atomowy odczyt-i-usunięcie (SELECT ... FOR UPDATE + DELETE) eliminuje race conditions', en: 'Atomic read-and-delete (SELECT ... FOR UPDATE + DELETE) eliminates race conditions' },
+    'vaultify.feat.3.title': { pl: 'Ochrona hasłem', en: 'Password protection' },
+    'vaultify.feat.3.desc':  { pl: 'Klucz wyprowadzany z hasła przez PBKDF2 (600 000 iteracji), nie trafia do URL', en: 'Key derived from password via PBKDF2 (600,000 iterations), never enters the URL' },
+    'vaultify.feat.4.title': { pl: 'Podział sekretu (Shamir)', en: "Secret splitting (Shamir)" },
+    'vaultify.feat.4.desc':  { pl: 'Klucz dzielony na udziały (threshold scheme) nad GF(256)', en: 'Key split into shares (threshold scheme) over GF(256)' },
+    'vaultify.feat.5.title': { pl: 'Tryb wabika (duress)', en: 'Duress mode' },
+    'vaultify.feat.5.desc':  { pl: 'Jedno hasło, dwa niezależne szyfrowania — bez ujawniania, która ścieżka trafiła', en: 'One password, two independent encryptions — without revealing which path was hit' },
+
+    'vaultify.tech.1.name': { pl: 'TypeScript', en: 'TypeScript' },
+    'vaultify.tech.1.desc': { pl: 'Język główny projektu — pełne typowanie logiki kryptograficznej i UI.', en: 'Main project language — full typing of crypto logic and UI.' },
+    'vaultify.tech.2.name': { pl: 'Next.js 16', en: 'Next.js 16' },
+    'vaultify.tech.2.desc': { pl: 'App Router — strony, routy API i layouty renderowane po stronie klienta i serwera.', en: 'App Router — pages, API routes and layouts rendered client- and server-side.' },
+    'vaultify.tech.3.name': { pl: 'Tailwind CSS', en: 'Tailwind CSS' },
+    'vaultify.tech.3.desc': { pl: 'Utility-first stylowanie komponentów interfejsu.', en: 'Utility-first styling of UI components.' },
+    'vaultify.tech.4.name': { pl: 'shadcn/ui', en: 'shadcn/ui' },
+    'vaultify.tech.4.desc': { pl: 'Gotowe, dostępne komponenty UI budowane na Radix i Tailwind.', en: 'Ready-made, accessible UI components built on Radix and Tailwind.' },
+    'vaultify.tech.5.name': { pl: 'Framer Motion', en: 'Framer Motion' },
+    'vaultify.tech.5.desc': { pl: 'Animacje przejść i mikrointerakcji w interfejsie.', en: 'Transition and micro-interaction animations in the UI.' },
+    'vaultify.tech.6.name': { pl: 'Web Crypto API', en: 'Web Crypto API' },
+    'vaultify.tech.6.desc': { pl: 'Natywne API przeglądarki — AES-GCM 256-bit oraz PBKDF2 do wyprowadzania kluczy.', en: "Native browser API — 256-bit AES-GCM and PBKDF2 for key derivation." },
+    'vaultify.tech.7.name': { pl: 'Supabase (Postgres)', en: 'Supabase (Postgres)' },
+    'vaultify.tech.7.desc': { pl: 'Baza danych z Row Level Security i funkcjami SECURITY DEFINER do bezpiecznego odczytu.', en: 'Database with Row Level Security and SECURITY DEFINER functions for safe reads.' },
+    'vaultify.tech.8.name': { pl: 'pg_cron', en: 'pg_cron' },
+    'vaultify.tech.8.desc': { pl: 'Cykliczne usuwanie przeterminowanych wpisów co ~15 minut.', en: 'Periodically removes expired entries every ~15 minutes.' },
+    'vaultify.tech.9.name': { pl: 'Vercel', en: 'Vercel' },
+    'vaultify.tech.9.desc': { pl: 'Hosting aplikacji Next.js z automatycznym deploymentem.', en: 'Hosting for the Next.js app with automatic deployment.' },
+
+    'vaultify.arch.1.title': { pl: 'Klucz nigdy nie trafia na serwer', en: 'The key never reaches the server' },
+    'vaultify.arch.1.desc':  { pl: 'W trybie bez hasła losowy klucz AES-GCM jest eksportowany do Base64URL i umieszczany wyłącznie we fragmencie adresu URL (#k=...).', en: 'In no-password mode, a random AES-GCM key is exported to Base64URL and placed only in the URL fragment (#k=...).' },
+    'vaultify.arch.2.title': { pl: 'Szyfrowanie lokalne', en: 'Local encryption' },
+    'vaultify.arch.2.desc':  { pl: 'Tekst lub plik jest szyfrowany w przeglądarce (AES-GCM, 12-bajtowy IV) zanim ciphertext trafi do Supabase.', en: 'Text or a file is encrypted in the browser (AES-GCM, 12-byte IV) before the ciphertext reaches Supabase.' },
+    'vaultify.arch.3.title': { pl: 'Tryb z hasłem — PBKDF2', en: 'Password mode — PBKDF2' },
+    'vaultify.arch.3.desc':  { pl: 'Klucz jest wyprowadzany z hasła przy użyciu PBKDF2 z solą (600 000 iteracji). Klucz nie opuszcza wtedy odbiorcy.', en: 'The key is derived from the password using salted PBKDF2 (600,000 iterations). The key never leaves the recipient.' },
+    'vaultify.arch.4.title': { pl: 'Read-once na poziomie bazy', en: 'Read-once at the database level' },
+    'vaultify.arch.4.desc':  { pl: 'Odczyt sekretu i jego usunięcie są atomowe, co eliminuje wyścig między dwiema równoczesnymi próbami odczytu.', en: 'Reading the secret and deleting it are atomic, eliminating a race between two simultaneous read attempts.' },
+    'vaultify.arch.5.title': { pl: "Shamir's Secret Sharing", en: "Shamir's Secret Sharing" },
+    'vaultify.arch.5.desc':  { pl: 'Klucz może zostać podzielony na udziały nad GF(256), zgodnie z arytmetyką używaną przez AES.', en: 'The key can be split into shares over GF(256), consistent with the arithmetic AES uses.' },
+    'vaultify.arch.6.title': { pl: 'Tryb duress', en: 'Duress mode' },
+    'vaultify.arch.6.desc':  { pl: 'Pod jednym hasłem ukryte są dwa niezależne szyfrowania. Aplikacja najpierw próbuje odszyfrować „prawdziwy” sekret, w razie niepowodzenia — wabik.', en: 'Two independent encryptions hide behind one password. The app first tries to decrypt the "real" secret, falling back to the decoy on failure.' },
+
+    'vaultify.security.label': { pl: 'Bezpieczeństwo', en: 'Security' },
+    'vaultify.security.title': { pl: 'Operacyjne środki ochrony', en: 'Operational safeguards' },
+    'vaultify.ctrl.1': { pl: 'Brak publicznego SELECT — dostęp tylko przez funkcje SECURITY DEFINER', en: 'No public SELECT — access only via SECURITY DEFINER functions' },
+    'vaultify.ctrl.2': { pl: 'Sekret usuwany atomowo po pierwszym odczycie', en: 'Secret deleted atomically after first read' },
+    'vaultify.ctrl.3': { pl: 'Losowy 12-bajtowy wektor inicjalizujący dla każdego szyfrowania', en: 'Random 12-byte initialization vector for every encryption' },
+    'vaultify.ctrl.4': { pl: 'pg_cron czyści przeterminowane wpisy co ~15 minut', en: 'pg_cron clears expired entries every ~15 minutes' },
+    'vaultify.ctrl.5': { pl: 'Service role key nigdy nie trafia do klienta', en: 'The service role key never reaches the client' },
+    'vaultify.ctrl.6': { pl: 'Fragment URL z kluczem nigdy nie jest wysyłany do serwera', en: 'The URL fragment holding the key is never sent to the server' },
+
+    'vaultify.req.pill.1': { pl: 'Node.js 18+', en: 'Node.js 18+' },
+    'vaultify.req.pill.2': { pl: 'npm', en: 'npm' },
+    'vaultify.req.pill.3': { pl: 'Konto Supabase', en: 'Supabase account' },
+    'vaultify.req.pill.4': { pl: 'Przeglądarka z Web Crypto API', en: 'A browser with Web Crypto API' },
+    'vaultify.step.1.title': { pl: 'Klonuj repozytorium i zainstaluj zależności', en: 'Clone the repository and install dependencies' },
+    'vaultify.step.2.title': { pl: 'Skonfiguruj zmienne środowiskowe', en: 'Configure environment variables' },
+    'vaultify.step.3.title': { pl: 'Uruchom w trybie deweloperskim', en: 'Run in development mode' },
+    'vaultify.step.4.title': { pl: 'Build produkcyjny', en: 'Production build' },
+
+    /* ════ VAELOQ ════ */
+    'vaeloq.category': { pl: 'Web Development · RAG / AI', en: 'Web Development · RAG / AI' },
+    'vaeloq.status':   { pl: 'W realizacji', en: 'In progress' },
+    'vaeloq.tagline':  { pl: 'Aplikacja Next.js realizująca pełny pipeline RAG — wgrywasz PDF, system tnie go na fragmenty, indeksuje jako wektory w pgvector i odpowiada na pytania, osadzając odpowiedź w konkretnych cytatach ze źródła.',
+                         en: 'A Next.js app running a full RAG pipeline — upload a PDF, the system splits it into chunks, indexes them as vectors in pgvector, and answers questions by grounding the response in specific source citations.' },
+
+    'vaeloq.stats.1.label': { pl: 'Język', en: 'Language' },
+    'vaeloq.stats.2.label': { pl: 'Framework', en: 'Framework' },
+    'vaeloq.stats.3.label': { pl: 'LLM + Embeddingi', en: 'LLM + Embeddings' },
+    'vaeloq.stats.4.label': { pl: 'Wyszukiwanie', en: 'Search' },
+
+    'vaeloq.gallery':   { pl: 'Aplikacja w akcji', en: 'App in action' },
+    'vaeloq.overlay.1': { pl: 'Ekran startowy — wgraj PDF', en: 'Start screen — upload a PDF' },
+    'vaeloq.overlay.2': { pl: 'Dokument zaindeksowany', en: 'Document indexed' },
+    'vaeloq.overlay.3': { pl: 'Odpowiedź z cytatami', en: 'Answer with citations' },
+    'vaeloq.overlay.4': { pl: 'Rozmowa wielotorowa z dokumentem', en: 'Multi-turn conversation with the document' },
+
+    'vaeloq.goal.h2': { pl: 'Dokument,<br><span class="grad">z którym można rozmawiać</span>',
+                        en: 'A document<br><span class="grad">you can talk to</span>' },
+    'vaeloq.goal.p1': { pl: 'Vaeloq zamienia statyczny PDF w źródło, które można odpytywać w języku naturalnym. Zamiast przeszukiwać dokument ręcznie, użytkownik zadaje pytanie, a model generuje odpowiedź opartą wyłącznie na fragmentach faktycznie obecnych w treści.',
+                        en: 'Vaeloq turns a static PDF into a source you can query in natural language. Instead of manually searching the document, the user asks a question and the model generates an answer grounded only in fragments actually present in the content.' },
+    'vaeloq.goal.p2': { pl: 'Każda odpowiedź jest strumieniowana na żywo i osadzona w konkretnych fragmentach źródłowych wraz z numerem strony i procentowym dopasowaniem — dzięki czemu można zweryfikować, skąd pochodzi informacja.',
+                        en: 'Every answer is streamed live and grounded in specific source fragments along with the page number and match percentage — so you can verify where the information comes from.' },
+
+    'vaeloq.feat.1.title': { pl: 'Parsowanie PDF', en: 'PDF parsing' },
+    'vaeloq.feat.1.desc':  { pl: 'Ekstrakcja tekstu i podział na logiczne fragmenty (chunking)', en: 'Text extraction and splitting into logical fragments (chunking)' },
+    'vaeloq.feat.2.title': { pl: 'Embeddingi Gemini', en: 'Gemini embeddings' },
+    'vaeloq.feat.2.desc':  { pl: 'Każdy fragment zamieniany na wektor i zapisywany w Supabase', en: 'Each fragment is converted into a vector and stored in Supabase' },
+    'vaeloq.feat.3.title': { pl: 'Wyszukiwanie wektorowe', en: 'Vector search' },
+    'vaeloq.feat.3.desc':  { pl: 'pgvector znajduje fragmenty najbardziej podobne do pytania', en: 'pgvector finds the fragments most similar to the question' },
+    'vaeloq.feat.4.title': { pl: 'Strumieniowane odpowiedzi', en: 'Streamed answers' },
+    'vaeloq.feat.4.desc':  { pl: 'Odpowiedź generowana na żywo, token po tokenie', en: 'Answer generated live, token by token' },
+    'vaeloq.feat.5.title': { pl: 'Cytaty źródłowe', en: 'Source citations' },
+    'vaeloq.feat.5.desc':  { pl: 'Każda odpowiedź linkuje do fragmentów ze stroną i % dopasowania', en: 'Every answer links to fragments with page number and match %' },
+
+    'vaeloq.tech.1.name': { pl: 'TypeScript', en: 'TypeScript' },
+    'vaeloq.tech.1.desc': { pl: 'Główny język projektu — API routes, komponenty i logika biblioteczna.', en: 'Main project language — API routes, components and library logic.' },
+    'vaeloq.tech.2.name': { pl: 'Next.js 16', en: 'Next.js 16' },
+    'vaeloq.tech.2.desc': { pl: 'App Router — split-screen layout, API routes process-document i chat.', en: 'App Router — split-screen layout, process-document and chat API routes.' },
+    'vaeloq.tech.3.name': { pl: '@google/genai (Gemini)', en: '@google/genai (Gemini)' },
+    'vaeloq.tech.3.desc': { pl: 'Model do generacji odpowiedzi oraz do liczenia embeddingów fragmentów.', en: 'Model used for answer generation and for computing fragment embeddings.' },
+    'vaeloq.tech.4.name': { pl: 'Supabase + pgvector', en: 'Supabase + pgvector' },
+    'vaeloq.tech.4.desc': { pl: 'Postgres z rozszerzeniem pgvector do przechowywania i przeszukiwania wektorów.', en: 'Postgres with the pgvector extension for storing and searching vectors.' },
+    'vaeloq.tech.5.name': { pl: 'pdf-parse', en: 'pdf-parse' },
+    'vaeloq.tech.5.desc': { pl: 'Ekstrakcja tekstu z plików PDF po stronie serwera.', en: 'Server-side text extraction from PDF files.' },
+    'vaeloq.tech.6.name': { pl: 'shadcn/ui', en: 'shadcn/ui' },
+    'vaeloq.tech.6.desc': { pl: 'Komponenty interfejsu — panel dokumentu, panel czatu, dialogi.', en: 'UI components — document panel, chat panel, dialogs.' },
+    'vaeloq.tech.7.name': { pl: 'Framer Motion', en: 'Framer Motion' },
+    'vaeloq.tech.7.desc': { pl: 'Animacje przejść i mikrointerakcji w interfejsie czatu.', en: 'Transition and micro-interaction animations in the chat interface.' },
+    'vaeloq.tech.8.name': { pl: 'Lucide React', en: 'Lucide React' },
+    'vaeloq.tech.8.desc': { pl: 'Zestaw ikon używany w całym interfejsie.', en: 'Icon set used throughout the interface.' },
+
+    'vaeloq.arch.1.title': { pl: 'Wgranie dokumentu', en: 'Document upload' },
+    'vaeloq.arch.1.desc':  { pl: 'document-panel.tsx wysyła plik PDF do API route app/api/process-document.', en: 'document-panel.tsx sends the PDF file to the app/api/process-document API route.' },
+    'vaeloq.arch.2.title': { pl: 'Ekstrakcja i chunking', en: 'Extraction and chunking' },
+    'vaeloq.arch.2.desc':  { pl: 'lib/document-processor.ts wyciąga tekst przez pdf-parse i dzieli dokument na logiczne fragmenty.', en: 'lib/document-processor.ts extracts text via pdf-parse and splits the document into logical fragments.' },
+    'vaeloq.arch.3.title': { pl: 'Embeddingi', en: 'Embeddings' },
+    'vaeloq.arch.3.desc':  { pl: 'lib/embeddings.ts wysyła każdy fragment do modelu Gemini i otrzymuje wektor reprezentujący jego treść.', en: 'lib/embeddings.ts sends each fragment to the Gemini model and receives a vector representing its content.' },
+    'vaeloq.arch.4.title': { pl: 'Zapis w pgvector', en: 'Storing in pgvector' },
+    'vaeloq.arch.4.desc':  { pl: 'lib/supabase.ts zapisuje fragmenty i wektory w tabeli Postgres z rozszerzeniem pgvector.', en: 'lib/supabase.ts stores fragments and vectors in a Postgres table with the pgvector extension.' },
+    'vaeloq.arch.5.title': { pl: 'Wyszukiwanie podobieństwa', en: 'Similarity search' },
+    'vaeloq.arch.5.desc':  { pl: 'API chat zamienia pytanie na wektor i pobiera najbardziej podobne fragmenty (cosine similarity).', en: 'The chat API converts the question into a vector and retrieves the most similar fragments (cosine similarity).' },
+    'vaeloq.arch.6.title': { pl: 'Generacja i streaming', en: 'Generation and streaming' },
+    'vaeloq.arch.6.desc':  { pl: 'Fragmenty + pytanie trafiają do Gemini, a odpowiedź jest strumieniowana do chat-panel.tsx wraz z cytatami.', en: 'Fragments + question go to Gemini, and the answer is streamed to chat-panel.tsx along with citations.' },
+
+    'vaeloq.notes.label': { pl: 'Uwagi techniczne', en: 'Technical notes' },
+    'vaeloq.notes.title': { pl: 'Co warto wiedzieć', en: 'Good to know' },
+    'vaeloq.note.1': { pl: 'pdf-parse, pdfjs-dist i @napi-rs/canvas są w serverExternalPackages, by Next.js ich nie bundlował', en: 'pdf-parse, pdfjs-dist and @napi-rs/canvas are in serverExternalPackages so Next.js doesn\'t bundle them' },
+    'vaeloq.note.2': { pl: 'Wymagane rozszerzenie pgvector w projekcie Supabase', en: 'The pgvector extension is required in the Supabase project' },
+    'vaeloq.note.3': { pl: 'Skrypt supabase/schema.sql trzeba dodać ręcznie — nie ma go jeszcze w repo', en: 'The supabase/schema.sql script must be added manually — it\'s not yet in the repo' },
+    'vaeloq.note.4': { pl: 'Service role key używany tylko po stronie serwera, nigdy w kliencie', en: 'The service role key is used only server-side, never on the client' },
+    'vaeloq.note.5': { pl: 'Każda odpowiedź zawiera źródło — numer fragmentu, stronę i % dopasowania', en: 'Every answer includes a source — fragment number, page and match %' },
+    'vaeloq.note.6': { pl: 'Projekt aktywnie rozwijany — interfejs i pipeline mogą się jeszcze zmieniać', en: 'The project is actively developed — the interface and pipeline may still change' },
+
+    'vaeloq.req.pill.1': { pl: 'Node.js 18+', en: 'Node.js 18+' },
+    'vaeloq.req.pill.2': { pl: 'npm', en: 'npm' },
+    'vaeloq.req.pill.3': { pl: 'Projekt Supabase z pgvector', en: 'Supabase project with pgvector' },
+    'vaeloq.req.pill.4': { pl: 'Klucz Gemini API', en: 'Gemini API key' },
+    'vaeloq.step.1.title': { pl: 'Klonuj repozytorium i zainstaluj zależności', en: 'Clone the repository and install dependencies' },
+    'vaeloq.step.2.title': { pl: 'Utwórz plik .env.local', en: 'Create the .env.local file' },
+    'vaeloq.step.3.title': { pl: 'Przygotuj bazę danych Supabase', en: 'Set up the Supabase database' },
+    'vaeloq.step.4.title': { pl: 'Uruchom dewelopersko', en: 'Run in development mode' },
   };
 
   /* ── DETECT CURRENT PAGE ─────────────────────── */
@@ -986,6 +1155,8 @@ window.I18N = (function () {
     if (/\/projects\/iot/.test(p))         return 'iot';
     if (/\/projects\/ml/.test(p))          return 'ml';
     if (/\/projects\/aiplanner/.test(p))   return 'aiplanner';
+    if (/\/projects\/vaultify/.test(p))    return 'vaultify';
+    if (/\/projects\/vaeloq/.test(p))      return 'vaeloq';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
@@ -1059,6 +1230,8 @@ window.I18N = (function () {
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
     if (page === 'aiplanner') applyAiplanner(lang);
+    if (page === 'vaultify') applyVaultify(lang);
+    if (page === 'vaeloq') applyVaeloq(lang);
 
     /* ── DATA ATTR TRANSLATIONS ── */
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1935,6 +2108,131 @@ window.I18N = (function () {
     if (teamCard) {
       setText(teamCard.querySelector('.team-name'), 'aiplanner.team.name', lang);
       setText(teamCard.querySelector('.team-role'), 'aiplanner.team.role', lang);
+    }
+  }
+
+  /* ── VAULTIFY ────────────────────────────────── */
+  function applyVaultify(lang) {
+    applySharedDetail(lang);
+    setText(document.querySelector('.proj-category'), 'vaultify.category', lang);
+    setText(document.querySelector('.badge-uni'), 'vaultify.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'vaultify.tagline', lang);
+
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    for (let i = 0; i < 4; i++) {
+      if (statLabels[i]) setText(statLabels[i], `vaultify.stats.${i+1}.label`, lang);
+    }
+
+    const galH2 = document.querySelector('.gallery-section .section-h2');
+    if (galH2) setText(galH2, 'vaultify.gallery', lang);
+
+    const overlays = document.querySelectorAll('.gallery-overlay span');
+    for (let i = 0; i < 5; i++) {
+      if (overlays[i]) setText(overlays[i], `vaultify.overlay.${i+1}`, lang);
+    }
+
+    setHTML(document.querySelector('.two-col .section-h2'), 'vaultify.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    if (goalPs[0]) setText(goalPs[0], 'vaultify.goal.p1', lang);
+    if (goalPs[1]) setText(goalPs[1], 'vaultify.goal.p2', lang);
+
+    const feats = document.querySelectorAll('.feat-item');
+    for (let i = 0; i < 5; i++) {
+      if (!feats[i]) continue;
+      setText(feats[i].querySelector('.feat-title'), `vaultify.feat.${i+1}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `vaultify.feat.${i+1}.desc`,  lang);
+    }
+
+    applyTechStack('vaultify', lang, 9);
+    applyArchInfo('vaultify', lang, 6);
+
+    /* Bezpieczeństwo */
+    const secLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.trim() === 'Bezpieczeństwo' || el.textContent.trim() === 'Security');
+    if (secLabel) setText(secLabel, 'vaultify.security.label', lang);
+    const secH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('Operacyjne') || el.textContent.includes('Operational'));
+    if (secH2) setText(secH2, 'vaultify.security.title', lang);
+
+    const ctrls = document.querySelectorAll('.ctrl span:last-child');
+    for (let i = 0; i < 6; i++) {
+      if (ctrls[i]) setText(ctrls[i], `vaultify.ctrl.${i+1}`, lang);
+    }
+
+    /* Wymagania + kroki instalacji */
+    const pills = document.querySelectorAll('.req-pill');
+    for (let i = 0; i < 4; i++) {
+      if (pills[i]) setText(pills[i], `vaultify.req.pill.${i+1}`, lang);
+    }
+    const stepTitles = document.querySelectorAll('.step-title');
+    for (let i = 0; i < 4; i++) {
+      if (stepTitles[i]) setText(stepTitles[i], `vaultify.step.${i+1}.title`, lang);
+    }
+  }
+
+  /* ── VAELOQ ──────────────────────────────────── */
+  function applyVaeloq(lang) {
+    applySharedDetail(lang);
+    setText(document.querySelector('.proj-category'), 'vaeloq.category', lang);
+    setText(document.querySelector('.proj-tagline'), 'vaeloq.tagline', lang);
+
+    /* status badge (zamiast badge-year, ma osobną strukturę) */
+    const statusBadge = document.querySelector('.badge-status');
+    if (statusBadge) {
+      const dot = statusBadge.querySelector('.status-dot');
+      statusBadge.textContent = t('vaeloq.status', lang);
+      if (dot) statusBadge.prepend(dot);
+    }
+
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    for (let i = 0; i < 4; i++) {
+      if (statLabels[i]) setText(statLabels[i], `vaeloq.stats.${i+1}.label`, lang);
+    }
+
+    const galH2 = document.querySelector('.gallery-section .section-h2');
+    if (galH2) setText(galH2, 'vaeloq.gallery', lang);
+
+    const overlays = document.querySelectorAll('.gallery-overlay span');
+    for (let i = 0; i < 4; i++) {
+      if (overlays[i]) setText(overlays[i], `vaeloq.overlay.${i+1}`, lang);
+    }
+
+    setHTML(document.querySelector('.two-col .section-h2'), 'vaeloq.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    if (goalPs[0]) setText(goalPs[0], 'vaeloq.goal.p1', lang);
+    if (goalPs[1]) setText(goalPs[1], 'vaeloq.goal.p2', lang);
+
+    const feats = document.querySelectorAll('.feat-item');
+    for (let i = 0; i < 5; i++) {
+      if (!feats[i]) continue;
+      setText(feats[i].querySelector('.feat-title'), `vaeloq.feat.${i+1}.title`, lang);
+      setText(feats[i].querySelector('.feat-desc'),  `vaeloq.feat.${i+1}.desc`,  lang);
+    }
+
+    applyTechStack('vaeloq', lang, 8);
+    applyArchInfo('vaeloq', lang, 6);
+
+    /* Uwagi techniczne */
+    const notesLabel = [...document.querySelectorAll('.section-label')].find(el =>
+      el.textContent.trim() === 'Uwagi techniczne' || el.textContent.trim() === 'Technical notes');
+    if (notesLabel) setText(notesLabel, 'vaeloq.notes.label', lang);
+    const notesH2 = [...document.querySelectorAll('.section-h2')].find(el =>
+      el.textContent.includes('warto wiedzieć') || el.textContent.includes('Good to know'));
+    if (notesH2) setText(notesH2, 'vaeloq.notes.title', lang);
+
+    const notes = document.querySelectorAll('.ctrl span:last-child');
+    for (let i = 0; i < 6; i++) {
+      if (notes[i]) setText(notes[i], `vaeloq.note.${i+1}`, lang);
+    }
+
+    /* Wymagania + kroki instalacji */
+    const pills = document.querySelectorAll('.req-pill');
+    for (let i = 0; i < 4; i++) {
+      if (pills[i]) setText(pills[i], `vaeloq.req.pill.${i+1}`, lang);
+    }
+    const stepTitles = document.querySelectorAll('.step-title');
+    for (let i = 0; i < 4; i++) {
+      if (stepTitles[i]) setText(stepTitles[i], `vaeloq.step.${i+1}.title`, lang);
     }
   }
 

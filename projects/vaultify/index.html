@@ -464,16 +464,26 @@ npm run start</pre>
   <script src="../../main.js"></script>
   <script>
     // ── LIGHTBOX ──────────────────────────────────────────
-    const images = [
-      { src: '../../assets/vaultify/screen1.png', cap: 'Ekran główny' },
-      { src: '../../assets/vaultify/screen2.png', cap: 'Tworzenie sekretu — opcje' },
-      { src: '../../assets/vaultify/screen3.png', cap: 'Link gotowy do wysłania' },
-      { src: '../../assets/vaultify/screen4.png', cap: 'Sekret chroniony hasłem' },
-      { src: '../../assets/vaultify/screen5.png', cap: 'Read-once — sekret zniszczony po odczycie' },
+    const imageKeys = [
+      { src: '../../assets/vaultify/screen1.png', key: 'vaultify.overlay.1' },
+      { src: '../../assets/vaultify/screen2.png', key: 'vaultify.overlay.2' },
+      { src: '../../assets/vaultify/screen3.png', key: 'vaultify.overlay.3' },
+      { src: '../../assets/vaultify/screen4.png', key: 'vaultify.overlay.4' },
+      { src: '../../assets/vaultify/screen5.png', key: 'vaultify.overlay.5' },
     ];
+
+    function getImages() {
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
+      return imageKeys.map(i => ({
+        src: i.src,
+        cap: window.I18N ? window.I18N.t(i.key, lang) : i.key
+      }));
+    }
+
     let lbIdx = 0;
 
     function openLightbox(i) {
+      const images = getImages();
       lbIdx = i;
       document.getElementById('lbImg').src = images[i].src;
       document.getElementById('lbCaption').textContent = images[i].cap;
@@ -485,6 +495,7 @@ npm run start</pre>
       document.body.style.overflow = '';
     }
     function lbNav(dir) {
+      const images = getImages();
       lbIdx = (lbIdx + dir + images.length) % images.length;
       document.getElementById('lbImg').src = images[lbIdx].src;
       document.getElementById('lbCaption').textContent = images[lbIdx].cap;
