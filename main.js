@@ -359,20 +359,36 @@
     /* ═══ RESPONSIVE ═══ */
     
     @media (max-width: 860px) {
-  #navbar .nav-inner {
-    gap: .8rem;
-    padding: .5rem .5rem .5rem 1.1rem;
+  /* Make navbar full-width and compact on mobile so controls remain visible */
+  #navbar {
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    top: .6rem;
   }
-  /* Mobile layout: hide full nav links to avoid overflow and show hamburger */
+
+  #navbar .nav-inner {
+    gap: .6rem;
+    padding: .4rem .75rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide full nav links to prevent overflow and free space for icons */
   .nav-links { display: none !important; }
 
-  /* Hamburger tylko na urządzeniach mobilnych */
-  #navbar .hamburger {
-    display: inline-flex !important;
-  }
+  /* Compact logo */
+  .nav-logo { font-size: 15px; }
+
+  /* Hide large CTA on mobile (we expose CV via icons/drawer) */
+  .nav-cta { display: none !important; }
+
+  /* Hamburger visible on mobile */
+  #navbar .hamburger { display: inline-flex !important; }
 
   /* Ensure mobile quick actions are visible inside nav */
-  #mobileQuick { display: flex !important; }
+  #mobileQuick { display: flex !important; margin-left: auto; }
 }
 
 @media (min-width: 861px) {
