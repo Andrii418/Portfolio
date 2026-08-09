@@ -4,9 +4,78 @@
    lub jako moduł. GitHub Pages: oba pliki w root.
 ═══════════════════════════════════════════════ */
 
+/* ── 0. LANG SWITCH — INJECT STYLES (raz na stronę) ──
+   Animowany segmentowany przełącznik PL / EN / UA.
+   Samowystarczalny — nie wymaga zmian w style.css.
+─────────────────────────────────────────────── */
+(function injectLangSwitchStyles() {
+  if (document.getElementById('lang-switch-styles')) return;
+  const style = document.createElement('style');
+  style.id = 'lang-switch-styles';
+  style.textContent = `
+    .lang-switch {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      overflow: hidden;
+      user-select: none;
+    }
+    .lang-switch-indicator {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: calc((100% - 8px) / 3);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7dffd4, #a8edff);
+      transition: transform .38s cubic-bezier(.22,.85,.2,1);
+      z-index: 0;
+      will-change: transform;
+    }
+    .lang-switch-btn {
+      position: relative;
+      z-index: 1;
+      min-width: 34px;
+      padding: 6px 10px;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      font: 600 11px/1 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: .04em;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color .25s ease;
+    }
+    .lang-switch-btn.active {
+      color: #05131a;
+    }
+    .lang-switch-btn:hover:not(.active) {
+      color: rgba(255,255,255,0.9);
+    }
+    html.light .lang-switch {
+      background: rgba(10,10,20,0.05);
+      border-color: rgba(10,10,20,0.12);
+    }
+    html.light .lang-switch-btn {
+      color: rgba(10,10,20,0.5);
+    }
+    html.light .lang-switch-btn:hover:not(.active) {
+      color: rgba(10,10,20,0.85);
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
 /* ── 1. INJECT NAVBAR BUTTONS ────────────────────
-   Wstrzykuje przyciski motywu i języka do navbara.
-   Działa na każdej podstronie bo navbar jest wspólny.
+   Wstrzykuje przyciski motywu i przełącznik języka
+   do navbara. Działa na każdej podstronie bo navbar
+   jest wspólny.
 ─────────────────────────────────────────────── */
 (function injectNavButtons() {
   const navInner = document.querySelector('.nav-inner');
@@ -35,19 +104,34 @@
     </svg>`;
   navInner.insertBefore(themeBtn, ham);
 
-  /* Lang toggle */
-  const langBtn = document.createElement('button');
-  langBtn.id = 'langBtn';
-  langBtn.className = 'nav-icon-btn';
-  langBtn.setAttribute('aria-label', 'Zmień język');
-  langBtn.innerHTML = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"/>
-      <line x1="2" y1="12" x2="22" y2="12"/>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </svg>
-    <span id="langLabel">EN</span>`;
-  navInner.insertBefore(langBtn, ham);
+  /* Animated language switch: PL / EN / UA */
+  const LANGS = [
+    { code: 'pl', label: 'PL' },
+    { code: 'en', label: 'EN' },
+    { code: 'ua', label: 'UA' },
+  ];
+
+  const langSwitch = document.createElement('div');
+  langSwitch.id = 'langSwitch';
+  langSwitch.className = 'lang-switch';
+  langSwitch.setAttribute('role', 'tablist');
+  langSwitch.setAttribute('aria-label', 'Wybór języka strony');
+
+  const indicator = document.createElement('span');
+  indicator.className = 'lang-switch-indicator';
+  langSwitch.appendChild(indicator);
+
+  LANGS.forEach(({ code, label }) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'lang-switch-btn';
+    btn.dataset.lang = code;
+    btn.setAttribute('role', 'tab');
+    btn.textContent = label;
+    langSwitch.appendChild(btn);
+  });
+
+  navInner.insertBefore(langSwitch, ham);
 })();
 
 /* ── 2. THEME TOGGLE ──────────────────────────── */
@@ -103,34 +187,72 @@
     return;
   }
 
+  const switchEl  = document.getElementById('langSwitch');
+  const indicator = switchEl?.querySelector('.lang-switch-indicator');
+  const buttons   = switchEl ? Array.from(switchEl.querySelectorAll('.lang-switch-btn')) : [];
+  const langs     = window.I18N.supportedLangs || ['pl', 'en', 'ua'];
+
+  function moveIndicator(lang, animate) {
+    if (!indicator) return;
+    const idx = langs.indexOf(lang);
+    if (idx === -1) return;
+
+    if (!animate) {
+      indicator.style.transition = 'none';
+      indicator.style.transform = `translateX(${idx * 100}%)`;
+      /* wymuszenie reflow, żeby kolejna zmiana już się animowała */
+      void indicator.offsetWidth;
+      indicator.style.transition = '';
+    } else {
+      indicator.style.transform = `translateX(${idx * 100}%)`;
+    }
+  }
+
+  function setActive(lang) {
+    buttons.forEach(btn => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
   let lang = window.I18N.getLang();
 
-  function updateLabel() {
-    const label = document.getElementById('langLabel');
-    if (label) label.textContent = lang === 'pl' ? 'EN' : 'PL';
-  }
+  /* Zastosuj zapisany język i ustaw pozycję suwaka BEZ animacji na starcie */
+  if (lang !== 'pl') window.I18N.apply(lang);
+  setActive(lang);
+  moveIndicator(lang, false);
 
-  /* Apply on load if EN was saved */
-  if (lang === 'en') {
-    window.I18N.apply('en');
-  }
-  updateLabel();
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.lang;
+      if (next === lang) return;
 
-  document.getElementById('langBtn')?.addEventListener('click', () => {
-    lang = lang === 'pl' ? 'en' : 'pl';
-    localStorage.setItem('lang', lang);
-    window.I18N.apply(lang);
-    updateLabel();
+      lang = next;
+      localStorage.setItem('lang', lang);
+      window.I18N.apply(lang);
+      setActive(lang);
+      moveIndicator(lang, true);
+    });
+  });
+
+  /* Reaguj na zmianę języka wywołaną z innego miejsca (np. i18n.apply()) */
+  document.addEventListener('i18n:changed', e => {
+    const newLang = e.detail?.lang;
+    if (!newLang || newLang === lang) return;
+    lang = newLang;
+    setActive(lang);
+    moveIndicator(lang, true);
   });
 })();
 
-/* ── 4. NAVBAR SCROLL ─────────────────────────── */
+/* ── 5. NAVBAR SCROLL ─────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar?.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-/* ── 5. HAMBURGER MENU ────────────────────────── */
+/* ── 6. HAMBURGER MENU ────────────────────────── */
 const ham    = document.getElementById('ham');
 const drawer = document.getElementById('drawer');
 
@@ -147,7 +269,7 @@ drawer?.querySelectorAll('.mob-link').forEach(link => {
   });
 });
 
-/* ── 6. SCROLL-REVEAL ─────────────────────────── */
+/* ── 7. SCROLL-REVEAL ─────────────────────────── */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -159,7 +281,7 @@ const revealObs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-/* ── 7. CANVAS — STAR FIELD + SHOOTING STARS ──── */
+/* ── 8. CANVAS — STAR FIELD + SHOOTING STARS ──── */
 (function initCanvas() {
   const canvas = document.getElementById('bgCanvas');
   if (!canvas) return;
@@ -252,7 +374,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   requestAnimationFrame(draw);
 })();
 
-/* ── 8. GLASS CARD TILT ───────────────────────── */
+/* ── 9. GLASS CARD TILT ───────────────────────── */
 (function cardTilt() {
   const card = document.querySelector('.glass-card');
   if (!card) return;
@@ -272,7 +394,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   });
 })();
 
-/* ── 9. CONTACT FORM ─────────────────────────── */
+/* ── 10. CONTACT FORM ─────────────────────────── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -364,7 +486,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   });
 })();
 
-/* ── 10. STACK PILL STAGGER ────────────────────── */
+/* ── 11. STACK PILL STAGGER ────────────────────── */
 document.querySelectorAll('.stack-pill').forEach((p, i) => {
   p.style.transitionDelay = (i * 18) + 'ms';
 });
