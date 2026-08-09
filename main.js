@@ -363,11 +363,16 @@
     gap: .8rem;
     padding: .5rem .5rem .5rem 1.1rem;
   }
+  /* Mobile layout: hide full nav links to avoid overflow and show hamburger */
+  .nav-links { display: none !important; }
 
   /* Hamburger tylko na urządzeniach mobilnych */
   #navbar .hamburger {
     display: inline-flex !important;
   }
+
+  /* Ensure mobile quick actions are visible inside nav */
+  #mobileQuick { display: flex !important; }
 }
 
 @media (min-width: 861px) {
@@ -399,6 +404,15 @@
   const navInner = document.querySelector('.nav-inner');
   if (!navInner) return;
   let ham = document.getElementById('ham');
+  // If the hamburger button is missing in some pages, create it for mobile
+  if (!ham) {
+    ham = document.createElement('button');
+    ham.className = 'hamburger';
+    ham.id = 'ham';
+    ham.setAttribute('aria-label', 'Menu');
+    ham.innerHTML = '<span></span><span></span><span></span>';
+    navInner.appendChild(ham);
+  }
 
   /* Theme toggle */
   const themeBtn = document.createElement('button');
@@ -458,8 +472,79 @@
   if (drawer) {
     const mobileLang = langSwitch.cloneNode(true);
     mobileLang.id = 'langSwitchMobile';
-    drawer.appendChild(mobileLang);
+    // Place language switch at the top of the drawer for visibility
+    drawer.insertBefore(mobileLang, drawer.firstChild);
+
+    // Ensure CV download link exists in drawer for mobile users
+    const hasCv = Array.from(drawer.querySelectorAll('a')).some(a => /CV\.pdf$/i.test(a.getAttribute('href') || ''));
+    if (!hasCv) {
+      const cvLink = document.createElement('a');
+      cvLink.href = 'assets/CV.pdf';
+      cvLink.className = 'mob-link';
+      cvLink.setAttribute('download', '');
+      cvLink.textContent = 'Pobierz CV';
+      drawer.appendChild(cvLink);
+    }
   }
+
+  // Mobile quick actions: visible only on small screens
+  const mobileQuick = document.createElement('div');
+  mobileQuick.id = 'mobileQuick';
+  mobileQuick.style.display = 'none';
+  mobileQuick.style.gap = '8px';
+  mobileQuick.style.alignItems = 'center';
+  mobileQuick.style.marginLeft = '8px';
+  mobileQuick.style.display = 'flex';
+
+  // CV download button (icon)
+  const cvBtn = document.createElement('a');
+  cvBtn.href = 'assets/CV.pdf';
+  cvBtn.setAttribute('download', '');
+  cvBtn.className = 'nav-icon-btn';
+  cvBtn.style.width = '36px';
+  cvBtn.style.height = '36px';
+  cvBtn.style.display = 'inline-flex';
+  cvBtn.style.alignItems = 'center';
+  cvBtn.style.justifyContent = 'center';
+  cvBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+
+  // Language cycle button (icon)
+  const langQuick = document.createElement('button');
+  langQuick.className = 'nav-icon-btn';
+  langQuick.style.width = '36px';
+  langQuick.style.height = '36px';
+  langQuick.style.display = 'inline-flex';
+  langQuick.style.alignItems = 'center';
+  langQuick.style.justifyContent = 'center';
+  langQuick.setAttribute('aria-label', 'Zmień język');
+  langQuick.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`;
+
+  mobileQuick.appendChild(cvBtn);
+  mobileQuick.appendChild(langQuick);
+
+  // Insert mobileQuick into navInner at the end
+  navInner.appendChild(mobileQuick);
+
+  function updateMobileQuickVisibility() {
+    if (window.innerWidth <= 860) mobileQuick.style.display = 'flex';
+    else mobileQuick.style.display = 'none';
+  }
+  updateMobileQuickVisibility();
+  window.addEventListener('resize', updateMobileQuickVisibility, { passive: true });
+
+  // langQuick cycles language using i18n API
+  langQuick.addEventListener('click', () => {
+    if (window.I18N && window.I18N.cycleLang) {
+      window.I18N.cycleLang();
+    } else {
+      // fallback: toggle pl/en/ua
+      const cur = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : (localStorage.getItem('lang') || 'pl');
+      const next = cur === 'pl' ? 'en' : (cur === 'en' ? 'ua' : 'pl');
+      try { localStorage.setItem('lang', next); } catch (e) {}
+      if (window.I18N && window.I18N.apply) window.I18N.apply(next);
+      document.dispatchEvent(new CustomEvent('i18n:changed', { detail: { lang: next } }));
+    }
+  });
 })();
 
 /* ── 2. NAV LINKS — SLIDING PILL INDICATOR ────────
