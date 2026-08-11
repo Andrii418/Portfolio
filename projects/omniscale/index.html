@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omniscale</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Cloud &amp; DevOps</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">MIT License</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Omni<span>scale</span></h1>
+
+        <p class="proj-tagline">
+          AI-powered platforma do orkiestracji infrastruktury chmurowej z wbudowanym agentem SRE —
+          deklaratywne zarządzanie zasobami inspirowane Terraform, spięte z dashboardem
+          monitorowania w czasie rzeczywistym inspirowanym Datadog.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/Omniscale.git" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">TypeScript</div>
+            <div class="ps-l">Język</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Next.js 16</div>
+            <div class="ps-l">Framework</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">ReactFlow</div>
+            <div class="ps-l">Topologia</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Google Gemini</div>
+            <div class="ps-l">SRE Agent</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Aplikacja w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/omniscale/screen1.png" alt="Omniscale — Ekran główny" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Dashboard — przegląd infrastruktury</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/omniscale/screen2.png" alt="Topologia zasobów w ReactFlow" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Topologia zasobów — ReactFlow</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/omniscale/screen3.png" alt="SRE Agent — wykrywanie anomalii" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>SRE Agent — wykrywanie anomalii</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/omniscale/screen4.png" alt="Metryki wydajności — Recharts" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Metryki wydajności — Recharts</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(4)">
+          <img src="../../assets/omniscale/screen5.png" alt="Definicja infrastruktury jako kodu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Infrastructure as Code — deklaratywny edytor zasobów</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Infrastruktura, którą<br/><span class="grad">agent widzi za ciebie</span></h2>
+          <p class="body-text">
+            Omniscale łączy dwa światy, które zwykle żyją w osobnych narzędziach: deklaratywne
+            zarządzanie zasobami chmurowymi w stylu Terraform oraz dashboard obserwowalności
+            znany z Datadog. Zamiast przełączać się między konsolą chmury a panelem metryk,
+            zespół DevOps/SRE dostaje jedno miejsce do definiowania, wdrażania i monitorowania
+            infrastruktury.
+          </p>
+          <p class="body-text">
+            Sercem platformy jest wbudowany SRE Agent oparty na Google Gemini — obserwuje
+            telemetrię w czasie rzeczywistym, wykrywa anomalie i potrafi zaproponować lub
+            wykonać działania naprawcze bez ręcznej interwencji.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🧠</div>
+            <div>
+              <div class="feat-title">AI-Powered SRE Agent</div>
+              <div class="feat-desc">Agent oparty na modelach Google Gemini analizuje stan systemu i automatyzuje reakcję na anomalie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📡</div>
+            <div>
+              <div class="feat-title">Real-time monitoring</div>
+              <div class="feat-desc">Dashboard z metrykami na żywo, wykresami (Recharts) i alertami inspirowany Datadog</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🧾</div>
+            <div>
+              <div class="feat-title">Infrastructure as Code</div>
+              <div class="feat-desc">Deklaratywne definiowanie zasobów chmurowych, kompatybilne koncepcyjnie z Terraform</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🕸️</div>
+            <div>
+              <div class="feat-title">Interaktywna topologia</div>
+              <div class="feat-desc">ReactFlow wizualizuje zależności między zasobami i przepływy danych w systemie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🧩</div>
+            <div>
+              <div class="feat-title">Modularny, typowany UI</div>
+              <div class="feat-desc">Komponenty shadcn/ui i Base UI React, cały kod w TypeScript (97.8%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-name">TypeScript 5</div>
+            <div class="tech-card-desc">Statyczne typowanie całego kodu — 97.8% repozytorium.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">▲</div>
+            <div class="tech-card-name">Next.js 16.3</div>
+            <div class="tech-card-desc">Framework full-stack — App Router, server-side rendering, API routes.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">⚛️</div>
+            <div class="tech-card-name">React 19.2</div>
+            <div class="tech-card-desc">Biblioteka UI napędzająca cały interfejs platformy.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">TailwindCSS 4</div>
+            <div class="tech-card-desc">Utility-first stylowanie, szybki i responsywny development.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🧱</div>
+            <div class="tech-card-name">shadcn/ui &amp; Base UI</div>
+            <div class="tech-card-desc">Wysokiej jakości, niezależne komponenty React budujące interfejs.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🕸️</div>
+            <div class="tech-card-name">ReactFlow 11.11</div>
+            <div class="tech-card-desc">Interaktywne diagramy przepływów i topologii infrastruktury.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📊</div>
+            <div class="tech-card-name">Recharts 3.10</div>
+            <div class="tech-card-desc">Wykresy i grafy metryk — łatwa integracja, pełna responsywność.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎞️</div>
+            <div class="tech-card-name">Framer Motion 13</div>
+            <div class="tech-card-desc">Płynne animacje i mikrointerakcje w całym interfejsie.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🧠</div>
+            <div class="tech-card-name">Google GenAI 2.16</div>
+            <div class="tech-card-desc">Integracja z modelami Google Gemini napędzająca SRE Agenta.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak to działa</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Infrastruktura jako kod</div>
+          <p class="arch-desc">
+            Zasoby chmurowe definiowane są deklaratywnie, podobnie jak w Terraform,
+            a warstwa API Next.js tłumaczy je na akcje wobec dostawcy chmury.
+          </p>
+          <div class="code-block">
+<pre>const resource = defineResource({
+  type: "compute.instance",
+  spec: { region, size },
+});</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">Topologia w ReactFlow</div>
+          <p class="arch-desc">
+            Zależności między zasobami renderowane są jako interaktywny graf —
+            węzły i krawędzie odzwierciedlają realną architekturę systemu.
+          </p>
+          <div class="code-block">
+<pre>&lt;ReactFlow
+  nodes={infraNodes}
+  edges={infraEdges}
+/&gt;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Telemetria na żywo</div>
+          <p class="arch-desc">
+            Metryki wydajności i stanu systemu spływają do dashboardu i są
+            wizualizowane w czasie rzeczywistym przy pomocy Recharts.
+          </p>
+          <div class="code-block">
+<pre>&lt;LineChart data={metrics}&gt;
+  &lt;Line dataKey="latency" /&gt;
+&lt;/LineChart&gt;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">SRE Agent</div>
+          <p class="arch-desc">
+            Agent oparty na Google Gemini analizuje strumień telemetrii,
+            wykrywa anomalie i proponuje bądź wykonuje działania naprawcze.
+          </p>
+          <div class="code-block">
+<pre>const diagnosis = await sreAgent.analyze(
+  telemetrySnapshot);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Alerty i notyfikacje</div>
+          <p class="arch-desc">
+            Przekroczenie progów metryk lub wykrycie anomalii przez agenta
+            uruchamia alert widoczny na dashboardzie i w kanałach powiadomień.
+          </p>
+          <div class="code-block">
+<pre>if (metric.value &gt; threshold) {
+  notify(alertChannel, metric);
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Automatyzacja operacyjna</div>
+          <p class="arch-desc">
+            Powtarzalne zadania operacyjne — skalowanie, restarty, czyszczenie
+            zasobów — mogą być delegowane agentowi zamiast obsługiwane ręcznie.
+          </p>
+          <div class="code-block">
+<pre>await sreAgent.execute(
+  recommendedAction);</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── KEY FEATURES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Kluczowe cechy</div>
+      <h2 class="section-h2 reveal delay-1">Co wyróżnia platformę</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>AI</kbd><span>Agent wykorzystujący modele Google Gemini do analizy i automatyzacji</span></div>
+        <div class="ctrl"><kbd>⚡</kbd><span>Real-time monitoring — dashboard z metrykami na żywo</span></div>
+        <div class="ctrl"><kbd>IaC</kbd><span>Deklaratywne zarządzanie infrastrukturą jako kodem</span></div>
+        <div class="ctrl"><kbd>🧩</kbd><span>Modularne komponenty UI wielokrotnego użytku</span></div>
+        <div class="ctrl"><kbd>📱</kbd><span>Responsywny design — działa na wszystkich urządzeniach</span></div>
+        <div class="ctrl"><kbd>TS</kbd><span>Cały kod w TypeScript — bezpieczeństwo typów end-to-end</span></div>
+      </div>
+    </section>
+
+    <!-- ── TECH RATIONALE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Uzasadnienie wyboru</div>
+      <h2 class="section-h2 reveal delay-1">Dlaczego te technologie</h2>
+      <div class="reveal delay-2" style="overflow-x:auto;">
+        <table class="rationale-table">
+          <thead>
+            <tr>
+              <th>Technologia</th>
+              <th>Zastosowanie</th>
+              <th>Powód wyboru</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Next.js</td><td>Framework full-stack</td><td>Server-side rendering, API routes, optymalizacja</td></tr>
+            <tr><td>ReactFlow</td><td>Diagramy topologii</td><td>Interaktywne wizualizacje architektur</td></tr>
+            <tr><td>Recharts</td><td>Wykresy metryk</td><td>Łatwa integracja, pełna responsywność</td></tr>
+            <tr><td>Framer Motion</td><td>Animacje UI</td><td>Płynne przejścia i mikrointerakcje</td></tr>
+            <tr><td>Google GenAI</td><td>SRE Agent</td><td>Zaawansowana analityka i automatyzacja</td></tr>
+            <tr><td>TailwindCSS</td><td>Stylowanie</td><td>Szybki development, responsywny design</td></tr>
+            <tr><td>TypeScript</td><td>Cały kod (97.8%)</td><td>Bezpieczeństwo typów, lepsze wsparcie IDE</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Node.js 18+</span>
+            <span class="req-pill">npm</span>
+            <span class="req-pill">Klucz API Google GenAI</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Zainstaluj zależności</div>
+              <div class="code-block">
+<pre>npm install</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Uruchom w trybie deweloperskim</div>
+              <div class="code-block">
+<pre>npm run dev
+# aplikacja dostępna na http://localhost:3000</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Build produkcyjny</div>
+              <div class="code-block">
+<pre>npm run build
+npm start</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-content">
+              <div class="step-title">Linting</div>
+              <div class="code-block">
+<pre>npm run lint</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECT METADATA ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Metadane</div>
+      <h2 class="section-h2 reveal delay-1">O projekcie</h2>
+      <div class="meta-strip reveal delay-2">
+        <div class="meta-item"><div class="meta-k">Wersja</div><div class="meta-v">0.1.0</div></div>
+        <div class="meta-item"><div class="meta-k">Główny język</div><div class="meta-v">TypeScript (97.8%)</div></div>
+        <div class="meta-item"><div class="meta-k">Licencja</div><div class="meta-v">MIT</div></div>
+        <div class="meta-item"><div class="meta-k">Status</div><div class="meta-v status-live">Aktywny</div></div>
+        <div class="meta-item"><div class="meta-k">Rozmiar repo</div><div class="meta-v">139 KB</div></div>
+      </div>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    const imageKeys = [
+      { src: '../../assets/omniscale/screen1.png', key: 'omniscale.overlay.1' },
+      { src: '../../assets/omniscale/screen2.png', key: 'omniscale.overlay.2' },
+      { src: '../../assets/omniscale/screen3.png', key: 'omniscale.overlay.3' },
+      { src: '../../assets/omniscale/screen4.png', key: 'omniscale.overlay.4' },
+      { src: '../../assets/omniscale/screen5.png', key: 'omniscale.overlay.5' },
+    ];
+
+    function getImages() {
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
+      return imageKeys.map(i => ({
+        src: i.src,
+        cap: window.I18N ? window.I18N.t(i.key, lang) : i.key
+      }));
+    }
+
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      const images = getImages();
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      const images = getImages();
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>
