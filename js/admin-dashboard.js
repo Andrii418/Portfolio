@@ -97,16 +97,16 @@
       month: `site-month-${year}-${month}`,
       total: 'site-total'
     };
-    const [day, week, month, total] = await Promise.all([
+    const [dayCount, weekCount, monthCount, totalCount] = await Promise.all([
       getCountApi(keys.day),
       getCountApi(keys.week),
       getCountApi(keys.month),
       getCountApi(keys.total)
     ]);
-    $('statDay').textContent = day;
-    $('statWeek').textContent = week;
-    $('statMonth').textContent = month;
-    $('statTotal').textContent = total;
+    $('statDay').textContent = dayCount;
+    $('statWeek').textContent = weekCount;
+    $('statMonth').textContent = monthCount;
+    $('statTotal').textContent = totalCount;
   }
 
   async function fetchSupabaseEvents(limit = 500) {
@@ -425,13 +425,26 @@
 
   $('authButton')?.addEventListener('click', async () => {
     const password = $('adminPassword').value.trim();
-    const hash = await sha256(password);
-    if (hash === ADMIN_HASH) {
-      setAuthed();
-      $('authMessage').textContent = '';
-      showDashboard();
-    } else {
-      $('authMessage').textContent = 'Błędne hasło. Spróbuj ponownie.';
+    const msg = $('authMessage');
+    if (!password) {
+      if (msg) msg.textContent = 'Wpisz hasło.';
+      return;
+    }
+    try {
+      if (!crypto?.subtle) {
+        if (msg) msg.textContent = 'Logowanie wymaga HTTPS lub localhost — otwórz stronę przez serwer, nie jako plik file://.';
+        return;
+      }
+      const hash = await sha256(password);
+      if (hash === ADMIN_HASH) {
+        setAuthed();
+        if (msg) msg.textContent = '';
+        showDashboard();
+      } else if (msg) {
+        msg.textContent = 'Błędne hasło. Spróbuj ponownie.';
+      }
+    } catch {
+      if (msg) msg.textContent = 'Błąd logowania — odśwież stronę i spróbuj ponownie.';
     }
   });
 
