@@ -685,38 +685,126 @@
   });
 })();
 
-/* ── 5. VISIT COUNTER ─────────────────────────── */
-(function initVisitCounter() {
+/* ── 5. ANALYTICS + ADMIN SHORTCUT + SITE SETTINGS ─ */
+(function initAnalyticsAndSettings() {
   const path = window.location.pathname;
   if (path.endsWith('/admin.html') || path.endsWith('admin.html')) return;
 
-  const namespace = 'andrii-portfolio-at';
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-
-  function isoWeekNumber(d) {
-    const dateCopy = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-    const dayNum = (dateCopy.getUTCDay() + 6) % 7;
-    dateCopy.setUTCDate(dateCopy.getUTCDate() - dayNum + 3);
-    const firstThursday = new Date(Date.UTC(dateCopy.getUTCFullYear(), 0, 4));
-    const diff = dateCopy - firstThursday + ((firstThursday.getUTCDay() + 6) % 7) * 86400000;
-    return 1 + Math.round(diff / 604800000);
+  function scriptBase() {
+    const scripts = document.querySelectorAll('script[src*="main.js"]');
+    const src = scripts[scripts.length - 1]?.getAttribute('src') || 'main.js';
+    return src.includes('/') ? src.replace(/[^/]+$/, '') : '';
   }
 
-  const week = String(isoWeekNumber(date)).padStart(2, '0');
-  const keys = [
-    'site-total',
-    `site-day-${year}-${month}-${day}`,
-    `site-week-${year}-W${week}`,
-    `site-month-${year}-${month}`
-  ];
+  const base = scriptBase();
+  const SETTINGS_KEY = 'portfolio-site-settings';
 
-  keys.forEach(key => {
-    const api = `https://api.countapi.xyz/hit/${namespace}/${key}`;
-    fetch(api).catch(() => { /* ignore errors */ });
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      if (document.querySelector(`script[src*="${src.split('/').pop()}"]`)) {
+        resolve();
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  function readSettings() {
+    try {
+      return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function applySettings(settings) {
+    const mode = settings.mode || 'recruitment';
+
+    const badge = document.querySelector('.hero-badge');
+    if (badge) {
+      if (!badge.dataset.originalHtml) badge.dataset.originalHtml = badge.innerHTML;
+      if (mode === 'freelance') {
+        badge.innerHTML = '<span class="badge-dot"></span> Dostępny do współpracy freelance &nbsp;·&nbsp; Remote / Hybrid';
+      } else {
+        badge.innerHTML = badge.dataset.originalHtml;
+      }
+    }
+
+    const heroDesc = document.querySelector('.hero-desc');
+    if (heroDesc && mode === 'freelance') {
+      heroDesc.dataset.originalText = heroDesc.dataset.originalText || heroDesc.textContent;
+      heroDesc.textContent = 'Tworzę nowoczesne strony i aplikacje webowe dla firm i startupów. Od szybkiego MVP po pełne wdrożenie — z naciskiem na jakość kodu i UX.';
+    } else if (heroDesc?.dataset.originalText) {
+      heroDesc.textContent = heroDesc.dataset.originalText;
+    }
+
+    let banner = document.getElementById('admin-promo-banner');
+    if (settings.promoEnabled && settings.promoText) {
+      if (!banner) {
+        banner = document.createElement('div');
+        banner.id = 'admin-promo-banner';
+        banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:999;padding:12px 20px;background:linear-gradient(90deg,rgba(125,255,212,.15),rgba(168,237,255,.12));border-top:1px solid rgba(125,255,212,.25);text-align:center;font-size:.9rem;backdrop-filter:blur(12px);';
+        document.body.appendChild(banner);
+      }
+      const link = settings.promoLink ? `<a href="${settings.promoLink}" style="color:#7dffd4;margin-left:8px;">→</a>` : '';
+      banner.innerHTML = settings.promoText + link;
+      banner.style.display = 'block';
+    } else if (banner) {
+      banner.style.display = 'none';
+    }
+  }
+
+  async function fetchRemoteSettings() {
+    const CFG = window.PORTFOLIO_ANALYTICS_CONFIG || {};
+    if (CFG.storageMode !== 'supabase' || !CFG.supabaseUrl) return null;
+    try {
+      const res = await fetch(`${CFG.supabaseUrl}/rest/v1/portfolio_settings?id=eq.1`, {
+        headers: { apikey: CFG.supabaseAnonKey, Authorization: `Bearer ${CFG.supabaseAnonKey}` }
+      });
+      if (!res.ok) return null;
+      const rows = await res.json();
+      const row = rows[0];
+      if (!row) return null;
+      return {
+        mode: row.mode,
+        promoEnabled: row.promo_enabled,
+        promoText: row.promo_text,
+        promoLink: row.promo_link,
+        updatedAt: row.updated_at
+      };
+    } catch {
+      return null;
+    }
+  }
+
+  async function syncAndApply() {
+    const remote = await fetchRemoteSettings();
+    const local = readSettings();
+    const settings = remote && remote.updatedAt > (local.updatedAt || '')
+      ? remote
+      : { mode: 'recruitment', promoEnabled: false, promoText: '', promoLink: '', ...local };
+    applySettings(settings);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
+      e.preventDefault();
+      window.location.href = base + 'admin.html';
+    }
   });
+
+  loadScript(base + 'js/analytics-config.js')
+    .then(() => loadScript(base + 'js/analytics.js'))
+    .then(() => {
+      syncAndApply();
+      window.addEventListener('storage', e => { if (e.key === SETTINGS_KEY) applySettings(readSettings()); });
+      setInterval(syncAndApply, 30000);
+    })
+    .catch(() => {});
 })();
 
 /* ── 6. LANGUAGE TOGGLE ───────────────────────── */

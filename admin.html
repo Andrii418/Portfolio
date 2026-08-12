@@ -3,125 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel statystyk — AT</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Command Center — AT</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px; }
-    .admin-panel { max-width: 680px; width: 100%; background: rgba(12, 18, 28, .92); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px; box-shadow: 0 24px 80px rgba(0,0,0,.25); }
-    .admin-panel h1 { margin-bottom: 18px; font-size: clamp(2rem, 2.4vw, 2.6rem); }
-    .admin-panel p { color: var(--t3); line-height: 1.75; margin-bottom: 18px; }
-    .admin-panel label { display: block; margin-bottom: 12px; font-family: var(--f-mono); letter-spacing: .05em; font-size: .9rem; color: var(--t2); }
-    .admin-panel input { width: 100%; padding: 14px 16px; border-radius: var(--r-sm); border: 1px solid var(--border); background: var(--surface); color: var(--t1); margin-bottom: 14px; }
-    .admin-panel button { padding: 12px 18px; border: none; border-radius: var(--r-sm); background: linear-gradient(90deg, var(--chrome-1), var(--chrome-2)); color: #fff; cursor: pointer; font-family: var(--f-mono); letter-spacing: .04em; }
-    .admin-panel button:hover { opacity: .92; }
-    .admin-message { margin-bottom: 20px; color: var(--t3); }
-    .stats-grid { display: grid; gap: 16px; margin-top: 24px; }
-    .stat-card { padding: 20px; border: 1px solid var(--border); border-radius: var(--r-md); background: rgba(255,255,255,.03); }
-    .stat-card h2 { margin: 0 0 8px; font-size: 1rem; color: var(--t3); }
-    .stat-card strong { display: block; margin-top: 10px; font-size: 2.2rem; color: var(--t1); }
-    @media (max-width: 720px) { body { padding: 20px; } }
-  </style>
+  <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-  <div class="admin-panel">
-    <h1>Panel statystyk</h1>
-    <p>Ta strona jest ukryta i nie ma linku w menu. Wpisz hasło, aby zobaczyć statystyki odwiedzin strony.</p>
 
-    <div id="authBlock">
+  <!-- LOGOWANIE -->
+  <div id="loginView" class="admin-login">
+    <div class="admin-login-card">
+      <h1>Command Center</h1>
+      <p>Ukryty panel administratora portfolio. Strona nie jest linkowana publicznie — dostęp tylko przez hasło lub skrót <kbd>Ctrl+Shift+A</kbd> na stronie portfolio.</p>
       <label for="adminPassword">Hasło administratora</label>
-      <input id="adminPassword" type="password" placeholder="Wpisz hasło" autocomplete="current-password" />
-      <button id="authButton">Zaloguj</button>
-      <div class="admin-message" id="authMessage"></div>
+      <input id="adminPassword" class="admin-input" type="password" placeholder="Wpisz hasło" autocomplete="current-password" />
+      <button id="authButton" class="admin-btn">Zaloguj</button>
+      <div class="admin-msg" id="authMessage"></div>
+      <p class="admin-hint">Sesja ważna 24h · dane: localStorage (dev) lub Supabase (prod)</p>
     </div>
+  </div>
 
-    <div id="statsBlock" style="display:none;">
-      <p>Statystyki oparte na wizytach, które zostały policzone przy ładowaniu strony.</p>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h2>Dzisiaj</h2>
-          <strong id="visitsDay">—</strong>
+  <!-- DASHBOARD -->
+  <div id="dashboardView" style="display:none;">
+    <div class="admin-shell">
+      <header class="admin-header">
+        <div>
+          <h1>Live Portfolio Command Center</h1>
         </div>
-        <div class="stat-card">
-          <h2>Ten tydzień</h2>
-          <strong id="visitsWeek">—</strong>
+        <div class="admin-header-meta">
+          <span class="admin-badge live">Na żywo</span>
+          <span class="admin-badge" id="storageModeBadge">LocalStorage</span>
+          <button id="logoutBtn" class="admin-btn ghost">Wyloguj</button>
         </div>
-        <div class="stat-card">
-          <h2>Ten miesiąc</h2>
-          <strong id="visitsMonth">—</strong>
+      </header>
+
+      <div class="admin-grid">
+        <!-- KPI -->
+        <div class="admin-card col-3">
+          <h2>Page Views (lokalne)</h2>
+          <div class="stat-value" id="statPageviews">—</div>
+          <div class="stat-sub">Wszystkie wyświetlenia</div>
         </div>
-        <div class="stat-card">
-          <h2>Łącznie</h2>
-          <strong id="visitsTotal">—</strong>
+        <div class="admin-card col-3">
+          <h2>Unikalni goście</h2>
+          <div class="stat-value" id="statUnique">—</div>
+          <div class="stat-sub">Visitor ID (anonimowy)</div>
+        </div>
+        <div class="admin-card col-3">
+          <h2>Sesje</h2>
+          <div class="stat-value" id="statSessions">—</div>
+          <div class="stat-sub">Aktywne sesje przeglądania</div>
+        </div>
+        <div class="admin-card col-3">
+          <h2>Leady</h2>
+          <div class="stat-value" id="statLeads">—</div>
+          <div class="stat-sub">Potencjalni rekruterzy / klienci</div>
+        </div>
+
+        <!-- CountAPI legacy -->
+        <div class="admin-card col-3">
+          <h2>Dziś (CountAPI)</h2>
+          <div class="stat-value" id="statDay">—</div>
+        </div>
+        <div class="admin-card col-3">
+          <h2>Tydzień</h2>
+          <div class="stat-value" id="statWeek">—</div>
+        </div>
+        <div class="admin-card col-3">
+          <h2>Miesiąc</h2>
+          <div class="stat-value" id="statMonth">—</div>
+        </div>
+        <div class="admin-card col-3">
+          <h2>Łącznie (CountAPI)</h2>
+          <div class="stat-value" id="statTotal">—</div>
+        </div>
+
+        <!-- Live feed -->
+        <div class="admin-card col-8">
+          <h2>Live Activity Log</h2>
+          <div class="live-feed" id="liveFeed">
+            <div class="empty-state">Ładowanie…</div>
+          </div>
+        </div>
+
+        <!-- Leads -->
+        <div class="admin-card col-4">
+          <h2>Potencjalni Leady</h2>
+          <div class="leads-list" id="leadsList"></div>
+        </div>
+
+        <!-- Projects -->
+        <div class="admin-card col-4">
+          <h2>Popularne projekty</h2>
+          <div id="projectBars"></div>
+        </div>
+
+        <!-- Section engagement -->
+        <div class="admin-card col-4">
+          <h2>Czas w sekcjach</h2>
+          <div id="sectionEngagement"></div>
+        </div>
+
+        <!-- Scroll + time -->
+        <div class="admin-card col-4">
+          <h2>Scroll Depth</h2>
+          <div id="scrollStats"></div>
+        </div>
+        <div class="admin-card col-4">
+          <h2>Czas na stronie</h2>
+          <div id="timeStats"></div>
+        </div>
+
+        <!-- Visit log -->
+        <div class="admin-card col-12">
+          <h2>Dziennik wizyt</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Kiedy</th>
+                  <th>Lokalizacja / Sesja</th>
+                  <th>Strona</th>
+                  <th>ID sesji</th>
+                </tr>
+              </thead>
+              <tbody id="visitLogBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick toggles -->
+        <div class="admin-card col-6">
+          <h2>Quick Theme / Content Toggle</h2>
+          <div class="control-group">
+            <label>Tryb portfolio</label>
+            <div class="control-row">
+              <button class="toggle-btn active" data-mode="recruitment">Tryb Rekrutacyjny</button>
+              <button class="toggle-btn" data-mode="freelance">Tryb Freelance</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label>Banner promocyjny (strona główna)</label>
+            <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+              <input type="checkbox" id="promoEnabled" /> Włącz banner
+            </label>
+            <input id="promoText" class="admin-input" placeholder="Tekst bannera, np. Dostępny na projekty Q2 2026" />
+            <input id="promoLink" class="admin-input" placeholder="Link (opcjonalnie), np. contact/index.html" />
+            <button id="savePromo" class="admin-btn">Zapisz ustawienia</button>
+            <div class="settings-saved" id="settingsSaved"></div>
+          </div>
+        </div>
+
+        <div class="admin-card col-6">
+          <h2>Narzędzia</h2>
+          <p style="color:var(--adm-muted);font-size:0.88rem;line-height:1.6;">
+            W trybie <strong>local</strong> dane są w localStorage tej samej domeny — idealne do testów lokalnych.
+            Dla produkcji ustaw <code>storageMode: 'supabase'</code> w <code>js/analytics-config.js</code>
+            i uruchom SQL z <code>js/supabase-schema.sql</code>.
+          </p>
+          <button id="clearDataBtn" class="admin-btn danger" style="margin-top:12px;">Wyczyść lokalne dane analityki</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-    const ADMIN_HASH = '9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b';
-
-    async function sha256(text) {
-      const data = new TextEncoder().encode(text);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    function isoWeekNumber(date) {
-      const target = new Date(date.valueOf());
-      target.setHours(0, 0, 0, 0);
-      target.setDate(target.getDate() + 3 - ((target.getDay() + 6) % 7));
-      const firstThursday = new Date(target.getFullYear(), 0, 4);
-      const diff = target - firstThursday + ((firstThursday.getDay() + 6) % 7) * 86400000;
-      return 1 + Math.round(diff / 604800000);
-    }
-
-    function getKeys() {
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      const week = String(isoWeekNumber(date)).padStart(2, '0');
-      return {
-        total: 'site-total',
-        day: `site-day-${year}-${month}-${day}`,
-        week: `site-week-${year}-W${week}`,
-        month: `site-month-${year}-${month}`
-      };
-    }
-
-    function getCount(key) {
-      const api = `https://api.countapi.xyz/get/andrii-portfolio-at/${key}`;
-      return fetch(api).then(res => res.ok ? res.json() : { value: 0 }).then(data => Number(data.value || 0)).catch(() => 0);
-    }
-
-    async function loadStats() {
-      const keys = getKeys();
-      const [day, week, month, total] = await Promise.all([
-        getCount(keys.day),
-        getCount(keys.week),
-        getCount(keys.month),
-        getCount(keys.total)
-      ]);
-
-      document.getElementById('visitsDay').textContent = day;
-      document.getElementById('visitsWeek').textContent = week;
-      document.getElementById('visitsMonth').textContent = month;
-      document.getElementById('visitsTotal').textContent = total;
-    }
-
-    document.getElementById('authButton').addEventListener('click', async () => {
-      const password = document.getElementById('adminPassword').value.trim();
-      const hash = await sha256(password);
-      const message = document.getElementById('authMessage');
-      if (hash === ADMIN_HASH) {
-        document.getElementById('authBlock').style.display = 'none';
-        document.getElementById('statsBlock').style.display = 'block';
-        message.textContent = '';
-        loadStats();
-      } else {
-        message.textContent = 'Błędne hasło. Spróbuj ponownie.';
-      }
-    });
-  </script>
+  <script src="js/analytics-config.js"></script>
+  <script src="js/admin-dashboard.js"></script>
 </body>
 </html>
