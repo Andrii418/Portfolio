@@ -4,7 +4,7 @@
 (function initAdminDashboard() {
   'use strict';
 
-  const ADMIN_HASH = '9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b';
+  const ADMIN_HASH = '797e0d4cc71977aeca601aa187ee91ed118122ec5d26dd75518cd595a89039dc';
   const AUTH_KEY = 'portfolio-admin-auth';
   const AUTH_TTL = 24 * 60 * 60 * 1000;
   const SETTINGS_KEY = 'portfolio-site-settings';
