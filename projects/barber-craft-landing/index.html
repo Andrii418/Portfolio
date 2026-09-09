@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barber Craft Landing</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Frontend</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">Projekt fikcyjny</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">Barber<span>Craft</span></h1>
+
+        <p class="proj-tagline">
+          Premium, ciemna strona typu landing page dla fikcyjnego salonu fryzjerskiego —
+          zbudowana w czystym HTML5, CSS3 i JavaScript, bez frameworków, jako demonstracja
+          nowoczesnego, responsywnego frontendu i dbałości o detal wizualny.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/barber-craft-landing" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://barber-craft-landing.vercel.app" target="_blank" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live demo
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">HTML5 · 48.5%</div>
+            <div class="ps-l">Struktura</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">CSS3 · 43.8%</div>
+            <div class="ps-l">Styling</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">JS · 7.7%</div>
+            <div class="ps-l">Interakcje</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">Vercel</div>
+            <div class="ps-l">Deployment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Strona w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/barber/screen1.png" alt="Barber Craft Landing — Strona główna" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Hero — pierwsze wrażenie</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/barber/screen2.png" alt="Sekcja usług i cennika" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Usługi — cennik i oferta</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/barber/screen3.png" alt="Portfolio prac salonu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Portfolio — galeria prac</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/barber/screen4.png" alt="Formularz kontaktowy" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Kontakt — formularz (demo)</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/barber/screen5.png" alt="Sekcja zespołu barberów" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Zespół — barberzy salonu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/barber/screen6.png" alt="Widok mobilny strony" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Widok mobilny — pełna responsywność</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(6)">
+          <img src="../../assets/barber/screen7.png" alt="Stopka i lokalizacja salonu" loading="lazy" />
+          <div class="gallery-overlay">
+            <span>Stopka — lokalizacja i godziny otwarcia</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Premium doświadczenie<br/><span class="grad">zaprojektowane w kodzie</span></h2>
+          <p class="body-text">
+            Barber Craft Landing to nowoczesna, ciemna strona typu landing page stworzona dla
+            fikcyjnego salonu fryzjerskiego. Projekt powstał wyłącznie w celach edukacyjnych
+            i portfolio — jako pokaz umiejętności budowania premium interfejsu wyłącznie
+            w oparciu o semantyczny HTML5, nowoczesny CSS3 i lekki, zależnościowo niezależny
+            JavaScript.
+          </p>
+          <p class="body-text">
+            Cały projekt — nazwa salonu, zdjęcia, recenzje, cennik i dane kontaktowe — jest
+            wymyślony. Strona nie reprezentuje żadnego rzeczywistego biznesu ani klienta.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">✂️</div>
+            <div>
+              <div class="feat-title">Premium, ciemny design</div>
+              <div class="feat-desc">Głęboka czerń i mosiężny akcent budujące klimat butikowego salonu</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📱</div>
+            <div>
+              <div class="feat-title">Pełna responsywność (RWD)</div>
+              <div class="feat-desc">Mobile-first layout dopasowany do telefonów, tabletów i desktopów</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💈</div>
+            <div>
+              <div class="feat-title">Sekcja usług i cennika</div>
+              <div class="feat-desc">Przejrzysta prezentacja oferty fryzjerskiej wraz z cenami</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🖼️</div>
+            <div>
+              <div class="feat-title">Portfolio prac</div>
+              <div class="feat-desc">Galeria realizacji z lightboxem, analogicznie jak w tym projekcie</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">✉️</div>
+            <div>
+              <div class="feat-title">Formularz kontaktowy (demo)</div>
+              <div class="feat-desc">Walidacja po stronie klienta w czystym JavaScript, bez backendu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📄</div>
+            <div class="tech-card-name">HTML5</div>
+            <div class="tech-card-desc">Semantyczny markup — nagłówki, sekcje, dostępność i SEO. 48.5% repozytorium.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">CSS3</div>
+            <div class="tech-card-desc">Flexbox, Grid, zmienne CSS i animacje — 43.8% repozytorium, bez frameworków.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-name">JavaScript (Vanilla)</div>
+            <div class="tech-card-desc">Menu mobilne, lightbox galerii i walidacja formularza — 7.7% repozytorium.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📱</div>
+            <div class="tech-card-name">Media Queries</div>
+            <div class="tech-card-desc">Podejście mobile-first, pełna responsywność bez zewnętrznych bibliotek.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎞️</div>
+            <div class="tech-card-name">CSS Animations</div>
+            <div class="tech-card-desc">Płynne przejścia i mikrointerakcje wzmacniające premium odbiór strony.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">👁️</div>
+            <div class="tech-card-name">Intersection Observer</div>
+            <div class="tech-card-desc">Animacje sekcji uruchamiane w momencie wejścia w viewport podczas scrollowania.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🔤</div>
+            <div class="tech-card-name">Google Fonts</div>
+            <div class="tech-card-desc">Starannie dobrana typografia budująca premium charakter marki.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🌑</div>
+            <div class="tech-card-name">Dark UI</div>
+            <div class="tech-card-desc">Ciemny motyw jako świadoma decyzja projektowa dla grupy docelowej.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">▲</div>
+            <div class="tech-card-name">Vercel</div>
+            <div class="tech-card-desc">Hosting i automatyczny deployment z gałęzi main.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STRUCTURE / ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak zbudowana jest strona</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Struktura semantyczna</div>
+          <p class="arch-desc">
+            Strona opiera się na znacznikach semantycznych HTML5, co poprawia
+            dostępność, SEO oraz czytelność kodu.
+          </p>
+          <div class="code-block">
+<pre>&lt;header&gt;...&lt;/header&gt;
+&lt;main&gt;
+  &lt;section id="uslugi"&gt;...&lt;/section&gt;
+  &lt;section id="portfolio"&gt;...&lt;/section&gt;
+&lt;/main&gt;</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">System designu w CSS</div>
+          <p class="arch-desc">
+            Paleta i odstępy zdefiniowane jako zmienne CSS, dzięki czemu
+            spójny, premium motyw jest łatwy do utrzymania i rozwijania.
+          </p>
+          <div class="code-block">
+<pre>:root {
+  --gold: #c9a15a;
+  --void: #0a0806;
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Nawigacja mobilna</div>
+          <p class="arch-desc">
+            Menu typu hamburger otwierane i zamykane w czystym JavaScript,
+            bez dodatkowych zależności.
+          </p>
+          <div class="code-block">
+<pre>ham.addEventListener("click", () =&gt;
+  drawer.classList.toggle("open"));</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Usługi i cennik</div>
+          <p class="arch-desc">
+            Siatka kart usług prezentuje ofertę salonu wraz z cenami,
+            zbudowana na CSS Grid.
+          </p>
+          <div class="code-block">
+<pre>.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">Galeria z lightboxem</div>
+          <p class="arch-desc">
+            Portfolio prac renderowane jest jako klikalna galeria z pełnoekranowym
+            podglądem — dokładnie tak, jak w sekcji screenshotów tej strony.
+          </p>
+          <div class="code-block">
+<pre>function openLightbox(i) {
+  lightbox.classList.add("open");
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Formularz kontaktowy (demo)</div>
+          <p class="arch-desc">
+            Walidacja pól po stronie klienta w JavaScript — formularz ma
+            charakter demonstracyjny i nie wysyła danych na żaden backend.
+          </p>
+          <div class="code-block">
+<pre>form.addEventListener("submit", e =&gt; {
+  e.preventDefault();
+  validate(form);
+});</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── KEY FEATURES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Kluczowe cechy</div>
+      <h2 class="section-h2 reveal delay-1">Co wyróżnia projekt</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>HTML</kbd><span>Semantyczny markup zgodny z dobrymi praktykami</span></div>
+        <div class="ctrl"><kbd>CSS</kbd><span>Flexbox &amp; Grid, zero zewnętrznych frameworków CSS</span></div>
+        <div class="ctrl"><kbd>JS</kbd><span>Lekka, zależnościowo niezależna interaktywność</span></div>
+        <div class="ctrl"><kbd>📱</kbd><span>Responsywny design — mobile, tablet, desktop</span></div>
+        <div class="ctrl"><kbd>🌑</kbd><span>Premium, ciemny motyw dopasowany do branży</span></div>
+        <div class="ctrl"><kbd>💈</kbd><span>Sekcja usług, portfolio i formularz kontaktowy</span></div>
+      </div>
+    </section>
+
+    <!-- ── TECH RATIONALE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Uzasadnienie wyboru</div>
+      <h2 class="section-h2 reveal delay-1">Dlaczego te technologie</h2>
+      <div class="reveal delay-2" style="overflow-x:auto;">
+        <table class="rationale-table">
+          <thead>
+            <tr>
+              <th>Technologia</th>
+              <th>Zastosowanie</th>
+              <th>Powód wyboru</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HTML5</td><td>Struktura strony</td><td>Semantyka, dostępność, SEO bez narzutu frameworka</td></tr>
+            <tr><td>CSS3</td><td>Stylowanie i layout</td><td>Flexbox/Grid i zmienne CSS wystarczają dla landing page</td></tr>
+            <tr><td>JavaScript</td><td>Interaktywność</td><td>Menu mobilne, lightbox, walidacja — bez zbędnych zależności</td></tr>
+            <tr><td>Media Queries</td><td>Responsywność</td><td>Pełna kontrola nad breakpointami bez frameworka CSS</td></tr>
+            <tr><td>Google Fonts</td><td>Typografia</td><td>Szybkie wdrożenie premium fontów bez lokalnych plików</td></tr>
+            <tr><td>Vercel</td><td>Hosting / deployment</td><td>Automatyczny deployment z main, darmowy SSL i CDN</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Wymagania</div>
+          <div class="req-pills">
+            <span class="req-pill">Przeglądarka internetowa</span>
+            <span class="req-pill">Live Server (opcjonalnie)</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Sklonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/barber-craft-landing.git</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Otwórz stronę lokalnie</div>
+              <div class="code-block">
+<pre>cd barber-craft-landing
+# otwórz index.html w przeglądarce
+# lub uruchom rozszerzenie Live Server</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Wdrożenie (opcjonalnie)</div>
+              <div class="code-block">
+<pre>vercel --prod</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECT METADATA ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Metadane</div>
+      <h2 class="section-h2 reveal delay-1">O projekcie</h2>
+      <div class="meta-strip reveal delay-2">
+        <div class="meta-item"><div class="meta-k">Wersja</div><div class="meta-v">1.0.0</div></div>
+        <div class="meta-item"><div class="meta-k">Główny język</div><div class="meta-v">HTML5 (48.5%)</div></div>
+        <div class="meta-item"><div class="meta-k">Repozytorium</div><div class="meta-v">Prywatne</div></div>
+        <div class="meta-item"><div class="meta-k">Status</div><div class="meta-v status-live">Live demo</div></div>
+        <div class="meta-item"><div class="meta-k">Charakter</div><div class="meta-v">Projekt fikcyjny</div></div>
+      </div>
+      <p class="body-text" style="margin-top:22px; max-width:100%;">
+        <em>Uwaga:</em> Barber Craft Landing to w całości fikcyjny projekt stworzony wyłącznie
+        w celach edukacyjnych i portfolio. Wszystkie dane, nazwy, zdjęcia, recenzje i informacje
+        kontaktowe są wymyślone i nie reprezentują żadnego rzeczywistego salonu fryzjerskiego
+        ani klienta.
+      </p>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    const imageKeys = [
+      { src: '../../assets/barber/screen1.png', key: 'barber.overlay.1' },
+      { src: '../../assets/barber/screen2.png', key: 'barber.overlay.2' },
+      { src: '../../assets/barber/screen3.png', key: 'barber.overlay.3' },
+      { src: '../../assets/barber/screen4.png', key: 'barber.overlay.4' },
+      { src: '../../assets/barber/screen5.png', key: 'barber.overlay.5' },
+      { src: '../../assets/barber/screen6.png', key: 'barber.overlay.6' },
+      { src: '../../assets/barber/screen7.png', key: 'barber.overlay.7' },
+    ];
+
+    function getImages() {
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
+      return imageKeys.map(i => ({
+        src: i.src,
+        cap: window.I18N ? window.I18N.t(i.key, lang) : i.key
+      }));
+    }
+
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      const images = getImages();
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      const images = getImages();
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>
