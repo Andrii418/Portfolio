@@ -48,7 +48,6 @@
 .back-btn:hover {
   color: var(--vq-ink-1);
   border-color: var(--vq-indigo-2);
-  transform: translateX(-3px);
 }
 
 /* ── HERO ─────────────────────────────────────── */
