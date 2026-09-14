@@ -146,6 +146,107 @@ window.I18N = (function () {
 
 'projects.card.link': { pl: 'Zobacz projekt', en: 'View project', ua: 'Переглянути проєкт' },
 
+  /* ════ LUMINA DENTAL — project detail ════ */
+  'lumina.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
+  'lumina.badge.uni': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'lumina.tagline': { pl: 'Nowoczesna, responsywna strona docelowa dla fikcyjnej kliniki stomatologicznej — zbudowana w czystym HTML5, CSS3 i JavaScript, prezentująca profesjonalny, budzący zaufanie wizerunek marki medycznej.', en: 'A modern, responsive landing page for a fictional dental clinic — built in pure HTML5, CSS3 and JavaScript, presenting a professional and trustworthy medical brand.', ua: 'Сучасна адаптивна лендинг-сторінка для вигаданої стоматологічної клініки — створена на чистих HTML5, CSS3 і JavaScript, що представляє професійний і надійний медичний бренд.' },
+  'lumina.live': { pl: 'Zobacz na żywo', en: 'View live', ua: 'Переглянути наживо' },
+  'lumina.stats.structure': { pl: 'Struktura', en: 'Structure', ua: 'Структура' },
+  'lumina.stats.styling': { pl: 'Styling', en: 'Styling', ua: 'Стилізація' },
+  'lumina.stats.interactions': { pl: 'Interakcje', en: 'Interactions', ua: 'Взаємодія' },
+  'lumina.stats.deployment': { pl: 'Deployment', en: 'Deployment', ua: 'Розгортання' },
+  'lumina.gallery.label': { pl: 'Screenshoty', en: 'Screenshots', ua: 'Скріншоти' },
+  'lumina.gallery.title': { pl: 'Strona w akcji', en: 'The site in action', ua: 'Сайт у дії' },
+  'lumina.overlay.1': { pl: 'Widok główny', en: 'Main view', ua: 'Головний екран' },
+  'lumina.overlay.2': { pl: 'Usługi kliniki', en: 'Clinic services', ua: 'Послуги клініки' },
+  'lumina.overlay.3': { pl: 'Zespół specjalistów', en: 'Specialist team', ua: 'Команда спеціалістів' },
+  'lumina.overlay.4': { pl: 'Opinie pacjentów', en: 'Patient reviews', ua: 'Відгуки пацієнтів' },
+  'lumina.overlay.5': { pl: 'O klinice', en: 'About the clinic', ua: 'Про клініку' },
+  'lumina.overlay.6': { pl: 'Formularz wizyty', en: 'Appointment form', ua: 'Форма запису' },
+  'lumina.overlay.7': { pl: 'Kontakt', en: 'Contact', ua: 'Контакти' },
+  'lumina.overlay.8': { pl: 'Stopka strony', en: 'Page footer', ua: 'Футер сторінки' },
+  'lumina.goal.label': { pl: 'Cel projektu', en: 'Project goal', ua: 'Мета проєкту' },
+  'lumina.goal.h2': { pl: 'Zaufanie i profesjonalizm<br/><span class="grad">wyrażone w interfejsie</span>', en: 'Trust and professionalism<br/><span class="grad">expressed through the interface</span>', ua: 'Довіра та професіоналізм<br/><span class="grad">виражені в інтерфейсі</span>' },
+  'lumina.goal.p1': { pl: 'Lumina Dental to responsywna strona typu landing page stworzona dla fikcyjnej kliniki stomatologicznej. Projekt powstał wyłącznie w celach portfolio — jako pokaz umiejętności budowania profesjonalnego, budzącego zaufanie interfejsu medycznego wyłącznie w oparciu o semantyczny HTML5, nowoczesny CSS3 i czysty JavaScript.', en: 'Lumina Dental is a responsive landing page created for a fictional dental clinic. The project was built solely for portfolio purposes, showcasing how to create a professional, trustworthy medical interface using semantic HTML5, modern CSS3 and pure JavaScript.', ua: 'Lumina Dental — це адаптивна лендинг-сторінка для вигаданої стоматологічної клініки. Проєкт створено виключно для портфоліо як приклад побудови професійного, надійного медичного інтерфейсу на семантичному HTML5, сучасному CSS3 і чистому JavaScript.' },
+  'lumina.goal.p2': { pl: 'Cały projekt — nazwa kliniki, personel, zdjęcia, opinie pacjentów i dane kontaktowe — jest wymyślony. Strona nie reprezentuje żadnej rzeczywistej placówki medycznej ani klienta.', en: 'The entire project — the clinic name, staff, photos, patient reviews and contact details — is fictional. The site does not represent any real medical facility or client.', ua: 'Увесь проєкт — назва клініки, персонал, фотографії, відгуки пацієнтів і контактні дані — вигаданий. Сайт не представляє жоден реальний медичний заклад чи клієнта.' },
+  'lumina.feat.1.title': { pl: 'Profesjonalny, medyczny design', en: 'Professional medical design', ua: 'Професійний медичний дизайн' },
+  'lumina.feat.1.desc': { pl: 'Spokojna paleta i klarowny layout budujące zaufanie pacjenta', en: 'A calm palette and clear layout that build patient trust', ua: 'Спокійна палітра та зрозумілий макет, що формують довіру пацієнта' },
+  'lumina.feat.2.title': { pl: 'Mobile-first RWD', en: 'Mobile-first RWD', ua: 'Mobile-first RWD' },
+  'lumina.feat.2.desc': { pl: 'Pełna responsywność dopasowana do telefonów, tabletów i desktopów', en: 'Fully responsive layout for phones, tablets and desktops', ua: 'Повна адаптивність для телефонів, планшетів і комп’ютерів' },
+  'lumina.feat.3.title': { pl: 'Sekcja usług stomatologicznych', en: 'Dental services section', ua: 'Секція стоматологічних послуг' },
+  'lumina.feat.3.desc': { pl: 'Przejrzysta prezentacja zabiegów i zakresu opieki kliniki', en: 'Clear presentation of treatments and the clinic’s scope of care', ua: 'Зрозуміла презентація процедур і спектра допомоги клініки' },
+  'lumina.feat.4.title': { pl: 'Gładkie animacje CSS', en: 'Smooth CSS animations', ua: 'Плавні CSS-анімації' },
+  'lumina.feat.4.desc': { pl: 'Subtelne przejścia i mikrointerakcje budujące spokojny odbiór strony', en: 'Subtle transitions and micro-interactions creating a calm experience', ua: 'Непомітні переходи та мікровзаємодії створюють спокійне сприйняття сайту' },
+  'lumina.feat.5.title': { pl: 'Interaktywne elementy JS', en: 'Interactive JS elements', ua: 'Інтерактивні елементи JS' },
+  'lumina.feat.5.desc': { pl: 'Menu, formularz umówienia wizyty i inne elementy w czystym JavaScript', en: 'Menu, appointment form and other elements built with pure JavaScript', ua: 'Меню, форма запису та інші елементи на чистому JavaScript' },
+  'lumina.tech.label': { pl: 'Technologie', en: 'Technologies', ua: 'Технології' },
+  'lumina.tech.title': { pl: 'Stack technologiczny', en: 'Tech stack', ua: 'Технологічний стек' },
+  'lumina.tech.1.desc': { pl: 'Semantyczny markup — nagłówki, sekcje, dostępność i SEO. 35.4% repozytorium.', en: 'Semantic markup — headings, sections, accessibility and SEO. 35.4% of the repository.', ua: 'Семантична розмітка — заголовки, секції, доступність і SEO. 35.4% репозиторію.' },
+  'lumina.tech.2.desc': { pl: 'Responsywne layouty i animacje — 30.3% repozytorium, bez frameworków.', en: 'Responsive layouts and animations — 30.3% of the repository, without frameworks.', ua: 'Адаптивні макети й анімації — 30.3% репозиторію, без фреймворків.' },
+  'lumina.tech.3.desc': { pl: 'Interaktywność interfejsu i logika formularzy — 34.3% repozytorium.', en: 'Interface interactivity and form logic — 34.3% of the repository.', ua: 'Інтерактивність інтерфейсу та логіка форм — 34.3% репозиторію.' },
+  'lumina.tech.4.desc': { pl: 'Podejście mobile-first, pełna responsywność bez zewnętrznych bibliotek.', en: 'Mobile-first approach and full responsiveness without external libraries.', ua: 'Підхід mobile-first і повна адаптивність без сторонніх бібліотек.' },
+  'lumina.tech.5.desc': { pl: 'Płynne przejścia i mikrointerakcje wzmacniające profesjonalny odbiór strony.', en: 'Smooth transitions and micro-interactions that enhance the professional feel.', ua: 'Плавні переходи та мікровзаємодії, що підсилюють професійне сприйняття.' },
+  'lumina.tech.6.desc': { pl: 'Animacje sekcji uruchamiane w momencie wejścia w viewport podczas scrollowania.', en: 'Section animations triggered when elements enter the viewport while scrolling.', ua: 'Анімації секцій запускаються, коли елементи входять у viewport під час прокручування.' },
+  'lumina.tech.7.desc': { pl: 'Starannie dobrana typografia budująca profesjonalny charakter marki.', en: 'Carefully selected typography that builds the brand’s professional character.', ua: 'Ретельно підібрана типографіка формує професійний характер бренду.' },
+  'lumina.tech.8.desc': { pl: 'Jasna hierarchia treści jako świadoma decyzja projektowa dla branży medycznej.', en: 'Clear content hierarchy as a deliberate design choice for the medical industry.', ua: 'Чітка ієрархія контенту як свідоме дизайнерське рішення для медичної галузі.' },
+  'lumina.tech.9.desc': { pl: 'Hosting i automatyczny deployment z gałęzi main.', en: 'Hosting and automatic deployment from the main branch.', ua: 'Хостинг і автоматичне розгортання з гілки main.' },
+  'lumina.arch.label': { pl: 'Architektura', en: 'Architecture', ua: 'Архітектура' },
+  'lumina.arch.title': { pl: 'Jak zbudowana jest strona', en: 'How the site is built', ua: 'Як побудований сайт' },
+  'lumina.arch.1.title': { pl: 'Struktura semantyczna', en: 'Semantic structure', ua: 'Семантична структура' },
+  'lumina.arch.1.desc': { pl: 'Strona opiera się na znacznikach semantycznych HTML5, co poprawia dostępność, SEO oraz czytelność kodu.', en: 'The site relies on semantic HTML5 elements, improving accessibility, SEO and code readability.', ua: 'Сайт використовує семантичні елементи HTML5, що покращує доступність, SEO та читабельність коду.' },
+  'lumina.arch.2.title': { pl: 'System designu w CSS', en: 'CSS design system', ua: 'Дизайн-система CSS' },
+  'lumina.arch.2.desc': { pl: 'Paleta i odstępy zdefiniowane jako zmienne CSS, dzięki czemu spójny, budzący zaufanie motyw jest łatwy do utrzymania i rozwijania.', en: 'The palette and spacing are defined as CSS variables, making the consistent trustworthy theme easy to maintain and extend.', ua: 'Палітра та відступи визначені як CSS-змінні, тому цілісну надійну тему легко підтримувати й розвивати.' },
+  'lumina.arch.3.title': { pl: 'Nawigacja mobilna', en: 'Mobile navigation', ua: 'Мобільна навігація' },
+  'lumina.arch.3.desc': { pl: 'Menu typu hamburger otwierane i zamykane w czystym JavaScript, bez dodatkowych zależności.', en: 'A hamburger menu opened and closed with pure JavaScript, without additional dependencies.', ua: 'Меню типу hamburger відкривається та закривається на чистому JavaScript без додаткових залежностей.' },
+  'lumina.arch.4.title': { pl: 'Usługi i zabiegi', en: 'Services and treatments', ua: 'Послуги та процедури' },
+  'lumina.arch.4.desc': { pl: 'Siatka kart usług prezentuje zakres opieki stomatologicznej, zbudowana na CSS Grid.', en: 'A CSS Grid of service cards presents the clinic’s dental care offering.', ua: 'Сітка карток послуг на CSS Grid представляє спектр стоматологічної допомоги.' },
+  'lumina.arch.5.title': { pl: 'Opinie pacjentów', en: 'Patient reviews', ua: 'Відгуки пацієнтів' },
+  'lumina.arch.5.desc': { pl: 'Sekcja rekomendacji renderowana jako karuzela lub siatka opinii, budująca wiarygodność kliniki w oczach odwiedzających.', en: 'A recommendation section rendered as a carousel or review grid, building credibility in visitors’ eyes.', ua: 'Секція рекомендацій у форматі каруселі або сітки відгуків підвищує довіру до клініки.' },
+  'lumina.arch.6.title': { pl: 'Formularz umówienia wizyty (demo)', en: 'Appointment form (demo)', ua: 'Форма запису на прийом (демо)' },
+  'lumina.arch.6.desc': { pl: 'Walidacja pól po stronie klienta w JavaScript — formularz ma charakter demonstracyjny i nie wysyła danych na żaden backend.', en: 'Client-side field validation in JavaScript — the form is demonstrational and does not send data to any backend.', ua: 'Клієнтська валідація полів на JavaScript — форма демонстраційна й не надсилає дані на backend.' },
+  'lumina.features.label': { pl: 'Kluczowe cechy', en: 'Key features', ua: 'Ключові риси' },
+  'lumina.features.title': { pl: 'Co wyróżnia projekt', en: 'What sets the project apart', ua: 'Що вирізняє проєкт' },
+  'lumina.ctrl.1': { pl: 'Semantyczny markup zgodny z dobrymi praktykami', en: 'Semantic markup following best practices', ua: 'Семантична розмітка відповідно до найкращих практик' },
+  'lumina.ctrl.2': { pl: 'Responsywny layout, zero zewnętrznych frameworków CSS', en: 'Responsive layout, no external CSS frameworks', ua: 'Адаптивний макет без сторонніх CSS-фреймворків' },
+  'lumina.ctrl.3': { pl: 'Lekka, zależnościowo niezależna interaktywność', en: 'Lightweight, dependency-free interactivity', ua: 'Легка інтерактивність без залежностей' },
+  'lumina.ctrl.4': { pl: 'Responsywny design — mobile, tablet, desktop', en: 'Responsive design — mobile, tablet, desktop', ua: 'Адаптивний дизайн — мобільні, планшети, комп’ютери' },
+  'lumina.ctrl.5': { pl: 'Sekcja usług, zespołu i opinii pacjentów', en: 'Services, team and patient reviews sections', ua: 'Секції послуг, команди та відгуків пацієнтів' },
+  'lumina.ctrl.6': { pl: 'Formularz umówienia wizyty (demo)', en: 'Appointment form (demo)', ua: 'Форма запису на прийом (демо)' },
+  'lumina.rationale.label': { pl: 'Uzasadnienie wyboru', en: 'Tech rationale', ua: 'Обґрунтування вибору' },
+  'lumina.rationale.title': { pl: 'Dlaczego te technologie', en: 'Why these technologies', ua: 'Чому саме ці технології' },
+  'lumina.table.tech': { pl: 'Technologia', en: 'Technology', ua: 'Технологія' },
+  'lumina.table.use': { pl: 'Zastosowanie', en: 'Use', ua: 'Застосування' },
+  'lumina.table.why': { pl: 'Powód wyboru', en: 'Why chosen', ua: 'Причина вибору' },
+  'lumina.table.1': { pl: 'Struktura strony', en: 'Page structure', ua: 'Структура сайту' },
+  'lumina.table.2': { pl: 'Semantyka, dostępność, SEO bez narzutu frameworka', en: 'Semantics, accessibility and SEO without framework overhead', ua: 'Семантика, доступність і SEO без навантаження фреймворку' },
+  'lumina.table.3': { pl: 'Stylowanie i layout', en: 'Styling and layout', ua: 'Стилізація та макет' },
+  'lumina.table.4': { pl: 'Responsywność i zmienne CSS wystarczają dla landing page', en: 'Responsiveness and CSS variables are enough for a landing page', ua: 'Адаптивності та CSS-змінних достатньо для лендинг-сторінки' },
+  'lumina.table.5': { pl: 'Interaktywność', en: 'Interactivity', ua: 'Інтерактивність' },
+  'lumina.table.6': { pl: 'Menu mobilne, lightbox, walidacja — bez zbędnych zależności', en: 'Mobile menu, lightbox and validation without unnecessary dependencies', ua: 'Мобільне меню, lightbox і валідація без зайвих залежностей' },
+  'lumina.table.7': { pl: 'Responsywność', en: 'Responsiveness', ua: 'Адаптивність' },
+  'lumina.table.8': { pl: 'Pełna kontrola nad breakpointami bez frameworka CSS', en: 'Full control over breakpoints without a CSS framework', ua: 'Повний контроль над breakpoint-ами без CSS-фреймворку' },
+  'lumina.table.9': { pl: 'Typografia', en: 'Typography', ua: 'Типографіка' },
+  'lumina.table.10': { pl: 'Szybkie wdrożenie profesjonalnych fontów bez lokalnych plików', en: 'Quick integration of professional fonts without local files', ua: 'Швидке підключення професійних шрифтів без локальних файлів' },
+  'lumina.table.11': { pl: 'Hosting / deployment', en: 'Hosting / deployment', ua: 'Хостинг / розгортання' },
+  'lumina.table.12': { pl: 'Automatyczny deployment z main, darmowy SSL i CDN', en: 'Automatic deployment from main, free SSL and CDN', ua: 'Автоматичне розгортання з main, безкоштовні SSL і CDN' },
+  'lumina.build.label': { pl: 'Instalacja', en: 'Installation', ua: 'Встановлення' },
+  'lumina.build.title': { pl: 'Jak uruchomić', en: 'How to run', ua: 'Як запустити' },
+  'lumina.req.title': { pl: 'Wymagania', en: 'Requirements', ua: 'Вимоги' },
+  'lumina.req.1': { pl: 'Przeglądarka internetowa', en: 'Web browser', ua: 'Веббраузер' },
+  'lumina.req.2': { pl: 'Live Server (opcjonalnie)', en: 'Live Server (optional)', ua: 'Live Server (необов’язково)' },
+  'lumina.step.1': { pl: 'Sklonuj repozytorium', en: 'Clone the repository', ua: 'Клонуй репозиторій' },
+  'lumina.step.2': { pl: 'Otwórz stronę lokalnie', en: 'Open the site locally', ua: 'Відкрий сайт локально' },
+  'lumina.step.3': { pl: 'Wdrożenie (opcjonalnie)', en: 'Deployment (optional)', ua: 'Розгортання (необов’язково)' },
+  'lumina.meta.label': { pl: 'Metadane', en: 'Metadata', ua: 'Метадані' },
+  'lumina.meta.title': { pl: 'O projekcie', en: 'About the project', ua: 'Про проєкт' },
+  'lumina.meta.1': { pl: 'Wersja', en: 'Version', ua: 'Версія' },
+  'lumina.meta.2': { pl: 'Główny język', en: 'Main language', ua: 'Основна мова' },
+  'lumina.meta.3': { pl: 'Repozytorium', en: 'Repository', ua: 'Репозиторій' },
+  'lumina.meta.4': { pl: 'Status', en: 'Status', ua: 'Статус' },
+  'lumina.meta.5': { pl: 'Charakter', en: 'Type', ua: 'Тип' },
+  'lumina.meta.fictional': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'lumina.note': { pl: '<em>Uwaga:</em> Lumina Dental to w całości fikcyjny projekt demonstracyjny stworzony wyłącznie w celach portfolio i edukacyjnych. Klient, teksty, grafiki, personel oraz dane kontaktowe są wymyślone i nie reprezentują żadnej rzeczywistej kliniki stomatologicznej ani pacjenta.', en: '<em>Note:</em> Lumina Dental is an entirely fictional demonstration project created solely for portfolio and educational purposes. The client, text, graphics, staff and contact details are invented and do not represent any real dental clinic or patient.', ua: '<em>Примітка:</em> Lumina Dental — повністю вигаданий демонстраційний проєкт, створений виключно для портфоліо та навчання. Клієнт, тексти, графіка, персонал і контактні дані вигадані та не представляють жодну реальну стоматологічну клініку чи пацієнта.' },
+
   /* ════ BARBER CRAFT — project detail ════ */
   'barber.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
   'barber.badge.uni': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
@@ -1507,6 +1608,7 @@ window.I18N = (function () {
     if (/\/projects\/vaeloq/.test(p))      return 'vaeloq';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects\/barber-craft-landing/.test(p)) return 'barber';
+    if (/\/projects\/lumina-dental-landing/.test(p)) return 'lumina';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
     return 'home';
@@ -1585,6 +1687,7 @@ window.I18N = (function () {
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
     if (page === 'barber')   applyBarber(lang);
+    if (page === 'lumina')   applyLumina(lang);
     if (page === 'aiplanner') applyAiplanner(lang);
     if (page === 'vaultify') applyVaultify(lang);
     if (page === 'vaeloq') applyVaeloq(lang);
@@ -1811,6 +1914,80 @@ window.I18N = (function () {
     setText(document.querySelector('.meta-item:nth-child(3) .meta-v'), 'barber.meta.private', lang);
     setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'barber.meta.fictional', lang);
     setHTML(metaSection?.querySelector('.body-text'), 'barber.note', lang);
+  }
+
+  /* ── LUMINA DENTAL ──────────────────────────── */
+  function applyLumina(lang) {
+    applySharedDetail(lang);
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) { const svg = backBtn.querySelector('svg'); backBtn.textContent = t('proj.back', lang); if (svg) backBtn.prepend(svg); }
+    document.title = `Lumina Dental — ${t('lumina.meta.title', lang)}`;
+    setText(document.querySelector('.proj-category'), 'lumina.category', lang);
+    setText(document.querySelector('.badge-uni'), 'lumina.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'lumina.tagline', lang);
+
+    const liveBtn = [...document.querySelectorAll('.btn-glass')].find(btn => btn.href && btn.href.includes('lumina-dental'));
+    if (liveBtn) { const svg = liveBtn.querySelector('svg'); liveBtn.textContent = t('lumina.live', lang); if (svg) liveBtn.prepend(svg); }
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    ['lumina.stats.structure', 'lumina.stats.styling', 'lumina.stats.interactions', 'lumina.stats.deployment'].forEach((key, i) => setText(statLabels[i], key, lang));
+
+    setText(document.querySelector('.gallery-section .section-label'), 'lumina.gallery.label', lang);
+    setText(document.querySelector('.gallery-section .section-h2'), 'lumina.gallery.title', lang);
+    setText(document.querySelector('.two-col .section-label'), 'lumina.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'lumina.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    setText(goalPs[0], 'lumina.goal.p1', lang);
+    setText(goalPs[1], 'lumina.goal.p2', lang);
+
+    const features = document.querySelectorAll('.feature-list .feat-item');
+    for (let i = 0; i < 5; i++) {
+      setText(features[i]?.querySelector('.feat-title'), `lumina.feat.${i + 1}.title`, lang);
+      setText(features[i]?.querySelector('.feat-desc'), `lumina.feat.${i + 1}.desc`, lang);
+    }
+
+    setText(document.querySelector('.tech-section .section-label'), 'lumina.tech.label', lang);
+    setText(document.querySelector('.tech-section .section-h2'), 'lumina.tech.title', lang);
+    const techCards = document.querySelectorAll('.tech-card');
+    for (let i = 0; i < 9; i++) setText(techCards[i]?.querySelector('.tech-card-desc'), `lumina.tech.${i + 1}.desc`, lang);
+
+    const archSection = document.querySelector('.arch-grid')?.closest('section');
+    setText(archSection?.querySelector('.section-label'), 'lumina.arch.label', lang);
+    setText(archSection?.querySelector('.section-h2'), 'lumina.arch.title', lang);
+    const archCards = document.querySelectorAll('.arch-card');
+    for (let i = 0; i < 6; i++) {
+      setText(archCards[i]?.querySelector('.arch-title'), `lumina.arch.${i + 1}.title`, lang);
+      setText(archCards[i]?.querySelector('.arch-desc'), `lumina.arch.${i + 1}.desc`, lang);
+    }
+
+    const controlsSection = document.querySelector('.controls-grid')?.closest('section');
+    setText(controlsSection?.querySelector('.section-label'), 'lumina.features.label', lang);
+    setText(controlsSection?.querySelector('.section-h2'), 'lumina.features.title', lang);
+    document.querySelectorAll('.controls-grid .ctrl span:last-child').forEach((el, i) => setText(el, `lumina.ctrl.${i + 1}`, lang));
+
+    const rationaleSection = document.querySelector('.rationale-table')?.closest('section');
+    setText(rationaleSection?.querySelector('.section-label'), 'lumina.rationale.label', lang);
+    setText(rationaleSection?.querySelector('.section-h2'), 'lumina.rationale.title', lang);
+    const headers = rationaleSection?.querySelectorAll('th');
+    ['lumina.table.tech', 'lumina.table.use', 'lumina.table.why'].forEach((key, i) => setText(headers?.[i], key, lang));
+    const tableRows = rationaleSection?.querySelectorAll('tbody tr');
+    for (let i = 0; i < 6; i++) {
+      setText(tableRows?.[i]?.cells[1], `lumina.table.${i * 2 + 1}`, lang);
+      setText(tableRows?.[i]?.cells[2], `lumina.table.${i * 2 + 2}`, lang);
+    }
+
+    const buildSection = document.querySelector('.build-steps')?.closest('section');
+    setText(buildSection?.querySelector('.section-label'), 'lumina.build.label', lang);
+    setText(buildSection?.querySelector('.section-h2'), 'lumina.build.title', lang);
+    setText(buildSection?.querySelector('.req-title'), 'lumina.req.title', lang);
+    document.querySelectorAll('.req-pill').forEach((el, i) => setText(el, `lumina.req.${i + 1}`, lang));
+    document.querySelectorAll('.step-title').forEach((el, i) => setText(el, `lumina.step.${i + 1}`, lang));
+
+    const metaSection = document.querySelector('.meta-strip')?.closest('section');
+    setText(metaSection?.querySelector('.section-label'), 'lumina.meta.label', lang);
+    setText(metaSection?.querySelector('.section-h2'), 'lumina.meta.title', lang);
+    document.querySelectorAll('.meta-k').forEach((el, i) => setText(el, `lumina.meta.${i + 1}`, lang));
+    setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'lumina.meta.fictional', lang);
+    setHTML(metaSection?.querySelector('.body-text'), 'lumina.note', lang);
   }
 
   /* ── SHARED PROJECT DETAIL helpers ──────────── */
