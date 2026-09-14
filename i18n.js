@@ -146,6 +146,109 @@ window.I18N = (function () {
 
 'projects.card.link': { pl: 'Zobacz projekt', en: 'View project', ua: 'Переглянути проєкт' },
 
+  /* ════ APEX BUILD — project detail ════ */
+  'apex.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
+  'apex.badge.uni': { pl: 'Studium przypadku', en: 'Case study', ua: 'Кейс-стаді' },
+  'apex.tagline': { pl: 'Nowoczesna strona promocyjna (landing page) zbudowana w oparciu o semantyczny HTML5, CSS3 i JavaScript — kompletne studium przypadku pokazujące pełen cykl budowy strony sprzedażowej, bez frameworków, jako projekt portfolio.', en: 'A modern promotional landing page built with semantic HTML5, CSS3 and JavaScript — a complete case study showing the full lifecycle of building a sales page without frameworks, as a portfolio project.', ua: 'Сучасна промоційна лендинг-сторінка на семантичному HTML5, CSS3 і JavaScript — повний кейс, що показує весь цикл створення сторінки продажів без фреймворків як портфоліо-проєкт.' },
+  'apex.live': { pl: 'Zobacz na żywo', en: 'View live', ua: 'Переглянути наживо' },
+  'apex.stats.structure': { pl: 'Struktura', en: 'Structure', ua: 'Структура' },
+  'apex.stats.styling': { pl: 'Styling', en: 'Styling', ua: 'Стилізація' },
+  'apex.stats.interactions': { pl: 'Interakcje', en: 'Interactions', ua: 'Взаємодія' },
+  'apex.stats.landing': { pl: 'Landing page', en: 'Landing page', ua: 'Landing page' },
+  'apex.gallery.label': { pl: 'Screenshoty', en: 'Screenshots', ua: 'Скріншоти' },
+  'apex.gallery.title': { pl: 'Strona w akcji', en: 'The site in action', ua: 'Сайт у дії' },
+  'apex.overlay.1': { pl: 'Widok główny', en: 'Main view', ua: 'Головний екран' },
+  'apex.overlay.2': { pl: 'Sekcja funkcji', en: 'Features section', ua: 'Секція функцій' },
+  'apex.overlay.3': { pl: 'Oferta', en: 'Offer', ua: 'Пропозиція' },
+  'apex.overlay.4': { pl: 'Opinie klientów', en: 'Client testimonials', ua: 'Відгуки клієнтів' },
+  'apex.overlay.5': { pl: 'Call to action', en: 'Call to action', ua: 'Заклик до дії' },
+  'apex.overlay.6': { pl: 'Sekcja kontaktowa', en: 'Contact section', ua: 'Контактна секція' },
+  'apex.overlay.7': { pl: 'Widok mobilny', en: 'Mobile view', ua: 'Мобільний вигляд' },
+  'apex.overlay.8': { pl: 'Responsywny layout', en: 'Responsive layout', ua: 'Адаптивний макет' },
+  'apex.overlay.9': { pl: 'Szczegóły interfejsu', en: 'Interface details', ua: 'Деталі інтерфейсу' },
+  'apex.overlay.10': { pl: 'Stopka strony', en: 'Page footer', ua: 'Футер сторінки' },
+  'apex.goal.label': { pl: 'Cel projektu', en: 'Project goal', ua: 'Мета проєкту' },
+  'apex.goal.h2': { pl: 'Kompletny landing page<br/><span class="grad">od pierwszego wrażenia po konwersję</span>', en: 'A complete landing page<br/><span class="grad">from first impression to conversion</span>', ua: 'Повна лендинг-сторінка<br/><span class="grad">від першого враження до конверсії</span>' },
+  'apex.goal.p1': { pl: 'Apex Build Landing Page to studium przypadku pokazujące pełen cykl budowy strony promocyjnej — od sekcji hero przez prezentację funkcji i opinie klientów, aż po wezwanie do działania. Projekt powstał wyłącznie w celach portfolio, jako demonstracja umiejętności potrzebnych na stanowisku Frontend Developer.', en: 'Apex Build Landing Page is a case study showing the full lifecycle of building a promotional page — from the hero section through features and customer testimonials to the call to action. The project was created solely for portfolio purposes, demonstrating skills needed for a Frontend Developer role.', ua: 'Apex Build Landing Page — це кейс, що показує повний цикл створення промоційної сторінки: від hero-секції через функції та відгуки клієнтів до заклику до дії. Проєкт створено виключно для портфоліо як демонстрацію навичок Frontend Developer.' },
+  'apex.goal.p2': { pl: 'Strona nie została stworzona dla rzeczywistego klienta — treści, dane i opinie mają charakter demonstracyjny, a kod jest czysty, dobrze zorganizowany i gotowy do prezentacji.', en: 'The site was not created for a real client — the content, data and testimonials are demonstrational, while the code is clean, well organized and ready to present.', ua: 'Сайт не створювався для реального клієнта — контент, дані та відгуки мають демонстраційний характер, а код чистий, добре організований і готовий до презентації.' },
+  'apex.feat.1.title': { pl: 'Hero Section', en: 'Hero Section', ua: 'Hero Section' },
+  'apex.feat.1.desc': { pl: 'Przyciągająca uwagę sekcja wejścia z wyraźnym call-to-action', en: 'An attention-grabbing opening section with a clear call to action', ua: 'Приваблива вступна секція з чітким закликом до дії' },
+  'apex.feat.2.title': { pl: 'Features', en: 'Features', ua: 'Features' },
+  'apex.feat.2.desc': { pl: 'Prezentacja kluczowych funkcji i zalet oferty', en: 'Presentation of the offer’s key features and benefits', ua: 'Презентація ключових функцій і переваг пропозиції' },
+  'apex.feat.3.title': { pl: 'Testimonials', en: 'Testimonials', ua: 'Testimonials' },
+  'apex.feat.3.desc': { pl: 'Sekcja opinii i recenzji budująca wiarygodność', en: 'A testimonial section that builds credibility', ua: 'Секція відгуків, що формує довіру' },
+  'apex.feat.4.title': { pl: 'Call-to-Action', en: 'Call-to-Action', ua: 'Call-to-Action' },
+  'apex.feat.4.desc': { pl: 'Wyraźna zachęta do podjęcia akcji przed stopką', en: 'A clear prompt to take action before the footer', ua: 'Чіткий заклик виконати дію перед футером' },
+  'apex.feat.5.title': { pl: 'Footer', en: 'Footer', ua: 'Footer' },
+  'apex.feat.5.desc': { pl: 'Stopka z informacjami kontaktowymi i linkami', en: 'A footer with contact information and links', ua: 'Футер із контактною інформацією та посиланнями' },
+  'apex.tech.label': { pl: 'Technologie', en: 'Technologies', ua: 'Технології' },
+  'apex.tech.title': { pl: 'Stack technologiczny', en: 'Tech stack', ua: 'Технологічний стек' },
+  'apex.tech.1.desc': { pl: 'Semantyczna struktura i treść strony — 38.9% repozytorium.', en: 'Semantic page structure and content — 38.9% of the repository.', ua: 'Семантична структура та контент сайту — 38.9% репозиторію.' },
+  'apex.tech.2.desc': { pl: 'Stylizacja, layouty i animacje — 35.3% repozytorium, bez frameworków.', en: 'Styling, layouts and animations — 35.3% of the repository, without frameworks.', ua: 'Стилізація, макети й анімації — 35.3% репозиторію, без фреймворків.' },
+  'apex.tech.3.desc': { pl: 'Interaktywność i logika kliencka — 25.8% repozytorium.', en: 'Interactivity and client-side logic — 25.8% of the repository.', ua: 'Інтерактивність і клієнтська логіка — 25.8% репозиторію.' },
+  'apex.tech.4.desc': { pl: 'Responsywny layout działający na urządzeniach mobilnych i desktopowych.', en: 'A responsive layout working on mobile and desktop devices.', ua: 'Адаптивний макет для мобільних і десктопних пристроїв.' },
+  'apex.tech.5.desc': { pl: 'Płynne przejścia i efekty wizualne wzmacniające odbiór strony.', en: 'Smooth transitions and visual effects that enhance the site experience.', ua: 'Плавні переходи та візуальні ефекти, що підсилюють сприйняття сайту.' },
+  'apex.tech.6.desc': { pl: 'Płynne przewijanie między sekcjami dla lepszego UX.', en: 'Smooth scrolling between sections for better UX.', ua: 'Плавне прокручування між секціями для кращого UX.' },
+  'apex.tech.7.desc': { pl: 'Starannie dobrana typografia budująca nowoczesny charakter marki.', en: 'Carefully selected typography that builds the brand’s modern character.', ua: 'Ретельно підібрана типографіка формує сучасний характер бренду.' },
+  'apex.tech.8.desc': { pl: 'Czysta, minimalistyczna wizualizacja jako świadoma decyzja projektowa.', en: 'A clean, minimalist visual language as a deliberate design choice.', ua: 'Чистий мінімалістичний візуальний стиль як свідоме дизайнерське рішення.' },
+  'apex.tech.9.desc': { pl: 'Przetestowane w Chrome, Firefox, Safari i Edge.', en: 'Tested in Chrome, Firefox, Safari and Edge.', ua: 'Протестовано в Chrome, Firefox, Safari та Edge.' },
+  'apex.arch.label': { pl: 'Architektura', en: 'Architecture', ua: 'Архітектура' },
+  'apex.arch.title': { pl: 'Jak zbudowana jest strona', en: 'How the site is built', ua: 'Як побудований сайт' },
+  'apex.arch.1.title': { pl: 'Struktura plików', en: 'File structure', ua: 'Структура файлів' },
+  'apex.arch.1.desc': { pl: 'Prosty, przejrzysty podział na znacznik strony, style i logikę — łatwy do rozwijania i utrzymania.', en: 'A simple, clear split between markup, styles and logic — easy to extend and maintain.', ua: 'Простий і зрозумілий поділ розмітки, стилів і логіки — легко розширювати та підтримувати.' },
+  'apex.arch.2.title': { pl: 'Hero Section', en: 'Hero Section', ua: 'Hero Section' },
+  'apex.arch.2.desc': { pl: 'Sekcja wejścia z nagłówkiem, opisem oferty i wyraźnym przyciskiem call-to-action, budująca pierwsze wrażenie.', en: 'An opening section with a headline, offer description and clear call-to-action button that creates the first impression.', ua: 'Вступна секція із заголовком, описом пропозиції та чіткою кнопкою call-to-action формує перше враження.' },
+  'apex.arch.3.title': { pl: 'Features', en: 'Features', ua: 'Features' },
+  'apex.arch.3.desc': { pl: 'Siatka kart prezentująca kluczowe funkcje i zalety oferty, zbudowana na CSS Grid/Flexbox.', en: 'A grid of cards presenting key features and benefits, built with CSS Grid/Flexbox.', ua: 'Сітка карток із ключовими функціями та перевагами на CSS Grid/Flexbox.' },
+  'apex.arch.4.title': { pl: 'Testimonials', en: 'Testimonials', ua: 'Testimonials' },
+  'apex.arch.4.desc': { pl: 'Sekcja opinii klientów budująca wiarygodność oferty przed wezwaniem do działania.', en: 'A customer testimonial section that builds offer credibility before the call to action.', ua: 'Секція відгуків клієнтів підвищує довіру до пропозиції перед закликом до дії.' },
+  'apex.arch.5.title': { pl: 'Call-to-Action', en: 'Call-to-Action', ua: 'Call-to-Action' },
+  'apex.arch.5.desc': { pl: 'Wyróżniona sekcja zachęcająca odwiedzającego do podjęcia konkretnej akcji tuż przed stopką.', en: 'A highlighted section encouraging visitors to take a specific action just before the footer.', ua: 'Виділена секція спонукає відвідувача виконати конкретну дію перед футером.' },
+  'apex.arch.6.title': { pl: 'Footer', en: 'Footer', ua: 'Footer' },
+  'apex.arch.6.desc': { pl: 'Stopka z danymi kontaktowymi i linkami, spinająca całą strukturę strony.', en: 'A footer with contact details and links that completes the page structure.', ua: 'Футер із контактними даними та посиланнями завершує структуру сайту.' },
+  'apex.features.label': { pl: 'Kluczowe cechy', en: 'Key features', ua: 'Ключові риси' },
+  'apex.features.title': { pl: 'Co wyróżnia projekt', en: 'What sets the project apart', ua: 'Що вирізняє проєкт' },
+  'apex.ctrl.1': { pl: 'Semantyczny markup — dobra praktyka SEO i accessibility', en: 'Semantic markup — SEO and accessibility best practices', ua: 'Семантична розмітка — найкращі практики SEO та доступності' },
+  'apex.ctrl.2': { pl: 'Responsywny layout, zero zewnętrznych frameworków CSS', en: 'Responsive layout, no external CSS frameworks', ua: 'Адаптивний макет без сторонніх CSS-фреймворків' },
+  'apex.ctrl.3': { pl: 'Interaktywne elementy dla lepszego UX', en: 'Interactive elements for better UX', ua: 'Інтерактивні елементи для кращого UX' },
+  'apex.ctrl.4': { pl: 'Responsywny design — mobile, tablet, desktop', en: 'Responsive design — mobile, tablet, desktop', ua: 'Адаптивний дизайн — мобільні, планшети, комп’ютери' },
+  'apex.ctrl.5': { pl: 'Płynne animacje CSS i przejścia', en: 'Smooth CSS animations and transitions', ua: 'Плавні CSS-анімації та переходи' },
+  'apex.ctrl.6': { pl: 'Kompatybilność z głównymi przeglądarkami', en: 'Compatibility with major browsers', ua: 'Сумісність із основними браузерами' },
+  'apex.rationale.label': { pl: 'Uzasadnienie wyboru', en: 'Tech rationale', ua: 'Обґрунтування вибору' },
+  'apex.rationale.title': { pl: 'Dlaczego te technologie', en: 'Why these technologies', ua: 'Чому саме ці технології' },
+  'apex.table.tech': { pl: 'Technologia', en: 'Technology', ua: 'Технологія' },
+  'apex.table.use': { pl: 'Zastosowanie', en: 'Use', ua: 'Застосування' },
+  'apex.table.why': { pl: 'Powód wyboru', en: 'Why chosen', ua: 'Причина вибору' },
+  'apex.table.1': { pl: 'Struktura strony', en: 'Page structure', ua: 'Структура сайту' },
+  'apex.table.2': { pl: 'Semantyka, dostępność, SEO bez narzutu frameworka', en: 'Semantics, accessibility and SEO without framework overhead', ua: 'Семантика, доступність і SEO без навантаження фреймворку' },
+  'apex.table.3': { pl: 'Stylowanie i layout', en: 'Styling and layout', ua: 'Стилізація та макет' },
+  'apex.table.4': { pl: 'Responsywność i animacje wystarczają dla landing page', en: 'Responsiveness and animations are enough for a landing page', ua: 'Адаптивності й анімацій достатньо для лендинг-сторінки' },
+  'apex.table.5': { pl: 'Interaktywność', en: 'Interactivity', ua: 'Інтерактивність' },
+  'apex.table.6': { pl: 'Dynamika UI bez zbędnych zależności', en: 'UI dynamics without unnecessary dependencies', ua: 'Динаміка UI без зайвих залежностей' },
+  'apex.table.7': { pl: 'Responsywność', en: 'Responsiveness', ua: 'Адаптивність' },
+  'apex.table.8': { pl: 'Pełna kontrola nad breakpointami bez frameworka CSS', en: 'Full control over breakpoints without a CSS framework', ua: 'Повний контроль над breakpoint-ами без CSS-фреймворку' },
+  'apex.table.9': { pl: 'Typografia', en: 'Typography', ua: 'Типографіка' },
+  'apex.table.10': { pl: 'Szybkie wdrożenie nowoczesnych fontów bez lokalnych plików', en: 'Quick integration of modern fonts without local files', ua: 'Швидке підключення сучасних шрифтів без локальних файлів' },
+  'apex.table.11': { pl: 'Logika kliencka', en: 'Client-side logic', ua: 'Клієнтська логіка' },
+  'apex.table.12': { pl: 'Lekki kod, łatwy do audytu i modyfikacji', en: 'Lightweight code that is easy to audit and modify', ua: 'Легкий код, який просто перевіряти та змінювати' },
+  'apex.build.label': { pl: 'Instalacja', en: 'Installation', ua: 'Встановлення' },
+  'apex.build.title': { pl: 'Jak uruchomić', en: 'How to run', ua: 'Як запустити' },
+  'apex.req.title': { pl: 'Kompatybilność', en: 'Compatibility', ua: 'Сумісність' },
+  'apex.req.5': { pl: 'Urządzenia mobilne', en: 'Mobile devices', ua: 'Мобільні пристрої' },
+  'apex.step.1': { pl: 'Sklonuj repozytorium', en: 'Clone the repository', ua: 'Клонуй репозиторій' },
+  'apex.step.2': { pl: 'Otwórz stronę lokalnie', en: 'Open the site locally', ua: 'Відкрий сайт локально' },
+  'apex.step.3': { pl: 'Ciesz się responsywnym landing page’em', en: 'Enjoy the responsive landing page', ua: 'Насолоджуйся адаптивною лендинг-сторінкою' },
+  'apex.meta.label': { pl: 'Metadane', en: 'Metadata', ua: 'Метадані' },
+  'apex.meta.title': { pl: 'O projekcie', en: 'About the project', ua: 'Про проєкт' },
+  'apex.meta.1': { pl: 'Wersja', en: 'Version', ua: 'Версія' },
+  'apex.meta.2': { pl: 'Główny język', en: 'Main language', ua: 'Основна мова' },
+  'apex.meta.3': { pl: 'Repozytorium', en: 'Repository', ua: 'Репозиторій' },
+  'apex.meta.4': { pl: 'Status', en: 'Status', ua: 'Статус' },
+  'apex.meta.5': { pl: 'Charakter', en: 'Type', ua: 'Тип' },
+  'apex.meta.status': { pl: 'Gotowy do prezentacji', en: 'Ready to present', ua: 'Готовий до презентації' },
+  'apex.meta.type': { pl: 'Portfolio / studium przypadku', en: 'Portfolio / case study', ua: 'Портфоліо / кейс-стаді' },
+  'apex.note': { pl: '<em>Uwaga:</em> Apex Build Landing Page to projekt portfolio/studium przypadku stworzony wyłącznie w celach edukacyjnych i demonstracyjnych. Nie został stworzony dla rzeczywistego klienta — treści, dane i opinie mają charakter wymyślony, a kod jest czysty, dobrze zorganizowany i gotowy do pokazania potencjalnym pracodawcom.', en: '<em>Note:</em> Apex Build Landing Page is a portfolio case study created solely for educational and demonstration purposes. It was not created for a real client — the content, data and testimonials are fictional, while the code is clean, well organized and ready to show potential employers.', ua: '<em>Примітка:</em> Apex Build Landing Page — портфоліо-кейс, створений виключно для навчання та демонстрації. Проєкт не створювався для реального клієнта: контент, дані й відгуки вигадані, а код чистий, добре організований і готовий для презентації потенційним роботодавцям.' },
+
   /* ════ LUMINA DENTAL — project detail ════ */
   'lumina.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
   'lumina.badge.uni': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
@@ -1609,6 +1712,7 @@ window.I18N = (function () {
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects\/barber-craft-landing/.test(p)) return 'barber';
     if (/\/projects\/lumina-dental-landing/.test(p)) return 'lumina';
+    if (/\/projects\/apex-build-landing/.test(p)) return 'apex';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
     return 'home';
@@ -1688,6 +1792,7 @@ window.I18N = (function () {
     if (page === 'wyspa')    applyWyspa(lang);
     if (page === 'barber')   applyBarber(lang);
     if (page === 'lumina')   applyLumina(lang);
+    if (page === 'apex')     applyApex(lang);
     if (page === 'aiplanner') applyAiplanner(lang);
     if (page === 'vaultify') applyVaultify(lang);
     if (page === 'vaeloq') applyVaeloq(lang);
@@ -1988,6 +2093,81 @@ window.I18N = (function () {
     document.querySelectorAll('.meta-k').forEach((el, i) => setText(el, `lumina.meta.${i + 1}`, lang));
     setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'lumina.meta.fictional', lang);
     setHTML(metaSection?.querySelector('.body-text'), 'lumina.note', lang);
+  }
+
+  /* ── APEX BUILD ─────────────────────────────── */
+  function applyApex(lang) {
+    applySharedDetail(lang);
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) { const svg = backBtn.querySelector('svg'); backBtn.textContent = t('proj.back', lang); if (svg) backBtn.prepend(svg); }
+    document.title = `Apex Build — ${t('apex.meta.title', lang)}`;
+    setText(document.querySelector('.proj-category'), 'apex.category', lang);
+    setText(document.querySelector('.badge-uni'), 'apex.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'apex.tagline', lang);
+
+    const liveBtn = [...document.querySelectorAll('.btn-glass')].find(btn => btn.href && btn.href.includes('apex-build-landing'));
+    if (liveBtn) { const svg = liveBtn.querySelector('svg'); liveBtn.textContent = t('apex.live', lang); if (svg) liveBtn.prepend(svg); }
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    ['apex.stats.structure', 'apex.stats.styling', 'apex.stats.interactions', 'apex.stats.landing'].forEach((key, i) => setText(statLabels[i], key, lang));
+
+    setText(document.querySelector('.gallery-section .section-label'), 'apex.gallery.label', lang);
+    setText(document.querySelector('.gallery-section .section-h2'), 'apex.gallery.title', lang);
+    setText(document.querySelector('.two-col .section-label'), 'apex.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'apex.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    setText(goalPs[0], 'apex.goal.p1', lang);
+    setText(goalPs[1], 'apex.goal.p2', lang);
+
+    const features = document.querySelectorAll('.feature-list .feat-item');
+    for (let i = 0; i < 5; i++) {
+      setText(features[i]?.querySelector('.feat-title'), `apex.feat.${i + 1}.title`, lang);
+      setText(features[i]?.querySelector('.feat-desc'), `apex.feat.${i + 1}.desc`, lang);
+    }
+
+    setText(document.querySelector('.tech-section .section-label'), 'apex.tech.label', lang);
+    setText(document.querySelector('.tech-section .section-h2'), 'apex.tech.title', lang);
+    const techCards = document.querySelectorAll('.tech-card');
+    for (let i = 0; i < 9; i++) setText(techCards[i]?.querySelector('.tech-card-desc'), `apex.tech.${i + 1}.desc`, lang);
+
+    const archSection = document.querySelector('.arch-grid')?.closest('section');
+    setText(archSection?.querySelector('.section-label'), 'apex.arch.label', lang);
+    setText(archSection?.querySelector('.section-h2'), 'apex.arch.title', lang);
+    const archCards = document.querySelectorAll('.arch-card');
+    for (let i = 0; i < 6; i++) {
+      setText(archCards[i]?.querySelector('.arch-title'), `apex.arch.${i + 1}.title`, lang);
+      setText(archCards[i]?.querySelector('.arch-desc'), `apex.arch.${i + 1}.desc`, lang);
+    }
+
+    const controlsSection = document.querySelector('.controls-grid')?.closest('section');
+    setText(controlsSection?.querySelector('.section-label'), 'apex.features.label', lang);
+    setText(controlsSection?.querySelector('.section-h2'), 'apex.features.title', lang);
+    document.querySelectorAll('.controls-grid .ctrl span:last-child').forEach((el, i) => setText(el, `apex.ctrl.${i + 1}`, lang));
+
+    const rationaleSection = document.querySelector('.rationale-table')?.closest('section');
+    setText(rationaleSection?.querySelector('.section-label'), 'apex.rationale.label', lang);
+    setText(rationaleSection?.querySelector('.section-h2'), 'apex.rationale.title', lang);
+    const headers = rationaleSection?.querySelectorAll('th');
+    ['apex.table.tech', 'apex.table.use', 'apex.table.why'].forEach((key, i) => setText(headers?.[i], key, lang));
+    const tableRows = rationaleSection?.querySelectorAll('tbody tr');
+    for (let i = 0; i < 6; i++) {
+      setText(tableRows?.[i]?.cells[1], `apex.table.${i * 2 + 1}`, lang);
+      setText(tableRows?.[i]?.cells[2], `apex.table.${i * 2 + 2}`, lang);
+    }
+
+    const buildSection = document.querySelector('.build-steps')?.closest('section');
+    setText(buildSection?.querySelector('.section-label'), 'apex.build.label', lang);
+    setText(buildSection?.querySelector('.section-h2'), 'apex.build.title', lang);
+    setText(buildSection?.querySelector('.req-title'), 'apex.req.title', lang);
+    document.querySelectorAll('.req-pill').forEach((el, i) => setText(el, i === 4 ? 'apex.req.5' : null, lang));
+    document.querySelectorAll('.step-title').forEach((el, i) => setText(el, `apex.step.${i + 1}`, lang));
+
+    const metaSection = document.querySelector('.meta-strip')?.closest('section');
+    setText(metaSection?.querySelector('.section-label'), 'apex.meta.label', lang);
+    setText(metaSection?.querySelector('.section-h2'), 'apex.meta.title', lang);
+    document.querySelectorAll('.meta-k').forEach((el, i) => setText(el, `apex.meta.${i + 1}`, lang));
+    setText(document.querySelector('.meta-item:nth-child(4) .meta-v'), 'apex.meta.status', lang);
+    setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'apex.meta.type', lang);
+    setHTML(metaSection?.querySelector('.body-text'), 'apex.note', lang);
   }
 
   /* ── SHARED PROJECT DETAIL helpers ──────────── */
