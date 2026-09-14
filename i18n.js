@@ -146,6 +146,106 @@ window.I18N = (function () {
 
 'projects.card.link': { pl: 'Zobacz projekt', en: 'View project', ua: 'Переглянути проєкт' },
 
+  /* ════ BARBER CRAFT — project detail ════ */
+  'barber.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
+  'barber.badge.uni': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'barber.tagline': { pl: 'Premium, ciemna strona typu landing page dla fikcyjnego salonu fryzjerskiego — zbudowana w czystym HTML5, CSS3 i JavaScript, bez frameworków, jako demonstracja nowoczesnego, responsywnego frontendu i dbałości o detal wizualny.', en: 'A premium dark landing page for a fictional barbershop — built in pure HTML5, CSS3 and JavaScript without frameworks, demonstrating modern responsive frontend development and attention to visual detail.', ua: 'Преміальна темна лендинг-сторінка для вигаданого барбершопу — створена на чистих HTML5, CSS3 і JavaScript без фреймворків як демонстрація сучасного адаптивного frontend та уваги до візуальних деталей.' },
+  'barber.live': { pl: 'Zobacz na żywo', en: 'View live', ua: 'Переглянути наживо' },
+  'barber.stats.structure': { pl: 'Struktura', en: 'Structure', ua: 'Структура' },
+  'barber.stats.styling': { pl: 'Styling', en: 'Styling', ua: 'Стилізація' },
+  'barber.stats.interactions': { pl: 'Interakcje', en: 'Interactions', ua: 'Взаємодія' },
+  'barber.stats.deployment': { pl: 'Deployment', en: 'Deployment', ua: 'Розгортання' },
+  'barber.gallery.label': { pl: 'Screenshoty', en: 'Screenshots', ua: 'Скріншоти' },
+  'barber.gallery.title': { pl: 'Strona w akcji', en: 'The site in action', ua: 'Сайт у дії' },
+  'barber.overlay.1': { pl: 'Widok główny', en: 'Main view', ua: 'Головний екран' },
+  'barber.overlay.2': { pl: 'Sekcja usług', en: 'Services section', ua: 'Секція послуг' },
+  'barber.overlay.3': { pl: 'Cennik', en: 'Price list', ua: 'Прайс-лист' },
+  'barber.overlay.4': { pl: 'Portfolio prac', en: 'Work portfolio', ua: 'Портфоліо робіт' },
+  'barber.overlay.5': { pl: 'Opinie klientów', en: 'Client reviews', ua: 'Відгуки клієнтів' },
+  'barber.overlay.6': { pl: 'Formularz kontaktowy', en: 'Contact form', ua: 'Контактна форма' },
+  'barber.overlay.7': { pl: 'Stopka strony', en: 'Page footer', ua: 'Футер сторінки' },
+  'barber.goal.h2': { pl: 'Premium doświadczenie<br/><span class="grad">zaprojektowane w kodzie</span>', en: 'A premium experience<br/><span class="grad">designed in code</span>', ua: 'Преміальний досвід<br/><span class="grad">створений у коді</span>' },
+  'barber.goal.p1': { pl: 'Barber Craft Landing to nowoczesna, ciemna strona typu landing page stworzona dla fikcyjnego salonu fryzjerskiego. Projekt powstał wyłącznie w celach edukacyjnych i portfolio — jako pokaz umiejętności budowania premium interfejsu wyłącznie w oparciu o semantyczny HTML5, nowoczesny CSS3 i lekki, zależnościowo niezależny JavaScript.', en: 'Barber Craft Landing is a modern dark landing page created for a fictional barbershop. The project was built solely for educational and portfolio purposes, showcasing how to create a premium interface using semantic HTML5, modern CSS3 and lightweight dependency-free JavaScript.', ua: 'Barber Craft Landing — це сучасна темна лендинг-сторінка для вигаданого барбершопу. Проєкт створено виключно для навчання та портфоліо як приклад побудови преміального інтерфейсу на семантичному HTML5, сучасному CSS3 і легкому JavaScript без залежностей.' },
+  'barber.goal.p2': { pl: 'Cały projekt — nazwa salonu, zdjęcia, recenzje, cennik i dane kontaktowe — jest wymyślony. Strona nie reprezentuje żadnego rzeczywistego biznesu ani klienta.', en: 'The entire project — the salon name, photos, reviews, price list and contact details — is fictional. The site does not represent any real business or client.', ua: 'Увесь проєкт — назва салону, фотографії, відгуки, прайс і контактні дані — вигаданий. Сайт не представляє жоден реальний бізнес чи клієнта.' },
+  'barber.feat.1.title': { pl: 'Premium, ciemny design', en: 'Premium dark design', ua: 'Преміальний темний дизайн' },
+  'barber.feat.1.desc': { pl: 'Głęboka czerń i mosiężny akcent budujące klimat butikowego salonu', en: 'Deep black and brass accents creating a boutique barbershop atmosphere', ua: 'Глибокий чорний і латунні акценти створюють атмосферу бутикового салону' },
+  'barber.feat.2.title': { pl: 'Pełna responsywność (RWD)', en: 'Fully responsive (RWD)', ua: 'Повна адаптивність (RWD)' },
+  'barber.feat.2.desc': { pl: 'Mobile-first layout dopasowany do telefonów, tabletów i desktopów', en: 'Mobile-first layout adapted for phones, tablets and desktops', ua: 'Mobile-first макет для телефонів, планшетів і комп’ютерів' },
+  'barber.feat.3.title': { pl: 'Sekcja usług i cennika', en: 'Services and price list', ua: 'Послуги та прайс-лист' },
+  'barber.feat.3.desc': { pl: 'Przejrzysta prezentacja oferty fryzjerskiej wraz z cenami', en: 'Clear presentation of the barbershop offer with prices', ua: 'Зрозуміла презентація переліку послуг із цінами' },
+  'barber.feat.4.title': { pl: 'Portfolio prac', en: 'Work portfolio', ua: 'Портфоліо робіт' },
+  'barber.feat.4.desc': { pl: 'Galeria realizacji z lightboxem, analogicznie jak w tym projekcie', en: 'A lightbox gallery of work, similar to the one on this project page', ua: 'Галерея робіт із lightbox, як на цій сторінці проєкту' },
+  'barber.feat.5.title': { pl: 'Formularz kontaktowy (demo)', en: 'Contact form (demo)', ua: 'Контактна форма (демо)' },
+  'barber.feat.5.desc': { pl: 'Walidacja po stronie klienta w czystym JavaScript, bez backendu', en: 'Client-side validation in pure JavaScript, without a backend', ua: 'Клієнтська валідація на чистому JavaScript без backend' },
+  'barber.tech.label': { pl: 'Technologie', en: 'Technologies', ua: 'Технології' },
+  'barber.tech.title': { pl: 'Stack technologiczny', en: 'Tech stack', ua: 'Технологічний стек' },
+  'barber.tech.1.desc': { pl: 'Semantyczny markup — nagłówki, sekcje, dostępność i SEO. 48.5% repozytorium.', en: 'Semantic markup — headings, sections, accessibility and SEO. 48.5% of the repository.', ua: 'Семантична розмітка — заголовки, секції, доступність і SEO. 48.5% репозиторію.' },
+  'barber.tech.2.desc': { pl: 'Flexbox, Grid, zmienne CSS i animacje — 43.8% repozytorium, bez frameworków.', en: 'Flexbox, Grid, CSS variables and animations — 43.8% of the repository, without frameworks.', ua: 'Flexbox, Grid, CSS-змінні та анімації — 43.8% репозиторію, без фреймворків.' },
+  'barber.tech.3.desc': { pl: 'Menu mobilne, lightbox galerii i walidacja formularza — 7.7% repozytorium.', en: 'Mobile menu, gallery lightbox and form validation — 7.7% of the repository.', ua: 'Мобільне меню, lightbox галереї та валідація форми — 7.7% репозиторію.' },
+  'barber.tech.4.desc': { pl: 'Podejście mobile-first, pełna responsywność bez zewnętrznych bibliotek.', en: 'Mobile-first approach and full responsiveness without external libraries.', ua: 'Підхід mobile-first і повна адаптивність без сторонніх бібліотек.' },
+  'barber.tech.5.desc': { pl: 'Płynne przejścia i mikrointerakcje wzmacniające premium odbiór strony.', en: 'Smooth transitions and micro-interactions that enhance the premium feel.', ua: 'Плавні переходи та мікровзаємодії, що підсилюють преміальне сприйняття.' },
+  'barber.tech.6.desc': { pl: 'Animacje sekcji uruchamiane w momencie wejścia w viewport podczas scrollowania.', en: 'Section animations triggered when elements enter the viewport while scrolling.', ua: 'Анімації секцій запускаються, коли елементи входять у viewport під час прокручування.' },
+  'barber.tech.7.desc': { pl: 'Starannie dobrana typografia budująca premium charakter marki.', en: 'Carefully selected typography that builds the brand’s premium character.', ua: 'Ретельно підібрана типографіка формує преміальний характер бренду.' },
+  'barber.tech.8.desc': { pl: 'Ciemny motyw jako świadoma decyzja projektowa dla grupy docelowej.', en: 'A dark theme as a deliberate design choice for the target audience.', ua: 'Темна тема як свідоме дизайнерське рішення для цільової аудиторії.' },
+  'barber.tech.9.desc': { pl: 'Hosting i automatyczny deployment z gałęzi main.', en: 'Hosting and automatic deployment from the main branch.', ua: 'Хостинг і автоматичне розгортання з гілки main.' },
+  'barber.arch.label': { pl: 'Architektura', en: 'Architecture', ua: 'Архітектура' },
+  'barber.arch.title': { pl: 'Jak zbudowana jest strona', en: 'How the site is built', ua: 'Як побудований сайт' },
+  'barber.arch.1.title': { pl: 'Struktura semantyczna', en: 'Semantic structure', ua: 'Семантична структура' },
+  'barber.arch.1.desc': { pl: 'Strona opiera się na znacznikach semantycznych HTML5, co poprawia dostępność, SEO oraz czytelność kodu.', en: 'The site relies on semantic HTML5 elements, improving accessibility, SEO and code readability.', ua: 'Сайт використовує семантичні елементи HTML5, що покращує доступність, SEO та читабельність коду.' },
+  'barber.arch.2.title': { pl: 'System designu w CSS', en: 'CSS design system', ua: 'Дизайн-система CSS' },
+  'barber.arch.2.desc': { pl: 'Paleta i odstępy zdefiniowane jako zmienne CSS, dzięki czemu spójny, premium motyw jest łatwy do utrzymania i rozwijania.', en: 'The palette and spacing are defined as CSS variables, making the consistent premium theme easy to maintain and extend.', ua: 'Палітра та відступи визначені як CSS-змінні, тому цілісну преміальну тему легко підтримувати й розвивати.' },
+  'barber.arch.3.title': { pl: 'Nawigacja mobilna', en: 'Mobile navigation', ua: 'Мобільна навігація' },
+  'barber.arch.3.desc': { pl: 'Menu typu hamburger otwierane i zamykane w czystym JavaScript, bez dodatkowych zależności.', en: 'A hamburger menu opened and closed with pure JavaScript, without additional dependencies.', ua: 'Меню типу hamburger відкривається та закривається на чистому JavaScript без додаткових залежностей.' },
+  'barber.arch.4.title': { pl: 'Usługi i cennik', en: 'Services and pricing', ua: 'Послуги та ціни' },
+  'barber.arch.4.desc': { pl: 'Siatka kart usług prezentuje ofertę salonu wraz z cenami, zbudowana na CSS Grid.', en: 'A CSS Grid of service cards presents the barbershop offer together with prices.', ua: 'Сітка карток послуг на CSS Grid представляє пропозицію салону разом із цінами.' },
+  'barber.arch.5.title': { pl: 'Galeria z lightboxem', en: 'Lightbox gallery', ua: 'Галерея з lightbox' },
+  'barber.arch.5.desc': { pl: 'Portfolio prac renderowane jest jako klikalna galeria z pełnoekranowym podglądem — dokładnie tak, jak w sekcji screenshotów tej strony.', en: 'The work portfolio is rendered as a clickable gallery with a fullscreen preview, just like the screenshots section on this page.', ua: 'Портфоліо робіт представлено як клікабельну галерею з повноекранним переглядом, як у секції скріншотів цієї сторінки.' },
+  'barber.arch.6.title': { pl: 'Formularz kontaktowy (demo)', en: 'Contact form (demo)', ua: 'Контактна форма (демо)' },
+  'barber.arch.6.desc': { pl: 'Walidacja pól po stronie klienta w JavaScript — formularz ma charakter demonstracyjny i nie wysyła danych na żaden backend.', en: 'Client-side field validation in JavaScript — the form is demonstrational and does not send data to any backend.', ua: 'Клієнтська валідація полів на JavaScript — форма демонстраційна й не надсилає дані на backend.' },
+  'barber.features.label': { pl: 'Kluczowe cechy', en: 'Key features', ua: 'Ключові риси' },
+  'barber.features.title': { pl: 'Co wyróżnia projekt', en: 'What sets the project apart', ua: 'Що вирізняє проєкт' },
+  'barber.ctrl.1': { pl: 'Semantyczny markup zgodny z dobrymi praktykami', en: 'Semantic markup following best practices', ua: 'Семантична розмітка відповідно до найкращих практик' },
+  'barber.ctrl.2': { pl: 'Flexbox & Grid, zero zewnętrznych frameworków CSS', en: 'Flexbox & Grid, no external CSS frameworks', ua: 'Flexbox і Grid, без сторонніх CSS-фреймворків' },
+  'barber.ctrl.3': { pl: 'Lekka, zależnościowo niezależna interaktywność', en: 'Lightweight, dependency-free interactivity', ua: 'Легка інтерактивність без залежностей' },
+  'barber.ctrl.4': { pl: 'Responsywny design — mobile, tablet, desktop', en: 'Responsive design — mobile, tablet, desktop', ua: 'Адаптивний дизайн — мобільні, планшети, комп’ютери' },
+  'barber.ctrl.5': { pl: 'Premium, ciemny motyw dopasowany do branży', en: 'Premium dark theme tailored to the industry', ua: 'Преміальна темна тема, адаптована до галузі' },
+  'barber.ctrl.6': { pl: 'Sekcja usług, portfolio i formularz kontaktowy', en: 'Services, portfolio and contact form sections', ua: 'Секції послуг, портфоліо та контактної форми' },
+  'barber.rationale.label': { pl: 'Uzasadnienie wyboru', en: 'Tech rationale', ua: 'Обґрунтування вибору' },
+  'barber.rationale.title': { pl: 'Dlaczego te technologie', en: 'Why these technologies', ua: 'Чому саме ці технології' },
+  'barber.table.tech': { pl: 'Technologia', en: 'Technology', ua: 'Технологія' },
+  'barber.table.use': { pl: 'Zastosowanie', en: 'Use', ua: 'Застосування' },
+  'barber.table.why': { pl: 'Powód wyboru', en: 'Why chosen', ua: 'Причина вибору' },
+  'barber.table.1': { pl: 'Struktura strony', en: 'Page structure', ua: 'Структура сайту' },
+  'barber.table.2': { pl: 'Semantyka, dostępność, SEO bez narzutu frameworka', en: 'Semantics, accessibility and SEO without framework overhead', ua: 'Семантика, доступність і SEO без навантаження фреймворку' },
+  'barber.table.3': { pl: 'Stylowanie i layout', en: 'Styling and layout', ua: 'Стилізація та макет' },
+  'barber.table.4': { pl: 'Flexbox/Grid i zmienne CSS wystarczają dla landing page', en: 'Flexbox/Grid and CSS variables are enough for a landing page', ua: 'Flexbox/Grid і CSS-змінних достатньо для лендинг-сторінки' },
+  'barber.table.5': { pl: 'Interaktywność', en: 'Interactivity', ua: 'Інтерактивність' },
+  'barber.table.6': { pl: 'Menu mobilne, lightbox, walidacja — bez zbędnych zależności', en: 'Mobile menu, lightbox and validation without unnecessary dependencies', ua: 'Мобільне меню, lightbox і валідація без зайвих залежностей' },
+  'barber.table.7': { pl: 'Responsywność', en: 'Responsiveness', ua: 'Адаптивність' },
+  'barber.table.8': { pl: 'Pełna kontrola nad breakpointami bez frameworka CSS', en: 'Full control over breakpoints without a CSS framework', ua: 'Повний контроль над breakpoint-ами без CSS-фреймворку' },
+  'barber.table.9': { pl: 'Typografia', en: 'Typography', ua: 'Типографіка' },
+  'barber.table.10': { pl: 'Szybkie wdrożenie premium fontów bez lokalnych plików', en: 'Quick integration of premium fonts without local files', ua: 'Швидке підключення преміальних шрифтів без локальних файлів' },
+  'barber.table.11': { pl: 'Hosting / deployment', en: 'Hosting / deployment', ua: 'Хостинг / розгортання' },
+  'barber.table.12': { pl: 'Automatyczny deployment z main, darmowy SSL i CDN', en: 'Automatic deployment from main, free SSL and CDN', ua: 'Автоматичне розгортання з main, безкоштовні SSL і CDN' },
+  'barber.build.label': { pl: 'Instalacja', en: 'Installation', ua: 'Встановлення' },
+  'barber.build.title': { pl: 'Jak uruchomić', en: 'How to run', ua: 'Як запустити' },
+  'barber.req.title': { pl: 'Wymagania', en: 'Requirements', ua: 'Вимоги' },
+  'barber.req.1': { pl: 'Przeglądarka internetowa', en: 'Web browser', ua: 'Веббраузер' },
+  'barber.req.2': { pl: 'Live Server (opcjonalnie)', en: 'Live Server (optional)', ua: 'Live Server (необов’язково)' },
+  'barber.step.1': { pl: 'Sklonuj repozytorium', en: 'Clone the repository', ua: 'Клонуй репозиторій' },
+  'barber.step.2': { pl: 'Otwórz stronę lokalnie', en: 'Open the site locally', ua: 'Відкрий сайт локально' },
+  'barber.step.3': { pl: 'Wdrożenie (opcjonalnie)', en: 'Deployment (optional)', ua: 'Розгортання (необов’язково)' },
+  'barber.meta.label': { pl: 'Metadane', en: 'Metadata', ua: 'Метадані' },
+  'barber.meta.title': { pl: 'O projekcie', en: 'About the project', ua: 'Про проєкт' },
+  'barber.meta.1': { pl: 'Wersja', en: 'Version', ua: 'Версія' },
+  'barber.meta.2': { pl: 'Główny język', en: 'Main language', ua: 'Основна мова' },
+  'barber.meta.3': { pl: 'Repozytorium', en: 'Repository', ua: 'Репозиторій' },
+  'barber.meta.4': { pl: 'Status', en: 'Status', ua: 'Статус' },
+  'barber.meta.5': { pl: 'Charakter', en: 'Type', ua: 'Тип' },
+  'barber.meta.private': { pl: 'Prywatne', en: 'Private', ua: 'Приватний' },
+  'barber.meta.fictional': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'barber.note': { pl: '<em>Uwaga:</em> Barber Craft Landing to w całości fikcyjny projekt stworzony wyłącznie w celach edukacyjnych i portfolio. Wszystkie dane, nazwy, zdjęcia, recenzje i informacje kontaktowe są wymyślone i nie reprezentują żadnego rzeczywistego salonu fryzjerskiego ani klienta.', en: '<em>Note:</em> Barber Craft Landing is an entirely fictional project created solely for educational and portfolio purposes. All data, names, photos, reviews and contact information are invented and do not represent any real barbershop or client.', ua: '<em>Примітка:</em> Barber Craft Landing — повністю вигаданий проєкт, створений виключно для навчання та портфоліо. Усі дані, назви, фотографії, відгуки й контактна інформація вигадані та не представляють жоден реальний барбершоп чи клієнта.' },
+
     /* ════ SHARED — project detail pages ════ */
     'proj.back':          { pl: 'Wróć do projektów',   en: 'Back to projects',   ua: 'Повернутися до проєктів' },
     'proj.screenshots':   { pl: 'Screenshots',          en: 'Screenshots',        ua: 'Скриншоти' },
@@ -1406,6 +1506,7 @@ window.I18N = (function () {
     if (/\/projects\/vaultify/.test(p))    return 'vaultify';
     if (/\/projects\/vaeloq/.test(p))      return 'vaeloq';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
+    if (/\/projects\/barber-craft-landing/.test(p)) return 'barber';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
     return 'home';
@@ -1483,6 +1584,7 @@ window.I18N = (function () {
     if (page === 'ml')       applyMl(lang);
     if (page === 'ualingo')  applyUalingo(lang);
     if (page === 'wyspa')    applyWyspa(lang);
+    if (page === 'barber')   applyBarber(lang);
     if (page === 'aiplanner') applyAiplanner(lang);
     if (page === 'vaultify') applyVaultify(lang);
     if (page === 'vaeloq') applyVaeloq(lang);
@@ -1634,6 +1736,82 @@ window.I18N = (function () {
     }
   });
 }
+
+  /* ── BARBER CRAFT ───────────────────────────── */
+  function applyBarber(lang) {
+    applySharedDetail(lang);
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) { const svg = backBtn.querySelector('svg'); backBtn.textContent = t('proj.back', lang); if (svg) backBtn.prepend(svg); }
+    document.title = `Barber Craft — ${t('barber.meta.title', lang)}`;
+    setText(document.querySelector('.proj-category'), 'barber.category', lang);
+    setText(document.querySelector('.badge-uni'), 'barber.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'barber.tagline', lang);
+
+    const liveBtn = [...document.querySelectorAll('.btn-glass')].find(btn => btn.href && btn.href.includes('barber-craft-landing'));
+    if (liveBtn) { const svg = liveBtn.querySelector('svg'); liveBtn.textContent = t('barber.live', lang); if (svg) liveBtn.prepend(svg); }
+
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    ['barber.stats.structure', 'barber.stats.styling', 'barber.stats.interactions', 'barber.stats.deployment'].forEach((key, i) => setText(statLabels[i], key, lang));
+
+    setText(document.querySelector('.gallery-section .section-label'), 'barber.gallery.label', lang);
+    setText(document.querySelector('.gallery-section .section-h2'), 'barber.gallery.title', lang);
+
+    setText(document.querySelector('.two-col .section-label'), 'proj.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'barber.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    setText(goalPs[0], 'barber.goal.p1', lang);
+    setText(goalPs[1], 'barber.goal.p2', lang);
+
+    const features = document.querySelectorAll('.feature-list .feat-item');
+    for (let i = 0; i < 5; i++) {
+      setText(features[i]?.querySelector('.feat-title'), `barber.feat.${i + 1}.title`, lang);
+      setText(features[i]?.querySelector('.feat-desc'), `barber.feat.${i + 1}.desc`, lang);
+    }
+
+    setText(document.querySelector('.tech-section .section-label'), 'barber.tech.label', lang);
+    setText(document.querySelector('.tech-section .section-h2'), 'barber.tech.title', lang);
+    const techCards = document.querySelectorAll('.tech-card');
+    for (let i = 0; i < 9; i++) setText(techCards[i]?.querySelector('.tech-card-desc'), `barber.tech.${i + 1}.desc`, lang);
+
+    setText(document.querySelector('.arch-grid')?.closest('section')?.querySelector('.section-label'), 'barber.arch.label', lang);
+    setText(document.querySelector('.arch-grid')?.closest('section')?.querySelector('.section-h2'), 'barber.arch.title', lang);
+    const archCards = document.querySelectorAll('.arch-card');
+    for (let i = 0; i < 6; i++) {
+      setText(archCards[i]?.querySelector('.arch-title'), `barber.arch.${i + 1}.title`, lang);
+      setText(archCards[i]?.querySelector('.arch-desc'), `barber.arch.${i + 1}.desc`, lang);
+    }
+
+    const controlsSection = document.querySelector('.controls-grid')?.closest('section');
+    setText(controlsSection?.querySelector('.section-label'), 'barber.features.label', lang);
+    setText(controlsSection?.querySelector('.section-h2'), 'barber.features.title', lang);
+    document.querySelectorAll('.controls-grid .ctrl span:last-child').forEach((el, i) => setText(el, `barber.ctrl.${i + 1}`, lang));
+
+    const rationaleSection = document.querySelector('.rationale-table')?.closest('section');
+    setText(rationaleSection?.querySelector('.section-label'), 'barber.rationale.label', lang);
+    setText(rationaleSection?.querySelector('.section-h2'), 'barber.rationale.title', lang);
+    const headers = rationaleSection?.querySelectorAll('th');
+    ['barber.table.tech', 'barber.table.use', 'barber.table.why'].forEach((key, i) => setText(headers?.[i], key, lang));
+    const tableRows = rationaleSection?.querySelectorAll('tbody tr');
+    for (let i = 0; i < 6; i++) {
+      setText(tableRows?.[i]?.cells[1], `barber.table.${i * 2 + 1}`, lang);
+      setText(tableRows?.[i]?.cells[2], `barber.table.${i * 2 + 2}`, lang);
+    }
+
+    const buildSection = document.querySelector('.build-steps')?.closest('section');
+    setText(buildSection?.querySelector('.section-label'), 'barber.build.label', lang);
+    setText(buildSection?.querySelector('.section-h2'), 'barber.build.title', lang);
+    setText(buildSection?.querySelector('.req-title'), 'barber.req.title', lang);
+    document.querySelectorAll('.req-pill').forEach((el, i) => setText(el, `barber.req.${i + 1}`, lang));
+    document.querySelectorAll('.step-title').forEach((el, i) => setText(el, `barber.step.${i + 1}`, lang));
+
+    const metaSection = document.querySelector('.meta-strip')?.closest('section');
+    setText(metaSection?.querySelector('.section-label'), 'barber.meta.label', lang);
+    setText(metaSection?.querySelector('.section-h2'), 'barber.meta.title', lang);
+    document.querySelectorAll('.meta-k').forEach((el, i) => setText(el, `barber.meta.${i + 1}`, lang));
+    setText(document.querySelector('.meta-item:nth-child(3) .meta-v'), 'barber.meta.private', lang);
+    setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'barber.meta.fictional', lang);
+    setHTML(metaSection?.querySelector('.body-text'), 'barber.note', lang);
+  }
 
   /* ── SHARED PROJECT DETAIL helpers ──────────── */
   function applySharedDetail(lang) {
