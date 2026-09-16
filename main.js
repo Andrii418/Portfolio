@@ -1083,7 +1083,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
     return;
   }
 
-  const ajaxAction = form.action.replace(/\/$/, '') + '/ajax';
+  const ajaxAction = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
   const originalSubmitText = submitBtn?.innerHTML || 'Wyślij wiadomość';
 
   form.addEventListener('submit', async event => {
@@ -1115,7 +1115,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
         console.warn('Contact form JSON parse failed', parseError);
       }
 
-      if (data?.success === 'true' || response.status === 200) {
+      if (data?.success === 'true' || data?.success === true) {
         status.textContent = '✅ Wiadomość została wysłana. Dziękuję za kontakt!';
         status.classList.add('success', 'visible');
         status.classList.remove('error');
@@ -1125,10 +1125,9 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
       }
     } catch (error) {
       console.warn('Contact form error:', error);
-      status.textContent = '⚠️ Wystąpił problem z wysyłką AJAX. Wysyłam formularz standardowo...';
+      status.textContent = '⚠️ Nie udało się wysłać wiadomości. Spróbuj ponownie.';
       status.classList.add('error', 'visible');
       status.classList.remove('success');
-      form.submit();
       return;
     } finally {
       submitBtn.disabled = false;
