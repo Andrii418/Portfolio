@@ -118,6 +118,13 @@ body.admin-body {
   background-clip: text;
 }
 
+.admin-header-note {
+  margin: 8px 0 0;
+  color: var(--adm-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .admin-header-meta {
   display: flex;
   align-items: center;
@@ -324,6 +331,29 @@ body.admin-body {
   font-size: 0.88rem;
 }
 .section-eng-row:last-child { border-bottom: none; }
+
+.journey-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--adm-border);
+}
+.journey-row:last-child { border-bottom: none; }
+.journey-row > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+.journey-row > div span {
+  color: var(--adm-muted);
+  font-family: var(--adm-mono);
+}
+.journey-row p {
+  margin: 8px 0 0;
+  color: var(--adm-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.journey-row b { color: var(--adm-accent); font-weight: 500; }
 
 .empty-state {
   color: var(--adm-muted);

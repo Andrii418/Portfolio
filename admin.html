@@ -29,6 +29,7 @@
       <header class="admin-header">
         <div>
           <h1>Live Portfolio Command Center</h1>
+          <p class="admin-header-note">Rejestrujemy anonimową sesję i konkretne wizyty na podstronach. Nie rozpoznajemy zawodu ani tożsamości odwiedzającego.</p>
         </div>
         <div class="admin-header-meta">
           <span class="admin-badge live">Na żywo</span>
@@ -47,7 +48,7 @@
         <div class="admin-card col-3">
           <h2>Unikalni goście</h2>
           <div class="stat-value" id="statUnique">—</div>
-          <div class="stat-sub">Visitor ID (anonimowy)</div>
+          <div class="stat-sub">Anonimowy Visitor ID, bez klasyfikacji osoby</div>
         </div>
         <div class="admin-card col-3">
           <h2>Sesje</h2>
@@ -55,9 +56,9 @@
           <div class="stat-sub">Aktywne sesje przeglądania</div>
         </div>
         <div class="admin-card col-3">
-          <h2>Leady</h2>
+          <h2>Kontakt skopiowany</h2>
           <div class="stat-value" id="statLeads">—</div>
-          <div class="stat-sub">Potencjalni rekruterzy / klienci</div>
+          <div class="stat-sub">Jedyny jawny sygnał kontaktu</div>
         </div>
 
         <!-- CountAPI legacy -->
@@ -86,9 +87,9 @@
           </div>
         </div>
 
-        <!-- Leads -->
+        <!-- Explicit contact actions -->
         <div class="admin-card col-4">
-          <h2>Potencjalni Leady</h2>
+          <h2>Akcje kontaktowe</h2>
           <div class="leads-list" id="leadsList"></div>
         </div>
 
@@ -98,20 +99,10 @@
           <div id="projectBars"></div>
         </div>
 
-        <!-- Section engagement -->
+        <!-- Page time -->
         <div class="admin-card col-4">
-          <h2>Czas w sekcjach</h2>
-          <div id="sectionEngagement"></div>
-        </div>
-
-        <!-- Scroll + time -->
-        <div class="admin-card col-4">
-          <h2>Scroll Depth</h2>
-          <div id="scrollStats"></div>
-        </div>
-        <div class="admin-card col-4">
-          <h2>Czas na stronie</h2>
-          <div id="timeStats"></div>
+          <h2>Czas na podstronach</h2>
+          <div id="pageDurations"></div>
         </div>
 
         <!-- Visit log -->
@@ -124,12 +115,18 @@
                   <th>Kiedy</th>
                   <th>Lokalizacja / Sesja</th>
                   <th>Strona</th>
+                  <th>Aktywny czas</th>
                   <th>ID sesji</th>
                 </tr>
               </thead>
               <tbody id="visitLogBody"></tbody>
             </table>
           </div>
+        </div>
+
+        <div class="admin-card col-12">
+          <h2>Trasy sesji</h2>
+          <div id="sessionJourneys"></div>
         </div>
 
         <!-- Quick toggles -->

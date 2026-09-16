@@ -14,7 +14,7 @@
   const STORAGE_VISITORS = 'portfolio-analytics-visitors-v1';
   const SESSION_KEY = 'portfolio-analytics-session-id';
   const VISITOR_KEY = 'portfolio-analytics-visitor-id';
-  const GEO_KEY = 'portfolio-analytics-geo-v1';
+  const GEO_KEY = 'portfolio-analytics-geo-session-v2';
 
   function uuid() {
     return crypto.randomUUID?.() ||
@@ -66,12 +66,18 @@
 
   const sessionId = getSessionId();
   const visitorId = getVisitorId();
-  const sessionStart = Date.now();
-  let geo = readJson(GEO_KEY, null);
-  let maxScroll = 0;
-  const sectionTimes = {};
-  const sectionEnter = {};
-  let currentSection = null;
+  let activeMs = 0;
+  let activeStartedAt = document.visibilityState === 'visible' ? Date.now() : null;
+  let pageClosed = false;
+  let persistedActiveMs = 0;
+  let geo = (() => {
+    try {
+      const raw = sessionStorage.getItem(GEO_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  })();
 
   async function fetchGeo() {
     if (geo) return geo;
@@ -84,10 +90,21 @@
         country: data.country_name || data.country || '—',
         region: data.region || ''
       };
-      writeJson(GEO_KEY, geo);
     } catch {
-      geo = { city: 'Lokalnie', country: '—', region: '' };
+      try {
+        const res = await fetch('https://ipwho.is/', { signal: AbortSignal.timeout(4000) });
+        const data = res.ok ? await res.json() : null;
+        if (!data?.success) throw new Error('fallback geo fail');
+        geo = {
+          city: data.city || 'Nieznane',
+          country: data.country || '—',
+          region: data.region || ''
+        };
+      } catch {
+        geo = { city: 'Nieznane', country: '—', region: '' };
+      }
     }
+    sessionStorage.setItem(GEO_KEY, JSON.stringify(geo));
     return geo;
   }
 
@@ -101,7 +118,6 @@
       totalTimeMs: 0,
       maxScrollDepth: 0,
       isLead: false,
-      leadReasons: [],
       geo: geo || {},
       events: 0
     };
@@ -175,112 +191,48 @@
     return event;
   }
 
-  function markLead(reason) {
-    const sessions = readJson(STORAGE_SESSIONS, {});
-    const s = sessions[sessionId];
-    if (!s) return;
-    if (!s.leadReasons.includes(reason)) s.leadReasons.push(reason);
-    s.isLead = true;
-    writeJson(STORAGE_SESSIONS, sessions);
-    pushEvent('lead', { reason, isLead: true });
+  function currentActiveMs() {
+    return activeMs + (activeStartedAt ? Date.now() - activeStartedAt : 0);
   }
 
-  function trackScrollDepth() {
-    const doc = document.documentElement;
-    const scrollTop = window.scrollY || doc.scrollTop;
-    const height = doc.scrollHeight - doc.clientHeight;
-    const depth = height > 0 ? Math.round((scrollTop / height) * 100) : 0;
-    if (depth > maxScroll) {
-      const prev = maxScroll;
-      maxScroll = depth;
-      upsertSession({ maxScrollDepth: maxScroll });
-      if (depth >= 25 && prev < 25) pushEvent('scroll', { depth: 25 });
-      else if (depth >= 50 && prev < 50) pushEvent('scroll', { depth: 50 });
-      else if (depth >= 75 && prev < 75) pushEvent('scroll', { depth: 75 });
-      else if (depth >= 90 && prev < 90) pushEvent('scroll', { depth: 90 });
-    }
+  function updateActiveTime() {
+    const elapsed = currentActiveMs();
+    const delta = Math.max(0, elapsed - persistedActiveMs);
+    persistedActiveMs = elapsed;
+    activeMs = elapsed;
+    if (activeStartedAt) activeStartedAt = Date.now();
+    if (delta) upsertSession({ totalTimeMs: getSessionTotalTime() + delta });
+    return elapsed;
   }
 
-  function trackSections() {
-    document.querySelectorAll('[data-section]').forEach(el => {
-      const name = el.dataset.section;
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            sectionEnter[name] = Date.now();
-            currentSection = name;
-            pushEvent('section_enter', { section: name });
-          } else if (sectionEnter[name]) {
-            const dur = Date.now() - sectionEnter[name];
-            sectionTimes[name] = (sectionTimes[name] || 0) + dur;
-            pushEvent('section_leave', { section: name, durationMs: dur });
-            if (currentSection === name) currentSection = null;
-            delete sectionEnter[name];
-          }
-        });
-      }, { threshold: 0.35 });
-      obs.observe(el);
+  function getSessionTotalTime() {
+    return readJson(STORAGE_SESSIONS, {})[sessionId]?.totalTimeMs || 0;
+  }
+
+  function trackVisibility() {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        updateActiveTime();
+        activeStartedAt = null;
+      } else if (!pageClosed) {
+        activeStartedAt = Date.now();
+      }
     });
-  }
-
-  function trackProjectClicks() {
-    document.addEventListener('click', e => {
-      const card = e.target.closest('.project-card, a[href*="/projects/"]');
-      if (!card) return;
-      const titleEl = card.querySelector('.project-card-title, h1, h2');
-      const href = card.getAttribute('href') || card.closest('a')?.getAttribute('href') || '';
-      const name = titleEl?.textContent?.trim() || href.split('/').filter(Boolean).pop() || 'Projekt';
-      pushEvent('project_click', { project: name, href });
-    }, true);
   }
 
   function trackCopy() {
     const contacts = (CFG.trackedContacts || []).map(c => c.toLowerCase());
     document.addEventListener('copy', () => {
       const text = (window.getSelection()?.toString() || '').toLowerCase();
-      const matched = contacts.some(c => text.includes(c));
-      if (matched) {
-        markLead('Skopiowano kontakt');
-        pushEvent('copy_contact', { text: text.slice(0, 80), isLead: true });
-      }
+      if (contacts.some(c => text.includes(c))) pushEvent('copy_contact', { text: text.slice(0, 80) });
     });
-  }
-
-  function trackNavClicks() {
-    document.addEventListener('click', e => {
-      const link = e.target.closest('a.nav-link, a.mob-link, .nav-cta, .btn');
-      if (!link) return;
-      const label = link.textContent?.trim().slice(0, 60) || link.getAttribute('href');
-      pushEvent('nav_click', { label, href: link.getAttribute('href') });
-    });
-  }
-
-  function heartbeat() {
-    const elapsed = Date.now() - sessionStart;
-    upsertSession({ totalTimeMs: elapsed });
-    pushEvent('heartbeat', {
-      elapsedMs: elapsed,
-      section: currentSection,
-      scrollDepth: maxScroll
-    });
-
-    const threshold = CFG.leadTimeThresholdMs || 180000;
-    if (elapsed >= threshold) {
-      markLead(`Czas na stronie > ${Math.round(threshold / 60000)} min`);
-    }
   }
 
   function trackLeave() {
-    const elapsed = Date.now() - sessionStart;
-    Object.keys(sectionEnter).forEach(name => {
-      sectionTimes[name] = (sectionTimes[name] || 0) + (Date.now() - sectionEnter[name]);
-    });
-    upsertSession({
-      totalTimeMs: elapsed,
-      maxScrollDepth: maxScroll,
-      sectionTimes
-    });
-    pushEvent('leave', { elapsedMs: elapsed, scrollDepth: maxScroll, sectionTimes });
+    if (pageClosed) return;
+    pageClosed = true;
+    const durationMs = updateActiveTime();
+    pushEvent('page_leave', { durationMs });
   }
 
   /* countapi — zachowanie wstecznej kompatybilności */
@@ -310,17 +262,13 @@
     hitCountApi();
     await pushEvent('pageview', { referrer: document.referrer || 'direct' });
 
-    trackSections();
-    trackProjectClicks();
     trackCopy();
-    trackNavClicks();
-
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
-    setInterval(heartbeat, CFG.heartbeatIntervalMs || 15000);
+    trackVisibility();
+    setInterval(() => {
+      if (document.visibilityState === 'visible') updateActiveTime();
+    }, CFG.activeTimeIntervalMs || 5000);
+    window.addEventListener('pagehide', trackLeave);
     window.addEventListener('beforeunload', trackLeave);
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') trackLeave();
-    });
   }
 
   if (document.readyState === 'loading') {
@@ -329,5 +277,5 @@
     init();
   }
 
-  window.PortfolioAnalytics = { pushEvent, markLead, getSessionId, pageName };
+  window.PortfolioAnalytics = { pushEvent, getSessionId, pageName };
 })();

@@ -22,12 +22,9 @@ window.PORTFOLIO_ANALYTICS_CONFIG = {
     'jan@kowalski.dev'
   ],
 
-  /** Próg czasu na stronie (ms) dla oznaczenia leada */
-  leadTimeThresholdMs: 3 * 60 * 1000,
-
   /** Maks. zdarzeń trzymanych lokalnie */
   localEventLimit: 2000,
 
-  /** Interwał heartbeat (ms) */
-  heartbeatIntervalMs: 15000
+  /** Interwał zapisu aktywnego czasu (ms) */
+  activeTimeIntervalMs: 5000
 };

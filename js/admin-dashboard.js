@@ -57,7 +57,8 @@
   }
 
   function formatDuration(ms) {
-    if (!ms || ms < 1000) return '<1s';
+    if (ms === undefined || ms === null) return 'w trakcie';
+    if (ms < 1000) return `${Math.max(0, ms / 1000).toFixed(1)}s`;
     const s = Math.floor(ms / 1000);
     if (s < 60) return `${s}s`;
     const m = Math.floor(s / 60);
@@ -148,51 +149,51 @@
     return readJson(SESSIONS_KEY, {});
   }
 
+  function sessionsFromEvents(events) {
+    const sessions = {};
+    events.forEach(ev => {
+      if (!ev.sessionId) return;
+      const session = sessions[ev.sessionId] ||= {
+        sessionId: ev.sessionId,
+        visitorId: ev.visitorId,
+        firstSeen: ev.timestamp,
+        lastSeen: ev.timestamp,
+        totalTimeMs: 0,
+        geo: ev.geo || {}
+      };
+      if (new Date(ev.timestamp) < new Date(session.firstSeen)) session.firstSeen = ev.timestamp;
+      if (new Date(ev.timestamp) > new Date(session.lastSeen)) session.lastSeen = ev.timestamp;
+      if (ev.type === 'page_leave') session.totalTimeMs += ev.data?.durationMs || 0;
+      if (ev.type === 'copy_contact') session.contactCopied = true;
+    });
+    return sessions;
+  }
+
   function eventLabel(ev) {
     const geo = ev.geo?.city ? `${ev.geo.city}${ev.geo.country ? ', ' + ev.geo.country : ''}` : 'Gość';
-    const sid = ev.sessionId?.slice(0, 8) || '???';
 
     switch (ev.type) {
       case 'pageview':
         return `<strong>${geo}</strong> wszedł na <em>${ev.page}</em>`;
-      case 'project_click':
-        return `<strong>${geo}</strong> kliknął projekt <em>${ev.data?.project || '?'}</em>`;
-      case 'section_enter':
-        return `<strong>${geo}</strong> czyta sekcję <em>${ev.data?.section}</em>`;
-      case 'section_leave': {
-        const dur = formatDuration(ev.data?.durationMs);
-        return `<strong>${geo}</strong> opuścił sekcję <em>${ev.data?.section}</em> (${dur})`;
-      }
-      case 'scroll':
-        return `<strong>${geo}</strong> przewinął ${ev.data?.depth}% na <em>${ev.page}</em>`;
       case 'copy_contact':
-        return `<strong>${geo}</strong> skopiował dane kontaktowe ⭐`;
-      case 'lead':
-        return `<strong>${geo}</strong> — potencjalny lead: ${ev.data?.reason}`;
-      case 'heartbeat': {
-        const elapsed = formatDuration(ev.data?.elapsedMs);
-        const sec = ev.data?.section ? ` · sekcja: ${ev.data.section}` : '';
-        return `<strong>${geo}</strong> aktywny ${elapsed}${sec}`;
-      }
-      case 'nav_click':
-        return `<strong>${geo}</strong> kliknął „${ev.data?.label}”`;
-      case 'leave':
-        return `<strong>${geo}</strong> opuścił stronę (${formatDuration(ev.data?.elapsedMs)}, scroll ${ev.data?.scrollDepth || 0}%)`;
+        return `<strong>${geo}</strong> skopiował dane kontaktowe`;
+      case 'page_leave':
+        return `<strong>${geo}</strong> opuścił <em>${ev.page}</em> po ${formatDuration(ev.data?.durationMs)}`;
       default:
-        return `<strong>${geo}</strong> · ${ev.type} · ${ev.page}`;
+        return '';
     }
   }
 
   function renderLiveFeed(events) {
     const feed = $('liveFeed');
     if (!feed) return;
-    const recent = events.slice(0, 40);
+    const recent = events.filter(ev => ['pageview', 'page_leave', 'copy_contact'].includes(ev.type)).slice(0, 40);
     if (!recent.length) {
       feed.innerHTML = '<div class="empty-state">Brak zdarzeń — odwiedź portfolio w innej karcie, aby zobaczyć aktywność na żywo.</div>';
       return;
     }
     feed.innerHTML = recent.map(ev => `
-      <div class="live-item${ev.isLead || ev.type === 'copy_contact' || ev.type === 'lead' ? ' lead' : ''}">
+      <div class="live-item${ev.type === 'copy_contact' ? ' lead' : ''}">
         <span class="live-time">${formatTime(ev.timestamp)}</span>
         <span class="live-text">${eventLabel(ev)}</span>
       </div>
@@ -204,15 +205,17 @@
     if (!tbody) return;
     const pageviews = events.filter(e => e.type === 'pageview').slice(0, 50);
     if (!pageviews.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="empty-state">Brak wizyt</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Brak wizyt</td></tr>';
       return;
     }
     tbody.innerHTML = pageviews.map(ev => {
       const loc = ev.geo?.city ? `${ev.geo.city}, ${ev.geo.country || ''}` : `Sesja ${ev.sessionId?.slice(0, 8)}`;
+      const leave = events.find(item => item.type === 'page_leave' && item.sessionId === ev.sessionId && item.page === ev.page && new Date(item.timestamp) >= new Date(ev.timestamp));
       return `<tr>
         <td>${formatTime(ev.timestamp)}</td>
         <td>${loc}</td>
         <td>${ev.page}</td>
+        <td>${formatDuration(leave?.data?.durationMs)}</td>
         <td><code>${ev.sessionId?.slice(0, 8)}</code></td>
       </tr>`;
     }).join('');
@@ -222,13 +225,13 @@
     const container = $('projectBars');
     if (!container) return;
     const counts = {};
-    events.filter(e => e.type === 'project_click').forEach(e => {
-      const name = e.data?.project || 'Unknown';
+    events.filter(e => e.type === 'pageview' && e.page?.startsWith('Projekt:')).forEach(e => {
+      const name = e.page.replace('Projekt: ', '');
       counts[name] = (counts[name] || 0) + 1;
     });
     const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
     if (!sorted.length) {
-      container.innerHTML = '<div class="empty-state">Brak kliknięć w projekty</div>';
+      container.innerHTML = '<div class="empty-state">Brak wizyt na projektach</div>';
       return;
     }
     const max = sorted[0][1];
@@ -241,82 +244,55 @@
     `).join('');
   }
 
-  function renderSectionEngagement(events, sessions) {
-    const container = $('sectionEngagement');
-    if (!container) return;
+  function renderPageDurations(events) {
+    const el = $('pageDurations');
+    if (!el) return;
     const totals = {};
-    events.filter(e => e.type === 'section_leave').forEach(e => {
-      const sec = e.data?.section;
-      if (!sec) return;
-      totals[sec] = (totals[sec] || 0) + (e.data.durationMs || 0);
-    });
-    Object.values(sessions).forEach(s => {
-      if (s.sectionTimes) {
-        Object.entries(s.sectionTimes).forEach(([sec, ms]) => {
-          totals[sec] = (totals[sec] || 0) + ms;
-        });
-      }
+    events.filter(e => e.type === 'page_leave').forEach(e => {
+      totals[e.page] = (totals[e.page] || 0) + (e.data?.durationMs || 0);
     });
     const sorted = Object.entries(totals).sort((a, b) => b[1] - a[1]);
     if (!sorted.length) {
-      container.innerHTML = '<div class="empty-state">Brak danych o sekcjach — dodaj data-section na stronach</div>';
+      el.innerHTML = '<div class="empty-state">Brak zakończonych wizyt</div>';
       return;
     }
-    const sessionCount = Object.keys(sessions).length || 1;
-    container.innerHTML = sorted.map(([sec, ms]) => {
-      const avg = Math.round(ms / sessionCount);
-      return `<div class="section-eng-row">
-        <span>${sec}</span>
-        <span>łącznie ${formatDuration(ms)} · śr. ${formatDuration(avg)}</span>
-      </div>`;
-    }).join('');
+    el.innerHTML = sorted.slice(0, 10).map(([page, ms]) => `<div class="section-eng-row"><span>${page}</span><strong>${formatDuration(ms)}</strong></div>`).join('');
   }
 
-  function renderScrollStats(sessions) {
-    const el = $('scrollStats');
-    if (!el) return;
-    const depths = Object.values(sessions).map(s => s.maxScrollDepth || 0);
-    if (!depths.length) {
-      el.innerHTML = '<div class="empty-state">Brak danych</div>';
+  function renderSessionJourneys(events) {
+    const container = $('sessionJourneys');
+    if (!container) return;
+    const grouped = {};
+    events.filter(e => e.type === 'pageview').forEach(view => {
+      const leave = events.find(item => item.type === 'page_leave' && item.sessionId === view.sessionId && item.page === view.page && new Date(item.timestamp) >= new Date(view.timestamp));
+      (grouped[view.sessionId] ||= []).push({ page: view.page, timestamp: view.timestamp, durationMs: leave?.data?.durationMs });
+    });
+    const journeys = Object.entries(grouped).slice(0, 20);
+    if (!journeys.length) {
+      container.innerHTML = '<div class="empty-state">Brak sesji</div>';
       return;
     }
-    const avg = Math.round(depths.reduce((a, b) => a + b, 0) / depths.length);
-    const over75 = depths.filter(d => d >= 75).length;
-    el.innerHTML = `
-      <div class="stat-value">${avg}%</div>
-      <div class="stat-sub">Średnia głębokość przewijania · ${over75} sesji ≥75%</div>
-    `;
-  }
-
-  function renderTimeStats(sessions) {
-    const el = $('timeStats');
-    if (!el) return;
-    const times = Object.values(sessions).map(s => s.totalTimeMs || 0).filter(t => t > 0);
-    if (!times.length) {
-      el.innerHTML = '<div class="stat-value">—</div><div class="stat-sub">Brak danych czasu</div>';
-      return;
-    }
-    const total = times.reduce((a, b) => a + b, 0);
-    const avg = Math.round(total / times.length);
-    el.innerHTML = `
-      <div class="stat-value">${formatDuration(avg)}</div>
-      <div class="stat-sub">Średni czas sesji · łącznie ${formatDuration(total)}</div>
-    `;
+    container.innerHTML = journeys.map(([sessionId, pages]) => `
+      <div class="journey-row">
+        <div><strong>Sesja ${sessionId.slice(0, 8)}</strong><span>${formatTime(pages[0].timestamp)}</span></div>
+        <p>${pages.map(item => `${item.page} <b>${formatDuration(item.durationMs)}</b>`).join(' → ')}</p>
+      </div>
+    `).join('');
   }
 
   function renderLeads(sessions) {
     const container = $('leadsList');
     if (!container) return;
-    const leads = Object.values(sessions).filter(s => s.isLead).sort((a, b) => (b.lastSeen || '').localeCompare(a.lastSeen || ''));
+    const leads = Object.values(sessions).filter(s => s.contactCopied).sort((a, b) => (b.lastSeen || '').localeCompare(a.lastSeen || ''));
     if (!leads.length) {
-      container.innerHTML = '<div class="empty-state">Brak leadów — pojawią się po skopiowaniu kontaktu lub >3 min na stronie</div>';
+      container.innerHTML = '<div class="empty-state">Brak jawnych akcji kontaktowych</div>';
       return;
     }
     container.innerHTML = leads.slice(0, 12).map(s => {
       const loc = s.geo?.city ? `${s.geo.city}, ${s.geo.country}` : `Sesja ${s.sessionId?.slice(0, 8)}`;
       return `<div class="lead-card">
-        <strong>⭐ Potencjalny Rekruter / Klient</strong>
-        <p>${loc} · ${formatTime(s.lastSeen)} · ${formatDuration(s.totalTimeMs)} · ${(s.leadReasons || []).join(', ')}</p>
+        <strong>Skopiowano dane kontaktowe</strong>
+        <p>${loc} · ${formatTime(s.lastSeen)} · ${formatDuration(s.totalTimeMs)}</p>
       </div>`;
     }).join('');
   }
@@ -327,21 +303,23 @@
     $('statPageviews').textContent = pageviews;
     $('statUnique').textContent = visitors.length || new Set(events.map(e => e.visitorId)).size;
     $('statSessions').textContent = Object.keys(sessions).length;
-    $('statLeads').textContent = Object.values(sessions).filter(s => s.isLead).length;
+    $('statLeads').textContent = events.filter(e => e.type === 'copy_contact').length;
   }
 
   async function refreshDashboard() {
     let events = await fetchSupabaseEvents();
     if (!events) events = getLocalEvents();
-    const sessions = getSessions();
+    const sessions = Object.keys(getSessions()).length ? getSessions() : sessionsFromEvents(events);
+    events.filter(e => e.type === 'copy_contact').forEach(e => {
+      if (sessions[e.sessionId]) sessions[e.sessionId].contactCopied = true;
+    });
 
     renderOverview(events, sessions);
     renderLiveFeed(events);
     renderVisitLog(events);
     renderProjects(events);
-    renderSectionEngagement(events, sessions);
-    renderScrollStats(sessions);
-    renderTimeStats(sessions);
+    renderPageDurations(events);
+    renderSessionJourneys(events);
     renderLeads(sessions);
     await loadCountApiStats();
   }
