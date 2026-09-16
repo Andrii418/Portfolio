@@ -1053,23 +1053,6 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
-  const nextInput = form.querySelector('input[name="_next"]');
-
-  if (nextInput) {
-    nextInput.value = `${window.location.origin}${window.location.pathname}?sent=1`;
-  }
-
-  if (status) {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
-      status.textContent = '✅ Wiadomość została wysłana. Dziękuję za kontakt!';
-      status.classList.add('success', 'visible');
-      status.classList.remove('error');
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, '', window.location.pathname);
-      }
-    }
-  }
 
   if (window.location.protocol === 'file:') {
     if (status) {
@@ -1083,7 +1066,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
     return;
   }
 
-  const ajaxAction = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+  const ajaxAction = form.action;
   const originalSubmitText = submitBtn?.innerHTML || 'Wyślij wiadomość';
 
   form.addEventListener('submit', async event => {
