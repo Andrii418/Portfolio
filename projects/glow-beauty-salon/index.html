@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLOW Beauty Salon</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="bg-scene">
+    <canvas id="bgCanvas"></canvas>
+    <div class="gradient-left"></div>
+    <div class="gradient-right"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../../index.html">
+      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html" class="nav-link">Home</a></li>
+      <li><a href="../index.html" class="nav-link active">Projekty</a></li>
+      <li><a href="../../contact/index.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <a href="../../assets/CV.pdf" class="nav-cta" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Pobierz CV
+    </a>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="drawer">
+    <a href="../../index.html" class="mob-link">Home</a>
+    <a href="../index.html" class="mob-link">Projekty</a>
+    <a href="../../contact/index.html" class="mob-link">Kontakt</a>
+    <a href="../../assets/CV.pdf" class="mob-link" download>Pobierz CV</a>
+  </div>
+</nav>
+
+  <main>
+
+    <!-- ── BACK BUTTON ── -->
+    <div class="back-wrap">
+      <a href="/projects/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wróć do projektów
+      </a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="proj-hero reveal">
+      <div class="proj-hero-inner">
+        <div class="proj-meta">
+          <span class="proj-category">Web Development · Frontend</span>
+          <div class="proj-badges">
+            <span class="badge-year">2026</span>
+            <span class="badge-uni">Projekt fikcyjny</span>
+          </div>
+        </div>
+
+        <h1 class="proj-title">GLOW<span>Beauty</span></h1>
+
+        <p class="proj-tagline">
+          Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych —
+          zbudowany w czystym HTML5, CSS3 i JavaScript, z wielojęzycznym interfejsem
+          (PL/EN/UA) i estetyką glassmorphism.
+        </p>
+
+        <div class="proj-actions">
+          <a href="https://github.com/Andrii418/glow-beauty-salon" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="#gallery" class="btn btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Screenshots
+          </a>
+        </div>
+
+        <!-- QUICK STATS -->
+        <div class="proj-stats">
+          <div class="ps">
+            <div class="ps-n">HTML5</div>
+            <div class="ps-l">Struktura</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">CSS3</div>
+            <div class="ps-l">Styling</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">JavaScript</div>
+            <div class="ps-l">Interakcje</div>
+          </div>
+          <div class="ps-sep"></div>
+          <div class="ps">
+            <div class="ps-n">PL · EN · UA</div>
+            <div class="ps-l">Języki</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-wrap">
+        <div class="section-label reveal">Screenshoty</div>
+        <h2 class="section-h2 reveal delay-1">Strona w akcji</h2>
+      </div>
+
+      <div class="gallery-grid reveal delay-2">
+        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
+          <img src="../../assets/glow/screen1.png" alt="Zrzut ekranu 1" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="../../assets/glow/screen2.png" alt="Zrzut ekranu 2" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="../../assets/glow/screen3.png" alt="Zrzut ekranu 3" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="../../assets/glow/screen4.png" alt="Zrzut ekranu 4" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="../../assets/glow/screen5.png" alt="Zrzut ekranu 5" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(5)">
+          <img src="../../assets/glow/screen6.png" alt="Zrzut ekranu 6" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(6)">
+          <img src="../../assets/glow/screen7.png" alt="Zrzut ekranu 7" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide" onclick="openLightbox(7)">
+          <img src="../../assets/glow/screen8.png" alt="Zrzut ekranu 8" loading="lazy" />
+          <div class="gallery-overlay">
+            <span></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section-wrap content-section">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-label">Cel projektu</div>
+          <h2 class="section-h2">Zmysłowy landing page<br/><span class="grad">zaprojektowany z dbałością o detal</span></h2>
+          <p class="body-text">
+            GLOW Beauty Salon to statyczny landing page fikcyjnego salonu urody i zabiegów
+            kosmetycznych — z sekcjami hero, usług, efektów „przed/po", opinii, FAQ,
+            formularza rezerwacji oraz kontaktu. Projekt powstał wyłącznie w celach
+            portfolio, jako demonstracja umiejętności front-end development bez
+            frameworków i backendu.
+          </p>
+          <p class="body-text">
+            Cały projekt — nazwa salonu, zabiegi, zdjęcia, opinie i dane kontaktowe —
+            jest wymyślony. Formularz rezerwacji działa wyłącznie po stronie klienta
+            i tylko wyświetla komunikat potwierdzający.
+          </p>
+        </div>
+        <div class="feature-list reveal delay-1">
+          <div class="feat-item">
+            <div class="feat-icon">🌍</div>
+            <div>
+              <div class="feat-title">Przełączanie języków PL / EN / UA</div>
+              <div class="feat-desc">Pełne tłumaczenie interfejsu obsługiwane w czystym JavaScript</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🖼️</div>
+            <div>
+              <div class="feat-title">Galeria z filtrem i efektem „przed/po"</div>
+              <div class="feat-desc">Filtrowanie zdjęć zabiegów oraz podgląd efektu przed wizytą</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">❓</div>
+            <div>
+              <div class="feat-title">Rozwijane FAQ (accordion)</div>
+              <div class="feat-desc">Najczęstsze pytania z animowanym rozwijaniem odpowiedzi</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">📅</div>
+            <div>
+              <div class="feat-title">Formularz rezerwacji z walidacją</div>
+              <div class="feat-desc">Sprawdzanie imienia, telefonu, zabiegu, daty i godziny po stronie klienta</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">✨</div>
+            <div>
+              <div class="feat-title">Glassmorphism i sticky header</div>
+              <div class="feat-desc">Nowoczesna estetyka szkła i przyklejony nagłówek podczas scrollowania</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="tech-section">
+      <div class="section-wrap">
+        <div class="section-label reveal">Technologie</div>
+        <h2 class="section-h2 reveal delay-1">Stack technologiczny</h2>
+
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">📄</div>
+            <div class="tech-card-name">HTML5</div>
+            <div class="tech-card-desc">Semantyczna struktura sekcji, nawigacji, formularza i stopki w index.html.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-name">CSS3</div>
+            <div class="tech-card-desc">Zmienne CSS, responsywny layout, hover effects i glassmorphism w style.css.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-name">JavaScript (Vanilla)</div>
+            <div class="tech-card-desc">Cała logika interaktywności i walidacji w script.js, bez frameworków.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🌍</div>
+            <div class="tech-card-name">Wielojęzyczność (i18n)</div>
+            <div class="tech-card-desc">Przełączanie i tłumaczenie treści między PL, EN i UA po stronie klienta.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🔤</div>
+            <div class="tech-card-name">Google Fonts</div>
+            <div class="tech-card-desc">Starannie dobrana typografia budująca premium charakter marki.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🖼️</div>
+            <div class="tech-card-name">Unsplash</div>
+            <div class="tech-card-desc">Zdjęcia salonu i efektów zabiegów pochodzące z zewnętrznej biblioteki.</div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon">🗺️</div>
+            <div class="tech-card-name">Google Maps Embed</div>
+            <div class="tech-card-desc">Osadzona mapa lokalizacji salonu w sekcji stopki.</div>
+          </div>
+          <div class="tech-card reveal delay-1">
+            <div class="tech-card-icon">🧊</div>
+            <div class="tech-card-name">Glassmorphism &amp; Sticky Header</div>
+            <div class="tech-card-desc">Efekty szkła i przyklejony nagłówek jako świadoma decyzja projektowa.</div>
+          </div>
+          <div class="tech-card reveal delay-2">
+            <div class="tech-card-icon">🚫</div>
+            <div class="tech-card-name">Brak backendu</div>
+            <div class="tech-card-desc">W pełni statyczna strona, gotowa do hostowania bez serwera aplikacyjnego.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STRUCTURE / ARCHITECTURE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Architektura</div>
+      <h2 class="section-h2 reveal delay-1">Jak zbudowana jest strona</h2>
+
+      <div class="arch-grid">
+
+        <div class="arch-card reveal">
+          <div class="arch-num">01</div>
+          <div class="arch-title">Struktura plików</div>
+          <p class="arch-desc">
+            Trzy pliki — treść, wygląd i logika — rozdzielone zgodnie z dobrą
+            praktyką separacji odpowiedzialności.
+          </p>
+          <div class="code-block">
+<pre>glow-beauty-salon/
+├── index.html
+├── style.css
+└── script.js</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">02</div>
+          <div class="arch-title">System wielojęzyczny</div>
+          <p class="arch-desc">
+            Po załadowaniu strony JavaScript ustawia domyślny język i tłumaczy
+            wszystkie elementy interfejsu na PL, EN lub UA.
+          </p>
+          <div class="code-block">
+<pre>function setLang(lang) {
+  translatePage(lang);
+}</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">03</div>
+          <div class="arch-title">Nawigacja i menu mobilne</div>
+          <p class="arch-desc">
+            Kliknięcie w zakładkę przewija do sekcji, a na urządzeniach
+            mobilnych otwiera się menu hamburgerowe.
+          </p>
+          <div class="code-block">
+<pre>ham.addEventListener("click", () =&gt;
+  drawer.classList.toggle("open"));</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-num">04</div>
+          <div class="arch-title">Galeria „przed/po"</div>
+          <p class="arch-desc">
+            Filtrowanie zdjęć w galerii oraz podgląd efektu „przed" zabiegiem
+            obsługiwane w czystym JavaScript.
+          </p>
+          <div class="code-block">
+<pre>filterButtons.forEach(btn =&gt;
+  btn.addEventListener("click", filterGallery));</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-1">
+          <div class="arch-num">05</div>
+          <div class="arch-title">FAQ i animacje scroll</div>
+          <p class="arch-desc">
+            Rozwijane odpowiedzi w sekcji FAQ oraz animacje elementów
+            pojawiających się podczas przewijania strony.
+          </p>
+          <div class="code-block">
+<pre>const observer = new IntersectionObserver(
+  revealOnScroll);</pre>
+          </div>
+        </div>
+
+        <div class="arch-card reveal delay-2">
+          <div class="arch-num">06</div>
+          <div class="arch-title">Formularz rezerwacji</div>
+          <p class="arch-desc">
+            Walidacja imienia, telefonu, zabiegu, daty i godziny — bez
+            backendu, wyłącznie z komunikatem potwierdzającym.
+          </p>
+          <div class="code-block">
+<pre>form.addEventListener("submit", e =&gt; {
+  e.preventDefault();
+  validateBooking(form);
+});</pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── KEY FEATURES ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Kluczowe cechy</div>
+      <h2 class="section-h2 reveal delay-1">Co wyróżnia projekt</h2>
+      <div class="controls-grid reveal delay-2">
+        <div class="ctrl"><kbd>HTML</kbd><span>Semantyczna struktura sekcji, formularza i stopki</span></div>
+        <div class="ctrl"><kbd>CSS</kbd><span>Zmienne CSS, glassmorphism, sticky header</span></div>
+        <div class="ctrl"><kbd>JS</kbd><span>Wielojęzyczność, filtr galerii, walidacja formularza</span></div>
+        <div class="ctrl"><kbd>🌍</kbd><span>Pełne tłumaczenie interfejsu PL / EN / UA</span></div>
+        <div class="ctrl"><kbd>📱</kbd><span>Responsywny design — mobile, tablet, desktop</span></div>
+        <div class="ctrl"><kbd>🚫</kbd><span>Brak backendu — w pełni statyczna strona</span></div>
+      </div>
+    </section>
+
+    <!-- ── TECH RATIONALE ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Uzasadnienie wyboru</div>
+      <h2 class="section-h2 reveal delay-1">Dlaczego te technologie</h2>
+      <div class="reveal delay-2" style="overflow-x:auto;">
+        <table class="rationale-table">
+          <thead>
+            <tr>
+              <th>Technologia</th>
+              <th>Zastosowanie</th>
+              <th>Powód wyboru</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HTML5</td><td>Struktura strony</td><td>Semantyka, dostępność i SEO bez narzutu frameworka</td></tr>
+            <tr><td>CSS3</td><td>Stylowanie i layout</td><td>Zmienne CSS i glassmorphism bez zewnętrznych bibliotek</td></tr>
+            <tr><td>JavaScript</td><td>Interaktywność</td><td>i18n, filtr galerii, FAQ i walidacja — bez zależności</td></tr>
+            <tr><td>Google Fonts</td><td>Typografia</td><td>Szybkie wdrożenie premium fontów bez lokalnych plików</td></tr>
+            <tr><td>Unsplash</td><td>Zdjęcia salonu</td><td>Wysokiej jakości grafiki bez konieczności sesji zdjęciowej</td></tr>
+            <tr><td>Google Maps Embed</td><td>Lokalizacja w stopce</td><td>Gotowa integracja mapy bez własnego API</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── BUILD INSTRUCTIONS ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Instalacja</div>
+      <h2 class="section-h2 reveal delay-1">Jak uruchomić</h2>
+      <div class="build-steps reveal delay-2">
+        <div class="build-req">
+          <div class="req-title">Hosting</div>
+          <div class="req-pills">
+            <span class="req-pill">GitHub Pages</span>
+            <span class="req-pill">Netlify</span>
+            <span class="req-pill">Dowolny serwer WWW</span>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Sklonuj repozytorium</div>
+              <div class="code-block">
+<pre>git clone https://github.com/Andrii418/glow-beauty-salon.git</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Otwórz stronę lokalnie</div>
+              <div class="code-block">
+<pre>cd glow-beauty-salon
+# otwórz index.html w przeglądarce
+# lub uruchom rozszerzenie Live Server</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Hostuj statycznie (opcjonalnie)</div>
+              <div class="code-block">
+<pre># np. GitHub Pages, Netlify
+# lub prosty serwer WWW</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECT METADATA ── -->
+    <section class="section-wrap content-section">
+      <div class="section-label reveal">Metadane</div>
+      <h2 class="section-h2 reveal delay-1">O projekcie</h2>
+      <div class="meta-strip reveal delay-2">
+        <div class="meta-item"><div class="meta-k">Wersja</div><div class="meta-v">1.0.0</div></div>
+        <div class="meta-item"><div class="meta-k">Główny język</div><div class="meta-v">HTML5 / CSS3 / JS</div></div>
+        <div class="meta-item"><div class="meta-k">Repozytorium</div><div class="meta-v">GitHub</div></div>
+        <div class="meta-item"><div class="meta-k">Status</div><div class="meta-v status-live">Statyczny, bez backendu</div></div>
+        <div class="meta-item"><div class="meta-k">Charakter</div><div class="meta-v">Projekt fikcyjny</div></div>
+      </div>
+      <p class="body-text" style="margin-top:22px; max-width:100%;">
+        <em>Uwaga:</em> GLOW Beauty Salon to w całości fikcyjny projekt stworzony wyłącznie
+        w celach portfolio i edukacyjnych. Nazwa salonu, zabiegi, zdjęcia, opinie i dane
+        kontaktowe są wymyślone i nie reprezentują żadnej rzeczywistej firmy ani klienta.
+      </p>
+    </section>
+
+    <!-- ── NEXT / PREV ── -->
+    <div class="section-wrap proj-nav-row reveal">
+      <a href="../index.html" class="proj-nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Wszystkie projekty
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-copy">© 2026 Andrii Torianyk</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../i18n.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+    // ── LIGHTBOX ──────────────────────────────────────────
+    // Podpisy do zdjęć celowo puste — uzupełnij klucze poniżej
+    // w i18n.js własnym tekstem, jeśli chcesz je dodać.
+    const imageKeys = [
+      { src: '../../assets/glow/screen1.png', key: 'glow.overlay.1' },
+      { src: '../../assets/glow/screen2.png', key: 'glow.overlay.2' },
+      { src: '../../assets/glow/screen3.png', key: 'glow.overlay.3' },
+      { src: '../../assets/glow/screen4.png', key: 'glow.overlay.4' },
+      { src: '../../assets/glow/screen5.png', key: 'glow.overlay.5' },
+      { src: '../../assets/glow/screen6.png', key: 'glow.overlay.6' },
+      { src: '../../assets/glow/screen7.png', key: 'glow.overlay.7' },
+      { src: '../../assets/glow/screen8.png', key: 'glow.overlay.8' },
+    ];
+
+    function getImages() {
+      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
+      return imageKeys.map(i => ({
+        src: i.src,
+        cap: (window.I18N && window.I18N.t(i.key, lang) !== i.key) ? window.I18N.t(i.key, lang) : ''
+      }));
+    }
+
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      const images = getImages();
+      lbIdx = i;
+      document.getElementById('lbImg').src = images[i].src;
+      document.getElementById('lbCaption').textContent = images[i].cap;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      const images = getImages();
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[lbIdx].src;
+      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    });
+  </script>
+</body>
+</html>
