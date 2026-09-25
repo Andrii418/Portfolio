@@ -146,6 +146,108 @@ window.I18N = (function () {
 
 'projects.card.link': { pl: 'Zobacz projekt', en: 'View project', ua: 'Переглянути проєкт' },
 
+  /* ════ GLOW BEAUTY SALON — project detail ════ */
+  'glow.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
+  'glow.badge.uni': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'glow.tagline': { pl: 'Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych — zbudowany w czystym HTML5, CSS3 i JavaScript, z wielojęzycznym interfejsem (PL/EN/UA) i estetyką glassmorphism.', en: 'A sensual landing page for a fictional beauty and cosmetics salon — built in pure HTML5, CSS3 and JavaScript, with a multilingual interface (PL/EN/UA) and a glassmorphism aesthetic.', ua: 'Чуттєва лендинг-сторінка вигаданого салону краси та косметологічних процедур — створена на чистих HTML5, CSS3 і JavaScript із багатомовним інтерфейсом (PL/EN/UA) та естетикою glassmorphism.' },
+  'glow.stats.structure': { pl: 'Struktura', en: 'Structure', ua: 'Структура' },
+  'glow.stats.styling': { pl: 'Styling', en: 'Styling', ua: 'Стилізація' },
+  'glow.stats.interactions': { pl: 'Interakcje', en: 'Interactions', ua: 'Взаємодія' },
+  'glow.stats.languages': { pl: 'Języki', en: 'Languages', ua: 'Мови' },
+  'glow.gallery.label': { pl: 'Screenshoty', en: 'Screenshots', ua: 'Скріншоти' },
+  'glow.gallery.title': { pl: 'Strona w akcji', en: 'The site in action', ua: 'Сайт у дії' },
+  'glow.overlay.1': { pl: 'Widok główny', en: 'Main view', ua: 'Головний екран' },
+  'glow.overlay.2': { pl: 'Oferta zabiegów', en: 'Treatment offer', ua: 'Пропозиція процедур' },
+  'glow.overlay.3': { pl: 'Efekty przed i po', en: 'Before and after results', ua: 'Результати до і після' },
+  'glow.overlay.4': { pl: 'Opinie klientek', en: 'Client testimonials', ua: 'Відгуки клієнток' },
+  'glow.overlay.5': { pl: 'Sekcja FAQ', en: 'FAQ section', ua: 'Секція FAQ' },
+  'glow.overlay.6': { pl: 'Formularz rezerwacji', en: 'Booking form', ua: 'Форма бронювання' },
+  'glow.overlay.7': { pl: 'Kontakt i lokalizacja', en: 'Contact and location', ua: 'Контакти та локація' },
+  'glow.overlay.8': { pl: 'Stopka strony', en: 'Page footer', ua: 'Футер сторінки' },
+  'glow.goal.label': { pl: 'Cel projektu', en: 'Project goal', ua: 'Мета проєкту' },
+  'glow.goal.h2': { pl: 'Zmysłowy landing page<br/><span class="grad">zaprojektowany z dbałością o detal</span>', en: 'A sensual landing page<br/><span class="grad">designed with attention to detail</span>', ua: 'Чуттєва лендинг-сторінка<br/><span class="grad">створена з увагою до деталей</span>' },
+  'glow.goal.p1': { pl: 'GLOW Beauty Salon to statyczny landing page fikcyjnego salonu urody i zabiegów kosmetycznych — z sekcjami hero, usług, efektów „przed/po”, opinii, FAQ, formularza rezerwacji oraz kontaktu. Projekt powstał wyłącznie w celach portfolio, jako demonstracja umiejętności front-end development bez frameworków i backendu.', en: 'GLOW Beauty Salon is a static landing page for a fictional beauty and cosmetics salon, with hero, services, before-and-after results, testimonials, FAQ, booking form and contact sections. The project was created solely for portfolio purposes, demonstrating frontend development without frameworks or a backend.', ua: 'GLOW Beauty Salon — статична лендинг-сторінка вигаданого салону краси та косметологічних процедур із секціями hero, послуг, результатів «до/після», відгуків, FAQ, форми бронювання та контактів. Проєкт створено виключно для портфоліо як демонстрацію frontend-розробки без фреймворків і backend.' },
+  'glow.goal.p2': { pl: 'Cały projekt — nazwa salonu, zabiegi, zdjęcia, opinie i dane kontaktowe — jest wymyślony. Formularz rezerwacji działa wyłącznie po stronie klienta i tylko wyświetla komunikat potwierdzający.', en: 'The entire project — the salon name, treatments, photos, testimonials and contact details — is fictional. The booking form works only on the client side and displays a confirmation message.', ua: 'Увесь проєкт — назва салону, процедури, фотографії, відгуки та контактні дані — вигаданий. Форма бронювання працює лише на стороні клієнта та показує повідомлення підтвердження.' },
+  'glow.feat.1.title': { pl: 'Przełączanie języków PL / EN / UA', en: 'PL / EN / UA language switcher', ua: 'Перемикання мов PL / EN / UA' },
+  'glow.feat.1.desc': { pl: 'Pełne tłumaczenie interfejsu obsługiwane w czystym JavaScript', en: 'Full interface translation handled with pure JavaScript', ua: 'Повний переклад інтерфейсу на чистому JavaScript' },
+  'glow.feat.2.title': { pl: 'Galeria z filtrem i efektem „przed/po”', en: 'Gallery with filters and before/after effect', ua: 'Галерея з фільтром і ефектом «до/після»' },
+  'glow.feat.2.desc': { pl: 'Filtrowanie zdjęć zabiegów oraz podgląd efektu przed wizytą', en: 'Treatment photo filtering and before/after previews', ua: 'Фільтрація фотографій процедур і перегляд результату до візиту' },
+  'glow.feat.3.title': { pl: 'Rozwijane FAQ (accordion)', en: 'Expandable FAQ (accordion)', ua: 'Розгортуваний FAQ (акордеон)' },
+  'glow.feat.3.desc': { pl: 'Najczęstsze pytania z animowanym rozwijaniem odpowiedzi', en: 'Frequently asked questions with animated expanding answers', ua: 'Найчастіші запитання з анімованим розгортанням відповідей' },
+  'glow.feat.4.title': { pl: 'Formularz rezerwacji z walidacją', en: 'Validated booking form', ua: 'Форма бронювання з валідацією' },
+  'glow.feat.4.desc': { pl: 'Sprawdzanie imienia, telefonu, zabiegu, daty i godziny po stronie klienta', en: 'Client-side validation of name, phone, treatment, date and time', ua: 'Клієнтська перевірка імені, телефону, процедури, дати та часу' },
+  'glow.feat.5.title': { pl: 'Glassmorphism i sticky header', en: 'Glassmorphism and sticky header', ua: 'Glassmorphism і sticky header' },
+  'glow.feat.5.desc': { pl: 'Nowoczesna estetyka szkła i przyklejony nagłówek podczas scrollowania', en: 'A modern glass aesthetic and sticky header while scrolling', ua: 'Сучасна скляна естетика та закріплений заголовок під час прокручування' },
+  'glow.tech.label': { pl: 'Technologie', en: 'Technologies', ua: 'Технології' },
+  'glow.tech.title': { pl: 'Stack technologiczny', en: 'Tech stack', ua: 'Технологічний стек' },
+  'glow.tech.4.name': { pl: 'Wielojęzyczność (i18n)', en: 'Multilingual support (i18n)', ua: 'Багатомовність (i18n)' },
+  'glow.tech.9.name': { pl: 'Brak backendu', en: 'No backend', ua: 'Без backend' },
+  'glow.tech.1.desc': { pl: 'Semantyczna struktura sekcji, nawigacji, formularza i stopki w index.html.', en: 'Semantic structure for sections, navigation, form and footer in index.html.', ua: 'Семантична структура секцій, навігації, форми та футера в index.html.' },
+  'glow.tech.2.desc': { pl: 'Zmienne CSS, responsywny layout, hover effects i glassmorphism w style.css.', en: 'CSS variables, responsive layout, hover effects and glassmorphism in style.css.', ua: 'CSS-змінні, адаптивний макет, hover-ефекти та glassmorphism у style.css.' },
+  'glow.tech.3.desc': { pl: 'Cała logika interaktywności i walidacji w script.js, bez frameworków.', en: 'All interactivity and validation logic in script.js, without frameworks.', ua: 'Уся логіка інтерактивності та валідації в script.js без фреймворків.' },
+  'glow.tech.4.desc': { pl: 'Przełączanie i tłumaczenie treści między PL, EN i UA po stronie klienta.', en: 'Client-side switching and translation between PL, EN and UA.', ua: 'Перемикання та переклад контенту між PL, EN і UA на стороні клієнта.' },
+  'glow.tech.5.desc': { pl: 'Starannie dobrana typografia budująca premium charakter marki.', en: 'Carefully selected typography that builds the brand’s premium character.', ua: 'Ретельно підібрана типографіка формує преміальний характер бренду.' },
+  'glow.tech.6.desc': { pl: 'Zdjęcia salonu i efektów zabiegów pochodzące z zewnętrznej biblioteki.', en: 'Salon and treatment result photos sourced from an external library.', ua: 'Фотографії салону та результатів процедур із зовнішньої бібліотеки.' },
+  'glow.tech.7.desc': { pl: 'Osadzona mapa lokalizacji salonu w sekcji stopki.', en: 'An embedded map showing the salon location in the footer section.', ua: 'Вбудована карта розташування салону в секції футера.' },
+  'glow.tech.8.desc': { pl: 'Efekty szkła i przyklejony nagłówek jako świadoma decyzja projektowa.', en: 'Glass effects and a sticky header as deliberate design choices.', ua: 'Скляні ефекти та закріплений заголовок як свідомі дизайнерські рішення.' },
+  'glow.tech.9.desc': { pl: 'W pełni statyczna strona, gotowa do hostowania bez serwera aplikacyjnego.', en: 'A fully static site ready to host without an application server.', ua: 'Повністю статичний сайт, готовий до хостингу без серверу застосунку.' },
+  'glow.arch.label': { pl: 'Architektura', en: 'Architecture', ua: 'Архітектура' },
+  'glow.arch.title': { pl: 'Jak zbudowana jest strona', en: 'How the site is built', ua: 'Як побудований сайт' },
+  'glow.arch.1.title': { pl: 'Struktura plików', en: 'File structure', ua: 'Структура файлів' },
+  'glow.arch.1.desc': { pl: 'Trzy pliki — treść, wygląd i logika — rozdzielone zgodnie z dobrą praktyką separacji odpowiedzialności.', en: 'Three files for content, presentation and logic, separated according to separation-of-concerns best practices.', ua: 'Три файли для контенту, вигляду та логіки, розділені відповідно до принципу поділу відповідальності.' },
+  'glow.arch.2.title': { pl: 'System wielojęzyczny', en: 'Multilingual system', ua: 'Багатомовна система' },
+  'glow.arch.2.desc': { pl: 'Po załadowaniu strony JavaScript ustawia domyślny język i tłumaczy wszystkie elementy interfejsu na PL, EN lub UA.', en: 'After loading, JavaScript sets the default language and translates all interface elements to PL, EN or UA.', ua: 'Після завантаження JavaScript встановлює мову за замовчуванням і перекладає всі елементи інтерфейсу на PL, EN або UA.' },
+  'glow.arch.3.title': { pl: 'Nawigacja i menu mobilne', en: 'Navigation and mobile menu', ua: 'Навігація та мобільне меню' },
+  'glow.arch.3.desc': { pl: 'Kliknięcie w zakładkę przewija do sekcji, a na urządzeniach mobilnych otwiera się menu hamburgerowe.', en: 'Clicking a tab scrolls to its section, while mobile devices use a hamburger menu.', ua: 'Натискання вкладки прокручує до секції, а на мобільних пристроях відкривається меню hamburger.' },
+  'glow.arch.4.title': { pl: 'Galeria „przed/po”', en: 'Before/after gallery', ua: 'Галерея «до/після»' },
+  'glow.arch.4.desc': { pl: 'Filtrowanie zdjęć w galerii oraz podgląd efektu „przed” zabiegiem obsługiwane w czystym JavaScript.', en: 'Gallery photo filtering and before-treatment previews handled with pure JavaScript.', ua: 'Фільтрація фотографій у галереї та перегляд результату «до» процедури на чистому JavaScript.' },
+  'glow.arch.5.title': { pl: 'FAQ i animacje scroll', en: 'FAQ and scroll animations', ua: 'FAQ та анімації прокручування' },
+  'glow.arch.5.desc': { pl: 'Rozwijane odpowiedzi w sekcji FAQ oraz animacje elementów pojawiających się podczas przewijania strony.', en: 'Expandable FAQ answers and animations for elements appearing while scrolling.', ua: 'Розгортувані відповіді в FAQ та анімації елементів, що з’являються під час прокручування.' },
+  'glow.arch.6.title': { pl: 'Formularz rezerwacji', en: 'Booking form', ua: 'Форма бронювання' },
+  'glow.arch.6.desc': { pl: 'Walidacja imienia, telefonu, zabiegu, daty i godziny — bez backendu, wyłącznie z komunikatem potwierdzającym.', en: 'Validation of name, phone, treatment, date and time, without a backend and with a confirmation message only.', ua: 'Валідація імені, телефону, процедури, дати та часу без backend із повідомленням підтвердження.' },
+  'glow.features.label': { pl: 'Kluczowe cechy', en: 'Key features', ua: 'Ключові риси' },
+  'glow.features.title': { pl: 'Co wyróżnia projekt', en: 'What sets the project apart', ua: 'Що вирізняє проєкт' },
+  'glow.ctrl.1': { pl: 'Semantyczna struktura sekcji, formularza i stopki', en: 'Semantic structure for sections, form and footer', ua: 'Семантична структура секцій, форми та футера' },
+  'glow.ctrl.2': { pl: 'Zmienne CSS, glassmorphism, sticky header', en: 'CSS variables, glassmorphism and sticky header', ua: 'CSS-змінні, glassmorphism і sticky header' },
+  'glow.ctrl.3': { pl: 'Wielojęzyczność, filtr galerii, walidacja formularza', en: 'Multilingual support, gallery filter and form validation', ua: 'Багатомовність, фільтр галереї та валідація форми' },
+  'glow.ctrl.4': { pl: 'Pełne tłumaczenie interfejsu PL / EN / UA', en: 'Full interface translation in PL / EN / UA', ua: 'Повний переклад інтерфейсу PL / EN / UA' },
+  'glow.ctrl.5': { pl: 'Responsywny design — mobile, tablet, desktop', en: 'Responsive design — mobile, tablet, desktop', ua: 'Адаптивний дизайн — мобільні, планшети, комп’ютери' },
+  'glow.ctrl.6': { pl: 'Brak backendu — w pełni statyczna strona', en: 'No backend — fully static site', ua: 'Без backend — повністю статичний сайт' },
+  'glow.rationale.label': { pl: 'Uzasadnienie wyboru', en: 'Tech rationale', ua: 'Обґрунтування вибору' },
+  'glow.rationale.title': { pl: 'Dlaczego te technologie', en: 'Why these technologies', ua: 'Чому саме ці технології' },
+  'glow.table.tech': { pl: 'Technologia', en: 'Technology', ua: 'Технологія' },
+  'glow.table.use': { pl: 'Zastosowanie', en: 'Use', ua: 'Застосування' },
+  'glow.table.why': { pl: 'Powód wyboru', en: 'Why chosen', ua: 'Причина вибору' },
+  'glow.table.1': { pl: 'Struktura strony', en: 'Page structure', ua: 'Структура сайту' },
+  'glow.table.2': { pl: 'Semantyka, dostępność i SEO bez narzutu frameworka', en: 'Semantics, accessibility and SEO without framework overhead', ua: 'Семантика, доступність і SEO без навантаження фреймворку' },
+  'glow.table.3': { pl: 'Stylowanie i layout', en: 'Styling and layout', ua: 'Стилізація та макет' },
+  'glow.table.4': { pl: 'Zmienne CSS i glassmorphism bez zewnętrznych bibliotek', en: 'CSS variables and glassmorphism without external libraries', ua: 'CSS-змінні та glassmorphism без сторонніх бібліотек' },
+  'glow.table.5': { pl: 'Interaktywność', en: 'Interactivity', ua: 'Інтерактивність' },
+  'glow.table.6': { pl: 'i18n, filtr galerii, FAQ i walidacja — bez zależności', en: 'i18n, gallery filter, FAQ and validation without dependencies', ua: 'i18n, фільтр галереї, FAQ і валідація без залежностей' },
+  'glow.table.7': { pl: 'Typografia', en: 'Typography', ua: 'Типографіка' },
+  'glow.table.8': { pl: 'Szybkie wdrożenie premium fontów bez lokalnych plików', en: 'Quick integration of premium fonts without local files', ua: 'Швидке підключення преміальних шрифтів без локальних файлів' },
+  'glow.table.9': { pl: 'Zdjęcia salonu', en: 'Salon photography', ua: 'Фотографії салону' },
+  'glow.table.10': { pl: 'Wysokiej jakości grafiki bez konieczności sesji zdjęciowej', en: 'High-quality images without the need for a photo shoot', ua: 'Якісні зображення без необхідності фотосесії' },
+  'glow.table.11': { pl: 'Lokalizacja w stopce', en: 'Footer location', ua: 'Локація у футері' },
+  'glow.table.12': { pl: 'Gotowa integracja mapy bez własnego API', en: 'Ready-made map integration without a custom API', ua: 'Готова інтеграція карти без власного API' },
+  'glow.build.label': { pl: 'Instalacja', en: 'Installation', ua: 'Встановлення' },
+  'glow.build.title': { pl: 'Jak uruchomić', en: 'How to run', ua: 'Як запустити' },
+  'glow.req.title': { pl: 'Hosting', en: 'Hosting', ua: 'Хостинг' },
+  'glow.req.3': { pl: 'Dowolny serwer WWW', en: 'Any web server', ua: 'Будь-який вебсервер' },
+  'glow.step.1': { pl: 'Sklonuj repozytorium', en: 'Clone the repository', ua: 'Клонуй репозиторій' },
+  'glow.step.2': { pl: 'Otwórz stronę lokalnie', en: 'Open the site locally', ua: 'Відкрий сайт локально' },
+  'glow.step.3': { pl: 'Hostuj statycznie (opcjonalnie)', en: 'Host it statically (optional)', ua: 'Розмісти статично (необов’язково)' },
+  'glow.meta.label': { pl: 'Metadane', en: 'Metadata', ua: 'Метадані' },
+  'glow.meta.title': { pl: 'O projekcie', en: 'About the project', ua: 'Про проєкт' },
+  'glow.meta.1': { pl: 'Wersja', en: 'Version', ua: 'Версія' },
+  'glow.meta.2': { pl: 'Główny język', en: 'Main language', ua: 'Основна мова' },
+  'glow.meta.3': { pl: 'Repozytorium', en: 'Repository', ua: 'Репозиторій' },
+  'glow.meta.4': { pl: 'Status', en: 'Status', ua: 'Статус' },
+  'glow.meta.5': { pl: 'Charakter', en: 'Type', ua: 'Тип' },
+  'glow.meta.status': { pl: 'Statyczny, bez backendu', en: 'Static, no backend', ua: 'Статичний, без backend' },
+  'glow.meta.fictional': { pl: 'Projekt fikcyjny', en: 'Fictional project', ua: 'Вигаданий проєкт' },
+  'glow.note': { pl: '<em>Uwaga:</em> GLOW Beauty Salon to w całości fikcyjny projekt stworzony wyłącznie w celach portfolio i edukacyjnych. Nazwa salonu, zabiegi, zdjęcia, opinie i dane kontaktowe są wymyślone i nie reprezentują żadnej rzeczywistej firmy ani klienta.', en: '<em>Note:</em> GLOW Beauty Salon is an entirely fictional project created solely for portfolio and educational purposes. The salon name, treatments, photos, testimonials and contact details are invented and do not represent any real business or client.', ua: '<em>Примітка:</em> GLOW Beauty Salon — повністю вигаданий проєкт, створений виключно для портфоліо та навчання. Назва салону, процедури, фотографії, відгуки та контактні дані вигадані й не представляють жодну реальну компанію чи клієнта.' },
+
   /* ════ APEX BUILD — project detail ════ */
   'apex.category': { pl: 'Web Development · Frontend', en: 'Web Development · Frontend', ua: 'Веброзробка · Frontend' },
   'apex.badge.uni': { pl: 'Studium przypadku', en: 'Case study', ua: 'Кейс-стаді' },
@@ -1713,6 +1815,7 @@ window.I18N = (function () {
     if (/\/projects\/barber-craft-landing/.test(p)) return 'barber';
     if (/\/projects\/lumina-dental-landing/.test(p)) return 'lumina';
     if (/\/projects\/apex-build-landing/.test(p)) return 'apex';
+    if (/\/projects\/glow-beauty-salon/.test(p)) return 'glow';
     if (/\/projects/.test(p))              return 'projects';
     if (/\/contact/.test(p))              return 'contact';
     return 'home';
@@ -1793,6 +1896,7 @@ window.I18N = (function () {
     if (page === 'barber')   applyBarber(lang);
     if (page === 'lumina')   applyLumina(lang);
     if (page === 'apex')     applyApex(lang);
+    if (page === 'glow')     applyGlow(lang);
     if (page === 'aiplanner') applyAiplanner(lang);
     if (page === 'vaultify') applyVaultify(lang);
     if (page === 'vaeloq') applyVaeloq(lang);
@@ -2168,6 +2272,82 @@ window.I18N = (function () {
     setText(document.querySelector('.meta-item:nth-child(4) .meta-v'), 'apex.meta.status', lang);
     setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'apex.meta.type', lang);
     setHTML(metaSection?.querySelector('.body-text'), 'apex.note', lang);
+  }
+
+  /* ── GLOW BEAUTY SALON ──────────────────────── */
+  function applyGlow(lang) {
+    applySharedDetail(lang);
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn) { const svg = backBtn.querySelector('svg'); backBtn.textContent = t('proj.back', lang); if (svg) backBtn.prepend(svg); }
+    document.title = `GLOW Beauty Salon — ${t('glow.meta.title', lang)}`;
+    setText(document.querySelector('.proj-category'), 'glow.category', lang);
+    setText(document.querySelector('.badge-uni'), 'glow.badge.uni', lang);
+    setText(document.querySelector('.proj-tagline'), 'glow.tagline', lang);
+
+    const statLabels = document.querySelectorAll('.proj-stats .ps-l');
+    ['glow.stats.structure', 'glow.stats.styling', 'glow.stats.interactions', 'glow.stats.languages'].forEach((key, i) => setText(statLabels[i], key, lang));
+    setText(document.querySelector('.gallery-section .section-label'), 'glow.gallery.label', lang);
+    setText(document.querySelector('.gallery-section .section-h2'), 'glow.gallery.title', lang);
+
+    setText(document.querySelector('.two-col .section-label'), 'glow.goal.label', lang);
+    setHTML(document.querySelector('.two-col .section-h2'), 'glow.goal.h2', lang);
+    const goalPs = document.querySelectorAll('.two-col .body-text');
+    setText(goalPs[0], 'glow.goal.p1', lang);
+    setText(goalPs[1], 'glow.goal.p2', lang);
+
+    const features = document.querySelectorAll('.feature-list .feat-item');
+    for (let i = 0; i < 5; i++) {
+      setText(features[i]?.querySelector('.feat-title'), `glow.feat.${i + 1}.title`, lang);
+      setText(features[i]?.querySelector('.feat-desc'), `glow.feat.${i + 1}.desc`, lang);
+    }
+
+    setText(document.querySelector('.tech-section .section-label'), 'glow.tech.label', lang);
+    setText(document.querySelector('.tech-section .section-h2'), 'glow.tech.title', lang);
+    const techCards = document.querySelectorAll('.tech-card');
+    for (let i = 0; i < 9; i++) {
+      setText(techCards[i]?.querySelector('.tech-card-name'), `glow.tech.${i + 1}.name`, lang);
+      setText(techCards[i]?.querySelector('.tech-card-desc'), `glow.tech.${i + 1}.desc`, lang);
+    }
+
+    const archSection = document.querySelector('.arch-grid')?.closest('section');
+    setText(archSection?.querySelector('.section-label'), 'glow.arch.label', lang);
+    setText(archSection?.querySelector('.section-h2'), 'glow.arch.title', lang);
+    const archCards = document.querySelectorAll('.arch-card');
+    for (let i = 0; i < 6; i++) {
+      setText(archCards[i]?.querySelector('.arch-title'), `glow.arch.${i + 1}.title`, lang);
+      setText(archCards[i]?.querySelector('.arch-desc'), `glow.arch.${i + 1}.desc`, lang);
+    }
+
+    const controlsSection = document.querySelector('.controls-grid')?.closest('section');
+    setText(controlsSection?.querySelector('.section-label'), 'glow.features.label', lang);
+    setText(controlsSection?.querySelector('.section-h2'), 'glow.features.title', lang);
+    document.querySelectorAll('.controls-grid .ctrl span:last-child').forEach((el, i) => setText(el, `glow.ctrl.${i + 1}`, lang));
+
+    const rationaleSection = document.querySelector('.rationale-table')?.closest('section');
+    setText(rationaleSection?.querySelector('.section-label'), 'glow.rationale.label', lang);
+    setText(rationaleSection?.querySelector('.section-h2'), 'glow.rationale.title', lang);
+    const headers = rationaleSection?.querySelectorAll('th');
+    ['glow.table.tech', 'glow.table.use', 'glow.table.why'].forEach((key, i) => setText(headers?.[i], key, lang));
+    const tableRows = rationaleSection?.querySelectorAll('tbody tr');
+    for (let i = 0; i < 6; i++) {
+      setText(tableRows?.[i]?.cells[1], `glow.table.${i * 2 + 1}`, lang);
+      setText(tableRows?.[i]?.cells[2], `glow.table.${i * 2 + 2}`, lang);
+    }
+
+    const buildSection = document.querySelector('.build-steps')?.closest('section');
+    setText(buildSection?.querySelector('.section-label'), 'glow.build.label', lang);
+    setText(buildSection?.querySelector('.section-h2'), 'glow.build.title', lang);
+    setText(buildSection?.querySelector('.req-title'), 'glow.req.title', lang);
+    setText(document.querySelectorAll('.req-pill')[2], 'glow.req.3', lang);
+    document.querySelectorAll('.step-title').forEach((el, i) => setText(el, `glow.step.${i + 1}`, lang));
+
+    const metaSection = document.querySelector('.meta-strip')?.closest('section');
+    setText(metaSection?.querySelector('.section-label'), 'glow.meta.label', lang);
+    setText(metaSection?.querySelector('.section-h2'), 'glow.meta.title', lang);
+    document.querySelectorAll('.meta-k').forEach((el, i) => setText(el, `glow.meta.${i + 1}`, lang));
+    setText(document.querySelector('.meta-item:nth-child(4) .meta-v'), 'glow.meta.status', lang);
+    setText(document.querySelector('.meta-item:nth-child(5) .meta-v'), 'glow.meta.fictional', lang);
+    setHTML(metaSection?.querySelector('.body-text'), 'glow.note', lang);
   }
 
   /* ── SHARED PROJECT DETAIL helpers ──────────── */
