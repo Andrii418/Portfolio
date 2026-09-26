@@ -121,6 +121,9 @@ window.I18N = (function () {
     'projects.apex.desc': { pl: 'Nowoczesna strona promocyjna (landing page) zbudowana w oparciu o semantyczny HTML5, CSS3 i JavaScript — kompletne studium przypadku z sekcjami Hero, Features, Testimonials i Call-to-Action.',
                             en: 'A modern promotional landing page built with semantic HTML5, CSS3 and JavaScript — a complete case study with Hero, Features, Testimonials and Call-to-Action sections.',
                             ua: 'Сучасна промоційна лендинг-сторінка на семантичному HTML5, CSS3 і JavaScript — повне кейс-стаді з секціями Hero, Features, Testimonials і Call-to-Action.' },
+    'projects.glow.desc': { pl: 'Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych — wielojęzyczny interfejs (PL/EN/UA), galeria „przed/po”, FAQ i formularz rezerwacji, w estetyce glassmorphism bez frameworków i backendu.',
+                            en: 'A sensual landing page for a fictional beauty salon — multilingual interface (PL/EN/UA), before-and-after gallery, FAQ and booking form, with a glassmorphism aesthetic and no frameworks or backend.',
+                            ua: 'Чуттєва лендинг-сторінка вигаданого салону краси — багатомовний інтерфейс (PL/EN/UA), галерея «до/після», FAQ і форма бронювання в естетиці glassmorphism, без фреймворків і backend.' },
     'projects.status.progress': { pl: 'W realizacji', en: 'In progress', ua: 'У розробці' },
     'projects.status.done':     { pl: 'Ukończony',    en: 'Completed',   ua: 'Завершений' },
 
@@ -2008,28 +2011,29 @@ window.I18N = (function () {
   setText(document.querySelector('.projects-desc'),   'projects.desc',    lang);
 
   const cards = document.querySelectorAll('.project-card');
-  /* Kolejność MUSI odpowiadać kolejności kart w projects/index.html */
-  const descKeys = [
-    'projects.osk.desc',
-    'projects.vaultify.desc',
-    'projects.vaeloq.desc',
-    'projects.omniscale.desc',
-    'projects.barber.desc',
-    'projects.lumina.desc',
-    'projects.apex.desc',
-    'projects.ml.desc',
-    'projects.aiplanner.desc',
-    'projects.racing.desc',
-    'projects.wyspa.desc',
-    'projects.blog.desc',
-    'projects.ualingo.desc',
-    'projects.eventhub.desc',
-    'projects.iot.desc',
-    'projects.quiz.desc',
-  ];
+  const descKeys = {
+    'osk-expert/index.html': 'projects.osk.desc',
+    'vaultify/index.html': 'projects.vaultify.desc',
+    'vaeloq/index.html': 'projects.vaeloq.desc',
+    'omniscale/index.html': 'projects.omniscale.desc',
+    'barber-craft-landing/index.html': 'projects.barber.desc',
+    'lumina-dental-landing/index.html': 'projects.lumina.desc',
+    'apex-build-landing/index.html': 'projects.apex.desc',
+    'glow-beauty-salon/index.html': 'projects.glow.desc',
+    'ml/index.html': 'projects.ml.desc',
+    'aiplanner/index.html': 'projects.aiplanner.desc',
+    'racing3d/index.html': 'projects.racing.desc',
+    'wyspa/index.html': 'projects.wyspa.desc',
+    'blog/index.html': 'projects.blog.desc',
+    'ualingo/index.html': 'projects.ualingo.desc',
+    'eventhubapi/index.html': 'projects.eventhub.desc',
+    'iot/index.html': 'projects.iot.desc',
+    'quiz/index.html': 'projects.quiz.desc',
+  };
 
-  cards.forEach((card, i) => {
-    if (descKeys[i]) setText(card.querySelector('.project-card-desc'), descKeys[i], lang);
+  cards.forEach(card => {
+    const descKey = descKeys[card.getAttribute('href')];
+    if (descKey) setText(card.querySelector('.project-card-desc'), descKey, lang);
     const link = card.querySelector('.project-card-link');
     if (link) {
       const svg = link.querySelector('svg');
