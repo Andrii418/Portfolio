@@ -24,7 +24,7 @@
 
 /* ── HERO TITLE — aligned with the rest of project pages ── */
 .proj-hero .proj-title {
-  font-size: clamp(38px, 5.4vw, 80px);
+  font-size: clamp(30px, 4.2vw, 62px);
   line-height: .96;
 }
 .grad-inferno {
