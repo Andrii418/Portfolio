@@ -92,11 +92,13 @@
 .proj-title {
   font-family: var(--f-display);
   font-size: clamp(28px, 3.8vw, 54px);
-  font-weight: 800;
-  letter-spacing: -.03em;
-  line-height: 1;
+  font-weight: 820;
+  letter-spacing: -.045em;
+  line-height: .92;
   margin-bottom: 20px;
   color: var(--bc-ink-1);
+  text-shadow: 0 0 18px rgba(255,255,255,0.08), 0 0 26px rgba(221,175,95,0.08);
+  filter: drop-shadow(0 0 14px rgba(221, 175, 95, 0.14));
 }
 .proj-title span {
   background: linear-gradient(120deg, var(--bc-gold) 0%, #e6c98a 55%, var(--bc-gold-2) 100%);
