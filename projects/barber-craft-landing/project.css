@@ -91,11 +91,11 @@
 
 .proj-title {
   font-family: var(--f-display);
-  font-size: clamp(30px, 4.2vw, 62px);
+  font-size: clamp(28px, 3.8vw, 54px);
   font-weight: 800;
   letter-spacing: -.03em;
-  line-height: .96;
-  margin-bottom: 22px;
+  line-height: 1;
+  margin-bottom: 20px;
   color: var(--bc-ink-1);
 }
 .proj-title span {
