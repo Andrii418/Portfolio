@@ -91,10 +91,10 @@
 
 .proj-title {
   font-family: var(--f-display);
-  font-size: clamp(52px, 9vw, 104px);
+  font-size: clamp(38px, 5.4vw, 80px);
   font-weight: 800;
   letter-spacing: -.03em;
-  line-height: .92;
+  line-height: .96;
   margin-bottom: 22px;
   color: var(--ab-ink-1);
 }
@@ -573,7 +573,7 @@ kbd {
   .gallery-grid { grid-template-columns: 1fr; gap: 10px; }
   .gallery-item { aspect-ratio: 4/3; }
   .controls-grid { grid-template-columns: 1fr; }
-  .proj-title { font-size: 50px; }
+  .proj-title { font-size: clamp(32px, 10vw, 54px); }
   .rationale-table { display: block; overflow-x: auto; white-space: nowrap; }
 }
 
