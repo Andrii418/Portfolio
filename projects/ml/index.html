@@ -176,9 +176,9 @@
     </section>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <button class="lb-close" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
       <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
       <div class="lb-caption" id="lbCaption"></div>
     </div>
