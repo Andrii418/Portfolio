@@ -17,6 +17,7 @@ window.I18N = (function () {
     'nav.contact':  { pl: 'Kontakt',     en: 'Contact',     ua: 'Контакти' },
     'nav.cv':       { pl: 'Pobierz CV',  en: 'Download CV', ua: 'Завантажити CV' },
     'nav.home':     { pl: 'Home',        en: 'Home',        ua: 'Головна' },
+    'nav.skip':     { pl: 'Przejdź do treści', en: 'Skip to content', ua: 'Перейти до вмісту' },
 
     /* ════ FOOTER (wszystkie strony) ════ */
     'footer.copy': { pl: '© 2026 Andrii Torianyk', en: '© 2026 Andrii Torianyk', ua: '© 2026 Andrii Torianyk' },
@@ -49,6 +50,7 @@ window.I18N = (function () {
                        en: 'I also develop mobile and desktop projects, ensuring technological consistency and high software quality regardless of the target platform.',
                        ua: 'Паралельно розвиваю мобільні та десктопні проєкти, дбаючи про технологічну узгодженість і високу якість програмного забезпечення незалежно від цільової платформи.' },
     'home.about.link': { pl: 'Przeglądaj stos technologiczny →', en: 'Browse tech stack →', ua: 'Переглянути технологічний стек →' },
+    'home.tl.1.year':  { pl: '2023 – obecnie', en: '2023 – present', ua: '2023 – дотепер' },
     'home.tl.1.title': { pl: 'Studia Inżynierskie: Informatyka',         en: "Bachelor's: Computer Science", ua: 'Бакалаврат: Інформатика' },
     'home.tl.1.sub':   { pl: 'Akademia Tarnowska (spec. Inżynieria Oprogramowania)', en: 'Tarnów Academy (Software Engineering)', ua: 'Тарновська академія (спец. Інженерія програмного забезпечення)' },
     'home.tl.2.title': { pl: 'Rozwój projektów mobilnych i desktopowych', en: 'Mobile & Desktop Project Development', ua: 'Розробка мобільних і десктопних проєктів' },
@@ -74,6 +76,18 @@ window.I18N = (function () {
     'contact.form.msg':      { pl: 'Wiadomość',          en: 'Message',   ua: 'Повідомлення' },
     'contact.form.msg.ph':   { pl: 'Cześć Andrii, chciałem/am...', en: 'Hi Andrii, I wanted to...', ua: 'Привіт Андрію, я хотів(-ла)...' },
     'contact.form.send':     { pl: 'Wyślij wiadomość',  en: 'Send message', ua: 'Надіслати повідомлення' },
+    'contact.form.sending':  { pl: 'Wysyłanie...', en: 'Sending...', ua: 'Надсилання...' },
+    'contact.form.required': { pl: 'Uzupełnij to pole.', en: 'Fill in this field.', ua: 'Заповніть це поле.' },
+    'contact.form.email.invalid': { pl: 'Wpisz poprawny adres e-mail.', en: 'Enter a valid email address.', ua: 'Введіть дійсну адресу електронної пошти.' },
+    'contact.form.success':  { pl: 'Wiadomość została wysłana. Dziękuję za kontakt!',
+                              en: 'Your message was sent. Thank you for getting in touch!',
+                              ua: 'Повідомлення надіслано. Дякую, що зв’язалися зі мною!' },
+    'contact.form.error':    { pl: 'Nie udało się wysłać wiadomości. Spróbuj ponownie.',
+                              en: 'Your message could not be sent. Please try again.',
+                              ua: 'Не вдалося надіслати повідомлення. Спробуйте ще раз.' },
+    'contact.form.file':     { pl: 'Formularz wymaga uruchomienia strony przez serwer HTTP. Użyj lokalnego serwera lub wdroż stronę online.',
+                              en: 'The form requires an HTTP server. Use a local server or deploy the site online.',
+                              ua: 'Для роботи форми потрібен HTTP-сервер. Використайте локальний сервер або опублікуйте сайт.' },
 
     /* ════ PROJECTS LIST — projects/index.html ════ */
     'projects.eyebrow':  { pl: 'Moje prace', en: 'My work',  ua: 'Мої роботи' },
@@ -560,6 +574,11 @@ window.I18N = (function () {
     'proj.screenshots':   { pl: 'Screenshots',          en: 'Screenshots',        ua: 'Скриншоти' },
     'proj.gallery.title': { pl: 'w akcji',              en: 'in action',          ua: 'у дії' },
     'proj.all':           { pl: 'Wszystkie projekty',   en: 'All projects',       ua: 'Усі проєкти' },
+    'proj.next':          { pl: 'Następny projekt', en: 'Next project', ua: 'Наступний проєкт' },
+    'proj.viewer':        { pl: 'Podgląd screenshotu', en: 'Screenshot viewer', ua: 'Перегляд знімка екрана' },
+    'proj.viewer.close':  { pl: 'Zamknij podgląd', en: 'Close viewer', ua: 'Закрити перегляд' },
+    'proj.viewer.prev':   { pl: 'Poprzedni screenshot', en: 'Previous screenshot', ua: 'Попередній знімок екрана' },
+    'proj.viewer.next':   { pl: 'Następny screenshot', en: 'Next screenshot', ua: 'Наступний знімок екрана' },
     'proj.github':        { pl: 'GitHub',               en: 'GitHub',             ua: 'GitHub' },
     'proj.live':          { pl: 'Zobacz na żywo',       en: 'View live',          ua: 'Переглянути наживо' },
     'proj.tech.label':    { pl: 'Technologie',          en: 'Technologies',       ua: 'Технології' },
@@ -1814,6 +1833,7 @@ window.I18N = (function () {
     if (/\/projects\/aiplanner/.test(p))   return 'aiplanner';
     if (/\/projects\/vaultify/.test(p))    return 'vaultify';
     if (/\/projects\/vaeloq/.test(p))      return 'vaeloq';
+    if (/\/projects\/omniscale/.test(p))   return 'omniscale';
     if (/\/projects\/wyspa/.test(p))       return 'wyspa';
     if (/\/projects\/barber-craft-landing/.test(p)) return 'barber';
     if (/\/projects\/lumina-dental-landing/.test(p)) return 'lumina';
@@ -1856,6 +1876,16 @@ window.I18N = (function () {
     if (SUPPORTED_LANGS.indexOf(lang) === -1) lang = 'pl';
     const page = getPage();
 
+    /* CV links retain their page-relative asset path on every route. */
+    const cvFile = { pl: 'CV.pdf', en: 'CV-EN.pdf', ua: 'CV-UA.pdf' }[lang];
+    document.querySelectorAll('a[download]').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      if (/\/CV(?:-EN|-UA)?\.pdf$/i.test(href)) {
+        a.setAttribute('href', href.replace(/CV(?:-EN|-UA)?\.pdf$/i, cvFile));
+        a.setAttribute('download', `Andrii Torianyk CV ${lang.toUpperCase()}.pdf`);
+      }
+    });
+
     /* ── NAVBAR (every page) ── */
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(a => {
@@ -1871,7 +1901,8 @@ window.I18N = (function () {
       const targetPath = new URL(href, location.href).pathname;
       if (/\/projects(\/index\.html)?$/.test(targetPath))     setText(a, 'nav.projects', lang);
       else if (/\/contact(\/index\.html)?$/.test(targetPath)) setText(a, 'nav.contact', lang);
-      else if (/CV\.pdf$/.test(href) || /CV\.pdf$/.test(targetPath)) setText(a, 'nav.cv', lang);
+      else if (/CV(?:-EN|-UA)?\.pdf$/i.test(href) || /CV(?:-EN|-UA)?\.pdf$/i.test(targetPath)) setText(a, 'nav.cv', lang);
+      else if (/\/(index\.html)?$/.test(targetPath)) setText(a, 'nav.home', lang);
     });
     const navCta = document.querySelector('.nav-cta');
     if (navCta) {
@@ -1903,6 +1934,7 @@ window.I18N = (function () {
     if (page === 'aiplanner') applyAiplanner(lang);
     if (page === 'vaultify') applyVaultify(lang);
     if (page === 'vaeloq') applyVaeloq(lang);
+    if (page === 'omniscale') applySharedDetail(lang);
 
     /* ── DATA ATTR TRANSLATIONS ── */
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1914,7 +1946,7 @@ window.I18N = (function () {
     });
 
     /* ── Update html lang attr ── */
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
 
     /* ── Persist + notify listeners (for the animated switcher) ── */
     try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -1941,13 +1973,7 @@ window.I18N = (function () {
     }
     setText(document.querySelector('.title-line'), 'home.title.line', lang);
 
-    /* role — preserve cursor span */
-    const role = document.querySelector('.hero-role');
-    if (role) {
-      const cursor = role.querySelector('.role-cursor');
-      role.textContent = t('home.role', lang);
-      if (cursor) role.prepend(cursor);
-    }
+    setText(document.querySelector('.hero-role'), 'home.role', lang);
 
     setText(document.querySelector('.hero-desc'), 'home.desc', lang);
 
@@ -1964,7 +1990,7 @@ window.I18N = (function () {
     setText(csLabels[2], 'home.card.tech',  lang);
 
     /* about */
-    setText(document.querySelector('.section-eyebrow'), 'home.about.eyebrow', lang);
+    setText(document.querySelector('.about-text .section-eyebrow'), 'home.about.eyebrow', lang);
     setHTML(document.querySelector('.section-title'),   'home.about.title',   lang);
     const aboutPs = document.querySelectorAll('.about-body');
     setText(aboutPs[0], 'home.about.p1', lang);
@@ -1982,6 +2008,7 @@ window.I18N = (function () {
 
   /* ── CONTACT ─────────────────────────────────── */
   function applyContact(lang) {
+    document.title = `${t('contact.eyebrow', lang)} — Andrii Torianyk`;
     setText(document.querySelector('.section-eyebrow'), 'contact.eyebrow', lang);
     setText(document.querySelector('.contact-title'),   'contact.title',   lang);
     setText(document.querySelector('.contact-desc'),    'contact.desc',    lang);
@@ -2000,8 +2027,8 @@ window.I18N = (function () {
     setPlaceholder(document.getElementById('email'),   'contact.form.email.ph', lang);
     setPlaceholder(document.getElementById('message'), 'contact.form.msg.ph',   lang);
 
-    const sendBtn = document.querySelector('.form-submit');
-    if (sendBtn) { const svg = sendBtn.querySelector('svg'); sendBtn.textContent = t('contact.form.send', lang); if (svg) sendBtn.appendChild(svg); }
+    const busy = document.getElementById('contactForm')?.getAttribute('aria-busy') === 'true';
+    setText(document.querySelector('.form-submit-label'), busy ? 'contact.form.sending' : 'contact.form.send', lang);
   }
 
   /* ── PROJECTS LIST ───────────────────────────── */
@@ -2359,7 +2386,7 @@ window.I18N = (function () {
     const backBtn = document.querySelector('.back-btn');
     if (backBtn) { const svg = backBtn.querySelector('svg'); backBtn.textContent = t('proj.back', lang); if (svg) backBtn.prepend(svg); }
 
-    document.querySelectorAll('.proj-nav-btn, .back-btn').forEach(btn => {
+    document.querySelectorAll('.proj-nav-btn').forEach(btn => {
       if (btn.textContent.includes('projekt') || btn.textContent.includes('project') || btn.textContent.includes('All') || btn.textContent.includes('Wszystkie') || btn.textContent.includes('проєкт') || btn.textContent.includes('Усі')) {
         const svg = btn.querySelector('svg');
         btn.textContent = t('proj.all', lang);
@@ -3258,8 +3285,10 @@ window.I18N = (function () {
     cycleLang,
     supportedLangs: SUPPORTED_LANGS.slice(),
     getLang: () => {
-      const stored = localStorage.getItem('lang');
-      return SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : 'pl';
+      const pageLang = document.documentElement.lang;
+      let lang = pageLang === 'uk' ? 'ua' : pageLang;
+      try { lang = localStorage.getItem('lang') || lang; } catch {}
+      return SUPPORTED_LANGS.includes(lang) ? lang : 'pl';
     },
   };
 

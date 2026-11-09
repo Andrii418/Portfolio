@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f6f1" />
   <title>OSK Expert — Andrii Torianyk</title>
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="../racing3d/project.css" />
-  <link rel="stylesheet" href="project-osk.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
-
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
+<body class="case-page">
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="../../index.html">
-      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
     </a>
     <ul class="nav-links">
       <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -32,11 +26,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Pobierz CV
     </a>
-    <button class="hamburger" id="ham" aria-label="Menu">
+    <button type="button" class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer" id="drawer" inert>
     <a href="../../index.html" class="mob-link">Home</a>
     <a href="../index.html" class="mob-link">Projekty</a>
     <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -44,18 +38,18 @@
   </div>
 </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <!-- ── BACK BUTTON ── -->
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
     <!-- ── HERO ── -->
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Web Development · Freelance</span>
@@ -68,7 +62,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">OSK <span>Expert</span></h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">OSK <span>Expert</span></h1>
+        </div>
 
         <p class="proj-tagline">
           Kompletna strona internetowa dla ośrodka szkolenia kierowców —
@@ -77,7 +73,7 @@
         </p>
 
         <div class="proj-actions">
-          <a href="https://www.osk-expert.com.pl/" target="_blank" class="btn btn-primary">
+          <a href="https://www.osk-expert.com.pl/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             Zobacz na żywo
           </a>
@@ -122,60 +118,60 @@
       <div class="gallery-grid osk-gallery reveal delay-2">
 
         <!-- Rząd 1: duży (strona główna) + 2 małe (aktualności, o firmie) -->
-        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
-          <img src="../../assets/osk-expert/screen1.png" alt="Strona główna" loading="lazy" />
-          <div class="gallery-overlay"><span>Strona główna</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(1)">
-          <img src="../../assets/osk-expert/screen2.png" alt="Aktualności" loading="lazy" />
-          <div class="gallery-overlay"><span>Aktualności</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(2)">
-          <img src="../../assets/osk-expert/screen3.png" alt="O firmie" loading="lazy" />
-          <div class="gallery-overlay"><span>O firmie</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item gallery-main" data-gallery-index="0" data-caption="Strona główna" aria-labelledby="case-caption-1" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen1.png" alt="Strona główna" width="1568" height="709" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-1">Strona główna</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="1" data-caption="Aktualności" aria-labelledby="case-caption-2" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen2.png" alt="Aktualności" width="1568" height="713" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-2">Aktualności</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="2" data-caption="O firmie" aria-labelledby="case-caption-3" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen3.png" alt="O firmie" width="1568" height="716" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-3">O firmie</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
         <!-- Rząd 2: opinie (wide) + oferta -->
-        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
-          <img src="../../assets/osk-expert/screen4.png" alt="Opinie kursantów" loading="lazy" />
-          <div class="gallery-overlay"><span>Opinie kursantów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(4)">
-          <img src="../../assets/osk-expert/screen5.png" alt="Oferta — szkolenia" loading="lazy" />
-          <div class="gallery-overlay"><span>Oferta — szkolenia</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item gallery-wide" data-gallery-index="3" data-caption="Opinie kursantów" aria-labelledby="case-caption-4" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen4.png" alt="Opinie kursantów" width="1568" height="701" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-4">Opinie kursantów</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="4" data-caption="Oferta — szkolenia" aria-labelledby="case-caption-5" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen5.png" alt="Oferta — szkolenia" width="1023" height="461" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-5">Oferta — szkolenia</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
         <!-- Rząd 3: terminy + jak zacząć + FAQ -->
-        <div class="gallery-item" onclick="openLightbox(5)">
-          <img src="../../assets/osk-expert/screen6.png" alt="Terminy kursów" loading="lazy" />
-          <div class="gallery-overlay"><span>Terminy kursów</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(6)">
-          <img src="../../assets/osk-expert/screen7.png" alt="Jak zacząć — timeline" loading="lazy" />
-          <div class="gallery-overlay"><span>Jak zacząć — timeline</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(7)">
-          <img src="../../assets/osk-expert/screen8.png" alt="FAQ — często zadawane pytania" loading="lazy" />
-          <div class="gallery-overlay"><span>FAQ</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item" data-gallery-index="5" data-caption="Terminy kursów" aria-labelledby="case-caption-6" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen6.png" alt="Terminy kursów" width="1023" height="463" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-6">Terminy kursów</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="6" data-caption="Jak zacząć — timeline" aria-labelledby="case-caption-7" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen7.png" alt="Jak zacząć — timeline" width="1023" height="461" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-7">Jak zacząć — timeline</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="7" data-caption="FAQ — częste pytania" aria-labelledby="case-caption-8" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen8.png" alt="FAQ — często zadawane pytania" width="1024" height="461" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-8">FAQ</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
         <!-- Rząd 4: galeria (wide) -->
-        <div class="gallery-item gallery-wide" onclick="openLightbox(8)">
-          <img src="../../assets/osk-expert/screen9.png" alt="Galeria zdjęć OSK" loading="lazy" />
-          <div class="gallery-overlay"><span>Galeria zdjęć</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item gallery-wide" data-gallery-index="8" data-caption="Galeria zdjęć" aria-labelledby="case-caption-9" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/osk-expert/screen9.png" alt="Galeria zdjęć OSK" width="1023" height="463" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-9">Galeria zdjęć</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
       </div>
     </section>
 
     <!-- ── LIGHTBOX ── -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd screenshotu" onclick="closeLightbox()">
-      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
-      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Podgląd screenshotu" data-gallery-label="proj.viewer">
+      <button type="button" class="lb-close" aria-label="Zamknij podgląd" data-gallery-label="proj.viewer.close" autofocus>×</button>
+      <button type="button" class="lb-prev" aria-label="Poprzedni screenshot" data-gallery-label="proj.viewer.prev">‹</button>
+      <button type="button" class="lb-next" aria-label="Następny screenshot" data-gallery-label="proj.viewer.next">›</button>
+      <img id="lbImg" alt="" />
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </dialog>
 
     <!-- ── OVERVIEW ── -->
     <section class="section-wrap content-section">
@@ -196,42 +192,42 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">📅</div>
+            <div class="feat-icon" aria-hidden="true">📅</div>
             <div>
               <div class="feat-title">Zarządzanie kursami</div>
               <div class="feat-desc">Admin ustawia daty: poprzedniego, najbliższego i kolejnego kursu — automatycznie aktualizują się na stronie</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📰</div>
+            <div class="feat-icon" aria-hidden="true">📰</div>
             <div>
               <div class="feat-title">System aktualności</div>
               <div class="feat-desc">Właściciel dodaje posty z panelu — publikacja bez znajomości kodu</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📊</div>
+            <div class="feat-icon" aria-hidden="true">📊</div>
             <div>
               <div class="feat-title">Statystyki odwiedzin</div>
               <div class="feat-desc">Panel pokazuje liczbę odwiedzin w danym dniu — prosta analityka własna</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🗺️</div>
+            <div class="feat-icon" aria-hidden="true">🗺️</div>
             <div>
               <div class="feat-title">Timeline "Jak zacząć"</div>
               <div class="feat-desc">Krok po kroku: Zapisz się → PKK → Kurs → Egzamin — przejrzysta ścieżka dla kursanta</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">❓</div>
+            <div class="feat-icon" aria-hidden="true">❓</div>
             <div>
               <div class="feat-title">FAQ accordion</div>
               <div class="feat-desc">Najczęściej zadawane pytania w formie rozwijalnych kart — zmniejsza liczbę telefonów do biura</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📱</div>
+            <div class="feat-icon" aria-hidden="true">📱</div>
             <div>
               <div class="feat-title">Responsywny design</div>
               <div class="feat-desc">Strona działa płynnie na telefonach, tabletach i komputerach</div>
@@ -249,32 +245,32 @@
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🌐</div>
+            <div class="tech-card-icon" aria-hidden="true">🌐</div>
             <div class="tech-card-name">HTML5 / CSS3</div>
             <div class="tech-card-desc">Semantyczny markup i nowoczesny CSS — Flexbox, Grid, animacje, custom properties.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-icon" aria-hidden="true">⚡</div>
             <div class="tech-card-name">JavaScript</div>
             <div class="tech-card-desc">Vanilla JS — hamburger menu, FAQ accordion, walidacja formularzy, lightbox galerii.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🐘</div>
+            <div class="tech-card-icon" aria-hidden="true">🐘</div>
             <div class="tech-card-name">PHP</div>
             <div class="tech-card-desc">Backend strony, logika panelu admina, routing i obsługa sesji autoryzacji.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🗄️</div>
+            <div class="tech-card-icon" aria-hidden="true">🗄️</div>
             <div class="tech-card-name">MySQL</div>
             <div class="tech-card-desc">Baza danych dla aktualności, dat kursów i dziennych liczników odwiedzin.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🔐</div>
+            <div class="tech-card-icon" aria-hidden="true">🔐</div>
             <div class="tech-card-name">Panel Admina</div>
             <div class="tech-card-desc">Chroniony hasłem interfejs — zarządzanie treścią bez dotykania kodu przez klienta.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🚀</div>
+            <div class="tech-card-icon" aria-hidden="true">🚀</div>
             <div class="tech-card-name">cPanel / Hosting</div>
             <div class="tech-card-desc">Wdrożenie na hostingu współdzielonym, konfiguracja domeny i certyfikat SSL.</div>
           </div>
@@ -297,7 +293,7 @@
             Najbliższy termin pojawia się jako pływający przycisk na każdej podstronie.
           </p>
           <div class="code-block">
-<pre>SELECT prev_date, curr_date,
+<pre tabindex="0">SELECT prev_date, curr_date,
        next_date
 FROM course_dates
 ORDER BY id DESC LIMIT 1;</pre>
@@ -312,7 +308,7 @@ ORDER BY id DESC LIMIT 1;</pre>
             Strona wyświetla posty posortowane od najnowszych.
           </p>
           <div class="code-block">
-<pre>INSERT INTO news
+<pre tabindex="0">INSERT INTO news
   (title, content, image, date)
 VALUES (?, ?, ?, NOW());</pre>
           </div>
@@ -326,7 +322,7 @@ VALUES (?, ?, ?, NOW());</pre>
             Panel admina wyświetla dzienny wykres.
           </p>
           <div class="code-block">
-<pre>INSERT INTO visits (date, count)
+<pre tabindex="0">INSERT INTO visits (date, count)
 VALUES (CURDATE(), 1)
 ON DUPLICATE KEY UPDATE
   count = count + 1;</pre>
@@ -341,7 +337,7 @@ ON DUPLICATE KEY UPDATE
             Próba wejścia bez sesji przekierowuje do strony logowania.
           </p>
           <div class="code-block">
-<pre>if (!isset($_SESSION['admin'])) {
+<pre tabindex="0">if (!isset($_SESSION['admin'])) {
   header('Location: /login.php');
   exit;
 }</pre>
@@ -356,7 +352,7 @@ ON DUPLICATE KEY UPDATE
             przełączane przez JS bez przeładowania strony.
           </p>
           <div class="code-block">
-<pre>item.addEventListener('click',
+<pre tabindex="0">item.addEventListener('click',
   () => item.classList
     .toggle('open'));</pre>
           </div>
@@ -370,7 +366,7 @@ ON DUPLICATE KEY UPDATE
             karty naprzemiennie lewo/prawo z linią połączenia.
           </p>
           <div class="code-block">
-<pre>/* Naprzemienne pozycje */
+<pre tabindex="0">/* Naprzemienne pozycje */
 .step:nth-child(odd)  { left: 0; }
 .step:nth-child(even) { right: 0; }</pre>
           </div>
@@ -385,22 +381,22 @@ ON DUPLICATE KEY UPDATE
       <h2 class="section-h2 reveal delay-1">Co zostało dostarczone</h2>
       <div class="deliverables-grid reveal delay-2">
         <div class="deliv-card">
-          <div class="deliv-icon">🎨</div>
+          <div class="deliv-icon" aria-hidden="true">🎨</div>
           <div class="deliv-title">Projekt UI/UX</div>
           <div class="deliv-desc">Cały layout pod brand klienta — niebieska paleta, czytelna typografia, ikony sekcji</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">💻</div>
+          <div class="deliv-icon" aria-hidden="true">💻</div>
           <div class="deliv-title">Frontend</div>
           <div class="deliv-desc">HTML, CSS, JS — pełna responsywność, animacje, płynna nawigacja z ikonami</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">⚙️</div>
+          <div class="deliv-icon" aria-hidden="true">⚙️</div>
           <div class="deliv-title">Backend + DB</div>
           <div class="deliv-desc">PHP + MySQL: aktualności, kursy, licznik odwiedzin, panel admina</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">🌍</div>
+          <div class="deliv-icon" aria-hidden="true">🌍</div>
           <div class="deliv-title">Wdrożenie</div>
           <div class="deliv-desc">Konfiguracja hostingu, domeny, SSL — strona live na osk-expert.com.pl</div>
         </div>
@@ -422,16 +418,21 @@ ON DUPLICATE KEY UPDATE
           <div class="team-avatar osk-avatar">OSK</div>
           <div class="team-name">OSK Expert Brzesko</div>
           <div class="team-role">Klient — Ośrodek Szkolenia Kierowców</div>
-          <a href="https://www.osk-expert.com.pl/" class="team-gh" target="_blank">osk-expert.com.pl</a>
+          <a href="https://www.osk-expert.com.pl/" class="team-gh" target="_blank" rel="noopener noreferrer">osk-expert.com.pl</a>
         </div>
       </div>
     </section>
 
     <!-- ── NEXT / PREV ── -->
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../vaultify/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">Vaultify</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -439,51 +440,17 @@ ON DUPLICATE KEY UPDATE
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="../../i18n.js"></script>
   <script src="../../main.js"></script>
-  <script>
-    const images = [
-      { src: '../../assets/osk-expert/screen1.png', cap: 'Strona główna' },
-      { src: '../../assets/osk-expert/screen2.png', cap: 'Aktualności' },
-      { src: '../../assets/osk-expert/screen3.png', cap: 'O firmie' },
-      { src: '../../assets/osk-expert/screen4.png', cap: 'Opinie kursantów' },
-      { src: '../../assets/osk-expert/screen5.png', cap: 'Oferta — szkolenia' },
-      { src: '../../assets/osk-expert/screen6.png', cap: 'Terminy kursów' },
-      { src: '../../assets/osk-expert/screen7.png', cap: 'Jak zacząć — timeline' },
-      { src: '../../assets/osk-expert/screen8.png', cap: 'FAQ — częste pytania' },
-      { src: '../../assets/osk-expert/screen9.png', cap: 'Galeria zdjęć' },
-    ];
-    let lbIdx = 0;
-    function openLightbox(i) {
-      lbIdx = i;
-      document.getElementById('lbImg').src = images[i].src;
-      document.getElementById('lbCaption').textContent = images[i].cap;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function lbNav(dir) {
-      lbIdx = (lbIdx + dir + images.length) % images.length;
-      document.getElementById('lbImg').src = images[lbIdx].src;
-      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') lbNav(1);
-      if (e.key === 'ArrowLeft') lbNav(-1);
-    });
-  </script>
+  <script src="../case-gallery.js"></script>
 </body>
 </html>

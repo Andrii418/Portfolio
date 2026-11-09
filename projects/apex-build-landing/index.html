@@ -7,24 +7,18 @@
   <meta name="description" content="Apex Build Landing Page — nowoczesna landing page budowlana z ofertą usług, sekcjami benefitów i CTA." />
   <meta property="og:title" content="Apex Build Landing Page — Portfolio Project" />
   <meta property="og:description" content="Nowoczesna strona promocyjna dla firmy budowlanej z częściami o usługach, realizacjach i kontakcie." />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#f8f6f1" />
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="project.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
-
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
+<body class="case-page">
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="../../index.html">
-      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
     </a>
     <ul class="nav-links">
       <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -35,11 +29,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Pobierz CV
     </a>
-    <button class="hamburger" id="ham" aria-label="Menu">
+    <button type="button" class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer" id="drawer" inert>
     <a href="../../index.html" class="mob-link">Home</a>
     <a href="../index.html" class="mob-link">Projekty</a>
     <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -47,18 +41,18 @@
   </div>
 </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <!-- ── BACK BUTTON ── -->
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
     <!-- ── HERO ── -->
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Web Development · Frontend</span>
@@ -68,7 +62,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">Apex<span>Build</span></h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">Apex<span>Build</span></h1>
+        </div>
 
         <p class="proj-tagline">
           Nowoczesna strona promocyjna (landing page) zbudowana w oparciu o semantyczny
@@ -77,11 +73,11 @@
         </p>
 
         <div class="proj-actions">
-          <a href="https://github.com/Andrii418/apex-build-landing" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/Andrii418/apex-build-landing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
-          <a href="https://apex-build-landing.vercel.app/" target="_blank" class="btn btn-glass">
+          <a href="https://apex-build-landing.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Live demo
           </a>
@@ -124,87 +120,87 @@
       </div>
 
       <div class="gallery-grid reveal delay-2">
-        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
-          <img src="../../assets/apexbuild/screen1.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(1)">
-          <img src="../../assets/apexbuild/screen2.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(2)">
-          <img src="../../assets/apexbuild/screen3.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(3)">
-          <img src="../../assets/apexbuild/screen4.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(4)">
-          <img src="../../assets/apexbuild/screen5.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(5)">
-          <img src="../../assets/apexbuild/screen6.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(6)">
-          <img src="../../assets/apexbuild/screen7.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(7)">
-          <img src="../../assets/apexbuild/screen8.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(8)">
-          <img src="../../assets/apexbuild/screen9.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item gallery-wide" onclick="openLightbox(9)">
-          <img src="../../assets/apexbuild/screen10.png" alt="" loading="lazy" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
+        <button type="button" class="gallery-item gallery-main" data-gallery-index="0" data-caption-key="apex.overlay.1" aria-labelledby="case-caption-1" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen1.png" alt="" width="1892" height="857" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-1"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="1" data-caption-key="apex.overlay.2" aria-labelledby="case-caption-2" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen2.png" alt="" width="1895" height="850" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-2"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="2" data-caption-key="apex.overlay.3" aria-labelledby="case-caption-3" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen3.png" alt="" width="1897" height="852" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-3"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="3" data-caption-key="apex.overlay.4" aria-labelledby="case-caption-4" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen4.png" alt="" width="1892" height="847" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-4"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="4" data-caption-key="apex.overlay.5" aria-labelledby="case-caption-5" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen5.png" alt="" width="1892" height="845" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-5"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="5" data-caption-key="apex.overlay.6" aria-labelledby="case-caption-6" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen6.png" alt="" width="1892" height="852" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-6"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="6" data-caption-key="apex.overlay.7" aria-labelledby="case-caption-7" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen7.png" alt="" width="1892" height="852" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-7"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="7" data-caption-key="apex.overlay.8" aria-labelledby="case-caption-8" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen8.png" alt="" width="1895" height="852" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-8"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="8" data-caption-key="apex.overlay.9" aria-labelledby="case-caption-9" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen9.png" alt="" width="1895" height="856" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-9"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item gallery-wide" data-gallery-index="9" data-caption-key="apex.overlay.10" aria-labelledby="case-caption-10" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/apexbuild/screen10.png" alt="" width="1895" height="852" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-10"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
       </div>
     </section>
 
     <!-- ── LIGHTBOX ── -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd screenshotu" onclick="closeLightbox()">
-      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
-      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Podgląd screenshotu" data-gallery-label="proj.viewer">
+      <button type="button" class="lb-close" aria-label="Zamknij podgląd" data-gallery-label="proj.viewer.close" autofocus>×</button>
+      <button type="button" class="lb-prev" aria-label="Poprzedni screenshot" data-gallery-label="proj.viewer.prev">‹</button>
+      <button type="button" class="lb-next" aria-label="Następny screenshot" data-gallery-label="proj.viewer.next">›</button>
+      <img id="lbImg" alt="" />
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </dialog>
 
     <!-- ── OVERVIEW ── -->
     <section class="section-wrap content-section">
@@ -227,35 +223,35 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">🚀</div>
+            <div class="feat-icon" aria-hidden="true">🚀</div>
             <div>
               <div class="feat-title">Hero Section</div>
               <div class="feat-desc">Przyciągająca uwagę sekcja wejścia z wyraźnym call-to-action</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🧩</div>
+            <div class="feat-icon" aria-hidden="true">🧩</div>
             <div>
               <div class="feat-title">Features</div>
               <div class="feat-desc">Prezentacja kluczowych funkcji i zalet oferty</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">💬</div>
+            <div class="feat-icon" aria-hidden="true">💬</div>
             <div>
               <div class="feat-title">Testimonials</div>
               <div class="feat-desc">Sekcja opinii i recenzji budująca wiarygodność</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📣</div>
+            <div class="feat-icon" aria-hidden="true">📣</div>
             <div>
               <div class="feat-title">Call-to-Action</div>
               <div class="feat-desc">Wyraźna zachęta do podjęcia akcji przed stopką</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon"></div>
+            <div class="feat-icon" aria-hidden="true"></div>
             <div>
               <div class="feat-title">Footer</div>
               <div class="feat-desc">Stopka z informacjami kontaktowymi i linkami</div>
@@ -273,47 +269,47 @@
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">📄</div>
+            <div class="tech-card-icon" aria-hidden="true">📄</div>
             <div class="tech-card-name">HTML5</div>
             <div class="tech-card-desc">Semantyczna struktura i treść strony — 38.9% repozytorium.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-icon" aria-hidden="true">🎨</div>
             <div class="tech-card-name">CSS3</div>
             <div class="tech-card-desc">Stylizacja, layouty i animacje — 35.3% repozytorium, bez frameworków.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-icon" aria-hidden="true">⚡</div>
             <div class="tech-card-name">JavaScript (ES6+)</div>
             <div class="tech-card-desc">Interaktywność i logika kliencka — 25.8% repozytorium.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">📱</div>
+            <div class="tech-card-icon" aria-hidden="true">📱</div>
             <div class="tech-card-name">Media Queries</div>
             <div class="tech-card-desc">Responsywny layout działający na urządzeniach mobilnych i desktopowych.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🎞️</div>
+            <div class="tech-card-icon" aria-hidden="true">🎞️</div>
             <div class="tech-card-name">CSS Animations</div>
             <div class="tech-card-desc">Płynne przejścia i efekty wizualne wzmacniające odbiór strony.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🖱️</div>
+            <div class="tech-card-icon" aria-hidden="true">🖱️</div>
             <div class="tech-card-name">Smooth Scroll</div>
             <div class="tech-card-desc">Płynne przewijanie między sekcjami dla lepszego UX.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🔤</div>
+            <div class="tech-card-icon" aria-hidden="true">🔤</div>
             <div class="tech-card-name">Google Fonts</div>
             <div class="tech-card-desc">Starannie dobrana typografia budująca nowoczesny charakter marki.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🧱</div>
+            <div class="tech-card-icon" aria-hidden="true">🧱</div>
             <div class="tech-card-name">Minimalist UI</div>
             <div class="tech-card-desc">Czysta, minimalistyczna wizualizacja jako świadoma decyzja projektowa.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🌐</div>
+            <div class="tech-card-icon" aria-hidden="true">🌐</div>
             <div class="tech-card-name">Cross-browser</div>
             <div class="tech-card-desc">Przetestowane w Chrome, Firefox, Safari i Edge.</div>
           </div>
@@ -336,7 +332,7 @@
             łatwy do rozwijania i utrzymania.
           </p>
           <div class="code-block">
-<pre>apex-build-landing/
+<pre tabindex="0">apex-build-landing/
 ├── index.html
 ├── css/styles.css
 └── js/script.js</pre>
@@ -351,7 +347,7 @@
             call-to-action, budująca pierwsze wrażenie.
           </p>
           <div class="code-block">
-<pre>&lt;section class="hero"&gt;
+<pre tabindex="0">&lt;section class="hero"&gt;
   &lt;h1&gt;...&lt;/h1&gt;
   &lt;a class="cta"&gt;...&lt;/a&gt;
 &lt;/section&gt;</pre>
@@ -366,7 +362,7 @@
             zbudowana na CSS Grid/Flexbox.
           </p>
           <div class="code-block">
-<pre>.features-grid {
+<pre tabindex="0">.features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }</pre>
@@ -381,7 +377,7 @@
             wezwaniem do działania.
           </p>
           <div class="code-block">
-<pre>&lt;div class="testimonial-card"&gt;
+<pre tabindex="0">&lt;div class="testimonial-card"&gt;
   ...
 &lt;/div&gt;</pre>
           </div>
@@ -395,7 +391,7 @@
             konkretnej akcji tuż przed stopką.
           </p>
           <div class="code-block">
-<pre>&lt;section class="cta-band"&gt;
+<pre tabindex="0">&lt;section class="cta-band"&gt;
   &lt;button&gt;...&lt;/button&gt;
 &lt;/section&gt;</pre>
           </div>
@@ -409,7 +405,7 @@
             strukturę strony.
           </p>
           <div class="code-block">
-<pre>&lt;footer&gt;
+<pre tabindex="0">&lt;footer&gt;
   &lt;p&gt;© Apex Build&lt;/p&gt;
 &lt;/footer&gt;</pre>
           </div>
@@ -436,7 +432,7 @@
     <section class="section-wrap content-section">
       <div class="section-label reveal">Uzasadnienie wyboru</div>
       <h2 class="section-h2 reveal delay-1">Dlaczego te technologie</h2>
-      <div class="reveal delay-2" style="overflow-x:auto;">
+      <div class="case-table reveal delay-2" tabindex="0">
         <table class="rationale-table">
           <thead>
             <tr>
@@ -480,7 +476,7 @@
             <div class="step-content">
               <div class="step-title">Sklonuj repozytorium</div>
               <div class="code-block">
-<pre>git clone https://github.com/Andrii418/apex-build-landing.git</pre>
+<pre tabindex="0">git clone https://github.com/Andrii418/apex-build-landing.git</pre>
               </div>
             </div>
           </div>
@@ -489,7 +485,7 @@
             <div class="step-content">
               <div class="step-title">Otwórz stronę lokalnie</div>
               <div class="code-block">
-<pre>cd apex-build-landing
+<pre tabindex="0">cd apex-build-landing
 # otwórz index.html w przeglądarce
 # lub uruchom rozszerzenie Live Server</pre>
               </div>
@@ -500,7 +496,7 @@
             <div class="step-content">
               <div class="step-title">Ciesz się responsywnym landing page'em</div>
               <div class="code-block">
-<pre>open index.html</pre>
+<pre tabindex="0">open index.html</pre>
               </div>
             </div>
           </div>
@@ -529,10 +525,15 @@
     </section>
 
     <!-- ── NEXT / PREV ── -->
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../glow-beauty-salon/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">GLOW Beauty Salon</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -540,65 +541,17 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="../../i18n.js"></script>
   <script src="../../main.js"></script>
-  <script>
-    // ── LIGHTBOX ──────────────────────────────────────────
-    const imageKeys = [
-      { src: '../../assets/apexbuild/screen1.png',  key: 'apex.overlay.1' },
-      { src: '../../assets/apexbuild/screen2.png',  key: 'apex.overlay.2' },
-      { src: '../../assets/apexbuild/screen3.png',  key: 'apex.overlay.3' },
-      { src: '../../assets/apexbuild/screen4.png',  key: 'apex.overlay.4' },
-      { src: '../../assets/apexbuild/screen5.png',  key: 'apex.overlay.5' },
-      { src: '../../assets/apexbuild/screen6.png',  key: 'apex.overlay.6' },
-      { src: '../../assets/apexbuild/screen7.png',  key: 'apex.overlay.7' },
-      { src: '../../assets/apexbuild/screen8.png',  key: 'apex.overlay.8' },
-      { src: '../../assets/apexbuild/screen9.png',  key: 'apex.overlay.9' },
-      { src: '../../assets/apexbuild/screen10.png', key: 'apex.overlay.10' },
-    ];
-
-    function getImages() {
-      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
-      return imageKeys.map(i => ({
-        src: i.src,
-        cap: window.I18N ? window.I18N.t(i.key, lang) : i.key
-      }));
-    }
-
-    let lbIdx = 0;
-
-    function openLightbox(i) {
-      const images = getImages();
-      lbIdx = i;
-      document.getElementById('lbImg').src = images[i].src;
-      document.getElementById('lbCaption').textContent = images[i].cap;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function lbNav(dir) {
-      const images = getImages();
-      lbIdx = (lbIdx + dir + images.length) % images.length;
-      document.getElementById('lbImg').src = images[lbIdx].src;
-      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') lbNav(1);
-      if (e.key === 'ArrowLeft')  lbNav(-1);
-    });
-  </script>
+  <script src="../case-gallery.js"></script>
 </body>
 </html>

@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f6f1" />
   <title>Projekty — Andrii Torianyk</title>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="projects.css" />
 </head>
 <body>
 
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
-
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="../index.html">
-      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
     </a>
     <ul class="nav-links">
       <li><a href="../index.html" class="nav-link">Home</a></li>
@@ -30,11 +25,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Pobierz CV
     </a>
-    <button class="hamburger" id="ham" aria-label="Menu">
+    <button type="button" class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer" id="drawer" inert>
     <a href="../index.html" class="mob-link">Home</a>
     <a href="index.html" class="mob-link">Projekty</a>
     <a href="../contact/index.html" class="mob-link">Kontakt</a>
@@ -42,523 +37,521 @@
   </div>
 </nav>
 
-  <main>
-    <section class="projects-hero" data-section="Projekty — intro">
-      <div class="projects-hero-inner">
-  <span class="section-eyebrow reveal">Moje prace</span>
-  <h1 class="projects-title reveal delay-1">Projekty</h1>
-  <p class="projects-desc reveal delay-2">
-    Aplikacje webowe, mobilne, gry i narzędzia backendowe —
-    tu trafia wszystko co zbudowałem.
-  </p>
-</div>
-    </section>
+  <main id="main-content" tabindex="-1">
+    <header class="projects-hero shell" data-section="Projekty — intro" aria-labelledby="archive-title">
+      <span class="section-eyebrow">Moje prace</span>
+      <h1 class="projects-title" id="archive-title">Projekty</h1>
+      <p class="projects-desc">
+        Aplikacje webowe, mobilne, gry i narzędzia backendowe —
+        tu trafia wszystko co zbudowałem.
+      </p>
+    </header>
 
-    <section class="projects-grid-section" data-section="Lista projektów">
+    <section class="projects-grid-section shell" data-section="Lista projektów" aria-labelledby="archive-title">
       <div class="projects-grid">
 
-        <a href="osk-expert/index.html" class="project-card reveal delay-1">
+        <a href="osk-expert/index.html" class="project-card reveal" aria-labelledby="archive-osk-expert">
           <div class="project-card-img">
             <img
               src="../assets/osk-expert/screen1.png"
               alt="OSK Expert — strona główna"
-              loading="lazy"
+              width="1568" height="709" decoding="async" loading="eager" fetchpriority="high"
             />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-osk-expert">OSK Expert</h2>
+            <p class="project-card-desc">
+              Strona internetowa dla ośrodka szkolenia kierowców — freelance.
+              Panel admina do zarządzania kursami, aktualnościami
+              i statystykami odwiedzin. Projekt live.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">HTML/CSS/JS</span>
               <span class="stack-pill">PHP</span>
               <span class="stack-pill">MySQL</span>
               <span class="stack-pill">Panel Admina</span>
             </div>
-            <h2 class="project-card-title">OSK Expert</h2>
-            <p class="project-card-desc">
-              Strona internetowa dla ośrodka szkolenia kierowców — freelance.
-              Panel admina do zarządzania kursami, aktualnościami
-              i statystykami odwiedzin. Projekt live.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="vaultify/index.html" class="project-card reveal">
+        <a href="vaultify/index.html" class="project-card reveal" aria-labelledby="archive-vaultify">
           <div class="project-card-img">
             <img
               src="../assets/vaultify/screen1.png"
               alt="Vaultify — ekran główny"
-              loading="lazy"
+              width="1892" height="857" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-vaultify">Vaultify</h2>
+            <p class="project-card-desc">
+              Zero-knowledge aplikacja do jednorazowego udostępniania sekretów —
+              hasła i klucze API szyfrowane lokalnie w przeglądarce (AES-256-GCM),
+              zanim cokolwiek trafi na serwer. Read-once, podział klucza Shamira i tryb wabika.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Next.js 16</span>
               <span class="stack-pill">Web Crypto API</span>
               <span class="stack-pill">Supabase</span>
             </div>
-            <h2 class="project-card-title">Vaultify</h2>
-            <p class="project-card-desc">
-              Zero-knowledge aplikacja do jednorazowego udostępniania sekretów —
-              hasła i klucze API szyfrowane lokalnie w przeglądarce (AES-256-GCM),
-              zanim cokolwiek trafi na serwer. Read-once, podział klucza Shamira i tryb wabika.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="vaeloq/index.html" class="project-card reveal">
+        <a href="vaeloq/index.html" class="project-card reveal" aria-labelledby="archive-vaeloq" aria-describedby="status-vaeloq">
           <div class="project-card-img">
             <img
               src="../assets/vaeloq/screen4.png"
               alt="Vaeloq — ekran wgrywania dokumentu"
-              loading="lazy"
+              width="1918" height="857" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-vaeloq">Vaeloq</h2>
+              <span class="status-pill" id="status-vaeloq"><span class="status-dot"></span>W realizacji</span>
+            </div>
+            <p class="project-card-desc">
+              Aplikacja Next.js realizująca pełny pipeline RAG — wgrywasz PDF, system tnie go
+              na fragmenty, indeksuje jako wektory w pgvector i odpowiada na pytania,
+              osadzając odpowiedź w konkretnych cytatach ze źródła.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Next.js 16</span>
               <span class="stack-pill">Gemini API</span>
               <span class="stack-pill">pgvector</span>
             </div>
-            <h2 class="project-card-title">
-              Vaeloq
-              <span class="status-pill"><span class="status-dot"></span>W realizacji</span>
-            </h2>
-            <p class="project-card-desc">
-              Aplikacja Next.js realizująca pełny pipeline RAG — wgrywasz PDF, system tnie go
-              na fragmenty, indeksuje jako wektory w pgvector i odpowiada na pytania,
-              osadzając odpowiedź w konkretnych cytatach ze źródła.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="omniscale/index.html" class="project-card reveal">
+        <a href="omniscale/index.html" class="project-card reveal" aria-labelledby="archive-omniscale" aria-describedby="status-omniscale">
           <div class="project-card-img">
             <img
               src="../assets/omniscale/screen1.png"
               alt="Omniscale — dashboard infrastruktury"
-              loading="lazy"
+              width="1893" height="856" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-omniscale">Omniscale</h2>
+              <span class="status-pill" id="status-omniscale"><span class="status-dot"></span>W realizacji</span>
+            </div>
+            <p class="project-card-desc">
+              AI-powered platforma do orkiestracji infrastruktury chmurowej z wbudowanym
+              agentem SRE — deklaratywne zarządzanie zasobami inspirowane Terraform,
+              dashboard monitorowania w czasie rzeczywistym i interaktywna topologia systemu.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Next.js 16</span>
               <span class="stack-pill">ReactFlow</span>
               <span class="stack-pill">Google Gemini</span>
             </div>
-            <h2 class="project-card-title">Omniscale
-              <span class="status-pill"><span class="status-dot"></span>W realizacji</span>
-            </h2>
-            
-            <p class="project-card-desc">
-              AI-powered platforma do orkiestracji infrastruktury chmurowej z wbudowanym
-              agentem SRE — deklaratywne zarządzanie zasobami inspirowane Terraform,
-              dashboard monitorowania w czasie rzeczywistym i interaktywna topologia systemu.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="barber-craft-landing/index.html" class="project-card reveal">
+        <a href="barber-craft-landing/index.html" class="project-card reveal" aria-labelledby="archive-barber-craft-landing" aria-describedby="status-barber-craft-landing">
           <div class="project-card-img">
             <img
               src="../assets/barber/screen1.png"
               alt="Barber Craft Landing — strona główna"
-              loading="lazy"
+              width="1891" height="860" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="stack-pill">HTML5</span>
-              <span class="stack-pill">CSS3</span>
-              <span class="stack-pill">JavaScript</span>
-              <span class="stack-pill">Vercel</span>
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-barber-craft-landing">Barber Craft Landing</h2>
+              <span class="status-pill" id="status-barber-craft-landing"><span class="status-dot"></span>Ukończony</span>
             </div>
-            <h2 class="project-card-title">Barber Craft Landing
-              <span class="status-pill"><span class="status-dot"></span>Ukończony</span>
-            </h2>
-            
             <p class="project-card-desc">
               Premium, ciemna strona typu landing page dla fikcyjnego salonu fryzjerskiego —
               zbudowana w czystym HTML5, CSS3 i JavaScript, bez frameworków, z sekcją usług,
               portfolio prac i formularzem kontaktowym.
             </p>
-            <div class="project-card-footer">
-              <span class="project-card-link">
-                Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-
-        <a href="lumina-dental-landing/index.html" class="project-card reveal">
-          <div class="project-card-img">
-            <img
-              src="../assets/lumina/screen1.png"
-              alt="Lumina Dental — strona główna"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
             <div class="project-card-tags">
               <span class="stack-pill">HTML5</span>
               <span class="stack-pill">CSS3</span>
               <span class="stack-pill">JavaScript</span>
               <span class="stack-pill">Vercel</span>
             </div>
-            <h2 class="project-card-title">Lumina Dental
-              <span class="status-pill"><span class="status-dot"></span>Ukończony</span>
-            </h2>
-            
+            <div class="project-card-footer">
+              <span class="project-card-link">
+                Zobacz projekt
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <a href="lumina-dental-landing/index.html" class="project-card reveal" aria-labelledby="archive-lumina-dental-landing" aria-describedby="status-lumina-dental-landing">
+          <div class="project-card-img">
+            <img
+              src="../assets/lumina/screen1.png"
+              alt="Lumina Dental — strona główna"
+              width="1897" height="857" decoding="async" loading="lazy"
+            />
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-lumina-dental-landing">Lumina Dental</h2>
+              <span class="status-pill" id="status-lumina-dental-landing"><span class="status-dot"></span>Ukończony</span>
+            </div>
             <p class="project-card-desc">
               Nowoczesna, responsywna strona docelowa dla fikcyjnej kliniki stomatologicznej —
               zbudowana w czystym HTML5, CSS3 i JavaScript, prezentująca profesjonalny,
               budzący zaufanie interfejs marki medycznej.
             </p>
+            <div class="project-card-tags">
+              <span class="stack-pill">HTML5</span>
+              <span class="stack-pill">CSS3</span>
+              <span class="stack-pill">JavaScript</span>
+              <span class="stack-pill">Vercel</span>
+            </div>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="apex-build-landing/index.html" class="project-card reveal">
+        <a href="apex-build-landing/index.html" class="project-card reveal" aria-labelledby="archive-apex-build-landing" aria-describedby="status-apex-build-landing">
           <div class="project-card-img">
             <img
               src="../assets/apexbuild/screen1.png"
               alt="Apex Build — sekcja Hero"
-              loading="lazy"
+              width="1892" height="857" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="stack-pill">HTML5</span>
-              <span class="stack-pill">CSS3</span>
-              <span class="stack-pill">JavaScript</span>
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-apex-build-landing">Apex Build Landing Page</h2>
+              <span class="status-pill" id="status-apex-build-landing"><span class="status-dot"></span>Ukończony</span>
             </div>
-            <h2 class="project-card-title">Apex Build Landing Page
-              <span class="status-pill"><span class="status-dot"></span>Ukończony</span>
-            </h2>
-            
             <p class="project-card-desc">
               Nowoczesna strona promocyjna (landing page) zbudowana w oparciu o semantyczny
               HTML5, CSS3 i JavaScript — kompletne studium przypadku z sekcjami Hero,
               Features, Testimonials i Call-to-Action.
             </p>
-            <div class="project-card-footer">
-              <span class="project-card-link">
-                Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-
-        <a href="glow-beauty-salon/index.html" class="project-card reveal">
-          <div class="project-card-img">
-            <img
-              src="../assets/glow/screen1.png"
-              alt="GLOW Beauty Salon — strona główna"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
             <div class="project-card-tags">
               <span class="stack-pill">HTML5</span>
               <span class="stack-pill">CSS3</span>
               <span class="stack-pill">JavaScript</span>
             </div>
-            <h2 class="project-card-title">GLOW Beauty Salon
-              <span class="status-pill"><span class="status-dot"></span>Ukończony</span>
-            </h2>
-            
-            <p class="project-card-desc">
-              Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych —
-              wielojęzyczny interfejs (PL/EN/UA), galeria „przed/po", FAQ i formularz
-              rezerwacji, w estetyce glassmorphism bez frameworków i backendu.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="ml/index.html" class="project-card reveal delay-2">
+        <a href="glow-beauty-salon/index.html" class="project-card reveal" aria-labelledby="archive-glow-beauty-salon" aria-describedby="status-glow-beauty-salon">
           <div class="project-card-img">
-            <img src="../assets/ml2/screen6.png" alt="Rozpoznawanie Emocji — rozkład klas FER-2013" loading="lazy" />
+            <img
+              src="../assets/glow/screen1.png"
+              alt="GLOW Beauty Salon — strona główna"
+              width="1892" height="862" decoding="async" loading="lazy"
+            />
           </div>
           <div class="project-card-body">
+            <div class="project-card-heading">
+              <h2 class="project-card-title" id="archive-glow-beauty-salon">GLOW Beauty Salon</h2>
+              <span class="status-pill" id="status-glow-beauty-salon"><span class="status-dot"></span>Ukończony</span>
+            </div>
+            <p class="project-card-desc">
+              Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych —
+              wielojęzyczny interfejs (PL/EN/UA), galeria „przed/po", FAQ i formularz
+              rezerwacji, w estetyce glassmorphism bez frameworków i backendu.
+            </p>
+            <div class="project-card-tags">
+              <span class="stack-pill">HTML5</span>
+              <span class="stack-pill">CSS3</span>
+              <span class="stack-pill">JavaScript</span>
+            </div>
+            <div class="project-card-footer">
+              <span class="project-card-link">
+                Zobacz projekt
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <a href="ml/index.html" class="project-card reveal" aria-labelledby="archive-ml">
+          <div class="project-card-img">
+            <img src="../assets/ml2/screen6.png" alt="Rozpoznawanie Emocji — rozkład klas FER-2013" width="1896" height="896" decoding="async" loading="lazy" />
+          </div>
+          <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-ml">Rozpoznawanie Emocji</h2>
+            <p class="project-card-desc">
+              Deep learning na zbiorze FER-2013 — klasyfikacja 7 emocji z wyrazu twarzy
+              przy użyciu CNN, automatyczne strojenie hiperparametrów Hyperband
+              i wizualizacja Grad-CAM w aplikacji Gradio.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">TensorFlow / Keras</span>
               <span class="stack-pill">CNN</span>
               <span class="stack-pill">Keras Tuner</span>
               <span class="stack-pill">Gradio</span>
             </div>
-            <h2 class="project-card-title">Rozpoznawanie Emocji</h2>
-            <p class="project-card-desc">
-              Deep learning na zbiorze FER-2013 — klasyfikacja 7 emocji z wyrazu twarzy
-              przy użyciu CNN, automatyczne strojenie hiperparametrów Hyperband
-              i wizualizacja Grad-CAM w aplikacji Gradio.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="aiplanner/index.html" class="project-card reveal delay-3">
+        <a href="aiplanner/index.html" class="project-card reveal project-card--portrait" aria-labelledby="archive-aiplanner">
           <div class="project-card-img">
-            <img src="../assets/smart-planner/screen1.png" alt="Smart Planner — dashboard aplikacji" loading="lazy" />
+            <img src="../assets/smart-planner/screen1.png" alt="Smart Planner — dashboard aplikacji" width="842" height="1867" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-aiplanner">Smart Planner</h2>
+            <p class="project-card-desc">
+              Mobilna aplikacja do planowania nauki, zadań i podróży z asystentem AI
+              (LLaMA 3.1 via GROQ API), real-time sync przez Firebase Firestore.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">React Native</span>
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Firebase</span>
               <span class="stack-pill">GROQ AI</span>
             </div>
-            <h2 class="project-card-title">Smart Planner</h2>
-            <p class="project-card-desc">
-              Mobilna aplikacja do planowania nauki, zadań i podróży z asystentem AI
-              (LLaMA 3.1 via GROQ API), real-time sync przez Firebase Firestore.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="racing3d/index.html" class="project-card reveal">
+        <a href="racing3d/index.html" class="project-card reveal" aria-labelledby="archive-racing3d">
           <div class="project-card-img">
             <img
               src="../assets/racing3d/screen1.png"
               alt="Racing 3D — menu główne"
-              loading="lazy"
+              width="747" height="386" decoding="async" loading="lazy"
             />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-racing3d">Racing 3D</h2>
+            <p class="project-card-desc">
+              Autorski silnik wyścigowy napisany od zera w C++ i OpenGL 3.3 —
+              bez Unity ani Unreal. Pełna fizyka, AI na waypointach, shadery Phonga
+              i system ekonomii z garażem 7 samochodów.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">C++17</span>
               <span class="stack-pill">OpenGL 3.3</span>
               <span class="stack-pill">Bullet Physics</span>
               <span class="stack-pill">GLSL</span>
             </div>
-            <h2 class="project-card-title">Racing 3D</h2>
-            <p class="project-card-desc">
-              Autorski silnik wyścigowy napisany od zera w C++ i OpenGL 3.3 —
-              bez Unity ani Unreal. Pełna fizyka, AI na waypointach, shadery Phonga
-              i system ekonomii z garażem 7 samochodów.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="wyspa/index.html" class="project-card reveal delay-2">
+        <a href="wyspa/index.html" class="project-card reveal" aria-labelledby="archive-wyspa">
           <div class="project-card-img">
-            <img src="../assets/wyspa/screen3.jpg" alt="Wyspa Mystery — gameplay" loading="lazy" />
+            <img src="../assets/wyspa/screen3.jpg" alt="Wyspa Mystery — gameplay" width="512" height="284" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-wyspa">Wyspa Mystery</h2>
+            <p class="project-card-desc">
+              Survivalowa gra FPS z systemem zagadek logicznych. Eksploruj niebezpieczną wyspę,
+              unikaj wilka i zapal ognisko pomocy przed zapadnięciem zmroku.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">Unity 3D</span>
               <span class="stack-pill">C#</span>
               <span class="stack-pill">AI</span>
               <span class="stack-pill">FPS</span>
             </div>
-            <h2 class="project-card-title">Wyspa Mystery</h2>
-            <p class="project-card-desc">
-              Survivalowa gra FPS z systemem zagadek logicznych. Eksploruj niebezpieczną wyspę,
-              unikaj wilka i zapal ognisko pomocy przed zapadnięciem zmroku.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="blog/index.html" class="project-card reveal delay-1">
+        <a href="blog/index.html" class="project-card reveal" aria-labelledby="archive-blog">
           <div class="project-card-img">
-            <img src="../assets/blog/screen1.png" alt="Blog App — strona główna" loading="lazy" />
+            <img src="../assets/blog/screen1.png" alt="Blog App — strona główna" width="1568" height="750" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-blog">Blog App</h2>
+            <p class="project-card-desc">
+              Fullstackowa aplikacja blogowa — Angular + Node.js. System postów,
+              komentarzy, ocen i ulubionych. Panel admina, autoryzacja JWT
+              i Server-Side Rendering.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">Angular</span>
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Node.js</span>
               <span class="stack-pill">JWT</span>
             </div>
-            <h2 class="project-card-title">Blog App</h2>
-            <p class="project-card-desc">
-              Fullstackowa aplikacja blogowa — Angular + Node.js. System postów,
-              komentarzy, ocen i ulubionych. Panel admina, autoryzacja JWT
-              i Server-Side Rendering.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="ualingo/index.html" class="project-card reveal delay-2">
+        <a href="ualingo/index.html" class="project-card reveal project-card--portrait" aria-labelledby="archive-ualingo">
           <div class="project-card-img">
-            <img src="../assets/ualingo/logo.png" alt="UAlingo — menu główne" loading="lazy" />
+            <img src="../assets/ualingo/logo.png" alt="UAlingo — menu główne" width="372" height="624" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-ualingo">UAlingo</h2>
+            <p class="project-card-desc">
+              Aplikacja mobilna Android do nauki języka ukraińskiego —
+              quizy z timerem, gra Word Search, memy edukacyjne
+              i autoryzacja Firebase. 18 ekranów, 10 tematów, 120 pytań.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">Java</span>
               <span class="stack-pill">Android</span>
               <span class="stack-pill">Firebase</span>
               <span class="stack-pill">Material UI</span>
             </div>
-            <h2 class="project-card-title">UAlingo</h2>
-            <p class="project-card-desc">
-              Aplikacja mobilna Android do nauki języka ukraińskiego —
-              quizy z timerem, gra Word Search, memy edukacyjne
-              i autoryzacja Firebase. 18 ekranów, 10 tematów, 120 pytań.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="eventhubapi/index.html" class="project-card reveal delay-1">
+        <a href="eventhubapi/index.html" class="project-card reveal" aria-labelledby="archive-eventhubapi">
+          <div class="project-card-img project-card-media--type" aria-hidden="true">
+            <span>REST API</span>
+          </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-eventhubapi">eventHubAPI</h2>
+            <p class="project-card-desc">
+              Kompleksowy backend REST API do zarządzania eventami —
+              Spring Boot 3.3, JWT, PostgreSQL. System ról RBAC,
+              zaproszenia, powiadomienia i multimedia w jednym serwisie.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">Java 21</span>
               <span class="stack-pill">Spring Boot</span>
               <span class="stack-pill">PostgreSQL</span>
               <span class="stack-pill">JWT</span>
             </div>
-            <h2 class="project-card-title">eventHubAPI</h2>
-            <p class="project-card-desc">
-              Kompleksowy backend REST API do zarządzania eventami —
-              Spring Boot 3.3, JWT, PostgreSQL. System ról RBAC,
-              zaproszenia, powiadomienia i multimedia w jednym serwisie.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
-        </a>  
+        </a>
 
-        <a href="iot/index.html" class="project-card reveal delay-2">
+        <a href="iot/index.html" class="project-card reveal project-card--portrait" aria-labelledby="archive-iot">
           <div class="project-card-img">
-            <img src="../assets/iot/screen3.png" alt="IoT App — widok urządzeń" loading="lazy" />
+            <img src="../assets/iot/screen3.png" alt="IoT App — widok urządzeń" width="356" height="798" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-iot">IoT App</h2>
+            <p class="project-card-desc">
+              Cross-platform aplikacja mobilna do sterowania urządzeniami smart home —
+              dodawaj lampy, rolety i inne urządzenia, przypisuj miejsce,
+              komendy i kolor identyfikacyjny.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">React Native</span>
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">Android</span>
               <span class="stack-pill">iOS</span>
             </div>
-            <h2 class="project-card-title">IoT App</h2>
-            <p class="project-card-desc">
-              Cross-platform aplikacja mobilna do sterowania urządzeniami smart home —
-              dodawaj lampy, rolety i inne urządzenia, przypisuj miejsce,
-              komendy i kolor identyfikacyjny.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
 
-        <a href="quiz/index.html" class="project-card reveal delay-1">
+        <a href="quiz/index.html" class="project-card reveal project-card--portrait" aria-labelledby="archive-quiz">
           <div class="project-card-img">
-            <img src="../assets/quiz/screen.png" alt="Quiz App — lista testów" loading="lazy" />
+            <img src="../assets/quiz/screen.png" alt="Quiz App — lista testów" width="680" height="1538" decoding="async" loading="lazy" />
           </div>
           <div class="project-card-body">
+            <h2 class="project-card-title" id="archive-quiz">Quiz App</h2>
+            <p class="project-card-desc">
+              Mobilna aplikacja edukacyjna do rozwiązywania testów wielokrotnego wyboru —
+              timer na pytanie, globalny ranking, tryb offline z SQLite
+              i synchronizacja z REST API.
+            </p>
             <div class="project-card-tags">
               <span class="stack-pill">React Native</span>
               <span class="stack-pill">TypeScript</span>
               <span class="stack-pill">SQLite</span>
               <span class="stack-pill">Offline-first</span>
             </div>
-            <h2 class="project-card-title">Quiz App</h2>
-            <p class="project-card-desc">
-              Mobilna aplikacja edukacyjna do rozwiązywania testów wielokrotnego wyboru —
-              timer na pytanie, globalny ranking, tryb offline z SQLite
-              i synchronizacja z REST API.
-            </p>
             <div class="project-card-footer">
               <span class="project-card-link">
                 Zobacz projekt
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </div>
         </a>
-
-        
-
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>

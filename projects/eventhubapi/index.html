@@ -7,25 +7,18 @@
   <meta name="description" content="eventHubAPI — backend REST API do zarządzania wydarzeniami z JWT, PostgreSQL i systemem ról RBAC." />
   <meta property="og:title" content="eventHubAPI — Portfolio Project" />
   <meta property="og:description" content="Kompleksowy backend do zarządzania eventami z zaproszeniami, rolami, powiadomieniami i mediami." />
-  <meta name="theme-color" content="#0b1120" />
+  <meta name="theme-color" content="#f8f6f1" />
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="../racing3d/project.css" />
-  <link rel="stylesheet" href="project-eventhub.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
-
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
+<body class="case-page">
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
     <div class="nav-inner">
       <a class="nav-logo" href="../../index.html">
-        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+        <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
       </a>
       <ul class="nav-links">
         <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -36,11 +29,11 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Pobierz CV
       </a>
-      <button class="hamburger" id="ham" aria-label="Menu">
+      <button type="button" class="hamburger" id="ham" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-drawer" id="drawer">
+    <div class="mobile-drawer" id="drawer" inert>
       <a href="../../index.html" class="mob-link">Home</a>
       <a href="../index.html" class="mob-link">Projekty</a>
       <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -48,18 +41,18 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <!-- ── BACK BUTTON ── -->
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
     <!-- ── HERO ── -->
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Backend Development · REST API</span>
@@ -69,7 +62,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">eventHub<span>API</span></h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">eventHub<span>API</span></h1>
+        </div>
 
         <p class="proj-tagline">
           Kompleksowy backend REST API do zarządzania eventami —
@@ -78,7 +73,7 @@
         </p>
 
         <div class="proj-actions">
-          <a href="https://github.com/DominikFa/eventHubAPI" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/DominikFa/eventHubAPI" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
@@ -136,42 +131,42 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">🎪</div>
+            <div class="feat-icon" aria-hidden="true">🎪</div>
             <div>
               <div class="feat-title">Zarządzanie eventami</div>
               <div class="feat-desc">CRUD eventów z filtrami po nazwie i dacie, publiczne i prywatne eventy</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🔐</div>
+            <div class="feat-icon" aria-hidden="true">🔐</div>
             <div>
               <div class="feat-title">JWT + role RBAC</div>
               <div class="feat-desc">Bearer token 24h, trzy role: ADMIN / ORGANIZER / USER z różnymi uprawnieniami</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">💌</div>
+            <div class="feat-icon" aria-hidden="true">💌</div>
             <div>
               <div class="feat-title">System zaproszeń</div>
               <div class="feat-desc">Wysyłanie, akceptacja, odrzucanie i wycofywanie zaproszeń do eventów</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🔔</div>
+            <div class="feat-icon" aria-hidden="true">🔔</div>
             <div>
               <div class="feat-title">Powiadomienia</div>
               <div class="feat-desc">Paginowane powiadomienia z statusami UNREAD / READ / ARCHIVED per użytkownik</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📸</div>
+            <div class="feat-icon" aria-hidden="true">📸</div>
             <div>
               <div class="feat-title">Upload multimediów</div>
               <div class="feat-desc">Galeria, logo i harmonogram eventu — pliki binarne w PostgreSQL (bytea)</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📖</div>
+            <div class="feat-icon" aria-hidden="true">📖</div>
             <div>
               <div class="feat-title">Swagger UI</div>
               <div class="feat-desc">Pełna dokumentacja OpenAPI 3.0 z autoryzacją Bearer JWT pod /swagger-ui.html</div>
@@ -189,32 +184,32 @@
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">☕</div>
+            <div class="tech-card-icon" aria-hidden="true">☕</div>
             <div class="tech-card-name">Java 21</div>
             <div class="tech-card-desc">Najnowszy LTS — records, sealed classes, pattern matching. Cały backend w Javie.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🍃</div>
+            <div class="tech-card-icon" aria-hidden="true">🍃</div>
             <div class="tech-card-name">Spring Boot 3.3</div>
             <div class="tech-card-desc">Web, Data JPA (Hibernate), Security, Validation, Actuator — pełny ekosystem Spring.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🐘</div>
+            <div class="tech-card-icon" aria-hidden="true">🐘</div>
             <div class="tech-card-name">PostgreSQL</div>
             <div class="tech-card-desc">Relacyjna baza danych z Hibernate ORM. DDL strategy: validate — schemat nienaruszony.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🔑</div>
+            <div class="tech-card-icon" aria-hidden="true">🔑</div>
             <div class="tech-card-name">JWT Security</div>
             <div class="tech-card-desc">JwtAuthenticationFilter, JwtTokenProvider — Bearer token 24h, Spring Security config.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">📋</div>
+            <div class="tech-card-icon" aria-hidden="true">📋</div>
             <div class="tech-card-name">Swagger / OpenAPI</div>
             <div class="tech-card-desc">springdoc-openapi 2.5.0 — interaktywna dokumentacja API z możliwością testowania.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🏗️</div>
+            <div class="tech-card-icon" aria-hidden="true">🏗️</div>
             <div class="tech-card-name">Maven + Lombok</div>
             <div class="tech-card-desc">Maven build system, Lombok 1.18.32 eliminuje boilerplate — gettery, konstruktory, buildery.</div>
           </div>
@@ -238,7 +233,7 @@
             walidowany i mapowany na <code>SecurityContext</code>.
           </p>
           <div class="code-block">
-<pre>// SecurityConfiguration
+<pre tabindex="0">// SecurityConfiguration
 .requestMatchers("/api/auth/**")
   .permitAll()
 .anyRequest()
@@ -258,7 +253,7 @@
             lub konfigurację SecurityFilterChain.
           </p>
           <div class="code-block">
-<pre>// Tylko ORGANIZER i ADMIN
+<pre tabindex="0">// Tylko ORGANIZER i ADMIN
 @PreAuthorize(
   "hasAnyRole('ORGANIZER','ADMIN')")
 public EventDto createEvent(...) {}
@@ -278,7 +273,7 @@ public void deleteAccount(...) {}</pre>
             może być uczestnikiem eventu tylko raz.
           </p>
           <div class="code-block">
-<pre>@Entity
+<pre tabindex="0">@Entity
 @IdClass(ParticipantId.class)
 public class Participant {
   @Id private Long userId;
@@ -298,7 +293,7 @@ public class Participant {
             enum <code>MediaUsage</code>.
           </p>
           <div class="code-block">
-<pre>@Entity
+<pre tabindex="0">@Entity
 public class Media {
   @Lob
   private byte[] mediaFile;
@@ -319,7 +314,7 @@ public class Media {
             z geolokacją jako osobna encja 1:1.
           </p>
           <div class="code-block">
-<pre>Location
+<pre tabindex="0">Location
   └─ PostalCode
        └─ City
             └─ Region
@@ -339,7 +334,7 @@ public class Media {
             Jeden komunikat może trafić do wielu odbiorców.
           </p>
           <div class="code-block">
-<pre>// account_notification (join table)
+<pre tabindex="0">// account_notification (join table)
 account_id      (FK → Account)
 notification_id (FK → Notification)
 status          (UNREAD|READ|ARCHIVED)
@@ -361,7 +356,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">🔐</span> Auth
+            <span class="endpoint-group-icon" aria-hidden="true">🔐</span> Auth
             <span class="endpoint-base">/api/auth</span>
           </div>
           <div class="endpoint-item">
@@ -380,7 +375,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">👤</span> Użytkownicy
+            <span class="endpoint-group-icon" aria-hidden="true">👤</span> Użytkownicy
             <span class="endpoint-base">/api/account</span>
           </div>
           <div class="endpoint-item">
@@ -411,7 +406,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">🎪</span> Eventy
+            <span class="endpoint-group-icon" aria-hidden="true">🎪</span> Eventy
             <span class="endpoint-base">/api/events</span>
           </div>
           <div class="endpoint-item">
@@ -454,7 +449,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">👥</span> Uczestnicy
+            <span class="endpoint-group-icon" aria-hidden="true">👥</span> Uczestnicy
             <span class="endpoint-base">/api/events/{eventId}/participants</span>
           </div>
           <div class="endpoint-item">
@@ -485,7 +480,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">💌</span> Zaproszenia
+            <span class="endpoint-group-icon" aria-hidden="true">💌</span> Zaproszenia
             <span class="endpoint-base">/api/invitations</span>
           </div>
           <div class="endpoint-item">
@@ -522,7 +517,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">🔔</span> Powiadomienia
+            <span class="endpoint-group-icon" aria-hidden="true">🔔</span> Powiadomienia
             <span class="endpoint-base">/api/notifications</span>
           </div>
           <div class="endpoint-item">
@@ -541,7 +536,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">📸</span> Media
+            <span class="endpoint-group-icon" aria-hidden="true">📸</span> Media
             <span class="endpoint-base">/api/events/{id}/media</span>
           </div>
           <div class="endpoint-item">
@@ -572,7 +567,7 @@ GET /api/notifications?page=0&size=20</pre>
 
         <div class="endpoint-group">
           <div class="endpoint-group-title">
-            <span class="endpoint-group-icon">🛡️</span> Admin
+            <span class="endpoint-group-icon" aria-hidden="true">🛡️</span> Admin
             <span class="endpoint-base">/api/admin</span>
           </div>
           <div class="endpoint-item">
@@ -766,7 +761,7 @@ GET /api/notifications?page=0&size=20</pre>
             <div class="step-content">
               <div class="step-title">Klonuj repozytorium</div>
               <div class="code-block">
-<pre>git clone https://github.com/DominikFa/eventHubAPI.git
+<pre tabindex="0">git clone https://github.com/DominikFa/eventHubAPI.git
 cd eventHubAPI</pre>
               </div>
             </div>
@@ -776,7 +771,7 @@ cd eventHubAPI</pre>
             <div class="step-content">
               <div class="step-title">Skonfiguruj bazę danych</div>
               <div class="code-block">
-<pre># src/main/resources/application.properties
+<pre tabindex="0"># src/main/resources/application.properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/event_hub
 spring.datasource.username=YOUR_USER
 spring.datasource.password=YOUR_PASSWORD</pre>
@@ -788,7 +783,7 @@ spring.datasource.password=YOUR_PASSWORD</pre>
             <div class="step-content">
               <div class="step-title">Zbuduj i uruchom</div>
               <div class="code-block">
-<pre>./mvnw clean package
+<pre tabindex="0">./mvnw clean package
 ./mvnw spring-boot:run</pre>
               </div>
             </div>
@@ -798,7 +793,7 @@ spring.datasource.password=YOUR_PASSWORD</pre>
             <div class="step-content">
               <div class="step-title">Otwórz dokumentację Swagger</div>
               <div class="code-block">
-<pre># Swagger UI:
+<pre tabindex="0"># Swagger UI:
 http://localhost:8080/swagger-ui.html
 
 # OpenAPI JSON:
@@ -819,22 +814,27 @@ http://localhost:8080/v3/api-docs</pre>
           <div class="team-avatar">AT</div>
           <div class="team-name">Andrii Torianyk</div>
           <div class="team-role">Backend · Security · Database · API Design</div>
-          <a href="https://github.com/Andrii418" class="team-gh" target="_blank">github.com/Andrii418</a>
+          <a href="https://github.com/Andrii418" class="team-gh" target="_blank" rel="noopener noreferrer">github.com/Andrii418</a>
         </div>
         <div class="team-card">
           <div class="team-avatar eventhub-avatar">DF</div>
           <div class="team-name">Dominik Fa</div>
           <div class="team-role">Backend · Architecture · Spring Boot</div>
-          <a href="https://github.com/DominikFa" class="team-gh" target="_blank">github.com/DominikFa</a>
+          <a href="https://github.com/DominikFa" class="team-gh" target="_blank" rel="noopener noreferrer">github.com/DominikFa</a>
         </div>
       </div>
     </section>
 
     <!-- ── BACK TO PROJECTS ── -->
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../iot/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">IoT App</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -842,11 +842,11 @@ http://localhost:8080/v3/api-docs</pre>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>

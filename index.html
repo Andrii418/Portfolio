@@ -3,23 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f6f1" />
   <title>Andrii Torianyk — Portfolio</title>
   <meta name="description" content="Portfolio Andrii Torianyka, full-stack developera. Zobacz projekty webowe i aplikacje oraz skontaktuj się w sprawie współpracy." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
-<body>
+<body class="home-page">
 
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
-
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html">
-        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+        <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -30,11 +26,11 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Pobierz CV
       </a>
-      <button class="hamburger" id="ham" aria-label="Menu">
+      <button type="button" class="hamburger" id="ham" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-drawer" id="drawer">
+    <div class="mobile-drawer" id="drawer" inert>
       <a href="index.html" class="mob-link">Home</a>
       <a href="projects/index.html" class="mob-link">Projekty</a>
       <a href="contact/index.html" class="mob-link">Kontakt</a>
@@ -42,81 +38,93 @@
     </div>
   </nav>
 
-  <main>
-    <section class="hero" data-section="Hero">
-      <div class="hero-content">
-
-        <div class="hero-badge reveal">
-          <span class="badge-dot"></span>
-          Poszukuję pracy &nbsp;·&nbsp; Kraków, Rzeszów, Tarnów / Remote
-        </div>
-
-        <h1 class="hero-title reveal delay-1">
-          <span class="title-line">Nazywam się</span>
-          <span class="title-name">Andrii Torianyk</span>
-        </h1>
-
-        <p class="hero-role reveal delay-2">
-          <span class="role-cursor">_</span>
-          Full-stack Developer | Student III roku Informatyki
-        </p>
-
-        <p class="hero-desc reveal delay-3">
-          Buduję skalowalne aplikacje webowe i systemy, łącząc wydajną logikę backendową 
-  z dopracowanymi interfejsami użytkownika. Skupiam się na pisaniu czystego kodu, 
-  bezpieczeństwie danych oraz optymalizacji wydajności systemów.
-        </p>
-
-        <div class="hero-actions reveal delay-4">
-          <a href="projects/index.html" class="btn btn-primary">
-            Moje projekty
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="contact/index.html" class="btn btn-glass">Formularz kontaktowy</a>
-        </div>
-
+  <main id="main-content" tabindex="-1">
+    <section class="hero shell" aria-labelledby="hero-title" data-section="Hero">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Poszukuję pracy &nbsp;·&nbsp; Kraków, Rzeszów, Tarnów / Remote
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        <span class="title-line">Nazywam się</span>
+        <span class="title-name">Andrii Torianyk</span>
+      </h1>
+      <p class="hero-role">Full-stack Developer | Student III roku Informatyki</p>
+      <p class="hero-desc">
+        Buduję skalowalne aplikacje webowe i systemy, łącząc wydajną logikę backendową
+        z dopracowanymi interfejsami użytkownika. Skupiam się na pisaniu czystego kodu,
+        bezpieczeństwie danych oraz optymalizacji wydajności systemów.
+      </p>
+      <div class="hero-actions">
+        <a href="projects/index.html" class="btn btn-primary">
+          Moje projekty
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a href="contact/index.html" class="btn btn-glass">Formularz kontaktowy</a>
       </div>
 
-      <div class="hero-card reveal delay-2">
-        <div class="glass-card">
-          <div class="card-avatar">AT</div>
-          <div class="card-name">Andrii Torianyk</div>
-          <div class="card-role">Full-stack Developer</div>
-          <div class="card-divider"></div>
-          <div class="card-stats">
-            <div class="cs">
-              <div class="cs-n">3+</div>
-              <div class="cs-l">lata studiów</div>
-            </div>
-            <div class="cs-sep"></div>
-            <div class="cs">
-              <div class="cs-n">10+</div>
-              <div class="cs-l">repozytoriów</div>
-            </div>
-            <div class="cs-sep"></div>
-            <div class="cs">
-              <div class="cs-n">10+</div>
-              <div class="cs-l">technologii</div>
-            </div>
-          </div>
-          <div class="card-divider"></div>
-          <div class="card-stack">
-            <span class="stack-pill">Angular</span>
-            <span class="stack-pill">React</span>
-            <span class="stack-pill">Kotlin</span>
-            <span class="stack-pill">JavaScript</span>
-            <span class="stack-pill">Python</span>
-            <span class="stack-pill">Java / Spring</span>
-            <span class="stack-pill">SQL</span>
-            <span class="stack-pill">C / C++</span>
-            <span class="stack-pill">HTML5 / SCSS</span> 
-          </div>
+      <div class="card-stack">
+        <span class="stack-pill">Angular</span>
+        <span class="stack-pill">React</span>
+        <span class="stack-pill">Kotlin</span>
+        <span class="stack-pill">JavaScript</span>
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">Java / Spring</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">C / C++</span>
+        <span class="stack-pill">HTML5 / SCSS</span>
+      </div>
+    </section>
+
+    <section class="home-work shell" aria-labelledby="work-heading" data-section="Moje prace">
+      <div class="work-heading reveal">
+        <div>
+          <div class="section-eyebrow" data-i18n="projects.eyebrow">Moje prace</div>
+          <h2 class="home-display" id="work-heading" data-i18n="projects.title">Projekty</h2>
         </div>
+        <a class="work-index" href="projects/index.html"><span data-i18n="home.btn.projects">Moje projekty</span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
+      </div>
+      <div class="work-gallery">
+          <a class="work-item reveal" href="projects/osk-expert/index.html">
+            <div class="work-image">
+              <img src="assets/osk-expert/screen1.png" alt="OSK Expert — strona główna" loading="lazy" decoding="async">
+            </div>
+            <div class="work-meta">
+              <div>
+                <h3>OSK Expert</h3>
+                <p>HTML/CSS/JS · PHP · MySQL</p>
+              </div>
+              <span class="work-arrow" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19 19 5M7 5h12v12"/></svg></span>
+            </div>
+          </a>
+          <a class="work-item reveal" href="projects/vaultify/index.html">
+            <div class="work-image">
+              <img src="assets/vaultify/screen1.png" alt="Vaultify — ekran główny" loading="lazy" decoding="async">
+            </div>
+            <div class="work-meta">
+              <div>
+                <h3>Vaultify</h3>
+                <p>TypeScript · Next.js 16 · Web Crypto API</p>
+              </div>
+              <span class="work-arrow" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19 19 5M7 5h12v12"/></svg></span>
+            </div>
+          </a>
+          <a class="work-item reveal" href="projects/omniscale/index.html">
+            <div class="work-image">
+              <img src="assets/omniscale/screen1.png" alt="Omniscale — dashboard infrastruktury" loading="lazy" decoding="async">
+            </div>
+            <div class="work-meta">
+              <div>
+                <h3>Omniscale</h3>
+                <p>TypeScript · Next.js 16 · ReactFlow</p>
+              </div>
+              <span class="work-arrow" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19 19 5M7 5h12v12"/></svg></span>
+            </div>
+          </a>
       </div>
     </section>
 
     <section class="about-strip" data-section="O mnie">
-      <div class="about-inner">
+      <div class="about-inner shell">
         <div class="about-text reveal">
           <span class="section-eyebrow">Profil zawodowy</span>
           <h2 class="section-title">
@@ -124,12 +132,12 @@
             <span class="gradient-text">od architektury po UI</span>
           </h2>
           <p class="about-body">
-            Jako student Inżynierii Oprogramowania podchodzę do tworzenia aplikacji w sposób kompleksowy. 
-            Moje kompetencje obejmują budowę skalowalnych API, zarządzanie relacyjnymi bazami danych 
+            Jako student Inżynierii Oprogramowania podchodzę do tworzenia aplikacji w sposób kompleksowy.
+            Moje kompetencje obejmują budowę skalowalnych API, zarządzanie relacyjnymi bazami danych
             oraz implementację nowoczesnych, intuicyjnych frontendów.
           </p>
           <p class="about-body">
-            Równolegle rozwijam projekty mobilne i desktopowe, dbając o spójność technologiczną 
+            Równolegle rozwijam projekty mobilne i desktopowe, dbając o spójność technologiczną
             i wysoką jakość dostarczanego oprogramowania niezależnie od platformy docelowej.
           </p>
           <a href="projects/index.html" class="about-link">
@@ -140,7 +148,7 @@
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-content">
-              <div class="tl-year">2023 – obecnie</div>
+              <div class="tl-year" data-i18n="home.tl.1.year">2023 – obecnie</div>
               <div class="tl-title">Studia Inżynierskie: Informatyka</div>
               <div class="tl-sub">Akademia Tarnowska (spec. Inżynieria Oprogramowania)</div>
             </div>
@@ -170,13 +178,46 @@
             </div>
           </div>
         </div>
+        <div class="profile-summary reveal">
+          <div class="profile-signature">
+            <span class="profile-mark" aria-hidden="true">AT</span>
+            <span><strong>Andrii Torianyk</strong><span class="card-role">Full-stack Developer</span></span>
+          </div>
+          <div class="card-stats">
+            <div class="cs">
+              <div class="cs-n">3+</div>
+              <div class="cs-l">lata studiów</div>
+            </div>
+            <div class="cs">
+              <div class="cs-n">10+</div>
+              <div class="cs-l">repozytoriów</div>
+            </div>
+            <div class="cs">
+              <div class="cs-n">10+</div>
+              <div class="cs-l">technologii</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-contact shell" aria-labelledby="home-contact-title" data-section="Kontakt">
+      <div class="home-contact-body reveal">
+          <div>
+            <div class="section-eyebrow" data-i18n="contact.eyebrow">Kontakt</div>
+            <h2 class="home-display" id="home-contact-title" data-i18n="contact.title">Porozmawiajmy</h2>
+            <a class="home-email" href="mailto:andrewtorianyk@gmail.com">andrewtorianyk@gmail.com</a>
+          </div>
+          <a class="btn btn-primary" href="contact/index.html">
+            <span data-i18n="home.btn.contact">Formularz kontaktowy</span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19 19 5M7 5h12v12"/></svg>
+          </a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
         <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
@@ -188,4 +229,4 @@
   <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
-</html>>
+</html>

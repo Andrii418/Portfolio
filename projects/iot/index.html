@@ -7,25 +7,18 @@
   <meta name="description" content="IoT App — aplikacja do zarządzania urządzeniami smart home z kontrolą lamp, rolet i przypisanych komend." />
   <meta property="og:title" content="IoT App — Portfolio Project" />
   <meta property="og:description" content="Cross-platformowa aplikacja smart home do sterowania lampami, roletami i innymi urządzeniami w domu." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="../racing3d/project.css" />
-  <link rel="stylesheet" href="project-iot.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
-
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
+<body class="case-page">
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
     <div class="nav-inner">
       <a class="nav-logo" href="../../index.html">
-        <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+        <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
       </a>
       <ul class="nav-links">
         <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -36,11 +29,11 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Pobierz CV
       </a>
-      <button class="hamburger" id="ham" aria-label="Menu">
+      <button type="button" class="hamburger" id="ham" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-drawer" id="drawer">
+    <div class="mobile-drawer" id="drawer" inert>
       <a href="../../index.html" class="mob-link">Home</a>
       <a href="../index.html" class="mob-link">Projekty</a>
       <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -48,18 +41,18 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <!-- ── BACK BUTTON ── -->
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
     <!-- ── HERO ── -->
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Mobile Development · React Native · IoT</span>
@@ -69,7 +62,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">IoT<span>App</span></h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">IoT<span>App</span></h1>
+        </div>
 
         <p class="proj-tagline">
           Cross-platform aplikacja mobilna do sterowania urządzeniami smart home —
@@ -78,7 +73,7 @@
         </p>
 
         <div class="proj-actions">
-          <a href="https://github.com/Andrii418/IoT" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/Andrii418/IoT" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             GitHub
           </a>
@@ -126,30 +121,30 @@
 
       <div class="gallery-grid iot-gallery reveal delay-2">
 
-        <div class="gallery-item iot-tall" onclick="openLightbox(0)">
-          <img src="../../assets/iot/screen1.png" alt="Devices — pusta lista" loading="lazy" />
-          <div class="gallery-overlay"><span>Devices — start</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item iot-tall" onclick="openLightbox(1)">
-          <img src="../../assets/iot/screen2.png" alt="Formularz nowego urządzenia" loading="lazy" />
-          <div class="gallery-overlay"><span>New device</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item iot-tall" onclick="openLightbox(2)">
-          <img src="../../assets/iot/screen3.png" alt="Devices — lampa, rolety" loading="lazy" />
-          <div class="gallery-overlay"><span>Devices — widok</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item iot-tall gallery-portrait" data-gallery-index="0" data-caption-key="iot.img.1.cap" aria-labelledby="case-caption-1" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/iot/screen1.png" alt="Devices — pusta lista" width="359" height="796" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-1">Devices — start</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item iot-tall gallery-portrait" data-gallery-index="1" data-caption-key="iot.img.2.cap" aria-labelledby="case-caption-2" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/iot/screen2.png" alt="Formularz nowego urządzenia" width="357" height="754" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-2">New device</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item iot-tall gallery-portrait" data-gallery-index="2" data-caption-key="iot.img.3.cap" aria-labelledby="case-caption-3" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/iot/screen3.png" alt="Devices — lampa, rolety" width="356" height="798" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-3">Devices — widok</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
       </div>
     </section>
 
     <!-- ── LIGHTBOX ── -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd screenshotu" onclick="closeLightbox()">
-      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
-      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Podgląd screenshotu" data-gallery-label="proj.viewer">
+      <button type="button" class="lb-close" aria-label="Zamknij podgląd" data-gallery-label="proj.viewer.close" autofocus>×</button>
+      <button type="button" class="lb-prev" aria-label="Poprzedni screenshot" data-gallery-label="proj.viewer.prev">‹</button>
+      <button type="button" class="lb-next" aria-label="Następny screenshot" data-gallery-label="proj.viewer.next">›</button>
+      <img id="lbImg" alt="" />
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </dialog>
 
     <!-- ── OVERVIEW ── -->
     <section class="section-wrap content-section">
@@ -171,42 +166,42 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">📱</div>
+            <div class="feat-icon" aria-hidden="true">📱</div>
             <div>
               <div class="feat-title">Cross-platform</div>
               <div class="feat-desc">Jedna baza kodu działa natywnie na Androidzie i iOS — React Native 0.83.1</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">➕</div>
+            <div class="feat-icon" aria-hidden="true">➕</div>
             <div>
               <div class="feat-title">Dodawanie urządzeń</div>
               <div class="feat-desc">Formularz z nazwą (np. Lampa), miejscem (np. Kuchnia) i komendą sterującą</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🎨</div>
+            <div class="feat-icon" aria-hidden="true">🎨</div>
             <div>
               <div class="feat-title">Wybór koloru</div>
               <div class="feat-desc">8 pastelowych kolorów do oznaczenia urządzeń — szybka identyfikacja na liście</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🗂️</div>
+            <div class="feat-icon" aria-hidden="true">🗂️</div>
             <div>
               <div class="feat-title">Siatka urządzeń</div>
               <div class="feat-desc">Przejrzysty grid z kafelkami — każde urządzenie z nazwą, miejscem i kolorem tła</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🗑️</div>
+            <div class="feat-icon" aria-hidden="true">🗑️</div>
             <div>
               <div class="feat-title">Usuwanie urządzeń</div>
               <div class="feat-desc">Przycisk ✕ na każdym kafelku do szybkiego usunięcia urządzenia z listy</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🔌</div>
+            <div class="feat-icon" aria-hidden="true">🔌</div>
             <div>
               <div class="feat-title">Zakładka Connection</div>
               <div class="feat-desc">Dolny pasek nawigacyjny — Devices i Connection do konfiguracji połączenia IoT</div>
@@ -270,21 +265,21 @@
         </div>
         <div class="feature-list">
           <div class="feat-item">
-            <div class="feat-icon">🤖</div>
+            <div class="feat-icon" aria-hidden="true">🤖</div>
             <div>
               <div class="feat-title">Kotlin — natywny Android</div>
               <div class="feat-desc">Logika biznesowa Androida, integracje z systemem, natywne moduły</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">💎</div>
+            <div class="feat-icon" aria-hidden="true">💎</div>
             <div>
               <div class="feat-title">Ruby — CocoaPods iOS</div>
               <div class="feat-desc">Zarządzanie zależnościami iOS przez Gemfile i CocoaPods</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🍎</div>
+            <div class="feat-icon" aria-hidden="true">🍎</div>
             <div>
               <div class="feat-title">Swift — natywny iOS</div>
               <div class="feat-desc">Natywna funkcjonalność iOS, moduły wymagające dostępu do systemu</div>
@@ -302,32 +297,32 @@
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">⚛️</div>
+            <div class="tech-card-icon" aria-hidden="true">⚛️</div>
             <div class="tech-card-name">React Native 0.83</div>
             <div class="tech-card-desc">Najnowsza wersja — nowa architektura, lepsza wydajność, React 19.2.0.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🔷</div>
+            <div class="tech-card-icon" aria-hidden="true">🔷</div>
             <div class="tech-card-name">TypeScript 5.8</div>
             <div class="tech-card-desc">Statyczna typizacja, strict mode — bezpieczniejszy kod i lepsze podpowiedzi IDE.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-icon" aria-hidden="true">🤖</div>
             <div class="tech-card-name">Android (Kotlin)</div>
             <div class="tech-card-desc">Natywna warstwa Android z Kotlin — integracje z systemem i API urządzenia.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🍎</div>
+            <div class="tech-card-icon" aria-hidden="true">🍎</div>
             <div class="tech-card-name">iOS (Swift)</div>
             <div class="tech-card-desc">Natywna warstwa iOS z Swift i CocoaPods do zarządzania zależnościami.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-icon" aria-hidden="true">⚡</div>
             <div class="tech-card-name">Metro Bundler</div>
             <div class="tech-card-desc">JavaScript bundler zoptymalizowany dla React Native — Hot Reload i Fast Refresh.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🧪</div>
+            <div class="tech-card-icon" aria-hidden="true">🧪</div>
             <div class="tech-card-name">Jest 29</div>
             <div class="tech-card-desc">Unit testy i snapshot testy z react-test-renderer bez potrzeby DOM.</div>
           </div>
@@ -351,7 +346,7 @@
             Metro bundluje JavaScript i przekazuje go do natywnego hosta.
           </p>
           <div class="code-block">
-<pre>// index.js
+<pre tabindex="0">// index.js
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name} from './app.json';
@@ -371,7 +366,7 @@ AppRegistry.registerComponent(
             bez potrzeby ręcznego przełączania.
           </p>
           <div class="code-block">
-<pre>function App() {
+<pre tabindex="0">function App() {
   const isDarkMode =
     useColorScheme() === 'dark';
 
@@ -398,7 +393,7 @@ AppRegistry.registerComponent(
             dla notchów, Dynamic Island i pasków systemowych.
           </p>
           <div class="code-block">
-<pre>function AppContent() {
+<pre tabindex="0">function AppContent() {
   const safeAreaInsets =
     useSafeAreaInsets();
 
@@ -424,7 +419,7 @@ AppRegistry.registerComponent(
             przez React Native Community CLI.
           </p>
           <div class="code-block">
-<pre># Dev build
+<pre tabindex="0"># Dev build
 npx react-native run-android
 
 # Release build
@@ -444,7 +439,7 @@ cd android
             Metro dostarcza JavaScript bundle dla symulatora i urządzenia.
           </p>
           <div class="code-block">
-<pre># Instalacja zależności
+<pre tabindex="0"># Instalacja zależności
 cd ios && pod install
 
 # Dev build
@@ -464,7 +459,7 @@ npx react-native run-ios
             i ESLint do statycznej analizy kodu.
           </p>
           <div class="code-block">
-<pre>// tsconfig.json (skrót)
+<pre tabindex="0">// tsconfig.json (skrót)
 {
   "extends":
     "@react-native/typescript-config",
@@ -575,7 +570,7 @@ npx react-native run-ios
             <div class="step-content">
               <div class="step-title" data-i18n="iot.step.1.title">Klonuj i zainstaluj zależności</div>
               <div class="code-block">
-<pre>git clone https://github.com/Andrii418/IoT.git
+<pre tabindex="0">git clone https://github.com/Andrii418/IoT.git
 cd IoT
 npm install</pre>
               </div>
@@ -586,7 +581,7 @@ npm install</pre>
             <div class="step-content">
               <div class="step-title" data-i18n="iot.step.2.title">Zainstaluj zależności iOS (tylko macOS)</div>
               <div class="code-block">
-<pre>cd ios && pod install && cd ..</pre>
+<pre tabindex="0">cd ios && pod install && cd ..</pre>
               </div>
             </div>
           </div>
@@ -595,7 +590,7 @@ npm install</pre>
             <div class="step-content">
               <div class="step-title" data-i18n="iot.step.3.title">Uruchom Metro dev server</div>
               <div class="code-block">
-<pre>npm start
+<pre tabindex="0">npm start
 # lub
 yarn start</pre>
               </div>
@@ -606,7 +601,7 @@ yarn start</pre>
             <div class="step-content">
               <div class="step-title" data-i18n="iot.step.4.title">Uruchom na platformie</div>
               <div class="code-block">
-<pre># Android
+<pre tabindex="0"># Android
 npm run android
 
 # iOS
@@ -619,6 +614,7 @@ npm run ios</pre>
         <!-- SCRIPTS TABLE -->
         <div style="margin-top: 2rem;">
           <div class="section-label" style="margin-bottom: 1rem;" data-i18n="iot.scripts.label">Dostępne komendy</div>
+          <div class="case-table" tabindex="0">
           <table class="scripts-table">
             <thead>
               <tr>
@@ -649,16 +645,22 @@ npm run ios</pre>
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- ── BACK TO PROJECTS ── -->
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../quiz/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">Quiz App</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -666,51 +668,17 @@ npm run ios</pre>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="../../i18n.js"></script>
   <script src="../../main.js"></script>
-  <script>
-    const images = [
-      { src: '../../assets/iot/screen1.png' },
-      { src: '../../assets/iot/screen2.png' },
-      { src: '../../assets/iot/screen3.png' },
-    ];
-    let lbIdx = 0;
-    function openLightbox(i) {
-      lbIdx = i;
-      document.getElementById('lbImg').src = images[i].src;
-      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : document.documentElement.lang || 'pl';
-      const capKey = `iot.img.${i+1}.cap`;
-      const cap = (window.I18N && window.I18N.t) ? window.I18N.t(capKey, lang) : '';
-      document.getElementById('lbCaption').textContent = cap || '';
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function lbNav(dir) {
-      lbIdx = (lbIdx + dir + images.length) % images.length;
-      document.getElementById('lbImg').src = images[lbIdx].src;
-      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : document.documentElement.lang || 'pl';
-      const capKey = `iot.img.${lbIdx+1}.cap`;
-      const cap = (window.I18N && window.I18N.t) ? window.I18N.t(capKey, lang) : '';
-      document.getElementById('lbCaption').textContent = cap || '';
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') lbNav(1);
-      if (e.key === 'ArrowLeft') lbNav(-1);
-    });
-  </script>
+  <script src="../case-gallery.js"></script>
 </body>
 </html>

@@ -7,24 +7,17 @@
   <meta name="description" content="System Rozpoznawania Emocji z Wyrazu Twarzy — model CNN do klasyfikacji 7 emocji z wykorzystaniem Hyperband i Grad-CAM." />
   <meta property="og:title" content="Emotion Recognition System — Portfolio Project" />
   <meta property="og:description" content="Deep learning na zbiorze FER-2013 z modelem CNN, tuningiem hiperparametrów i wizualizacją Grad-CAM." />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#f8f6f1" />
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="../racing3d/project.css" />
-  <link rel="stylesheet" href="project-ml2.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
+<body class="case-page">
 
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
-
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="../../index.html">
-      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
     </a>
     <ul class="nav-links">
       <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -35,11 +28,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Pobierz CV
     </a>
-    <button class="hamburger" id="ham" aria-label="Menu">
+    <button type="button" class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer" id="drawer" inert>
     <a href="../../index.html" class="mob-link">Home</a>
     <a href="../index.html" class="mob-link">Projekty</a>
     <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -47,15 +40,15 @@
   </div>
 </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Deep Learning · Praca akademicka</span>
@@ -66,7 +59,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">Rozpoznawanie <span>Emocji</span><br/>z Wyrazu Twarzy</h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">Rozpoznawanie <span>Emocji</span><br/>z Wyrazu Twarzy</h1>
+        </div>
 
         <p class="proj-tagline">
           End-to-end pipeline deep learningu na zbiorze FER-2013 — od eksploracji
@@ -76,7 +71,7 @@
         </p>
 
         <div class="proj-actions">
-          <a href="https://github.com/jpDG1/ML2" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/jpDG1/ML2" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.89-.02 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0z"/></svg>
             Repozytorium GitHub
           </a>
@@ -86,6 +81,7 @@
           </a>
         </div>
 
+        <!-- QUICK STATS -->
         <div class="proj-stats">
           <div class="ps">
             <div class="ps-n">35 887</div>
@@ -137,51 +133,51 @@
 
       <div class="gallery-grid ml2-gallery reveal delay-2">
 
-        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
-          <img src="../../assets/ml2/screen1.png" alt="Rozkład klas FER-2013" loading="lazy" />
-          <div class="gallery-overlay"><span>Rozkład klas emocji</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(1)">
-          <img src="../../assets/ml2/screen2.png" alt="Przykładowe obrazy per klasa" loading="lazy" />
-          <div class="gallery-overlay"><span>Przykładowe obrazy</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(2)">
-          <img src="../../assets/ml2/screen3.png" alt="Warianty augmentacji danych" loading="lazy" />
-          <div class="gallery-overlay"><span>Augmentacja danych</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item gallery-main" data-gallery-index="0" data-caption="Rozkład klas emocji" aria-labelledby="case-caption-1" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen1.png" alt="Rozkład klas FER-2013" width="1390" height="495" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-1">Rozkład klas emocji</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="1" data-caption="Przykładowe obrazy per klasa" aria-labelledby="case-caption-2" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen2.png" alt="Przykładowe obrazy per klasa" width="1589" height="553" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-2">Przykładowe obrazy</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="2" data-caption="Augmentacja danych" aria-labelledby="case-caption-3" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen3.png" alt="Warianty augmentacji danych" width="1167" height="495" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-3">Augmentacja danych</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
-        <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
-          <img src="../../assets/ml2/screen4.png" alt="Krzywe uczenia — model bazowy vs Hyperband" loading="lazy" />
-          <div class="gallery-overlay"><span>Krzywe uczenia: bazowy vs Hyperband</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(4)">
-          <img src="../../assets/ml2/screen5.png" alt="Aplikacja Gradio — predykcja emocji" loading="lazy" />
-          <div class="gallery-overlay"><span>Aplikacja Gradio</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item gallery-wide" data-gallery-index="3" data-caption="Krzywe uczenia: bazowy vs Hyperband" aria-labelledby="case-caption-4" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen4.png" alt="Krzywe uczenia — model bazowy vs Hyperband" width="1388" height="495" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-4">Krzywe uczenia: bazowy vs Hyperband</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="4" data-caption="Aplikacja Gradio" aria-labelledby="case-caption-5" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen5.png" alt="Aplikacja Gradio — predykcja emocji" width="1892" height="897" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-5">Aplikacja Gradio</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
-        <div class="gallery-item" onclick="openLightbox(5)">
-          <img src="../../assets/ml2/screen6.png" alt="Wykres prawdopodobieństwa Softmax" loading="lazy" />
-          <div class="gallery-overlay"><span>Wykres Softmax (7 klas)</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(6)">
-          <img src="../../assets/ml2/screen7.png" alt="Mapa Grad-CAM Inferno na twarzy" loading="lazy" />
-          <div class="gallery-overlay"><span>Grad-CAM — mapa Inferno</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(7)">
-          <img src="../../assets/ml2/screen8.png" alt="Detekcja twarzy Haar Cascade z bounding boxem" loading="lazy" />
-          <div class="gallery-overlay"><span>Detekcja twarzy (ROI)</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
-        </div>
+        <button type="button" class="gallery-item" data-gallery-index="5" data-caption="Wykres Softmax (7 klas)" aria-labelledby="case-caption-6" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen6.png" alt="Wykres prawdopodobieństwa Softmax" width="1896" height="896" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-6">Wykres Softmax (7 klas)</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="6" data-caption="Grad-CAM — mapa Inferno" aria-labelledby="case-caption-7" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen7.png" alt="Mapa Grad-CAM Inferno na twarzy" width="1887" height="902" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-7">Grad-CAM — mapa Inferno</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="7" data-caption="Detekcja twarzy (ROI)" aria-labelledby="case-caption-8" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/ml2/screen8.png" alt="Detekcja twarzy Haar Cascade z bounding boxem" width="1890" height="902" decoding="async" loading="lazy" /></span>
+          <span class="gallery-overlay"><span id="case-caption-8">Detekcja twarzy (ROI)</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+        </button>
 
       </div>
     </section>
 
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd screenshotu" onclick="closeLightbox()">
-      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
-      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Podgląd screenshotu" data-gallery-label="proj.viewer">
+      <button type="button" class="lb-close" aria-label="Zamknij podgląd" data-gallery-label="proj.viewer.close" autofocus>×</button>
+      <button type="button" class="lb-prev" aria-label="Poprzedni screenshot" data-gallery-label="proj.viewer.prev">‹</button>
+      <button type="button" class="lb-next" aria-label="Następny screenshot" data-gallery-label="proj.viewer.next">›</button>
+      <img id="lbImg" alt="" />
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </dialog>
 
     <section class="section-wrap content-section">
       <div class="two-col">
@@ -203,42 +199,42 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">📊</div>
+            <div class="feat-icon" aria-hidden="true">📊</div>
             <div>
               <div class="feat-title">EDA i niezbalansowanie klas</div>
               <div class="feat-desc">Analiza struktury FER-2013 — klasa happy zdecydowanie najliczniejsza, disgust wielokrotnie rzadszy</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🔄</div>
+            <div class="feat-icon" aria-hidden="true">🔄</div>
             <div>
               <div class="feat-title">Augmentacja w locie</div>
               <div class="feat-desc">Rotacja, przesunięcie, odbicie lustrzane, zoom i jasność — ImageDataGenerator redukujący overfitting</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🧠</div>
+            <div class="feat-icon" aria-hidden="true">🧠</div>
             <div>
               <div class="feat-title">CNN — 3 bloki konwolucyjne</div>
               <div class="feat-desc">Conv2D + BatchNorm + MaxPool + Dropout, klasyfikator Dense 256 jednostek, wyjście Softmax 7 klas</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🎛️</div>
+            <div class="feat-icon" aria-hidden="true">🎛️</div>
             <div>
               <div class="feat-title">Keras Tuner Hyperband</div>
               <div class="feat-desc">Automatyczne przeszukiwanie hiperparametrów metodą successive halving — 5–10× mniej epok niż Grid Search</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🔥</div>
+            <div class="feat-icon" aria-hidden="true">🔥</div>
             <div>
               <div class="feat-title">Grad-CAM</div>
               <div class="feat-desc">Mapy cieplne Inferno wskazujące, które obszary twarzy decydują o predykcji emocji</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🌐</div>
+            <div class="feat-icon" aria-hidden="true">🌐</div>
             <div>
               <div class="feat-title">Wdrożenie w Gradio</div>
               <div class="feat-desc">Interaktywna aplikacja webowa z obsługą kamery, wykresem Softmax i adnotacją bounding boxa</div>
@@ -272,7 +268,7 @@
       </div>
 
       <div class="code-block ml2-code-wide reveal delay-2">
-<pre>train_datagen = ImageDataGenerator(
+<pre tabindex="0">train_datagen = ImageDataGenerator(
     rescale            = 1./255,   # Normalizacja pikseli do [0,1]
     rotation_range     = 15,       # Losowa rotacja +-15 stopni
     width_shift_range  = 0.1,      # Przesuniecie poziome do 10%
@@ -290,27 +286,27 @@
 
       <div class="pipeline-flow reveal delay-2">
         <div class="pf-step">
-          <div class="pf-icon">🖼️</div>
+          <div class="pf-icon" aria-hidden="true">🖼️</div>
           <div class="pf-label">Obraz wejściowy<br/><span>RGB / PIL</span></div>
         </div>
         <div class="pf-arrow">→</div>
         <div class="pf-step">
-          <div class="pf-icon">🔲</div>
+          <div class="pf-icon" aria-hidden="true">🔲</div>
           <div class="pf-label">Detekcja twarzy<br/><span>Haar Cascade</span></div>
         </div>
         <div class="pf-arrow">→</div>
         <div class="pf-step">
-          <div class="pf-icon">⚙️</div>
+          <div class="pf-icon" aria-hidden="true">⚙️</div>
           <div class="pf-label">Preprocessing<br/><span>resize 48×48, /255.0</span></div>
         </div>
         <div class="pf-arrow">→</div>
         <div class="pf-step">
-          <div class="pf-icon">🧠</div>
+          <div class="pf-icon" aria-hidden="true">🧠</div>
           <div class="pf-label">CNN predict()<br/><span>Softmax, 7 klas</span></div>
         </div>
         <div class="pf-arrow">→</div>
         <div class="pf-step">
-          <div class="pf-icon">🔥</div>
+          <div class="pf-icon" aria-hidden="true">🔥</div>
           <div class="pf-label">Grad-CAM<br/><span>+ wykres + adnotacja</span></div>
         </div>
       </div>
@@ -325,7 +321,7 @@
             i Dropout(0.25). Wyjście: 12×12×32.
           </p>
           <div class="code-block">
-<pre>Conv2D(32) x2 + BN
+<pre tabindex="0">Conv2D(32) x2 + BN
 MaxPool2D + Dropout(0.25)
 -> 12x12x32</pre>
           </div>
@@ -339,7 +335,7 @@ MaxPool2D + Dropout(0.25)
             Wyjście: 6×6×64.
           </p>
           <div class="code-block">
-<pre>Conv2D(64) x2 + BN
+<pre tabindex="0">Conv2D(64) x2 + BN
 MaxPool2D + Dropout(0.25)
 -> 6x6x64</pre>
           </div>
@@ -353,7 +349,7 @@ MaxPool2D + Dropout(0.25)
             Wyjście: 3×3×128, dalej Flatten → 1152.
           </p>
           <div class="code-block">
-<pre>Conv2D(128) x2 + BN
+<pre tabindex="0">Conv2D(128) x2 + BN
 MaxPool2D + Dropout(0.40)
 -> 3x3x128 -> Flatten 1152</pre>
           </div>
@@ -367,7 +363,7 @@ MaxPool2D + Dropout(0.40)
             i Dropout(0.50), zakończona warstwą Softmax na 7 klas.
           </p>
           <div class="code-block">
-<pre>Dense(256, relu) + BN
+<pre tabindex="0">Dense(256, relu) + BN
 Dropout(0.50)
 -> Dense(7, softmax)</pre>
           </div>
@@ -381,7 +377,7 @@ Dropout(0.50)
             neuronów Dense oraz learning rate Adama strojone automatycznie.
           </p>
           <div class="code-block">
-<pre>kt.Hyperband(
+<pre tabindex="0">kt.Hyperband(
   build_model,
   objective='val_accuracy',
   max_epochs=15, factor=3)</pre>
@@ -396,7 +392,7 @@ Dropout(0.50)
             odporne na zmiany architektury bez ręcznej aktualizacji.
           </p>
           <div class="code-block">
-<pre>for layer in reversed(model.layers):
+<pre tabindex="0">for layer in reversed(model.layers):
   if isinstance(layer, Conv2D):
     return layer.name</pre>
           </div>
@@ -409,7 +405,7 @@ Dropout(0.50)
       <div class="section-label reveal">Wyniki</div>
       <h2 class="section-h2 reveal delay-1">Model bazowy vs Hyperband</h2>
 
-      <div class="results-table-wrap reveal delay-2">
+      <div class="case-table reveal delay-2" tabindex="0">
         <table class="results-table">
           <thead>
             <tr>
@@ -454,32 +450,32 @@ Dropout(0.50)
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🧮</div>
+            <div class="tech-card-icon" aria-hidden="true">🧮</div>
             <div class="tech-card-name">TensorFlow / Keras</div>
             <div class="tech-card-desc">Budowa i trening konwolucyjnej sieci neuronowej, warstwy Conv2D, BatchNorm, Dropout.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🎛️</div>
+            <div class="tech-card-icon" aria-hidden="true">🎛️</div>
             <div class="tech-card-name">Keras Tuner</div>
             <div class="tech-card-desc">Algorytm Hyperband do automatycznego strojenia hiperparametrów modelu.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🌐</div>
+            <div class="tech-card-icon" aria-hidden="true">🌐</div>
             <div class="tech-card-name">Gradio</div>
             <div class="tech-card-desc">Interaktywna aplikacja webowa — Premium Dark UI, obsługa kamery i wykresów.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">👁️</div>
+            <div class="tech-card-icon" aria-hidden="true">👁️</div>
             <div class="tech-card-name">OpenCV</div>
             <div class="tech-card-desc">Detekcja twarzy Haar Cascade, nakładanie map cieplnych Grad-CAM (alpha blending).</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">📈</div>
+            <div class="tech-card-icon" aria-hidden="true">📈</div>
             <div class="tech-card-name">Matplotlib / Seaborn</div>
             <div class="tech-card-desc">Wizualizacje EDA, krzywe uczenia, wykresy rozkładu Softmax.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🐍</div>
+            <div class="tech-card-icon" aria-hidden="true">🐍</div>
             <div class="tech-card-name">Python / NumPy / Pandas</div>
             <div class="tech-card-desc">Przetwarzanie danych, pipeline augmentacji i analiza wyników.</div>
           </div>
@@ -492,32 +488,32 @@ Dropout(0.50)
       <h2 class="section-h2 reveal delay-1">Struktura projektu</h2>
       <div class="deliverables-grid reveal delay-2">
         <div class="deliv-card">
-          <div class="deliv-icon">📊</div>
+          <div class="deliv-icon" aria-hidden="true">📊</div>
           <div class="deliv-title">zajecia2_data_analysis.py</div>
           <div class="deliv-desc">EDA: analiza struktury FER-2013, wykresy, augmentacja</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">🔄</div>
+          <div class="deliv-icon" aria-hidden="true">🔄</div>
           <div class="deliv-title">zajecia2_deep_learning.py</div>
           <div class="deliv-desc">Data pipeline, konfiguracja generatora danych</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">🧠</div>
+          <div class="deliv-icon" aria-hidden="true">🧠</div>
           <div class="deliv-title">zajecia2_cnn.py</div>
           <div class="deliv-desc">Budowa CNN, trening bazowy, Keras Tuner Hyperband</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">📉</div>
+          <div class="deliv-icon" aria-hidden="true">📉</div>
           <div class="deliv-title">zajecia4_klasyfikacja.py</div>
           <div class="deliv-desc">Macierz pomyłek, ROC, permutation importance</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">🌐</div>
+          <div class="deliv-icon" aria-hidden="true">🌐</div>
           <div class="deliv-title">app.py</div>
           <div class="deliv-desc">Aplikacja Gradio — detekcja emocji + wizualizacja Grad-CAM</div>
         </div>
         <div class="deliv-card">
-          <div class="deliv-icon">💾</div>
+          <div class="deliv-icon" aria-hidden="true">💾</div>
           <div class="deliv-title">best_model.keras</div>
           <div class="deliv-desc">Najlepszy wytrenowany model (plik binarny Keras)</div>
         </div>
@@ -538,15 +534,20 @@ Dropout(0.50)
           <div class="team-avatar ml2-avatar">BT</div>
           <div class="team-name">Bohdan Tsybulenko</div>
           <div class="team-role">EDA, pipeline danych, augmentacja, ewaluacja modelu</div>
-          <a href="https://github.com/jpDG1" class="team-gh" target="_blank">github.com/jpDG1</a>
+          <a href="https://github.com/jpDG1" class="team-gh" target="_blank" rel="noopener noreferrer">github.com/jpDG1</a>
         </div>
       </div>
     </section>
 
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../aiplanner/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">Smart Planner</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -554,50 +555,17 @@ Dropout(0.50)
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
-        <a href="https://github.com/Andrii418" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="../../i18n.js"></script>
   <script src="../../main.js"></script>
-  <script>
-    const images = [
-      { src: '../../assets/ml2/screen1.png', cap: 'Rozkład klas emocji' },
-      { src: '../../assets/ml2/screen2.png', cap: 'Przykładowe obrazy per klasa' },
-      { src: '../../assets/ml2/screen3.png', cap: 'Augmentacja danych' },
-      { src: '../../assets/ml2/screen4.png', cap: 'Krzywe uczenia: bazowy vs Hyperband' },
-      { src: '../../assets/ml2/screen5.png', cap: 'Aplikacja Gradio' },
-      { src: '../../assets/ml2/screen6.png', cap: 'Wykres Softmax (7 klas)' },
-      { src: '../../assets/ml2/screen7.png', cap: 'Grad-CAM — mapa Inferno' },
-      { src: '../../assets/ml2/screen8.png', cap: 'Detekcja twarzy (ROI)' },
-    ];
-    let lbIdx = 0;
-    function openLightbox(i) {
-      lbIdx = i;
-      document.getElementById('lbImg').src = images[i].src;
-      document.getElementById('lbCaption').textContent = images[i].cap;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function lbNav(dir) {
-      lbIdx = (lbIdx + dir + images.length) % images.length;
-      document.getElementById('lbImg').src = images[lbIdx].src;
-      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') lbNav(1);
-      if (e.key === 'ArrowLeft') lbNav(-1);
-    });
-  </script>
+  <script src="../case-gallery.js"></script>
 </body>
 </html>

@@ -14,7 +14,10 @@
   --adm-mono: 'Consolas', 'SF Mono', monospace;
 }
 
-body.admin-body {
+body {
+  --chrome-1: #7dffd4;
+  --chrome-2: #a8edff;
+  color-scheme: dark;
   min-height: 100vh;
   margin: 0;
   padding: 0;

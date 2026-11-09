@@ -7,24 +7,18 @@
   <meta name="description" content="GLOW Beauty Salon — projekt portfolio z nowoczesnym landing page salonu urody, wielojęzycznym interfejsem i estetyką glassmorphism." />
   <meta property="og:title" content="GLOW Beauty Salon — Portfolio Project" />
   <meta property="og:description" content="Landing page salonu urody z sekcjami usług, galerii, FAQ i formularzem rezerwacji." />
-  <meta name="theme-color" content="#140d1e" />
+  <meta name="theme-color" content="#f8f6f1" />
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="project.css" />
+  <link rel="stylesheet" href="../case.css" />
 </head>
-<body>
-
-  <div class="bg-scene">
-    <canvas id="bgCanvas"></canvas>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <div class="grain"></div>
-  </div>
+<body class="case-page">
 
   <!-- NAVBAR -->
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Przejdź do treści</a>
   <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="../../index.html">
-      <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+      <span class="nav-mark" aria-hidden="true">AT</span><span>Andrii Torianyk</span>
     </a>
     <ul class="nav-links">
       <li><a href="../../index.html" class="nav-link">Home</a></li>
@@ -35,11 +29,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Pobierz CV
     </a>
-    <button class="hamburger" id="ham" aria-label="Menu">
+    <button type="button" class="hamburger" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-drawer" id="drawer">
+  <div class="mobile-drawer" id="drawer" inert>
     <a href="../../index.html" class="mob-link">Home</a>
     <a href="../index.html" class="mob-link">Projekty</a>
     <a href="../../contact/index.html" class="mob-link">Kontakt</a>
@@ -47,18 +41,18 @@
   </div>
 </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <!-- ── BACK BUTTON ── -->
     <div class="back-wrap">
-      <a href="https://andrii418.github.io/Portfolio/projects/index.html" class="back-btn">
+      <a href="../index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wróć do projektów
       </a>
     </div>
 
     <!-- ── HERO ── -->
-    <section class="proj-hero reveal">
+    <section class="proj-hero" aria-labelledby="case-title">
       <div class="proj-hero-inner">
         <div class="proj-meta">
           <span class="proj-category">Web Development · Frontend</span>
@@ -68,7 +62,9 @@
           </div>
         </div>
 
-        <h1 class="proj-title">GLOW<span>Beauty</span></h1>
+        <div class="case-title-frame">
+          <h1 class="proj-title" id="case-title">GLOW<span>Beauty</span></h1>
+        </div>
 
         <p class="proj-tagline">
           Zmysłowy landing page fikcyjnego salonu urody i zabiegów kosmetycznych —
@@ -120,73 +116,73 @@
       </div>
 
       <div class="gallery-grid reveal delay-2">
-        <div class="gallery-item gallery-main" onclick="openLightbox(0)">
-          <img src="../../assets/glow/screen1.png" alt="Zrzut ekranu 1" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(1)">
-          <img src="../../assets/glow/screen2.png" alt="Zrzut ekranu 2" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(2)">
-          <img src="../../assets/glow/screen3.png" alt="Zrzut ekranu 3" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(3)">
-          <img src="../../assets/glow/screen4.png" alt="Zrzut ekranu 4" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(4)">
-          <img src="../../assets/glow/screen5.png" alt="Zrzut ekranu 5" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(5)">
-          <img src="../../assets/glow/screen6.png" alt="Zrzut ekranu 6" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox(6)">
-          <img src="../../assets/glow/screen7.png" alt="Zrzut ekranu 7" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
-        <div class="gallery-item gallery-wide" onclick="openLightbox(7)">
-          <img src="../../assets/glow/screen8.png" alt="Zrzut ekranu 8" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <span></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-          </div>
-        </div>
+        <button type="button" class="gallery-item gallery-main" data-gallery-index="0" data-caption-key="glow.overlay.1" aria-labelledby="case-caption-1" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen1.png" alt="Zrzut ekranu 1" width="1892" height="862" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-1"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="1" data-caption-key="glow.overlay.2" aria-labelledby="case-caption-2" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen2.png" alt="Zrzut ekranu 2" width="1891" height="857" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-2"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="2" data-caption-key="glow.overlay.3" aria-labelledby="case-caption-3" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen3.png" alt="Zrzut ekranu 3" width="1887" height="850" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-3"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="3" data-caption-key="glow.overlay.4" aria-labelledby="case-caption-4" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen4.png" alt="Zrzut ekranu 4" width="1896" height="856" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-4"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="4" data-caption-key="glow.overlay.5" aria-labelledby="case-caption-5" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen5.png" alt="Zrzut ekranu 5" width="1896" height="866" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-5"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="5" data-caption-key="glow.overlay.6" aria-labelledby="case-caption-6" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen6.png" alt="Zrzut ekranu 6" width="1890" height="857" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-6"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item" data-gallery-index="6" data-caption-key="glow.overlay.7" aria-labelledby="case-caption-7" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen7.png" alt="Zrzut ekranu 7" width="1897" height="855" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-7"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
+        <button type="button" class="gallery-item gallery-wide" data-gallery-index="7" data-caption-key="glow.overlay.8" aria-labelledby="case-caption-8" aria-haspopup="dialog">
+          <span class="gallery-media"><img src="../../assets/glow/screen8.png" alt="Zrzut ekranu 8" width="1890" height="851" decoding="async" loading="lazy" decoding="async" /></span>
+          <span class="gallery-overlay">
+            <span id="case-caption-8"></span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </span>
+        </button>
       </div>
     </section>
 
     <!-- ── LIGHTBOX ── -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd screenshotu" onclick="closeLightbox()">
-      <button class="lb-close" aria-label="Zamknij podgląd" onclick="closeLightbox()">✕</button>
-      <button class="lb-prev" aria-label="Poprzedni screenshot" onclick="event.stopPropagation();lbNav(-1)">‹</button>
-      <button class="lb-next" aria-label="Następny screenshot" onclick="event.stopPropagation();lbNav(1)">›</button>
-      <img id="lbImg" src="" alt="" onclick="event.stopPropagation()" />
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Podgląd screenshotu" data-gallery-label="proj.viewer">
+      <button type="button" class="lb-close" aria-label="Zamknij podgląd" data-gallery-label="proj.viewer.close" autofocus>×</button>
+      <button type="button" class="lb-prev" aria-label="Poprzedni screenshot" data-gallery-label="proj.viewer.prev">‹</button>
+      <button type="button" class="lb-next" aria-label="Następny screenshot" data-gallery-label="proj.viewer.next">›</button>
+      <img id="lbImg" alt="" />
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </dialog>
 
     <!-- ── OVERVIEW ── -->
     <section class="section-wrap content-section">
@@ -209,35 +205,35 @@
         </div>
         <div class="feature-list reveal delay-1">
           <div class="feat-item">
-            <div class="feat-icon">🌍</div>
+            <div class="feat-icon" aria-hidden="true">🌍</div>
             <div>
               <div class="feat-title">Przełączanie języków PL / EN / UA</div>
               <div class="feat-desc">Pełne tłumaczenie interfejsu obsługiwane w czystym JavaScript</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">🖼️</div>
+            <div class="feat-icon" aria-hidden="true">🖼️</div>
             <div>
               <div class="feat-title">Galeria z filtrem i efektem „przed/po"</div>
               <div class="feat-desc">Filtrowanie zdjęć zabiegów oraz podgląd efektu przed wizytą</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">❓</div>
+            <div class="feat-icon" aria-hidden="true">❓</div>
             <div>
               <div class="feat-title">Rozwijane FAQ (accordion)</div>
               <div class="feat-desc">Najczęstsze pytania z animowanym rozwijaniem odpowiedzi</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">📅</div>
+            <div class="feat-icon" aria-hidden="true">📅</div>
             <div>
               <div class="feat-title">Formularz rezerwacji z walidacją</div>
               <div class="feat-desc">Sprawdzanie imienia, telefonu, zabiegu, daty i godziny po stronie klienta</div>
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon">✨</div>
+            <div class="feat-icon" aria-hidden="true">✨</div>
             <div>
               <div class="feat-title">Glassmorphism i sticky header</div>
               <div class="feat-desc">Nowoczesna estetyka szkła i przyklejony nagłówek podczas scrollowania</div>
@@ -255,47 +251,47 @@
 
         <div class="tech-grid">
           <div class="tech-card reveal">
-            <div class="tech-card-icon">📄</div>
+            <div class="tech-card-icon" aria-hidden="true">📄</div>
             <div class="tech-card-name">HTML5</div>
             <div class="tech-card-desc">Semantyczna struktura sekcji, nawigacji, formularza i stopki w index.html.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🎨</div>
+            <div class="tech-card-icon" aria-hidden="true">🎨</div>
             <div class="tech-card-name">CSS3</div>
             <div class="tech-card-desc">Zmienne CSS, responsywny layout, hover effects i glassmorphism w style.css.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-icon" aria-hidden="true">⚡</div>
             <div class="tech-card-name">JavaScript (Vanilla)</div>
             <div class="tech-card-desc">Cała logika interaktywności i walidacji w script.js, bez frameworków.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🌍</div>
+            <div class="tech-card-icon" aria-hidden="true">🌍</div>
             <div class="tech-card-name">Wielojęzyczność (i18n)</div>
             <div class="tech-card-desc">Przełączanie i tłumaczenie treści między PL, EN i UA po stronie klienta.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🔤</div>
+            <div class="tech-card-icon" aria-hidden="true">🔤</div>
             <div class="tech-card-name">Google Fonts</div>
             <div class="tech-card-desc">Starannie dobrana typografia budująca premium charakter marki.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🖼️</div>
+            <div class="tech-card-icon" aria-hidden="true">🖼️</div>
             <div class="tech-card-name">Unsplash</div>
             <div class="tech-card-desc">Zdjęcia salonu i efektów zabiegów pochodzące z zewnętrznej biblioteki.</div>
           </div>
           <div class="tech-card reveal">
-            <div class="tech-card-icon">🗺️</div>
+            <div class="tech-card-icon" aria-hidden="true">🗺️</div>
             <div class="tech-card-name">Google Maps Embed</div>
             <div class="tech-card-desc">Osadzona mapa lokalizacji salonu w sekcji stopki.</div>
           </div>
           <div class="tech-card reveal delay-1">
-            <div class="tech-card-icon">🧊</div>
+            <div class="tech-card-icon" aria-hidden="true">🧊</div>
             <div class="tech-card-name">Glassmorphism &amp; Sticky Header</div>
             <div class="tech-card-desc">Efekty szkła i przyklejony nagłówek jako świadoma decyzja projektowa.</div>
           </div>
           <div class="tech-card reveal delay-2">
-            <div class="tech-card-icon">🚫</div>
+            <div class="tech-card-icon" aria-hidden="true">🚫</div>
             <div class="tech-card-name">Brak backendu</div>
             <div class="tech-card-desc">W pełni statyczna strona, gotowa do hostowania bez serwera aplikacyjnego.</div>
           </div>
@@ -318,7 +314,7 @@
             praktyką separacji odpowiedzialności.
           </p>
           <div class="code-block">
-<pre>glow-beauty-salon/
+<pre tabindex="0">glow-beauty-salon/
 ├── index.html
 ├── style.css
 └── script.js</pre>
@@ -333,7 +329,7 @@
             wszystkie elementy interfejsu na PL, EN lub UA.
           </p>
           <div class="code-block">
-<pre>function setLang(lang) {
+<pre tabindex="0">function setLang(lang) {
   translatePage(lang);
 }</pre>
           </div>
@@ -347,7 +343,7 @@
             mobilnych otwiera się menu hamburgerowe.
           </p>
           <div class="code-block">
-<pre>ham.addEventListener("click", () =&gt;
+<pre tabindex="0">ham.addEventListener("click", () =&gt;
   drawer.classList.toggle("open"));</pre>
           </div>
         </div>
@@ -360,7 +356,7 @@
             obsługiwane w czystym JavaScript.
           </p>
           <div class="code-block">
-<pre>filterButtons.forEach(btn =&gt;
+<pre tabindex="0">filterButtons.forEach(btn =&gt;
   btn.addEventListener("click", filterGallery));</pre>
           </div>
         </div>
@@ -373,7 +369,7 @@
             pojawiających się podczas przewijania strony.
           </p>
           <div class="code-block">
-<pre>const observer = new IntersectionObserver(
+<pre tabindex="0">const observer = new IntersectionObserver(
   revealOnScroll);</pre>
           </div>
         </div>
@@ -386,7 +382,7 @@
             backendu, wyłącznie z komunikatem potwierdzającym.
           </p>
           <div class="code-block">
-<pre>form.addEventListener("submit", e =&gt; {
+<pre tabindex="0">form.addEventListener("submit", e =&gt; {
   e.preventDefault();
   validateBooking(form);
 });</pre>
@@ -414,7 +410,7 @@
     <section class="section-wrap content-section">
       <div class="section-label reveal">Uzasadnienie wyboru</div>
       <h2 class="section-h2 reveal delay-1">Dlaczego te technologie</h2>
-      <div class="reveal delay-2" style="overflow-x:auto;">
+      <div class="case-table reveal delay-2" tabindex="0">
         <table class="rationale-table">
           <thead>
             <tr>
@@ -455,7 +451,7 @@
             <div class="step-content">
               <div class="step-title">Sklonuj repozytorium</div>
               <div class="code-block">
-<pre>git clone https://github.com/Andrii418/glow-beauty-salon.git</pre>
+<pre tabindex="0">git clone https://github.com/Andrii418/glow-beauty-salon.git</pre>
               </div>
             </div>
           </div>
@@ -464,7 +460,7 @@
             <div class="step-content">
               <div class="step-title">Otwórz stronę lokalnie</div>
               <div class="code-block">
-<pre>cd glow-beauty-salon
+<pre tabindex="0">cd glow-beauty-salon
 # otwórz index.html w przeglądarce
 # lub uruchom rozszerzenie Live Server</pre>
               </div>
@@ -475,7 +471,7 @@
             <div class="step-content">
               <div class="step-title">Hostuj statycznie (opcjonalnie)</div>
               <div class="code-block">
-<pre># np. GitHub Pages, Netlify
+<pre tabindex="0"># np. GitHub Pages, Netlify
 # lub prosty serwer WWW</pre>
               </div>
             </div>
@@ -503,10 +499,15 @@
     </section>
 
     <!-- ── NEXT / PREV ── -->
-    <div class="section-wrap proj-nav-row reveal">
+    <div class="section-wrap proj-nav-row">
       <a href="../index.html" class="proj-nav-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Wszystkie projekty
+      </a>
+      <a href="../ml/index.html" class="case-next">
+        <span class="case-next-label" data-i18n="proj.next">Następny projekt</span>
+        <span class="case-next-name">Rozpoznawanie Emocji</span>
+        <span class="case-next-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -514,65 +515,17 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">&lt;AT/&gt;</span>
+      <span class="footer-logo" aria-hidden="true">AT</span>
       <span class="footer-copy">© 2026 Andrii Torianyk</span>
       <div class="footer-socials">
         <a href="https://github.com/Andrii418" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+        <a href="https://linkedin.com/in/andrii-torianyk-858233412" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script src="../../i18n.js"></script>
   <script src="../../main.js"></script>
-  <script>
-    // ── LIGHTBOX ──────────────────────────────────────────
-    // Podpisy do zdjęć celowo puste — uzupełnij klucze poniżej
-    // w i18n.js własnym tekstem, jeśli chcesz je dodać.
-    const imageKeys = [
-      { src: '../../assets/glow/screen1.png', key: 'glow.overlay.1' },
-      { src: '../../assets/glow/screen2.png', key: 'glow.overlay.2' },
-      { src: '../../assets/glow/screen3.png', key: 'glow.overlay.3' },
-      { src: '../../assets/glow/screen4.png', key: 'glow.overlay.4' },
-      { src: '../../assets/glow/screen5.png', key: 'glow.overlay.5' },
-      { src: '../../assets/glow/screen6.png', key: 'glow.overlay.6' },
-      { src: '../../assets/glow/screen7.png', key: 'glow.overlay.7' },
-      { src: '../../assets/glow/screen8.png', key: 'glow.overlay.8' },
-    ];
-
-    function getImages() {
-      const lang = (window.I18N && window.I18N.getLang) ? window.I18N.getLang() : 'pl';
-      return imageKeys.map(i => ({
-        src: i.src,
-        cap: (window.I18N && window.I18N.t(i.key, lang) !== i.key) ? window.I18N.t(i.key, lang) : ''
-      }));
-    }
-
-    let lbIdx = 0;
-
-    function openLightbox(i) {
-      const images = getImages();
-      lbIdx = i;
-      document.getElementById('lbImg').src = images[i].src;
-      document.getElementById('lbCaption').textContent = images[i].cap;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function lbNav(dir) {
-      const images = getImages();
-      lbIdx = (lbIdx + dir + images.length) % images.length;
-      document.getElementById('lbImg').src = images[lbIdx].src;
-      document.getElementById('lbCaption').textContent = images[lbIdx].cap;
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') lbNav(1);
-      if (e.key === 'ArrowLeft')  lbNav(-1);
-    });
-  </script>
+  <script src="../case-gallery.js"></script>
 </body>
 </html>
