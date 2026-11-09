@@ -323,9 +323,11 @@
     submitLabel.textContent = translate('sending');
 
     try {
+      const formData = new FormData(form);
+      formData.set('message', `Email: ${formData.get('email')}\n\n${formData.get('message')}`);
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: formData,
         headers: { Accept: 'application/json' },
       });
 
